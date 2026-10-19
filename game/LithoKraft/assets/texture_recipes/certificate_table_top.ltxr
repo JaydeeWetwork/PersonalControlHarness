@@ -1,0 +1,14 @@
+# certificate_table_top: the signing surface -- near-black violet slate with
+# a violet stave-cross etched across the face (the Systerian stave), orange
+# rivet sparks at scattered points (inverted voronoi peaks, glow-lit).
+# Locked certificate colours: violet #A970FF lines, orange #FF6F00 rivets.
+noise kind=gradient scale=4 octaves=4 seed=741
+curve contrast=1.25 clamp_max=0.38
+grid cells=2 width=0.09 sharpness=1.5
+curve clamp_max=0.8
+blend mode=max mix=1
+voronoi scale=4 mode=f1 seed=742
+curve invert=1 gamma=4 contrast=2
+blend mode=max mix=1
+palette stops=0:#06040e,0.38:#17102e,0.62:#2a1a56,0.8:#A970FF,0.88:#FF6F00,1:#ffb03a
+glow threshold=0.85 intensity=0.5 color=#FF6F00

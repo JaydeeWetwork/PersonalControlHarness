@@ -1,0 +1,302 @@
+{
+ "format": "litholattice.resources",
+ "version": 1,
+ "generated_by": "tools/convert_pack_manifest.py from manifest.json (pack_16)",
+ "tile_size": 16,
+ "textures": {
+  "capacitor_side": "textures/blocks/capacitor_side.png",
+  "certificate_table_side": "textures/blocks/certificate_table_side.png",
+  "certificate_table_top": "textures/blocks/certificate_table_top.png",
+  "chipor": "textures/blocks/chipor.png",
+  "dirt": "textures/blocks/dirt.png",
+  "dirt_slab_side": "textures/blocks/dirt_slab_side.png",
+  "dirt_slab_top": "textures/blocks/dirt_slab_top.png",
+  "dish": "textures/blocks/dish.png",
+  "etchor": "textures/blocks/etchor.png",
+  "formula_shrub_311": "textures/blocks/formula_shrub_311.png",
+  "formula_shrub_314": "textures/blocks/formula_shrub_314.png",
+  "fusor": "textures/blocks/fusor.png",
+  "grass_side": "textures/blocks/grass_side.png",
+  "grass_top": "textures/blocks/grass_top.png",
+  "overclockor": "textures/blocks/overclockor.png",
+  "portor": "textures/blocks/portor.png",
+  "procgen_dry_scrub": "textures/blocks/procgen_dry_scrub.png",
+  "procgen_fern": "textures/blocks/procgen_fern.png",
+  "procgen_formula_blob": "textures/blocks/procgen_formula_blob.png",
+  "procgen_formula_flower": "textures/blocks/procgen_formula_flower.png",
+  "procgen_formula_leaf": "textures/blocks/procgen_formula_leaf.png",
+  "procgen_formula_star": "textures/blocks/procgen_formula_star.png",
+  "procgen_grass_tuft": "textures/blocks/procgen_grass_tuft.png",
+  "quartz_spire": "textures/blocks/quartz_spire.png",
+  "signal_receivor": "textures/blocks/signal_receivor.png",
+  "signal_transmittor": "textures/blocks/signal_transmittor.png",
+  "silica_grass": "textures/blocks/silica_grass.png",
+  "silica_tilled": "textures/blocks/silica_tilled.png",
+  "silicon": "textures/blocks/silicon.png",
+  "silicon_slab_side": "textures/blocks/silicon_slab_side.png",
+  "silicon_slab_top": "textures/blocks/silicon_slab_top.png",
+  "stone": "textures/blocks/stone.png",
+  "stone_slab_side": "textures/blocks/stone_slab_side.png",
+  "stone_slab_top": "textures/blocks/stone_slab_top.png",
+  "structure_block": "textures/blocks/structure_block.png",
+  "trace_bark": "textures/blocks/trace_bark.png",
+  "trace_canopy": "textures/blocks/trace_canopy.png",
+  "trace_tip": "textures/blocks/trace_tip.png",
+  "trace_tip_red": "textures/blocks/trace_tip_red.png",
+  "wafer_ground_capacitor": "textures/blocks/wafer_ground_capacitor.png",
+  "wafer_ground_dead": "textures/blocks/wafer_ground_dead.png",
+  "wafer_ground_dicing": "textures/blocks/wafer_ground_dicing.png",
+  "wafer_ground_resonator": "textures/blocks/wafer_ground_resonator.png",
+  "wafer_ground_trace": "textures/blocks/wafer_ground_trace.png",
+  "copper_block": "textures/blocks/copper_block.png",
+  "aluminum_block": "textures/blocks/aluminum_block.png",
+  "gravity_block": "textures/blocks/gravity_block.png",
+  "substrate": "textures/blocks/substrate.png",
+  "insulatnor": "textures/blocks/insulatnor.png",
+  "insulator": "textures/blocks/insulator.png",
+  "insulatxor": "textures/blocks/insulatxor.png"
+ },
+ "animations": {},
+ "palettes": {},
+ "models": {
+  "capacitor_side": {
+   "faces": {
+    "all": "capacitor_side"
+   }
+  },
+  "certificate_table": {
+   "faces": {
+    "side": "certificate_table_side",
+    "top": "certificate_table_top"
+   }
+  },
+  "chipor": {
+   "faces": {
+    "all": "chipor"
+   }
+  },
+  "dirt": {
+   "faces": {
+    "all": "dirt"
+   }
+  },
+  "dirt_slab": {
+   "faces": {
+    "bottom": "dirt_slab_top",
+    "side": "dirt_slab_side",
+    "top": "dirt_slab_top"
+   }
+  },
+  "dish": {
+   "faces": {
+    "all": "dish"
+   }
+  },
+  "etchor": {
+   "faces": {
+    "all": "etchor"
+   }
+  },
+  "formula_shrub_311": {
+   "faces": {
+    "all": "formula_shrub_311"
+   }
+  },
+  "formula_shrub_314": {
+   "faces": {
+    "all": "formula_shrub_314"
+   }
+  },
+  "fusor": {
+   "faces": {
+    "all": "fusor"
+   }
+  },
+  "grass": {
+   "faces": {
+    "bottom": "dirt",
+    "side": "grass_side",
+    "top": "grass_top"
+   }
+  },
+  "overclockor": {
+   "faces": {
+    "all": "overclockor"
+   }
+  },
+  "portor": {
+   "faces": {
+    "all": "portor"
+   }
+  },
+  "procgen_dry_scrub": {
+   "faces": {
+    "all": "procgen_dry_scrub"
+   }
+  },
+  "procgen_fern": {
+   "faces": {
+    "all": "procgen_fern"
+   }
+  },
+  "procgen_formula_blob": {
+   "faces": {
+    "all": "procgen_formula_blob"
+   }
+  },
+  "procgen_formula_flower": {
+   "faces": {
+    "all": "procgen_formula_flower"
+   }
+  },
+  "procgen_formula_leaf": {
+   "faces": {
+    "all": "procgen_formula_leaf"
+   }
+  },
+  "procgen_formula_star": {
+   "faces": {
+    "all": "procgen_formula_star"
+   }
+  },
+  "procgen_grass_tuft": {
+   "faces": {
+    "all": "procgen_grass_tuft"
+   }
+  },
+  "quartz_spire": {
+   "faces": {
+    "all": "quartz_spire"
+   }
+  },
+  "signal_receivor": {
+   "faces": {
+    "all": "signal_receivor"
+   }
+  },
+  "signal_transmittor": {
+   "faces": {
+    "all": "signal_transmittor"
+   }
+  },
+  "silica_grass": {
+   "faces": {
+    "all": "silica_grass"
+   }
+  },
+  "silica_tilled": {
+   "faces": {
+    "all": "silica_tilled"
+   }
+  },
+  "silicon": {
+   "faces": {
+    "all": "silicon"
+   }
+  },
+  "silicon_slab": {
+   "faces": {
+    "bottom": "silicon_slab_top",
+    "side": "silicon_slab_side",
+    "top": "silicon_slab_top"
+   }
+  },
+  "stone": {
+   "faces": {
+    "all": "stone"
+   }
+  },
+  "stone_slab": {
+   "faces": {
+    "bottom": "stone_slab_top",
+    "side": "stone_slab_side",
+    "top": "stone_slab_top"
+   }
+  },
+  "structure_block": {
+   "faces": {
+    "all": "structure_block"
+   }
+  },
+  "trace_bark": {
+   "faces": {
+    "all": "trace_bark"
+   }
+  },
+  "trace_canopy": {
+   "faces": {
+    "all": "trace_canopy"
+   }
+  },
+  "trace_tip": {
+   "faces": {
+    "all": "trace_tip"
+   }
+  },
+  "trace_tip_red": {
+   "faces": {
+    "all": "trace_tip_red"
+   }
+  },
+  "wafer_ground_capacitor": {
+   "faces": {
+    "all": "wafer_ground_capacitor"
+   }
+  },
+  "wafer_ground_dead": {
+   "faces": {
+    "all": "wafer_ground_dead"
+   }
+  },
+  "wafer_ground_dicing": {
+   "faces": {
+    "all": "wafer_ground_dicing"
+   }
+  },
+  "wafer_ground_resonator": {
+   "faces": {
+    "all": "wafer_ground_resonator"
+   }
+  },
+  "wafer_ground_trace": {
+   "faces": {
+    "all": "wafer_ground_trace"
+   }
+  },
+  "copper_block": {
+   "faces": {
+    "all": "copper_block"
+   }
+  },
+  "aluminum_block": {
+   "faces": {
+    "all": "aluminum_block"
+   }
+  },
+  "gravity_block": {
+   "faces": {
+    "all": "gravity_block"
+   }
+  },
+  "substrate": {
+   "faces": {
+    "all": "substrate"
+   }
+  },
+  "insulatnor": {
+   "faces": {
+    "all": "insulatnor"
+   }
+  },
+  "insulator": {
+   "faces": {
+    "all": "insulator"
+   }
+  },
+  "insulatxor": {
+   "faces": {
+    "all": "insulatxor"
+   }
+  }
+ }
+}

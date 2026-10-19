@@ -1,0 +1,5 @@
+# grass_side: dirt body with grass-green growth taking the high field --
+# reads as grass-over-dirt from its palette split.
+noise kind=value scale=6 octaves=4 seed=271
+curve contrast=1.9
+palette stops=0:#140b06,0.35:#2c1c0e,0.52:#3a2410,0.62:#14523a,0.82:#1f7a55,1:#5cffc8

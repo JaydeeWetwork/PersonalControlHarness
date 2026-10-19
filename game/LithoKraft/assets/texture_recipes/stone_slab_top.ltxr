@@ -1,0 +1,6 @@
+# stone_slab_top: stone with a slab edge frame (cells=1 grid border).
+voronoi scale=4 mode=f1 seed=211
+curve gamma=0.9 contrast=1.2 clamp_max=0.8
+grid cells=1 width=0.07 sharpness=1.5
+blend mode=max mix=0.8
+palette stops=0:#1a1b24,0.35:#30333f,0.6:#484d5f,0.82:#798092,1:#9aa1b5

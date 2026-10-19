@@ -1,0 +1,5 @@
+# silicon_dioxide (item icon): glassy quartz-pale chunks (JD materials
+# 2026-10-14).
+voronoi scale=3 mode=f1 seed=739
+curve gamma=0.95 contrast=1.15
+palette stops=0:#1c2a30,0.35:#3d5a63,0.6:#6d97a1,0.85:#a8ccd4,1:#eefcff

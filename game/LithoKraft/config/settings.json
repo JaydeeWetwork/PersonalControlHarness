@@ -1,0 +1,13 @@
+{
+  "masterVolume": 0.6000000238418579,
+  "muted": true,
+  "hudScale": 0,
+  "displayMode": 0,
+  "vsync": false,
+  "tps": 32,
+  "tickRadius": 8,
+  "euv": true,
+  "mesher": 0,
+  "pbrTier": 1,
+  "ambientMode": 0
+}

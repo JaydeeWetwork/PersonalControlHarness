@@ -1,0 +1,6 @@
+# fragment (item icon): the Fragment starting book -- dark bound cover,
+# pale pages, the broken trace-square glyph in red and blue.
+voronoi scale=2 mode=f1 seed=501
+curve gamma=0.9 contrast=1.15
+palette stops=0:#0c0a14,0.3:#1e1830,0.5:#3a3358,0.68:#cfc7a8,0.84:#3f7de0,1:#ff5147
+glow threshold=0.8 intensity=0.4 color=#ff5147

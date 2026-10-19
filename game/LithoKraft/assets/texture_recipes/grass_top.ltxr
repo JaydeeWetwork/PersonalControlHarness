@@ -1,0 +1,7 @@
+# grass_top: deep teal-green silicon grass mat, cyan-lit tips on the peaks.
+noise kind=value scale=8 octaves=5 seed=261
+curve contrast=1.6 gamma=0.95
+noise kind=gradient scale=4 octaves=3 seed=262
+blend mode=multiply mix=0.45
+palette stops=0:#06180f,0.3:#0d2e22,0.55:#14523a,0.8:#1f7a55,0.94:#39c98a,1:#7dffce
+glow threshold=0.88 intensity=0.35 color=#5cffc8

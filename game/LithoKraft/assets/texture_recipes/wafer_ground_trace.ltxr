@@ -1,0 +1,8 @@
+# wafer_ground_trace: dark PCB + glowing cyan trace web (ridged noise ridges).
+noise kind=gradient scale=3 octaves=3 seed=21
+curve contrast=1.15 clamp_max=0.5
+voronoi scale=5 mode=edge seed=22
+curve invert=1 contrast=1.7
+blend mode=max mix=1
+palette stops=0:#05081c,0.35:#0c1230,0.5:#16224e,0.72:#0e4a63,0.9:#35e0ff,1:#d8fdff
+glow threshold=0.75 intensity=0.5 color=#35e0ff

@@ -1,0 +1,10 @@
+# wafer_ground_resonator: dark violet-flecked plate + amethyst sparkle.
+noise kind=gradient scale=5 octaves=4 seed=51
+curve contrast=1.25 clamp_max=0.55
+noise kind=value scale=13 octaves=1 seed=52
+noise kind=value scale=17 octaves=1 seed=53
+blend mode=multiply mix=1
+curve contrast=2.2 gamma=0.8
+blend mode=max mix=0.9
+palette stops=0:#0d0824,0.35:#1a1038,0.55:#2c1c5c,0.75:#5b3ea8,0.9:#9d7bff,1:#e6dcff
+glow threshold=0.8 intensity=0.55 color=#9d7bff

@@ -1,0 +1,13 @@
+{
+ "name": "LithoKraft stub textures (16px, agent mip chain)",
+ "game": "LithoKraft (formerly LithoCraft / VOXEL COMPUTE)",
+ "engine": "LithoLattice",
+ "engine_display": "LithoLattice Engine",
+ "tile_size": 16,
+ "format": "png",
+ "alpha": "straight (non-premultiplied)",
+ "packing": "one PNG per texture; engine builds the GPU array at load",
+ "naming": "lowercase snake_case = block[_face|_state|_piece]",
+ "animation": "vertical strip + <name>.png.json sidecar",
+ "version": "stub v0.1 (2026-10-11, wafer biome stubs; CloudAtlas to replace)"
+}

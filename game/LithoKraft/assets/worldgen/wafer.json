@@ -1,0 +1,2163 @@
+{
+  "climate": {
+    "continentalness": "continentalness",
+    "erosion": "erosion",
+    "humidity": "humidity",
+    "temperature": "temperature"
+  },
+  "biomes": {
+    "selector": {
+      "type": "blended",
+      "blend_radius": 0.25,
+      "blend_count": 3,
+      "comment": "Minecraft-style blending: biome edges read as gradients. blend_radius is the softmax softness scale in climate-space distance (smaller = crisper biomes, narrower borders). Tune per dimension."
+    },
+    "list": [
+      {
+        "climate": {
+          "humidity": 0.7,
+          "temperature": 0.72
+        },
+        "name": "trace_forest",
+        "surface": {
+          "depth": 3,
+          "filler": "silicon",
+          "top": "silicon"
+        }
+      },
+      {
+        "climate": {
+          "continentalness": 0.78,
+          "erosion": 0.22
+        },
+        "name": "dicing_plains",
+        "surface": {
+          "depth": 3,
+          "filler": "silicon",
+          "top": "silicon"
+        }
+      },
+      {
+        "climate": {
+          "temperature": 0.42,
+          "humidity": 0.32
+        },
+        "name": "capacitor_groves",
+        "surface": {
+          "depth": 4,
+          "filler": "silicon",
+          "top": "silicon"
+        }
+      },
+      {
+        "climate": {
+          "continentalness": 0.55,
+          "erosion": 0.9
+        },
+        "name": "resonator_spires",
+        "surface": {
+          "depth": 3,
+          "filler": "silicon",
+          "top": "silicon"
+        }
+      },
+      {
+        "climate": {
+          "temperature": 0.22,
+          "humidity": 0.22
+        },
+        "name": "dead_zones",
+        "surface": {
+          "depth": 5,
+          "filler": "stone",
+          "top": "stone"
+        }
+      }
+    ]
+  },
+  "description": "Wafer: five climate-selected surface biomes around y 254 with a 24-block crust. Climate noise (temperature/humidity/continentalness/erosion) feeds a BlendedBiomeSelector; each biome shapes its own height field and the heights/palettes blend at the borders. Biome order here is the ColumnMaps::biome id order (see lithokraft/game/wafer_biomes.h): 0 trace_forest, 1 dicing_plains, 2 capacitor_groves, 3 resonator_spires, 4 dead_zones.",
+  "graph": {
+    "nodes": {
+      "continentalness": {
+        "bias": 0.5,
+        "input": {
+          "fractal": {
+            "octaves": 3,
+            "type": "fbm"
+          },
+          "frequency": 0.0022,
+          "noise": "perlin",
+          "seed": 303,
+          "type": "noise"
+        },
+        "scale": 0.5,
+        "type": "scale_bias"
+      },
+      "erosion": {
+        "bias": 0.5,
+        "input": {
+          "fractal": {
+            "octaves": 2,
+            "type": "fbm"
+          },
+          "frequency": 0.004,
+          "noise": "opensimplex2s",
+          "seed": 404,
+          "type": "noise"
+        },
+        "scale": 0.5,
+        "type": "scale_bias"
+      },
+      "h_dead_crack": {
+        "fractal": {
+          "octaves": 2,
+          "type": "fbm"
+        },
+        "frequency": 0.025,
+        "noise": "perlin",
+        "seed": 15,
+        "type": "noise"
+      },
+      "h_forest_mound": {
+        "fractal": {
+          "octaves": 2,
+          "type": "billow"
+        },
+        "frequency": 0.008,
+        "noise": "opensimplex2s",
+        "seed": 12,
+        "type": "noise"
+      },
+      "h_forest_roll": {
+        "fractal": {
+          "octaves": 4,
+          "type": "fbm"
+        },
+        "frequency": 0.02,
+        "noise": "opensimplex2s",
+        "seed": 11,
+        "type": "noise"
+      },
+      "h_groves_bump": {
+        "fractal": {
+          "octaves": 3,
+          "type": "fbm"
+        },
+        "frequency": 0.03,
+        "noise": "perlin",
+        "seed": 13,
+        "type": "noise"
+      },
+      "h_spires_ridge": {
+        "fractal": {
+          "octaves": 4,
+          "type": "ridged"
+        },
+        "frequency": 0.012,
+        "noise": "opensimplex2s",
+        "seed": 14,
+        "type": "noise"
+      },
+      "height_capacitor_groves": {
+        "inputs": [
+          254,
+          {
+            "bias": 0,
+            "input": "h_groves_bump",
+            "scale": 2.5,
+            "type": "scale_bias"
+          }
+        ],
+        "type": "add"
+      },
+      "height_dead_zones": {
+        "inputs": [
+          252,
+          {
+            "bias": 0,
+            "input": "h_dead_crack",
+            "scale": 1.5,
+            "type": "scale_bias"
+          }
+        ],
+        "type": "add"
+      },
+      "height_dicing_plains": {
+        "type": "constant",
+        "value": 254
+      },
+      "height_resonator_spires": {
+        "inputs": [
+          254,
+          {
+            "bias": 0,
+            "input": "h_spires_ridge",
+            "scale": 16.0,
+            "type": "scale_bias"
+          }
+        ],
+        "type": "add"
+      },
+      "height_trace_forest": {
+        "inputs": [
+          254,
+          {
+            "bias": 0,
+            "input": "h_forest_roll",
+            "scale": 5.0,
+            "type": "scale_bias"
+          },
+          {
+            "bias": 0,
+            "input": "h_forest_mound",
+            "scale": 3.5,
+            "type": "scale_bias"
+          }
+        ],
+        "type": "add"
+      },
+      "humidity": {
+        "bias": 0.5,
+        "input": {
+          "fractal": {
+            "octaves": 3,
+            "type": "fbm"
+          },
+          "frequency": 0.003,
+          "noise": "opensimplex2s",
+          "seed": 202,
+          "type": "noise"
+        },
+        "scale": 0.5,
+        "type": "scale_bias"
+      },
+      "temperature": {
+        "bias": 0.5,
+        "input": {
+          "fractal": {
+            "octaves": 3,
+            "type": "fbm"
+          },
+          "frequency": 0.0035,
+          "noise": "opensimplex2s",
+          "seed": 101,
+          "type": "noise"
+        },
+        "scale": 0.5,
+        "type": "scale_bias"
+      }
+    },
+    "outputs": {
+      "continentalness": "continentalness",
+      "erosion": "erosion",
+      "height_capacitor_groves": "height_capacitor_groves",
+      "height_dead_zones": "height_dead_zones",
+      "height_dicing_plains": "height_dicing_plains",
+      "height_resonator_spires": "height_resonator_spires",
+      "height_trace_forest": "height_trace_forest",
+      "humidity": "humidity",
+      "temperature": "temperature"
+    }
+  },
+  "terrain": {
+    "biomes": [
+      {
+        "material": "silicon",
+        "output": "height_trace_forest"
+      },
+      {
+        "material": "silicon",
+        "output": "height_dicing_plains"
+      },
+      {
+        "material": "silicon",
+        "output": "height_capacitor_groves"
+      },
+      {
+        "material": "silicon",
+        "output": "height_resonator_spires"
+      },
+      {
+        "material": "stone",
+        "output": "height_dead_zones"
+      }
+    ],
+    "depth": 24,
+    "type": "biome_heightmap"
+  },
+  "oceans": {
+    "comment": "LithoKraft's water values as DATA (JD 2026-10-11; parameterized 2026-10-13 -- these are game-set settings, not engine caps; mods may set them freely). INERT today by design: no Wafer biome opts in (empty biomes table = eligibility 0 everywhere) and LithoKraft registers no water block yet, so water is the air sentinel (kAirMaterial = the fill rule no-ops, per water.h). Generated output is unchanged until a biome opts in AND a real water material is named here.",
+    "sea_level": 256,
+    "max_depth": 196,
+    "min_solid_below": 60,
+    "water": "air",
+    "biomes": {}
+  },
+  "lakes": {
+    "comment": "LithoKraft's lake value as DATA (JD 2026-10-11): max_depth 98, an independent settings field (not derived from the ocean value). INERT today for the same reason as oceans above: no biome opts in and water is the air no-op sentinel.",
+    "water_table": 256,
+    "max_depth": 98,
+    "water": "air",
+    "biomes": {}
+  },
+  "features": [
+    {
+      "name": "trace_trees",
+      "type": "trace_tree",
+      "comment": "Silicon trace-trees: via trunks, trace branches, red/blue glowing tips. Dense in Trace Forest, sparse elsewhere, never in Dead Zones.",
+      "trunk": "lithokraft:trace_trunk",
+      "branch": "lithokraft:trace_branch",
+      "tip_red": "lithokraft:trace_tip_red",
+      "tip_blue": "lithokraft:trace_tip_blue",
+      "red_tip_chance": 0.15,
+      "min_trunk": 4,
+      "max_trunk": 7,
+      "density": 0.0,
+      "biomes": {
+        "trace_forest": 0.09,
+        "dicing_plains": 0.006,
+        "capacitor_groves": 0.01,
+        "resonator_spires": 0.005,
+        "dead_zones": 0.0
+      }
+    },
+    {
+      "name": "shrubs_dry_tuft",
+      "type": "groundcover",
+      "comment": "Shrub placement. History: minimal caller 2026-10-12 rendered the CrossedQuads rows through the silica_grass Cross block; wiring pass B4 (2026-10-13) bound the engine's procgen plant textures into live worldgen -- each live CrossedQuads biome now places its OWN plant block per biome_vegetation.h's formula rows: DicingPlains -> procgen_formula_leaf (leaf lens), ResonatorSpires -> procgen_formula_blob (soft blob). The feature NAME is unchanged on purpose: it feeds the placement seed, and the two entries' biome maps partition the old single entry's map, so placement positions/densities are identical to the silica_grass era (0.012 / 0.020) -- only the placed block (and thus the rendered texture) changed. Modeled3D shrubs (TraceForest Berry 0.10, CapacitorGroves Twisted 0.06) are still NOT placed: octree shrubs do not stamp into voxel chunks yet — see biome_vegetation.h.",
+      "entries": [
+        {
+          "material": "lithokraft:procgen_formula_leaf",
+          "min_height": 1,
+          "max_height": 1,
+          "density": 0.0,
+          "biomes": {
+            "dicing_plains": 0.012
+          }
+        },
+        {
+          "material": "lithokraft:procgen_formula_blob",
+          "min_height": 1,
+          "max_height": 1,
+          "density": 0.0,
+          "biomes": {
+            "resonator_spires": 0.02
+          }
+        }
+      ]
+    },
+    {
+      "name": "capacitor_clusters",
+      "type": "capacitor_cans",
+      "comment": "Squat capacitor-can clusters, tight and maze-like. Capacitor Groves only.",
+      "can": "lithokraft:capacitor_can",
+      "min_cans": 3,
+      "max_cans": 7,
+      "min_height": 2,
+      "max_height": 3,
+      "density": 0.0,
+      "biomes": {
+        "capacitor_groves": 0.08
+      }
+    },
+    {
+      "name": "resonator_spires_feat",
+      "type": "resonator_spire",
+      "comment": "Tall quartz crystal spikes. Resonator Spires biome.",
+      "crystal": "lithokraft:resonator_crystal",
+      "min_height": 8,
+      "max_height": 16,
+      "density": 0.0,
+      "biomes": {
+        "resonator_spires": 0.03
+      }
+    },
+    {
+      "name": "transformer_ruin",
+      "type": "structure",
+      "comment": "Broken transformer husk: dead-silicon pad and corner posts, a broken-via core stub, one standing fossil-trace coil, one collapsed coil, a fallen winding chunk. Dead zones and trace-forest edges.",
+      "cell_size": 64,
+      "density": 0.08,
+      "biomes": {
+        "dead_zones": 1.0,
+        "trace_forest": 0.3
+      },
+      "rotate": true,
+      "blueprint": [
+        {
+          "d": [
+            -2,
+            0,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -2,
+            0,
+            -1
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -2,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -2,
+            0,
+            1
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -2,
+            0,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -1,
+            0,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -1,
+            0,
+            -1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            0,
+            0,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            0,
+            0,
+            -1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            1,
+            0,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            1,
+            0,
+            -1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            1
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            2,
+            0,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            2,
+            0,
+            -1
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            2,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            2,
+            0,
+            1
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            2,
+            0,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.25
+        },
+        {
+          "d": [
+            -2,
+            1,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            -2,
+            2,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            -2,
+            1,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            -2,
+            2,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            1,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            2,
+            -2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            1,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            2,
+            2
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            0,
+            1,
+            0
+          ],
+          "m": "lithokraft:broken_via"
+        },
+        {
+          "d": [
+            0,
+            2,
+            0
+          ],
+          "m": "lithokraft:broken_via"
+        },
+        {
+          "d": [
+            0,
+            3,
+            0
+          ],
+          "m": "lithokraft:broken_via"
+        },
+        {
+          "d": [
+            -2,
+            1,
+            -2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -2,
+            2,
+            -2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -2,
+            1,
+            -1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -2,
+            2,
+            -1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -1,
+            1,
+            -2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -1,
+            2,
+            -2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -1,
+            1,
+            -1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            -1,
+            2,
+            -1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            1,
+            1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            1,
+            1,
+            2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            1,
+            1
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            2,
+            1,
+            2
+          ],
+          "m": "lithokraft:fossil_trace",
+          "decay": 0.2
+        },
+        {
+          "d": [
+            3,
+            1,
+            1
+          ],
+          "m": "lithokraft:fossil_trace"
+        },
+        {
+          "d": [
+            0,
+            4,
+            0
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.5
+        }
+      ]
+    },
+    {
+      "name": "dead_memory_bank",
+      "type": "structure",
+      "comment": "Dead memory bank: three foundation strips of dead silicon carrying rows of inert dead memory cells, with broken-via stubs at the row ends. Dicing plains.",
+      "cell_size": 48,
+      "density": 0.1,
+      "biomes": {
+        "dicing_plains": 1.0
+      },
+      "rotate": true,
+      "blueprint": [
+        {
+          "d": [
+            0,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            3,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            4,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            5,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            6,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            7,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            8,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            9,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            10,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            11,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            12,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            13,
+            0,
+            0
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            5,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            7,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            9,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            11,
+            1,
+            0
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            14,
+            1,
+            0
+          ],
+          "m": "lithokraft:broken_via",
+          "decay": 0.3
+        },
+        {
+          "d": [
+            0,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            3,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            4,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            5,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            6,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            7,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            8,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            9,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            10,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            11,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            12,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            13,
+            0,
+            3
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            5,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            7,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            9,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            11,
+            1,
+            3
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            14,
+            1,
+            3
+          ],
+          "m": "lithokraft:broken_via",
+          "decay": 0.3
+        },
+        {
+          "d": [
+            0,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            3,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            4,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            5,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            6,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            7,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            8,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            9,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            10,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            11,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            12,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon"
+        },
+        {
+          "d": [
+            13,
+            0,
+            6
+          ],
+          "m": "lithokraft:dead_silicon",
+          "decay": 0.15
+        },
+        {
+          "d": [
+            1,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            5,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            7,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            9,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            11,
+            1,
+            6
+          ],
+          "m": "lithokraft:dead_memory_cell",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            14,
+            1,
+            6
+          ],
+          "m": "lithokraft:broken_via",
+          "decay": 0.3
+        }
+      ]
+    },
+    {
+      "name": "scribe_monument",
+      "type": "structure",
+      "comment": "Scribe-line monument: stepped scribe-silicon pyramid with a dense-silicon obelisk and a resonator-crystal cap. The base snaps to the 32-block die grid, so it always sits on a scribe intersection. Dicing plains.",
+      "cell_size": 96,
+      "density": 0.12,
+      "biomes": {
+        "dicing_plains": 1.0
+      },
+      "snap": 32,
+      "rotate": false,
+      "blueprint": [
+        {
+          "d": [
+            -3,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -3,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -2,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -2,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -1,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -1,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            0,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            0,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            1,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            1,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            2,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            2,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            -3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            3,
+            0,
+            3
+          ],
+          "m": "lithokraft:scribe_silicon",
+          "decay": 0.12
+        },
+        {
+          "d": [
+            -2,
+            1,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            1,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            1,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            1,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -2,
+            1,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            1,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            1,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            1,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            1,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            1,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            1,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            1,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            1,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            1,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            0,
+            1,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            1,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            1,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            1,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            1,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            1,
+            1,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            1,
+            -2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            1,
+            -1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            1,
+            0
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            1,
+            1
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            2,
+            1,
+            2
+          ],
+          "m": "lithokraft:scribe_silicon"
+        },
+        {
+          "d": [
+            -1,
+            2,
+            -1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            -1,
+            2,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            -1,
+            2,
+            1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            2,
+            -1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            2,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            2,
+            1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            1,
+            2,
+            -1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            1,
+            2,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            1,
+            2,
+            1
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            3,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            4,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            5,
+            0
+          ],
+          "m": "lithokraft:dense_silicon"
+        },
+        {
+          "d": [
+            0,
+            6,
+            0
+          ],
+          "m": "lithokraft:resonator_crystal"
+        }
+      ]
+    },
+    {
+      "name": "litho_starfish",
+      "type": "lithoform_stamp",
+      "comment": "Litho Formula scatter (alpha): baked starfish preset stamped as a silicon formation. Rare in Dicing Plains, absent in Dead Zones.",
+      "model": "starfish",
+      "materials": {
+        "1": "lithokraft:dead_silicon",
+        "2": "lithokraft:dense_silicon",
+        "3": "lithokraft:scribe_silicon",
+        "5": "lithokraft:trace_tip_red",
+        "6": "lithokraft:trace_tip_blue",
+        "7": "lithokraft:dead_silicon",
+        "8": "lithokraft:dense_silicon",
+        "10": "lithokraft:resonator_crystal",
+        "12": "lithokraft:fossil_trace"
+      },
+      "cell_size": 192,
+      "density": 0.9,
+      "biomes": {
+        "trace_forest": 0.0,
+        "dicing_plains": 0.02,
+        "capacitor_groves": 0.0,
+        "resonator_spires": 0.008,
+        "dead_zones": 0.0
+      },
+      "rotate": 1,
+      "y_offset": 0,
+      "anchor_center": 0
+    },
+    {
+      "name": "litho_pebble",
+      "type": "lithoform_stamp",
+      "comment": "Litho Formula scatter (alpha): baked pebble preset stamped as a worn silicon nodule. Sparse in Capacitor Groves.",
+      "model": "pebble",
+      "materials": {
+        "1": "lithokraft:dead_silicon",
+        "2": "lithokraft:dense_silicon",
+        "3": "lithokraft:scribe_silicon",
+        "5": "lithokraft:trace_tip_red",
+        "6": "lithokraft:trace_tip_blue",
+        "7": "lithokraft:dead_silicon",
+        "8": "lithokraft:dense_silicon",
+        "10": "lithokraft:resonator_crystal",
+        "12": "lithokraft:fossil_trace"
+      },
+      "cell_size": 160,
+      "density": 0.9,
+      "biomes": {
+        "trace_forest": 0.0,
+        "dicing_plains": 0.0,
+        "capacitor_groves": 0.025,
+        "resonator_spires": 0.0,
+        "dead_zones": 0.0
+      },
+      "rotate": 1,
+      "y_offset": 0,
+      "anchor_center": 0
+    }
+  ]
+}

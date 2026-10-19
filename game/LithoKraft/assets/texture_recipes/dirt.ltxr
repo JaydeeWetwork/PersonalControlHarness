@@ -1,0 +1,7 @@
+# dirt: earthy-dark clods (billowed noise), amber-brown with violet shadow --
+# stays dirt, gains real clump depth.
+noise kind=value scale=5 octaves=4 seed=231
+curve contrast=1.7 gamma=1.05
+noise kind=value scale=11 octaves=2 seed=232
+blend mode=multiply mix=0.5
+palette stops=0:#120b06,0.3:#241407,0.55:#3a2410,0.8:#5c3a1c,1:#7d5228

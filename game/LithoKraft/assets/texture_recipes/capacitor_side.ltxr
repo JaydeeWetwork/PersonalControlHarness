@@ -1,0 +1,8 @@
+# capacitor_side: dark metal can + copper band + label stripes (segmented
+# grid over a clamped metal base; the palette's copper band sits mid-field so
+# the grid segments read as the labelled band).
+noise kind=gradient scale=4 octaves=3 seed=101
+curve contrast=1.2 clamp_max=0.45
+grid cells=2 width=0.16 sharpness=1.5
+blend mode=max mix=0.85
+palette stops=0:#0a0c18,0.3:#181d2e,0.45:#232a44,0.62:#b5762e,0.72:#e8a84c,0.85:#2c3554,1:#8fd8e8

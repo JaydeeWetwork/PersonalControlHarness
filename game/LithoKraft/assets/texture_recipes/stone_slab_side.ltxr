@@ -1,0 +1,6 @@
+# stone_slab_side: stone slab side -- segmented grid over stone facets.
+voronoi scale=4 mode=f1 seed=221
+curve gamma=0.9 contrast=1.2 clamp_max=0.78
+grid cells=2 width=0.1 sharpness=1.4
+blend mode=max mix=0.7
+palette stops=0:#14151d,0.35:#272a36,0.6:#3e4254,0.85:#5d6376,1:#767d92

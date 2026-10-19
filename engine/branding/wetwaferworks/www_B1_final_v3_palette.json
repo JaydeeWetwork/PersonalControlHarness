@@ -1,0 +1,15 @@
+{
+  "name": "Wet Wafer Works B1 final v3",
+  "colors": {
+    "deep": "#131726",
+    "wafer": "#3E465C",
+    "lattice": "#B9A8F0",
+    "signal_red": "#FF514B",
+    "signal_blue": "#2FB4FF",
+    "signal_purple": "#5B34B8"
+  },
+  "also_used": {
+    "die": "#7C88A6",
+    "drop": "#6FDCFF"
+  }
+}

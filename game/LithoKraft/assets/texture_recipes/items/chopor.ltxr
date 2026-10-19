@@ -1,0 +1,8 @@
+# chopor (item icon): the axe, tier 1 trace-trunk material -- warm trunk
+# browns with a bright steel edge band and blue zigzag inlay spark.
+noise kind=gradient scale=4 octaves=3 seed=421
+curve contrast=1.2 clamp_max=0.5
+grid cells=3 width=0.16 sharpness=1.3
+blend mode=max mix=1
+palette stops=0:#140f06,0.35:#2e2010,0.55:#54401e,0.72:#8a6a34,0.88:#d7dde6,1:#4dc3ff
+glow threshold=0.9 intensity=0.45 color=#4dc3ff

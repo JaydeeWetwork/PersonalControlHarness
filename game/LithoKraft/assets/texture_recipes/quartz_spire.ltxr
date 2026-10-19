@@ -1,0 +1,8 @@
+# quartz_spire: amethyst crystal -- posterised voronoi facets, violet
+# gradient, bright core near the cell points.
+voronoi scale=5 mode=f1 seed=111
+curve invert=1 posterize=6 gamma=0.85 contrast=1.2
+noise kind=gradient scale=8 octaves=3 seed=112
+blend mode=multiply mix=0.4
+palette stops=0:#24104f,0.25:#6a3fd4,0.5:#9d7bff,0.75:#c4a6ff,1:#f2eaff
+glow threshold=0.7 intensity=0.35 color=#c4a6ff

@@ -1,0 +1,14 @@
+{
+ "frametime_ms": 50,
+ "frames": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "interpolate": false,
+ "loop": false,
+ "note": "play once per fired pulse (the pulse itself is 1 tick); engine returns to pulsar_top when done"
+}

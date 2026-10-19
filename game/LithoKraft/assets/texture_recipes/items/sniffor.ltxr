@@ -1,0 +1,8 @@
+# sniffor (item icon): handheld signal receiver -- dark body, cyan screen
+# field, one red Daemon-channel blip.
+noise kind=gradient scale=4 octaves=3 seed=511
+curve contrast=1.25 clamp_max=0.55
+grid cells=3 width=0.14 sharpness=1.2
+blend mode=max mix=1
+palette stops=0:#070a12,0.35:#101a2e,0.58:#1d3a5c,0.78:#35e0ff,0.92:#bffbff,1:#ff5147
+glow threshold=0.9 intensity=0.55 color=#35e0ff

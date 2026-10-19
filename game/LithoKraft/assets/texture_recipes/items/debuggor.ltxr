@@ -1,0 +1,8 @@
+# debuggor (item icon): the debug stick -- dark wand field, steel rotation
+# ring, red/blue dial detents.
+noise kind=gradient scale=3 octaves=3 seed=491
+curve contrast=1.3 clamp_max=0.5
+grid cells=2 width=0.18 sharpness=1.3
+blend mode=max mix=1
+palette stops=0:#0a0812,0.35:#1a1430,0.58:#3c3660,0.76:#9aa5b5,0.9:#ff5147,1:#4dc3ff
+glow threshold=0.86 intensity=0.5 color=#4dc3ff

@@ -1,0 +1,181 @@
+{
+  "description": "Organic World: plains and hills chosen by a slow continentalness field; grass, dirt and stone with worm caves and dirt veins.",
+  "graph": {
+    "nodes": {
+      "continentalness": {
+        "type": "scale_bias",
+        "scale": 0.5,
+        "bias": 0.5,
+        "input": {
+          "type": "noise",
+          "noise": "value",
+          "seed": 1,
+          "frequency": 0.010416666666666666,
+          "offset": [
+            100,
+            0,
+            0
+          ]
+        }
+      },
+      "plains": {
+        "type": "scale_bias",
+        "scale": 1.5,
+        "bias": 67.5,
+        "input": {
+          "type": "noise",
+          "noise": "value",
+          "seed": 2,
+          "frequency": 0.041666666666666664
+        }
+      },
+      "hills": {
+        "type": "scale_bias",
+        "scale": 13,
+        "bias": 79,
+        "input": {
+          "type": "add",
+          "inputs": [
+            {
+              "type": "scale_bias",
+              "scale": 0.65,
+              "input": {
+                "type": "noise",
+                "noise": "value",
+                "seed": 3,
+                "frequency": 0.025
+              }
+            },
+            {
+              "type": "scale_bias",
+              "scale": 0.35,
+              "input": {
+                "type": "noise",
+                "noise": "value",
+                "seed": 4,
+                "frequency": 0.07692307692307693
+              }
+            }
+          ]
+        }
+      },
+      "height": {
+        "type": "select",
+        "control": "continentalness",
+        "a": "plains",
+        "b": "hills",
+        "threshold": 0.5,
+        "falloff": 0.08
+      }
+    },
+    "outputs": {
+      "height": "height",
+      "continentalness": "continentalness"
+    }
+  },
+  "climate": {
+    "continentalness": "continentalness"
+  },
+  "biomes": [
+    {
+      "name": "plains",
+      "climate": {
+        "continentalness": 0.25
+      },
+      "surface": {
+        "top": "grass",
+        "filler": "dirt",
+        "depth": 3
+      }
+    },
+    {
+      "name": "hills",
+      "climate": {
+        "continentalness": 0.75
+      },
+      "surface": {
+        "top": "grass",
+        "filler": "dirt",
+        "depth": 3
+      }
+    }
+  ],
+  "surface": {
+    "top_state": "biome"
+  },
+  "terrain": {
+    "type": "heightmap",
+    "output": "height",
+    "material": "stone"
+  },
+  "oceans": {
+    "comment": "LithoKraft's water values as DATA (JD 2026-10-11; parameterized 2026-10-13 -- game-set settings, not engine caps). INERT today by design: no Organic biome opts in (empty biomes table = eligibility 0 everywhere) and LithoKraft registers no water block yet, so water is the air sentinel (kAirMaterial = the fill rule no-ops, per water.h). Generated output is unchanged until a biome opts in AND a real water material is named here.",
+    "sea_level": 256,
+    "max_depth": 196,
+    "min_solid_below": 60,
+    "water": "air",
+    "biomes": {}
+  },
+  "lakes": {
+    "comment": "LithoKraft's lake value as DATA (JD 2026-10-11): max_depth 98, an independent settings field (not derived from the ocean value). INERT today for the same reason as oceans above: no biome opts in and water is the air no-op sentinel.",
+    "water_table": 256,
+    "max_depth": 98,
+    "water": "air",
+    "biomes": {}
+  },
+  "carvers": [
+    {
+      "type": "worm_cave",
+      "chance": 0.3,
+      "min_length": 40,
+      "max_length": 90,
+      "min_radius": 1.5,
+      "max_radius": 3,
+      "min_y": 10,
+      "max_y": 50,
+      "surface_margin": 8
+    },
+    {
+      "type": "ravine"
+    }
+  ],
+  "features": [
+    {
+      "name": "dirt_veins",
+      "type": "ore_vein",
+      "material": "dirt",
+      "replace": "stone",
+      "count": 6,
+      "size": 14,
+      "min_y": 4,
+      "max_y": 56
+    },
+    {
+      "name": "dungeon",
+      "type": "dungeon"
+    },
+    {
+      "name": "litho_blossom",
+      "type": "lithoform_stamp",
+      "comment": "Litho Formula scatter (alpha): baked blossom preset stamped as an organic growth. Sparse in plains, rarer in hills.",
+      "model": "blossom",
+      "materials": {
+        "1": "dirt",
+        "2": "stone",
+        "3": "stone",
+        "7": "dirt",
+        "8": "stone",
+        "10": "grass"
+      },
+      "cell_size": 192,
+      "density": 0.9,
+      "biomes": {
+        "plains": 0.02,
+        "hills": 0.01
+      },
+      "rotate": 1,
+      "y_offset": 0,
+      "anchor_center": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# dioxide (item icon): fine off-white powder mound (JD materials
+# 2026-10-14).
+noise kind=gradient scale=7 octaves=3 seed=733
+curve contrast=0.85 gamma=1.2 clamp_max=0.7
+palette stops=0:#5e5a4e,0.35:#948e7c,0.6:#c2bda9,0.85:#e8e4d2,1:#fffdf2

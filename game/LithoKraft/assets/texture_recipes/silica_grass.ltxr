@@ -1,0 +1,9 @@
+# silica_grass: silicon fern sprite -- needs ALPHA. Ridged filaments are the
+# fronds: the palette is fully transparent below 0.62, then cyan-green frond
+# colour with violet-tinged tips at the ridge crests.
+noise kind=value scale=6 octaves=2 seed=121
+curve contrast=1.8
+ridged
+curve contrast=2.6 gamma=0.9
+palette stops=0:#2affc400,0.7:#2affc400,0.8:#0a4a38cc,0.9:#0f9a68ee,0.97:#2ed69b,1:#7dffce
+glow threshold=0.85 intensity=0.45 color=#5cffc8

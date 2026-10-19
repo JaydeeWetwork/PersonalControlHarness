@@ -1,0 +1,7 @@
+# certificate_table_side: the table body -- deep violet-black panels with a
+# faint etched grid. Deliberately quieter than the signing surface on top.
+noise kind=gradient scale=3 octaves=3 seed=743
+curve contrast=1.2 clamp_max=0.34
+grid cells=4 width=0.14 sharpness=1.2
+blend mode=max mix=0.5
+palette stops=0:#050410,0.34:#120d24,0.7:#1d1440,1:#4a2d8f

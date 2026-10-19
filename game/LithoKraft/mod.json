@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "lithokraft",
+  "name": "LithoKraft",
+  "version": "0.1.0",
+  "type": "content",
+  "deps": [{"id": "litholattice", "version": ">=0.1.0"}],
+  "extensible": true
+}

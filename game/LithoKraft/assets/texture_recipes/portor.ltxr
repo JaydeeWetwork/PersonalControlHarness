@@ -1,0 +1,9 @@
+# portor: port frame -- thick cells=1 border in dark metal, violet portal
+# glow pooling at the centre point's radial field (max of frame + inverse
+# radial, both mapped through one palette: frame = band, core = top).
+voronoi scale=1 mode=f1 seed=351
+curve invert=1 gamma=0.8 clamp_max=0.75
+grid cells=1 width=0.18 sharpness=1.2
+blend mode=max mix=1
+palette stops=0:#0a0c1c,0.35:#1c2340,0.6:#39406b,0.78:#6a3fd4,0.92:#9d7bff,1:#e6dcff
+glow threshold=0.8 intensity=0.5 color=#9d7bff

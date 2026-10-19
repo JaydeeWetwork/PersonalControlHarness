@@ -1,0 +1,5 @@
+# silicon_gallium (item icon): steely mauve-grey lump, JD's pairing
+# applied down the list (JD materials 2026-10-14).
+noise kind=gradient scale=4 octaves=3 seed=727
+curve contrast=1.15 gamma=1.05
+palette stops=0:#181019,0.35:#372a40,0.6:#5d4a6e,0.85:#8d76a5,1:#c4b2dd

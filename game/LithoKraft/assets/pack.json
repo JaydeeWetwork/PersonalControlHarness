@@ -1,0 +1,4 @@
+{
+ "name": "lithokraft",
+ "note": "Game pack: UI theme and world generators. Stacks on the engine base pack (shaders); art packs (packs/) and mods stack above it (docs/RESOURCE_PACKS.md)."
+}

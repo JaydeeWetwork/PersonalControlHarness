@@ -1,0 +1,8 @@
+# ping (item icon): the bow -- curved limb browns, a taut cyan string
+# field, one red packet-head spark.
+noise kind=gradient scale=3 octaves=3 seed=471
+curve contrast=1.25 clamp_max=0.5
+voronoi scale=2 mode=edge seed=472
+blend mode=max mix=0.8
+palette stops=0:#0d0a06,0.35:#2b1d0e,0.58:#5a4020,0.78:#8a6a34,0.92:#35e0ff,1:#ff5147
+glow threshold=0.9 intensity=0.5 color=#35e0ff

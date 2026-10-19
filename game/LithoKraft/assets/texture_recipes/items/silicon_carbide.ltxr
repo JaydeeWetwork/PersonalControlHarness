@@ -1,0 +1,5 @@
+# silicon_carbide (item icon): dark green-black crystal facets (JD
+# materials 2026-10-14).
+voronoi scale=3 mode=f1 seed=719
+curve gamma=0.85 contrast=1.35
+palette stops=0:#04120c,0.35:#0d2e20,0.6:#17573a,0.85:#23855c,1:#5fc793

@@ -1,0 +1,5 @@
+# heapor (item icon): the shovel -- cupped steel scoop, glowing blue rim.
+voronoi scale=2 mode=f1 seed=431
+curve gamma=0.85 contrast=1.2
+palette stops=0:#0d0f14,0.3:#232833,0.55:#4a5568,0.75:#8b95a7,0.9:#35e0ff,1:#e6f7ff
+glow threshold=0.82 intensity=0.5 color=#35e0ff

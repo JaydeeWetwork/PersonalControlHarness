@@ -1,0 +1,743 @@
+{
+ "format": "litholattice.resources",
+ "version": 1,
+ "generated_by": "tools/convert_pack_manifest.py from manifest.json (pack_32)",
+ "tile_size": 32,
+ "textures": {
+  "blue_torch": "textures/blocks/blue_torch.png",
+  "blue_torch_off": "textures/blocks/blue_torch_off.png",
+  "blue_trace": "textures/blocks/blue_trace.png",
+  "blue_trace_corner": "textures/blocks/blue_trace_corner.png",
+  "blue_trace_cross": "textures/blocks/blue_trace_cross.png",
+  "blue_trace_dot": "textures/blocks/blue_trace_dot.png",
+  "blue_trace_dot_mask": "textures/masks/blue_trace_dot_mask.png",
+  "blue_trace_end": "textures/blocks/blue_trace_end.png",
+  "blue_trace_ring_mask": "textures/masks/blue_trace_ring_mask.png",
+  "blue_trace_t": "textures/blocks/blue_trace_t.png",
+  "blue_via_bottom": "textures/blocks/blue_via_bottom.png",
+  "blue_via_core_mask_top": "textures/masks/blue_via_core_mask_top.png",
+  "blue_via_side": "textures/blocks/blue_via_side.png",
+  "blue_via_side_bottom": "textures/blocks/blue_via_side_bottom.png",
+  "blue_via_side_mid": "textures/blocks/blue_via_side_mid.png",
+  "blue_via_side_single": "textures/blocks/blue_via_side_single.png",
+  "blue_via_side_top": "textures/blocks/blue_via_side_top.png",
+  "blue_via_top": "textures/blocks/blue_via_top.png",
+  "button_side": "textures/blocks/button_side.png",
+  "button_top": "textures/blocks/button_top.png",
+  "button_top_pressed": "textures/blocks/button_top_pressed.png",
+  "capacitor_side": "textures/blocks/capacitor_side.png",
+  "catchor_back": "textures/blocks/catchor_back.png",
+  "catchor_front": "textures/blocks/catchor_front.png",
+  "catchor_front_firing": "textures/blocks/catchor_front_firing.png",
+  "catchor_readout_mask": "textures/masks/catchor_readout_mask.png",
+  "catchor_side": "textures/blocks/catchor_side.png",
+  "catchor_top": "textures/blocks/catchor_top.png",
+  "catchor_top_firing": "textures/blocks/catchor_top_firing.png",
+  "ceramic": "textures/blocks/ceramic.png",
+  "certificate_table_side": "textures/blocks/certificate_table_side.png",
+  "certificate_table_top": "textures/blocks/certificate_table_top.png",
+  "chipor": "textures/blocks/chipor.png",
+  "color_lamp_16": "textures/blocks/color_lamp_16.png",
+  "color_lamp_16_mask": "textures/masks/color_lamp_16_mask.png",
+  "color_lamp_16_off": "textures/blocks/color_lamp_16_off.png",
+  "color_lamp_16_rim_mask": "textures/masks/color_lamp_16_rim_mask.png",
+  "color_lamp_32": "textures/blocks/color_lamp_32.png",
+  "color_lamp_32_mask": "textures/masks/color_lamp_32_mask.png",
+  "color_lamp_32_off": "textures/blocks/color_lamp_32_off.png",
+  "color_lamp_32_rim_mask": "textures/masks/color_lamp_32_rim_mask.png",
+  "color_lamp_64": "textures/blocks/color_lamp_64.png",
+  "color_lamp_64_mask": "textures/masks/color_lamp_64_mask.png",
+  "color_lamp_64_off": "textures/blocks/color_lamp_64_off.png",
+  "color_lamp_64_rim_mask": "textures/masks/color_lamp_64_rim_mask.png",
+  "debug_trace_digits_mask": "textures/masks/debug_trace_digits_mask.png",
+  "dirt": "textures/blocks/dirt.png",
+  "dirt_slab_side": "textures/blocks/dirt_slab_side.png",
+  "dirt_slab_top": "textures/blocks/dirt_slab_top.png",
+  "dish": "textures/blocks/dish.png",
+  "etchor": "textures/blocks/etchor.png",
+  "fast_latch_off": "textures/blocks/fast_latch_off.png",
+  "fast_latch_on": "textures/blocks/fast_latch_on.png",
+  "formula_shrub_311": "textures/blocks/formula_shrub_311.png",
+  "formula_shrub_314": "textures/blocks/formula_shrub_314.png",
+  "frosted_glass": "textures/blocks/frosted_glass.png",
+  "fusor": "textures/blocks/fusor.png",
+  "glass": "textures/blocks/glass.png",
+  "grass_side": "textures/blocks/grass_side.png",
+  "grass_top": "textures/blocks/grass_top.png",
+  "keyboard_control": "textures/blocks/keyboard_control.png",
+  "keyboard_front": "textures/blocks/keyboard_front.png",
+  "keyboard_side": "textures/blocks/keyboard_side.png",
+  "keyboard_top": "textures/blocks/keyboard_top.png",
+  "lamp_off": "textures/blocks/lamp_off.png",
+  "lamp_on": "textures/blocks/lamp_on.png",
+  "memor_back": "textures/blocks/memor_back.png",
+  "memor_front": "textures/blocks/memor_front.png",
+  "memor_side": "textures/blocks/memor_side.png",
+  "memor_top": "textures/blocks/memor_top.png",
+  "memor_top_empty": "textures/blocks/memor_top_empty.png",
+  "memor_value_mask": "textures/masks/memor_value_mask.png",
+  "overclockor": "textures/blocks/overclockor.png",
+  "pattern_cells_top": "textures/blocks/pattern_cells_top.png",
+  "pattern_checkers_top": "textures/blocks/pattern_checkers_top.png",
+  "pattern_circles_top": "textures/blocks/pattern_circles_top.png",
+  "pattern_delaunay_top": "textures/blocks/pattern_delaunay_top.png",
+  "pattern_rom_back": "textures/blocks/pattern_rom_back.png",
+  "pattern_rom_front": "textures/blocks/pattern_rom_front.png",
+  "pattern_rom_side": "textures/blocks/pattern_rom_side.png",
+  "pattern_rom_top": "textures/blocks/pattern_rom_top.png",
+  "pattern_spheres_top": "textures/blocks/pattern_spheres_top.png",
+  "portor": "textures/blocks/portor.png",
+  "procgen_dry_scrub": "textures/blocks/procgen_dry_scrub.png",
+  "procgen_fern": "textures/blocks/procgen_fern.png",
+  "procgen_formula_blob": "textures/blocks/procgen_formula_blob.png",
+  "procgen_formula_flower": "textures/blocks/procgen_formula_flower.png",
+  "procgen_formula_leaf": "textures/blocks/procgen_formula_leaf.png",
+  "procgen_formula_star": "textures/blocks/procgen_formula_star.png",
+  "procgen_grass_tuft": "textures/blocks/procgen_grass_tuft.png",
+  "pulsor_back": "textures/blocks/pulsor_back.png",
+  "pulsor_front": "textures/blocks/pulsor_front.png",
+  "pulsor_side": "textures/blocks/pulsor_side.png",
+  "pulsor_top": "textures/blocks/pulsor_top.png",
+  "quartz_spire": "textures/blocks/quartz_spire.png",
+  "red_torch": "textures/blocks/red_torch.png",
+  "red_torch_off": "textures/blocks/red_torch_off.png",
+  "red_trace": "textures/blocks/red_trace.png",
+  "red_trace_corner": "textures/blocks/red_trace_corner.png",
+  "red_trace_cross": "textures/blocks/red_trace_cross.png",
+  "red_trace_dot": "textures/blocks/red_trace_dot.png",
+  "red_trace_dot_mask": "textures/masks/red_trace_dot_mask.png",
+  "red_trace_end": "textures/blocks/red_trace_end.png",
+  "red_trace_ring_mask": "textures/masks/red_trace_ring_mask.png",
+  "red_trace_t": "textures/blocks/red_trace_t.png",
+  "red_via_bottom": "textures/blocks/red_via_bottom.png",
+  "red_via_core_mask_top": "textures/masks/red_via_core_mask_top.png",
+  "red_via_side": "textures/blocks/red_via_side.png",
+  "red_via_side_bottom": "textures/blocks/red_via_side_bottom.png",
+  "red_via_side_mid": "textures/blocks/red_via_side_mid.png",
+  "red_via_side_single": "textures/blocks/red_via_side_single.png",
+  "red_via_side_top": "textures/blocks/red_via_side_top.png",
+  "red_via_top": "textures/blocks/red_via_top.png",
+  "redirector_front": "textures/blocks/redirector_front.png",
+  "redirector_front_on": "textures/blocks/redirector_front_on.png",
+  "redirector_front_split": "textures/blocks/redirector_front_split.png",
+  "redirector_front_split_blue_on": "textures/blocks/redirector_front_split_blue_on.png",
+  "redirector_front_split_both_on": "textures/blocks/redirector_front_split_both_on.png",
+  "redirector_front_split_red_on": "textures/blocks/redirector_front_split_red_on.png",
+  "redirector_overlay_blue_e": "textures/blocks/redirector_overlay_blue_e.png",
+  "redirector_overlay_blue_e_off": "textures/blocks/redirector_overlay_blue_e_off.png",
+  "redirector_overlay_blue_n": "textures/blocks/redirector_overlay_blue_n.png",
+  "redirector_overlay_blue_n_off": "textures/blocks/redirector_overlay_blue_n_off.png",
+  "redirector_overlay_blue_s": "textures/blocks/redirector_overlay_blue_s.png",
+  "redirector_overlay_blue_s_off": "textures/blocks/redirector_overlay_blue_s_off.png",
+  "redirector_overlay_blue_w": "textures/blocks/redirector_overlay_blue_w.png",
+  "redirector_overlay_blue_w_off": "textures/blocks/redirector_overlay_blue_w_off.png",
+  "redirector_overlay_red_e": "textures/blocks/redirector_overlay_red_e.png",
+  "redirector_overlay_red_e_off": "textures/blocks/redirector_overlay_red_e_off.png",
+  "redirector_overlay_red_n": "textures/blocks/redirector_overlay_red_n.png",
+  "redirector_overlay_red_n_off": "textures/blocks/redirector_overlay_red_n_off.png",
+  "redirector_overlay_red_s": "textures/blocks/redirector_overlay_red_s.png",
+  "redirector_overlay_red_s_off": "textures/blocks/redirector_overlay_red_s_off.png",
+  "redirector_overlay_red_w": "textures/blocks/redirector_overlay_red_w.png",
+  "redirector_overlay_red_w_off": "textures/blocks/redirector_overlay_red_w_off.png",
+  "redirector_side": "textures/blocks/redirector_side.png",
+  "redirector_top": "textures/blocks/redirector_top.png",
+  "redirector_top_on": "textures/blocks/redirector_top_on.png",
+  "redirector_top_split": "textures/blocks/redirector_top_split.png",
+  "repeater_back": "textures/blocks/repeater_back.png",
+  "repeater_delay_mask": "textures/masks/repeater_delay_mask.png",
+  "repeater_front": "textures/blocks/repeater_front.png",
+  "repeater_side": "textures/blocks/repeater_side.png",
+  "repeater_top": "textures/blocks/repeater_top.png",
+  "repeater_top_on": "textures/blocks/repeater_top_on.png",
+  "signal_receivor": "textures/blocks/signal_receivor.png",
+  "signal_transmittor": "textures/blocks/signal_transmittor.png",
+  "silica_grass": "textures/blocks/silica_grass.png",
+  "silica_tilled": "textures/blocks/silica_tilled.png",
+  "silicon": "textures/blocks/silicon.png",
+  "silicon_slab_side": "textures/blocks/silicon_slab_side.png",
+  "silicon_slab_top": "textures/blocks/silicon_slab_top.png",
+  "stone": "textures/blocks/stone.png",
+  "stone_slab_side": "textures/blocks/stone_slab_side.png",
+  "stone_slab_top": "textures/blocks/stone_slab_top.png",
+  "structure_block": "textures/blocks/structure_block.png",
+  "switch_side": "textures/blocks/switch_side.png",
+  "switch_top_off": "textures/blocks/switch_top_off.png",
+  "switch_top_on": "textures/blocks/switch_top_on.png",
+  "thresholdor_back": "textures/blocks/thresholdor_back.png",
+  "thresholdor_front": "textures/blocks/thresholdor_front.png",
+  "thresholdor_high": "textures/blocks/thresholdor_high.png",
+  "thresholdor_low": "textures/blocks/thresholdor_low.png",
+  "thresholdor_side": "textures/blocks/thresholdor_side.png",
+  "thresholdor_top": "textures/blocks/thresholdor_top.png",
+  "thresholdor_top_on": "textures/blocks/thresholdor_top_on.png",
+  "tone_block_back": "textures/blocks/tone_block_back.png",
+  "tone_block_front": "textures/blocks/tone_block_front.png",
+  "tone_block_side": "textures/blocks/tone_block_side.png",
+  "tone_block_top": "textures/blocks/tone_block_top.png",
+  "tone_block_top_playing": "textures/blocks/tone_block_top_playing.png",
+  "trace_bark": "textures/blocks/trace_bark.png",
+  "trace_canopy": "textures/blocks/trace_canopy.png",
+  "trace_tip": "textures/blocks/trace_tip.png",
+  "trace_tip_red": "textures/blocks/trace_tip_red.png",
+  "via_core_mask_side": "textures/masks/via_core_mask_side.png",
+  "wafer_ground_capacitor": "textures/blocks/wafer_ground_capacitor.png",
+  "wafer_ground_dead": "textures/blocks/wafer_ground_dead.png",
+  "wafer_ground_dicing": "textures/blocks/wafer_ground_dicing.png",
+  "wafer_ground_resonator": "textures/blocks/wafer_ground_resonator.png",
+  "wafer_ground_trace": "textures/blocks/wafer_ground_trace.png",
+  "copper_block": "textures/blocks/copper_block.png",
+  "aluminum_block": "textures/blocks/aluminum_block.png",
+  "gravity_block": "textures/blocks/gravity_block.png",
+  "substrate": "textures/blocks/substrate.png",
+  "insulatnor": "textures/blocks/insulatnor.png",
+  "insulator": "textures/blocks/insulator.png",
+  "insulatxor": "textures/blocks/insulatxor.png"
+ },
+ "animations": {
+  "pulsor_top_firing": {
+   "file": "textures/blocks/pulsor_top_firing.png"
+  },
+  "tone_block_front_playing": {
+   "file": "textures/blocks/tone_block_front_playing.png"
+  }
+ },
+ "palettes": {
+  "blue_trace": "textures/palettes/blue_trace.png",
+  "cga16": "textures/palettes/cga16.png",
+  "red_trace": "textures/palettes/red_trace.png",
+  "vga32": "textures/palettes/vga32.png",
+  "vga64": "textures/palettes/vga64.png"
+ },
+ "models": {
+  "blue_torch": {
+   "faces": {
+    "all": "blue_torch_off"
+   },
+   "active": {
+    "all": "blue_torch"
+   }
+  },
+  "blue_trace": {
+   "wire": {
+    "corner": "blue_trace_corner",
+    "cross": "blue_trace_cross",
+    "dot": "blue_trace_dot",
+    "end": "blue_trace_end",
+    "straight": "blue_trace",
+    "t": "blue_trace_t"
+   },
+   "palette": "blue_trace",
+   "masks": {
+    "dot": "blue_trace_dot_mask",
+    "ring": "blue_trace_ring_mask"
+   }
+  },
+  "blue_via": {
+   "faces": {
+    "bottom": "blue_via_bottom",
+    "side": "blue_via_side",
+    "side_bottom": "blue_via_side_bottom",
+    "side_mid": "blue_via_side_mid",
+    "side_single": "blue_via_side_single",
+    "side_top": "blue_via_side_top",
+    "top": "blue_via_top"
+   }
+  },
+  "button": {
+   "faces": {
+    "side": "button_side",
+    "top": "button_top"
+   },
+   "active": {
+    "top": "button_top_pressed"
+   }
+  },
+  "capacitor_side": {
+   "faces": {
+    "all": "capacitor_side"
+   }
+  },
+  "catchor": {
+   "faces": {
+    "back": "catchor_back",
+    "front": "catchor_front",
+    "side": "catchor_side",
+    "top": "catchor_top"
+   },
+   "active": {
+    "front": "catchor_front_firing",
+    "top": "catchor_top_firing"
+   },
+   "masks": {
+    "readout": "catchor_readout_mask"
+   }
+  },
+  "ceramic": {
+   "faces": {
+    "all": "ceramic"
+   }
+  },
+  "certificate_table": {
+   "faces": {
+    "side": "certificate_table_side",
+    "top": "certificate_table_top"
+   }
+  },
+  "chipor": {
+   "faces": {
+    "all": "chipor"
+   }
+  },
+  "color_lamp_16": {
+   "faces": {
+    "all": "color_lamp_16_off"
+   },
+   "active": {
+    "all": "color_lamp_16"
+   },
+   "palette": "cga16",
+   "masks": {
+    "main": "color_lamp_16_mask",
+    "rim": "color_lamp_16_rim_mask"
+   }
+  },
+  "color_lamp_32": {
+   "faces": {
+    "all": "color_lamp_32_off"
+   },
+   "active": {
+    "all": "color_lamp_32"
+   },
+   "palette": "vga32",
+   "masks": {
+    "main": "color_lamp_32_mask",
+    "rim": "color_lamp_32_rim_mask"
+   }
+  },
+  "color_lamp_64": {
+   "faces": {
+    "all": "color_lamp_64_off"
+   },
+   "active": {
+    "all": "color_lamp_64"
+   },
+   "palette": "vga64",
+   "masks": {
+    "main": "color_lamp_64_mask",
+    "rim": "color_lamp_64_rim_mask"
+   }
+  },
+  "dirt": {
+   "faces": {
+    "all": "dirt"
+   }
+  },
+  "dirt_slab": {
+   "faces": {
+    "bottom": "dirt_slab_top",
+    "side": "dirt_slab_side",
+    "top": "dirt_slab_top"
+   }
+  },
+  "dish": {
+   "faces": {
+    "all": "dish"
+   }
+  },
+  "etchor": {
+   "faces": {
+    "all": "etchor"
+   }
+  },
+  "fast_latch": {
+   "faces": {
+    "all": "fast_latch_off"
+   },
+   "active": {
+    "all": "fast_latch_on"
+   }
+  },
+  "formula_shrub_311": {
+   "faces": {
+    "all": "formula_shrub_311"
+   }
+  },
+  "formula_shrub_314": {
+   "faces": {
+    "all": "formula_shrub_314"
+   }
+  },
+  "frosted_glass": {
+   "faces": {
+    "all": "frosted_glass"
+   }
+  },
+  "fusor": {
+   "faces": {
+    "all": "fusor"
+   }
+  },
+  "glass": {
+   "faces": {
+    "all": "glass"
+   }
+  },
+  "grass": {
+   "faces": {
+    "bottom": "dirt",
+    "side": "grass_side",
+    "top": "grass_top"
+   }
+  },
+  "keyboard": {
+   "faces": {
+    "front": "keyboard_front",
+    "right": "keyboard_control",
+    "side": "keyboard_side",
+    "top": "keyboard_top"
+   }
+  },
+  "lamp": {
+   "faces": {
+    "all": "lamp_off"
+   },
+   "active": {
+    "all": "lamp_on"
+   }
+  },
+  "memor": {
+   "faces": {
+    "back": "memor_back",
+    "front": "memor_front",
+    "side": "memor_side",
+    "top": "memor_top_empty"
+   },
+   "active": {
+    "top": "memor_top"
+   },
+   "masks": {
+    "value": "memor_value_mask"
+   }
+  },
+  "overclockor": {
+   "faces": {
+    "all": "overclockor"
+   }
+  },
+  "pattern_cells": {
+   "faces": {
+    "top": "pattern_cells_top"
+   }
+  },
+  "pattern_checkers": {
+   "faces": {
+    "top": "pattern_checkers_top"
+   }
+  },
+  "pattern_circles": {
+   "faces": {
+    "top": "pattern_circles_top"
+   }
+  },
+  "pattern_delaunay": {
+   "faces": {
+    "top": "pattern_delaunay_top"
+   }
+  },
+  "pattern_rom": {
+   "faces": {
+    "back": "pattern_rom_back",
+    "front": "pattern_rom_front",
+    "side": "pattern_rom_side",
+    "top": "pattern_rom_top"
+   }
+  },
+  "pattern_spheres": {
+   "faces": {
+    "top": "pattern_spheres_top"
+   }
+  },
+  "portor": {
+   "faces": {
+    "all": "portor"
+   }
+  },
+  "procgen_dry_scrub": {
+   "faces": {
+    "all": "procgen_dry_scrub"
+   }
+  },
+  "procgen_fern": {
+   "faces": {
+    "all": "procgen_fern"
+   }
+  },
+  "procgen_formula_blob": {
+   "faces": {
+    "all": "procgen_formula_blob"
+   }
+  },
+  "procgen_formula_flower": {
+   "faces": {
+    "all": "procgen_formula_flower"
+   }
+  },
+  "procgen_formula_leaf": {
+   "faces": {
+    "all": "procgen_formula_leaf"
+   }
+  },
+  "procgen_formula_star": {
+   "faces": {
+    "all": "procgen_formula_star"
+   }
+  },
+  "procgen_grass_tuft": {
+   "faces": {
+    "all": "procgen_grass_tuft"
+   }
+  },
+  "pulsor": {
+   "faces": {
+    "back": "pulsor_back",
+    "front": "pulsor_front",
+    "side": "pulsor_side",
+    "top": "pulsor_top"
+   },
+   "active": {
+    "top": {
+     "animation": "pulsor_top_firing"
+    }
+   }
+  },
+  "quartz_spire": {
+   "faces": {
+    "all": "quartz_spire"
+   }
+  },
+  "red_torch": {
+   "faces": {
+    "all": "red_torch_off"
+   },
+   "active": {
+    "all": "red_torch"
+   }
+  },
+  "red_trace": {
+   "wire": {
+    "corner": "red_trace_corner",
+    "cross": "red_trace_cross",
+    "dot": "red_trace_dot",
+    "end": "red_trace_end",
+    "straight": "red_trace",
+    "t": "red_trace_t"
+   },
+   "palette": "red_trace",
+   "masks": {
+    "dot": "red_trace_dot_mask",
+    "ring": "red_trace_ring_mask"
+   }
+  },
+  "red_via": {
+   "faces": {
+    "bottom": "red_via_bottom",
+    "side": "red_via_side",
+    "side_bottom": "red_via_side_bottom",
+    "side_mid": "red_via_side_mid",
+    "side_single": "red_via_side_single",
+    "side_top": "red_via_side_top",
+    "top": "red_via_top"
+   }
+  },
+  "redirector": {
+   "faces": {
+    "front": "redirector_front",
+    "side": "redirector_side",
+    "top": "redirector_top"
+   },
+   "active": {
+    "front": "redirector_front_on",
+    "top": "redirector_top_on"
+   }
+  },
+  "repeater": {
+   "faces": {
+    "back": "repeater_back",
+    "front": "repeater_front",
+    "side": "repeater_side",
+    "top": "repeater_top"
+   },
+   "active": {
+    "top": "repeater_top_on"
+   },
+   "masks": {
+    "delay": "repeater_delay_mask"
+   }
+  },
+  "signal_receivor": {
+   "faces": {
+    "all": "signal_receivor"
+   }
+  },
+  "signal_transmittor": {
+   "faces": {
+    "all": "signal_transmittor"
+   }
+  },
+  "silica_grass": {
+   "faces": {
+    "all": "silica_grass"
+   }
+  },
+  "silica_tilled": {
+   "faces": {
+    "all": "silica_tilled"
+   }
+  },
+  "silicon": {
+   "faces": {
+    "all": "silicon"
+   }
+  },
+  "silicon_slab": {
+   "faces": {
+    "bottom": "silicon_slab_top",
+    "side": "silicon_slab_side",
+    "top": "silicon_slab_top"
+   }
+  },
+  "stone": {
+   "faces": {
+    "all": "stone"
+   }
+  },
+  "stone_slab": {
+   "faces": {
+    "bottom": "stone_slab_top",
+    "side": "stone_slab_side",
+    "top": "stone_slab_top"
+   }
+  },
+  "structure_block": {
+   "faces": {
+    "all": "structure_block"
+   }
+  },
+  "switch": {
+   "faces": {
+    "side": "switch_side",
+    "top": "switch_top_off"
+   },
+   "active": {
+    "top": "switch_top_on"
+   }
+  },
+  "thresholdor": {
+   "faces": {
+    "back": "thresholdor_back",
+    "front": "thresholdor_front",
+    "left": "thresholdor_low",
+    "right": "thresholdor_high",
+    "side": "thresholdor_side",
+    "top": "thresholdor_top"
+   },
+   "active": {
+    "top": "thresholdor_top_on"
+   }
+  },
+  "tone_block": {
+   "faces": {
+    "back": "tone_block_back",
+    "front": "tone_block_front",
+    "side": "tone_block_side",
+    "top": "tone_block_top"
+   },
+   "active": {
+    "front": {
+     "animation": "tone_block_front_playing"
+    },
+    "top": "tone_block_top_playing"
+   }
+  },
+  "trace_bark": {
+   "faces": {
+    "all": "trace_bark"
+   }
+  },
+  "trace_canopy": {
+   "faces": {
+    "all": "trace_canopy"
+   }
+  },
+  "trace_tip": {
+   "faces": {
+    "all": "trace_tip"
+   }
+  },
+  "trace_tip_red": {
+   "faces": {
+    "all": "trace_tip_red"
+   }
+  },
+  "wafer_ground_capacitor": {
+   "faces": {
+    "all": "wafer_ground_capacitor"
+   }
+  },
+  "wafer_ground_dead": {
+   "faces": {
+    "all": "wafer_ground_dead"
+   }
+  },
+  "wafer_ground_dicing": {
+   "faces": {
+    "all": "wafer_ground_dicing"
+   }
+  },
+  "wafer_ground_resonator": {
+   "faces": {
+    "all": "wafer_ground_resonator"
+   }
+  },
+  "wafer_ground_trace": {
+   "faces": {
+    "all": "wafer_ground_trace"
+   }
+  },
+  "copper_block": {
+   "faces": {
+    "all": "copper_block"
+   }
+  },
+  "aluminum_block": {
+   "faces": {
+    "all": "aluminum_block"
+   }
+  },
+  "gravity_block": {
+   "faces": {
+    "all": "gravity_block"
+   }
+  },
+  "substrate": {
+   "faces": {
+    "all": "substrate"
+   }
+  },
+  "insulatnor": {
+   "faces": {
+    "all": "insulatnor"
+   }
+  },
+  "insulator": {
+   "faces": {
+    "all": "insulator"
+   }
+  },
+  "insulatxor": {
+   "faces": {
+    "all": "insulatxor"
+   }
+  }
+ }
+}

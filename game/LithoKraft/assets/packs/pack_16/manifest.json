@@ -1,0 +1,1010 @@
+{
+ "pack": "pack_16",
+ "tile_size": 16,
+ "alpha": "straight",
+ "file_count": 102,
+ "decisions": {
+  "stub": "16px step-downs of the 64px wafer biome stubs for the agent renderer mip chain (MCP vision renders tiny frames). Generated 2026-10-11; CloudAtlas replaces with final art."
+ },
+ "files": [
+  {
+   "path": "textures/blocks/capacitor_side.png",
+   "bytes": 1108,
+   "sha256": "89fee1968b1a6af0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "capacitor_side",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/certificate_table_side.png",
+   "bytes": 1108,
+   "sha256": "a54e9369c98c26e8",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "certificate_table",
+   "face": "side"
+  },
+  {
+   "path": "textures/blocks/certificate_table_top.png",
+   "bytes": 1108,
+   "sha256": "3c97203ffd3cd0e0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "certificate_table",
+   "face": "top"
+  },
+  {
+   "path": "textures/blocks/chipor.png",
+   "bytes": 1108,
+   "sha256": "bd5d68aa5ad90620",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "chipor",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/dirt.png",
+   "bytes": 1108,
+   "sha256": "6157a75c54e50f43",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "dirt",
+   "face": "all",
+   "world": "organic_world (formerly 'overworld')"
+  },
+  {
+   "path": "textures/blocks/dirt_slab_side.png",
+   "bytes": 1108,
+   "sha256": "945b6e841b6db694",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "dirt_slab",
+   "face_layout": "top+side (half)",
+   "face": "side",
+   "world": "organic_world"
+  },
+  {
+   "path": "textures/blocks/dirt_slab_top.png",
+   "bytes": 1108,
+   "sha256": "a1297980c905c679",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "dirt_slab",
+   "face_layout": "top+side (half)",
+   "face": "top",
+   "world": "organic_world"
+  },
+  {
+   "path": "textures/blocks/dish.png",
+   "bytes": 1108,
+   "sha256": "75fa8badd0591cdf",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "alpha": "opaque",
+   "block": "dish",
+   "face_layout": "all-same",
+   "face": "all",
+   "state": "default",
+   "batch": 3
+  },
+  {
+   "path": "textures/blocks/fusor.png",
+   "bytes": 1108,
+   "sha256": "5a0ed3d207d35397",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "fusor",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/grass_side.png",
+   "bytes": 1108,
+   "sha256": "bddffd609f56bce9",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "grass",
+   "face": "side",
+   "world": "organic_world (formerly 'overworld')"
+  },
+  {
+   "path": "textures/blocks/grass_top.png",
+   "bytes": 1108,
+   "sha256": "3f4c9596510c3315",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "grass",
+   "face": "top",
+   "world": "organic_world (formerly 'overworld')"
+  },
+  {
+   "path": "textures/blocks/overclockor.png",
+   "bytes": 1108,
+   "sha256": "a911f1fcadec6919",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "alpha": "opaque",
+   "block": "overclockor",
+   "face_layout": "all-same",
+   "face": "all",
+   "state": "default",
+   "batch": 3
+  },
+  {
+   "path": "textures/blocks/portor.png",
+   "bytes": 1108,
+   "sha256": "7ef47d0b6119036d",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "portor",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/quartz_spire.png",
+   "bytes": 1108,
+   "sha256": "f5feb8f662fbaee5",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "quartz_spire",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/signal_receivor.png",
+   "bytes": 1108,
+   "sha256": "842818cf00691fdf",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "alpha": "opaque",
+   "block": "signal_receivor",
+   "face_layout": "all-same",
+   "face": "all",
+   "state": "default",
+   "batch": 3
+  },
+  {
+   "path": "textures/blocks/signal_transmittor.png",
+   "bytes": 1108,
+   "sha256": "8a3c92724cadf3ac",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "alpha": "opaque",
+   "block": "signal_transmittor",
+   "face_layout": "all-same",
+   "face": "all",
+   "state": "default",
+   "batch": 3
+  },
+  {
+   "path": "textures/blocks/silica_grass.png",
+   "bytes": 1108,
+   "sha256": "439d7d8553367d11",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "silica_grass",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/silica_tilled.png",
+   "bytes": 1108,
+   "sha256": "1c4f986ea8748692",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "silica_tilled",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/silicon.png",
+   "bytes": 1108,
+   "sha256": "2fa59f0f267da83b",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "silicon",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/silicon_slab_side.png",
+   "bytes": 1108,
+   "sha256": "b1c9bdbba9b9f678",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "silicon_slab",
+   "face_layout": "top+side (half)",
+   "face": "side"
+  },
+  {
+   "path": "textures/blocks/silicon_slab_top.png",
+   "bytes": 1108,
+   "sha256": "bf376c2e7550229c",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "silicon_slab",
+   "face_layout": "top+side (half)",
+   "face": "top"
+  },
+  {
+   "path": "textures/blocks/stone.png",
+   "bytes": 1108,
+   "sha256": "3b005d55171a3227",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "stone",
+   "face": "all",
+   "world": "organic_world (formerly 'overworld')"
+  },
+  {
+   "path": "textures/blocks/stone_slab_side.png",
+   "bytes": 1108,
+   "sha256": "54071449028b4031",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "stone_slab",
+   "face_layout": "top+side (half)",
+   "face": "side",
+   "world": "organic_world"
+  },
+  {
+   "path": "textures/blocks/stone_slab_top.png",
+   "bytes": 1108,
+   "sha256": "038fd0ce4100d35e",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "stone_slab",
+   "face_layout": "top+side (half)",
+   "face": "top",
+   "world": "organic_world"
+  },
+  {
+   "path": "textures/blocks/structure_block.png",
+   "bytes": 1108,
+   "sha256": "1c3acc2765a28aaa",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "structure_block",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/trace_bark.png",
+   "bytes": 1108,
+   "sha256": "86150f3bfed34369",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "trace_bark",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/trace_canopy.png",
+   "bytes": 1108,
+   "sha256": "e82c597aa94da70a",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "trace_canopy",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/trace_tip.png",
+   "bytes": 1108,
+   "sha256": "7fe80fa05f4335a1",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "trace_tip",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/trace_tip_red.png",
+   "bytes": 1108,
+   "sha256": "df601a23e126b240",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "trace_tip_red",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/wafer_ground_capacitor.png",
+   "bytes": 1108,
+   "sha256": "c4e6032d4b7621ad",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "wafer_ground_capacitor",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/wafer_ground_dead.png",
+   "bytes": 1108,
+   "sha256": "968c3470650a558f",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "wafer_ground_dead",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/wafer_ground_dicing.png",
+   "bytes": 1108,
+   "sha256": "d996ef0e267275c1",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "wafer_ground_dicing",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/wafer_ground_resonator.png",
+   "bytes": 1108,
+   "sha256": "0a061e9dcf8885e4",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "wafer_ground_resonator",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/wafer_ground_trace.png",
+   "bytes": 1108,
+   "sha256": "9dbb5927a0230417",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "wafer_ground_trace",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/atlas.png",
+   "bytes": 1108,
+   "sha256": "f05a99217f6d0288",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "atlas"
+  },
+  {
+   "path": "textures/ui/icons/bashor.png",
+   "bytes": 1108,
+   "sha256": "f02c781c5258ec71",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "bashor"
+  },
+  {
+   "path": "textures/ui/icons/callback.png",
+   "bytes": 1108,
+   "sha256": "c19d149ec6d73819",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "callback"
+  },
+  {
+   "path": "textures/ui/icons/capacitor_side.png",
+   "bytes": 1108,
+   "sha256": "89fee1968b1a6af0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "capacitor_side"
+  },
+  {
+   "path": "textures/ui/icons/certificate_table.png",
+   "bytes": 1108,
+   "sha256": "3c97203ffd3cd0e0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "certificate_table"
+  },
+  {
+   "path": "textures/ui/icons/chopor.png",
+   "bytes": 1108,
+   "sha256": "57b634d93f544217",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "chopor"
+  },
+  {
+   "path": "textures/ui/icons/debuggor.png",
+   "bytes": 1108,
+   "sha256": "2a22e76d4ec991ff",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "debuggor"
+  },
+  {
+   "path": "textures/ui/icons/firewall.png",
+   "bytes": 1108,
+   "sha256": "1b38db8aa0f20732",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "firewall"
+  },
+  {
+   "path": "textures/ui/icons/fragment.png",
+   "bytes": 1108,
+   "sha256": "632f741790aeb0e7",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "fragment"
+  },
+  {
+   "path": "textures/ui/icons/fusor.png",
+   "bytes": 1108,
+   "sha256": "5a0ed3d207d35397",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "fusor"
+  },
+  {
+   "path": "textures/ui/icons/heapor.png",
+   "bytes": 1108,
+   "sha256": "234575f11eaa37b4",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "heapor"
+  },
+  {
+   "path": "textures/ui/icons/pickor.png",
+   "bytes": 1108,
+   "sha256": "d5f686facf349ebf",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "pickor"
+  },
+  {
+   "path": "textures/ui/icons/ping.png",
+   "bytes": 1108,
+   "sha256": "bdbf13b879cc64fb",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "ping"
+  },
+  {
+   "path": "textures/ui/icons/portor.png",
+   "bytes": 1108,
+   "sha256": "7ef47d0b6119036d",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "portor"
+  },
+  {
+   "path": "textures/ui/icons/quartz_spire.png",
+   "bytes": 1108,
+   "sha256": "f5feb8f662fbaee5",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "quartz_spire"
+  },
+  {
+   "path": "textures/ui/icons/seedor.png",
+   "bytes": 1108,
+   "sha256": "bf5869ed95eedbf2",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "seedor"
+  },
+  {
+   "path": "textures/ui/icons/silica_seed.png",
+   "bytes": 447,
+   "sha256": "b596419d44d59f07",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silica_seed"
+  },
+  {
+   "path": "textures/ui/icons/slicor.png",
+   "bytes": 1108,
+   "sha256": "cead463156f75cfc",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "slicor"
+  },
+  {
+   "path": "textures/ui/icons/sniffor.png",
+   "bytes": 1108,
+   "sha256": "c11d3a3f3a9e8bb2",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "sniffor"
+  },
+  {
+   "path": "textures/ui/icons/structure_block.png",
+   "bytes": 1108,
+   "sha256": "1c3acc2765a28aaa",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "structure_block"
+  },
+  {
+   "path": "textures/ui/icons/trace_bark.png",
+   "bytes": 1108,
+   "sha256": "86150f3bfed34369",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "trace_bark"
+  },
+  {
+   "path": "textures/ui/icons/trace_canopy.png",
+   "bytes": 1108,
+   "sha256": "e82c597aa94da70a",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "trace_canopy"
+  },
+  {
+   "path": "textures/ui/icons/trace_tip.png",
+   "bytes": 1108,
+   "sha256": "7fe80fa05f4335a1",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "trace_tip"
+  },
+  {
+   "path": "textures/ui/icons/trace_tip_red.png",
+   "bytes": 1108,
+   "sha256": "df601a23e126b240",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "trace_tip_red"
+  },
+  {
+   "path": "textures/ui/icons/wafer_ground_capacitor.png",
+   "bytes": 1108,
+   "sha256": "c4e6032d4b7621ad",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "wafer_ground_capacitor"
+  },
+  {
+   "path": "textures/ui/icons/wafer_ground_dead.png",
+   "bytes": 1108,
+   "sha256": "968c3470650a558f",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "wafer_ground_dead"
+  },
+  {
+   "path": "textures/ui/icons/wafer_ground_dicing.png",
+   "bytes": 1108,
+   "sha256": "d996ef0e267275c1",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "wafer_ground_dicing"
+  },
+  {
+   "path": "textures/ui/icons/wafer_ground_resonator.png",
+   "bytes": 1108,
+   "sha256": "0a061e9dcf8885e4",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "wafer_ground_resonator"
+  },
+  {
+   "path": "textures/ui/icons/wafer_ground_trace.png",
+   "bytes": 1108,
+   "sha256": "9dbb5927a0230417",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "wafer_ground_trace"
+  },
+  {
+   "path": "textures/blocks/etchor.png",
+   "bytes": 1108,
+   "sha256": "079302a4aa06264e",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "etchor",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_dry_scrub.png",
+   "bytes": 1108,
+   "sha256": "4b8fc0723448f187",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_dry_scrub",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_fern.png",
+   "bytes": 1108,
+   "sha256": "a06fd2ce65209c8a",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_fern",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_formula_blob.png",
+   "bytes": 1108,
+   "sha256": "93e2f754f9d0a6a9",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_formula_blob",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_formula_flower.png",
+   "bytes": 1108,
+   "sha256": "46c86591a16c4493",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_formula_flower",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_formula_leaf.png",
+   "bytes": 1108,
+   "sha256": "4738e3c237bfe271",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_formula_leaf",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_formula_star.png",
+   "bytes": 1108,
+   "sha256": "1e5bc9e5ea0575d0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_formula_star",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/procgen_grass_tuft.png",
+   "bytes": 1108,
+   "sha256": "3eefc1fd39c77e6e",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "procgen_grass_tuft",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/formula_shrub_311.png",
+   "bytes": 1108,
+   "sha256": "41055ba11a098816",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "formula_shrub_311",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/formula_shrub_314.png",
+   "bytes": 1108,
+   "sha256": "e93452544d11c38e",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "formula_shrub_314",
+   "face": "all"
+  },
+  {
+   "path": "textures/blocks/copper_block.png",
+   "bytes": 1108,
+   "sha256": "e8a0c68ba7db1204",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "copper_block",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/copper_block.png",
+   "bytes": 1108,
+   "sha256": "e8a0c68ba7db1204",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "copper_block"
+  },
+  {
+   "path": "textures/blocks/aluminum_block.png",
+   "bytes": 1108,
+   "sha256": "10d8717c0fdf7570",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "aluminum_block",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/aluminum_block.png",
+   "bytes": 1108,
+   "sha256": "10d8717c0fdf7570",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "aluminum_block"
+  },
+  {
+   "path": "textures/blocks/gravity_block.png",
+   "bytes": 1108,
+   "sha256": "736b277fefb5294b",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "gravity_block",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/gravity_block.png",
+   "bytes": 1108,
+   "sha256": "736b277fefb5294b",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "gravity_block"
+  },
+  {
+   "path": "textures/blocks/substrate.png",
+   "bytes": 1108,
+   "sha256": "f9b290ce58145935",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "substrate",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/substrate.png",
+   "bytes": 1108,
+   "sha256": "f9b290ce58145935",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "substrate"
+  },
+  {
+   "path": "textures/blocks/insulatnor.png",
+   "bytes": 1108,
+   "sha256": "ea52569a5a29da25",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "insulatnor",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/insulatnor.png",
+   "bytes": 1108,
+   "sha256": "ea52569a5a29da25",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "insulatnor"
+  },
+  {
+   "path": "textures/blocks/insulator.png",
+   "bytes": 1108,
+   "sha256": "623e21fc20fc46b8",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "insulator",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/insulator.png",
+   "bytes": 1108,
+   "sha256": "623e21fc20fc46b8",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "insulator"
+  },
+  {
+   "path": "textures/blocks/insulatxor.png",
+   "bytes": 1108,
+   "sha256": "854e07e8ca0ef04d",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "block": "insulatxor",
+   "face": "all"
+  },
+  {
+   "path": "textures/ui/icons/insulatxor.png",
+   "bytes": 1108,
+   "sha256": "854e07e8ca0ef04d",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "insulatxor"
+  },
+  {
+   "path": "textures/ui/icons/silicon_ingot.png",
+   "bytes": 1108,
+   "sha256": "89216ca1fffe1834",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_ingot"
+  },
+  {
+   "path": "textures/ui/icons/carbide.png",
+   "bytes": 1108,
+   "sha256": "5f53b6239aaeaff3",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "carbide"
+  },
+  {
+   "path": "textures/ui/icons/silicon_carbide.png",
+   "bytes": 1108,
+   "sha256": "92dcac8119897349",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_carbide"
+  },
+  {
+   "path": "textures/ui/icons/gallium.png",
+   "bytes": 1108,
+   "sha256": "e0614024d76074e0",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "gallium"
+  },
+  {
+   "path": "textures/ui/icons/silicon_gallium.png",
+   "bytes": 1108,
+   "sha256": "98986ba54540c6ee",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_gallium"
+  },
+  {
+   "path": "textures/ui/icons/nitride.png",
+   "bytes": 1108,
+   "sha256": "d2568e477eb5b0ce",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "nitride"
+  },
+  {
+   "path": "textures/ui/icons/silicon_nitride.png",
+   "bytes": 1108,
+   "sha256": "28bfa2704a7d7677",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_nitride"
+  },
+  {
+   "path": "textures/ui/icons/dioxide.png",
+   "bytes": 1108,
+   "sha256": "b3a3c2953c57139c",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "dioxide"
+  },
+  {
+   "path": "textures/ui/icons/silicon_dioxide.png",
+   "bytes": 1108,
+   "sha256": "88ee1e66d7719653",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_dioxide"
+  },
+  {
+   "path": "textures/ui/icons/copper.png",
+   "bytes": 1108,
+   "sha256": "ef5f4aadf5306b29",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "copper"
+  },
+  {
+   "path": "textures/ui/icons/silicon_copper.png",
+   "bytes": 1108,
+   "sha256": "ab1e05445e96116c",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_copper"
+  },
+  {
+   "path": "textures/ui/icons/aluminum.png",
+   "bytes": 1108,
+   "sha256": "0c16dec1a94c0dca",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "aluminum"
+  },
+  {
+   "path": "textures/ui/icons/silicon_aluminum.png",
+   "bytes": 1108,
+   "sha256": "5f6cd9100c4c6553",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "silicon_aluminum"
+  },
+  {
+   "path": "textures/ui/icons/photoresist.png",
+   "bytes": 1108,
+   "sha256": "a9a1de2d6dd60d0a",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "photoresist"
+  },
+  {
+   "path": "textures/ui/icons/resist.png",
+   "bytes": 1108,
+   "sha256": "e3078bb4cada541d",
+   "width": 16,
+   "height": 16,
+   "mode": "RGBA",
+   "ui": "resist"
+  }
+ ]
+}

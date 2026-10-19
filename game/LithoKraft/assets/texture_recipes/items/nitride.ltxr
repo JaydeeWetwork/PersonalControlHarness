@@ -1,0 +1,5 @@
+# nitride (item icon): pale straw ceramic powder (JD materials
+# 2026-10-14).
+noise kind=gradient scale=6 octaves=3 seed=729
+curve contrast=0.95 gamma=1.15 clamp_max=0.66
+palette stops=0:#4a3d1c,0.35:#857437,0.6:#bfa653,0.85:#e3d189,1:#fdf6c8

@@ -1,0 +1,5 @@
+# silicon_aluminum (item icon): blue-grey alloy lump, JD's pairing
+# applied down the list (JD materials 2026-10-14).
+noise kind=gradient scale=4 octaves=3 seed=749
+curve contrast=1.15 gamma=1.08
+palette stops=0:#141a26,0.35:#33455e,0.6:#5a7594,0.85:#8fabcc,1:#d8ecff

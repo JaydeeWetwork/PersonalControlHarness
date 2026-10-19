@@ -1,0 +1,8 @@
+# chipor: the printed chip -- near-black indigo die, fine pin grid, copper/
+# gold pins at the palette top with a cyan etch under them.
+noise kind=gradient scale=3 octaves=3 seed=341
+curve contrast=1.2 clamp_max=0.42
+grid cells=4 width=0.2 sharpness=1.3
+blend mode=max mix=1
+palette stops=0:#05060f,0.25:#0d1020,0.42:#181d33,0.66:#0e4a63,0.85:#b5762e,1:#ffd98a
+glow threshold=0.86 intensity=0.35 color=#e8a84c

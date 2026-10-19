@@ -1,0 +1,6 @@
+# fusor: fusion core -- white-orange heart at the feature point, amber ->
+# copper -> deep violet shell.
+voronoi scale=1 mode=f1 seed=361
+curve invert=1 gamma=0.7 contrast=1.2
+palette stops=0:#0d0824,0.15:#3d1650,0.35:#a83c14,0.58:#ff8c2e,0.8:#ffd98a,1:#ffffff
+glow threshold=0.5 intensity=0.7 color=#ffb03a

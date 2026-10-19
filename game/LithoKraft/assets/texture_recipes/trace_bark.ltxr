@@ -1,0 +1,8 @@
+# trace_bark: copper/bronze bark with etched circuit grooves (ridged field:
+# groove bottoms dark, ridge crests amber-lit).
+noise kind=value scale=5 octaves=4 seed=71
+ridged
+curve contrast=1.9 gamma=1.05
+noise kind=value scale=9 octaves=3 seed=72
+blend mode=multiply mix=0.6
+palette stops=0:#120903,0.35:#2e1a0a,0.58:#59371a,0.8:#8a5a24,0.93:#c07f36,1:#e8a84c

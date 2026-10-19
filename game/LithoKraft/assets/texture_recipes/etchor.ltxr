@@ -1,0 +1,14 @@
+# etchor: the etch station -- dark machine slate, a fine etch-field grid,
+# the Laysor's violet beam burned across the face, orange rivet sparks
+# (inverted voronoi peaks, glow-lit). Family palette: violet #A970FF
+# beam (the Laysor hue, LOCKED), orange #FF6F00 rivets, cyan etch traces.
+noise kind=gradient scale=3 octaves=3 seed=733
+curve contrast=1.2 clamp_max=0.4
+grid cells=6 width=0.12 sharpness=1.4
+curve clamp_max=0.8
+blend mode=max mix=1
+voronoi scale=5 mode=f1 seed=734
+curve invert=1 gamma=4 contrast=2
+blend mode=max mix=1
+palette stops=0:#07060f,0.3:#12101f,0.5:#1c1830,0.66:#0e4a63,0.8:#A970FF,0.9:#FF6F00,1:#ffb03a
+glow threshold=0.85 intensity=0.45 color=#A970FF

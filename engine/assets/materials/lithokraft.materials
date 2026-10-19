@@ -1,0 +1,37 @@
+// lithokraft.materials — LithoKraft default PBR material definitions.
+// FORMAT (JSON, full-line `//` comments allowed):
+//   { "format": "lithokraft.materials/v1", "materials": [ <material>, ... ] }
+//   <material> fields (all optional except "id"):
+//     "id":               string ID, e.g. "lithokraft:iron". Mods use their own namespace.
+//     "albedo":           [r, g, b] linear-space base colour (default [1,1,1]).
+//     "albedo_texture":   texture/layer ref into the texture registry (default "": flat colour).
+//     "roughness":        0 (mirror) .. 1 (fully diffuse), default 0.9.
+//     "metalness":        0 (dielectric) .. 1 (metal), default 0.
+//     "emissive":         [r, g, b] linear emission colour, default [0,0,0].
+//     "emissive_intensity": emission multiplier, default 0 (no emission).
+//     "ior":              index of refraction, default 1.5.
+//     "alpha":            0..1 opacity, default 1 (opaque).
+//     "transparency":     blend strategy when alpha < 1: "screendoor" (default),
+//                        "alphablend", "weightedoit", "additive".
+//   Duplicate "id" with identical params is idempotent; with different params the load fails.
+{
+  "format": "lithokraft.materials/v1",
+  "materials": [
+    { "id": "lithokraft:stone", "albedo": [0.50, 0.50, 0.52], "albedo_texture": "stone", "roughness": 0.95, "ior": 1.52 },
+    { "id": "lithokraft:dirt", "albedo": [0.36, 0.24, 0.15], "albedo_texture": "dirt", "roughness": 1.0, "ior": 1.45 },
+    { "id": "lithokraft:grass", "albedo": [0.25, 0.48, 0.20], "albedo_texture": "grass_top", "roughness": 0.95, "ior": 1.40 },
+    { "id": "lithokraft:wood", "albedo": [0.55, 0.38, 0.22], "albedo_texture": "planks", "roughness": 0.85, "ior": 1.50 },
+    { "id": "lithokraft:log", "albedo": [0.42, 0.30, 0.18], "albedo_texture": "log_side", "roughness": 0.90, "ior": 1.50 },
+    { "id": "lithokraft:leaves", "albedo": [0.18, 0.38, 0.14], "albedo_texture": "leaves", "roughness": 1.0, "alpha": 0.85, "transparency": "screendoor", "ior": 1.35 },
+    { "id": "lithokraft:sand", "albedo": [0.76, 0.68, 0.50], "albedo_texture": "sand", "roughness": 1.0, "ior": 1.55 },
+    { "id": "lithokraft:glass", "albedo": [0.85, 0.95, 1.00], "roughness": 0.05, "alpha": 0.35, "transparency": "screendoor", "ior": 1.52 },
+    { "id": "lithokraft:ice", "albedo": [0.65, 0.80, 0.95], "roughness": 0.15, "alpha": 0.55, "transparency": "alphablend", "ior": 1.31 },
+    { "id": "lithokraft:water", "albedo": [0.15, 0.35, 0.75], "roughness": 0.05, "alpha": 0.70, "transparency": "alphablend", "ior": 1.33 },
+    { "id": "lithokraft:lava", "albedo": [0.90, 0.30, 0.05], "roughness": 0.40, "emissive": [1.0, 0.35, 0.05], "emissive_intensity": 3.0, "ior": 1.40 },
+    { "id": "lithokraft:torch", "albedo": [0.60, 0.45, 0.25], "roughness": 0.80, "emissive": [1.0, 0.62, 0.25], "emissive_intensity": 2.0, "ior": 1.45 },
+    { "id": "lithokraft:iron", "albedo": [0.55, 0.58, 0.62], "albedo_texture": "iron_block", "roughness": 0.35, "metalness": 1.0, "ior": 2.50 },
+    { "id": "lithokraft:copper", "albedo": [0.72, 0.42, 0.28], "albedo_texture": "copper_block", "roughness": 0.40, "metalness": 1.0, "ior": 2.40 },
+    { "id": "lithokraft:gold", "albedo": [0.95, 0.72, 0.30], "albedo_texture": "gold_block", "roughness": 0.25, "metalness": 1.0, "ior": 2.60 },
+    { "id": "lithokraft:obsidian", "albedo": [0.08, 0.07, 0.12], "albedo_texture": "obsidian", "roughness": 0.30, "metalness": 0.2, "ior": 1.60 }
+  ]
+}

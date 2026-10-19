@@ -1,0 +1,8 @@
+# wafer_ground_dicing: dark slate plate + bright violet dicing grid with a
+# cyan channel at the very core of each grid line (palette top stop).
+noise kind=gradient scale=4 octaves=4 seed=31
+curve contrast=1.2 clamp_max=0.5
+grid cells=4 width=0.18 sharpness=1.2
+blend mode=max mix=1
+palette stops=0:#0a0d26,0.3:#141a3d,0.5:#232c5c,0.7:#6a55c9,0.88:#9d7bff,1:#35e0ff
+glow threshold=0.8 intensity=0.45 color=#9d7bff

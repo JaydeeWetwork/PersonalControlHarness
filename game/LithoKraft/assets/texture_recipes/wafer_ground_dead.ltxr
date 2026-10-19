@@ -1,0 +1,7 @@
+# wafer_ground_dead: cracked dark gray-violet (the one muted texture).
+# Voronoi edges are 0 at the cracks, so the palette starts near-black.
+warp strength=0.06 scale=3 octaves=2 seed=61
+voronoi scale=5 mode=edge seed=62
+noise kind=gradient scale=6 octaves=3 seed=63
+blend mode=multiply mix=0.65
+palette stops=0:#0a0a10,0.18:#23222e,0.55:#35323f,0.85:#474350,1:#575263

@@ -1,0 +1,7 @@
+# photoresist (item icon): glossy amber gel -- the light-sensitive
+# coating of real lithography (JD materials 2026-10-14; in-game role
+# JD-to-define).
+noise kind=gradient scale=3 octaves=3 seed=751
+curve contrast=1.05 gamma=1.1
+palette stops=0:#2e1503,0.35:#6e3c0c,0.6:#ad6a1c,0.85:#e09a34,1:#ffd478
+glow threshold=0.84 intensity=0.4 color=#e09a34

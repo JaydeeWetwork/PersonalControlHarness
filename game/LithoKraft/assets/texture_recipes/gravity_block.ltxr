@@ -1,0 +1,6 @@
+# gravity_block: deep violet cube, heavy core glow (JD-named 2026-10-14;
+# function OPEN -- presentation placeholder art only, no mechanics).
+voronoi scale=3 mode=f1 seed=617
+curve gamma=0.8 contrast=1.35
+palette stops=0:#0d0618,0.35:#241040,0.6:#3d1f6e,0.8:#5f36a8,0.93:#8f62e0,1:#d6bcff
+glow threshold=0.85 intensity=0.5 color=#8f62e0

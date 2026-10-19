@@ -1,0 +1,7 @@
+# stone: stony slate in the Wafer family -- blue-gray-violet rock, voronoi
+# facets mottled with noise (identity stays stone).
+voronoi scale=4 mode=f1 seed=201
+curve gamma=0.65 contrast=1.5
+noise kind=gradient scale=7 octaves=4 seed=202
+blend mode=multiply mix=0.3
+palette stops=0:#1c1e28,0.3:#2e3242,0.55:#454b61,0.8:#646b84,1:#8b93ab

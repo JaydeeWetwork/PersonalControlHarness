@@ -1,0 +1,8 @@
+# firewall (item icon): the shield -- steel plate, copper rim heat, the
+# red/blue trace cross at its heart.
+voronoi scale=2 mode=f1 seed=461
+curve contrast=1.2 clamp_max=0.6
+grid cells=1 width=0.22 sharpness=1.3
+blend mode=max mix=1
+palette stops=0:#10131c,0.3:#262d3f,0.52:#57627a,0.7:#b5762e,0.86:#3f7de0,1:#ff5147
+glow threshold=0.84 intensity=0.45 color=#ff5147

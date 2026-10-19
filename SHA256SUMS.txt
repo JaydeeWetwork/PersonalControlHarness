@@ -1,0 +1,15 @@
+# SHA-256 checksums of 12 key artifacts in this release package.
+# Verify all (Linux/macOS):  sha256sum -c SHA256SUMS.txt
+# Spot-check one (Windows PowerShell):  Get-FileHash .\README.md
+0d40691bafae593593a30ac02f5584b9037dbd7f043ea5bc7c4466316d16099a  demo_record_proof.lldemo
+dd8498b6640f52f56810d78424eeaf91f70feaa41bd7a933825bd5c1b6c5ae85  README.md
+22879b5c7ab96d9a01ad4cf14fdb0ab16c8f88bce4b4e3777f924fe60f9c7b3e  LICENSE-OPTIONS.md
+90376097fdd7caf243fca880365d22923639ea0443e82e4eda347e5f4a28460b  pch/harness/stream_sampled.jsonl
+753cc6dac8d0dc8eb151db98671b3ea3157c2625de45b44813c84e737603cd70  pch/harness/stream_greedy.jsonl
+b6886727d950f1cf075f28b8cb2d78da7a7413cab5cc5216b43cd5543fa8165b  pch/harness/stepstream.py
+8d16660138f21b65169b0627d807c6f2ea9ca52bb8ebd3ba3e6a71c3c68b93e4  pch/harness/harness.py
+0982e82513f078327bc9f31d95b5002fe4fdff10ee54510d4b664e87829752ec  game/LithoKraft/CREDITS.md
+95b30033a71259047a88e0fed4a22610c85e47a4d46ffeb32ddce43fe549ddae  engine/CMakeLists.txt
+6e89990afc850ecf29afc830836c0e0d4f36a82a6225166daafc9ecceac40d00  game/LithoKraft/CMakeLists.txt
+eb478f92c61c1917d7791b6b08dc46ce28755bd709c740c185decced942e3cf4  engine/README.md
+43703a3c427d4adfec6d630d51d4c18d8d9a43367d0ddae3f5f394e346f4e298  engine/THIRD_PARTY_LICENSES.md

@@ -1,0 +1,19 @@
+{"chain": "1c2a4fa50c238c25bd79f6166ec422af28d06f587182e3b9381da15ffd9639b4", "kind": "header", "prompt": [11, 42, 7, 99, 3, 250, 18, 5], "run_seed": 777, "temperature": 0.0, "weights": "4365dc9610eadcfaa2ebffd8f8755bfa9e77aa504d0ecd4a6e6413bbb2ee4e0b"}
+{"cache": "a89c0e4e99e15df5cd83e1a790c49eb8568feacff85e6d04772d13757a70aa27", "chain": "c4d8c9e197c903d06d7d00058a52ab90ee7a364954ea369ae315fa08c6a7049a", "chunk": [0, 8], "kind": "prefill"}
+{"chain": "63be6cfc3fa64e6e4774ae5128aa9a33320859b74c40fabfe298e1e849855cdd", "kind": "step", "p": 1.0, "step": 0, "token": 440}
+{"chain": "a67d5ab6a4a959d8e717f559238300ba10bde1168fb02cfc75d13d41ac9024a2", "kind": "step", "p": 1.0, "step": 1, "token": 148}
+{"chain": "6ce41ac13022f45a636ff35e112626c6b2075cb6d6feb20afda2fcc0ea2cdc65", "kind": "step", "p": 1.0, "step": 2, "token": 440}
+{"chain": "d249e59ead7707588fbfa15eb052b8f8ca524af6ec2c0bee6eadb71b929315a4", "kind": "step", "p": 1.0, "step": 3, "token": 148}
+{"chain": "1356cc601a10c535bae630e7439a7fa0753b9b72eb61389a5c1714f4defd8e2b", "kind": "step", "p": 1.0, "step": 4, "token": 148}
+{"chain": "35130c26538a39c12900d9bacef3f7ff2e85493824513cf51016c7ebd89e5f75", "kind": "step", "p": 1.0, "step": 5, "token": 205}
+{"chain": "f9635bdff783b63861c4640830116f372185a5953ad869cbc06109347669ce24", "kind": "step", "p": 1.0, "step": 6, "token": 245}
+{"chain": "9c671542364f3a27a2d5d1d39076c1e4d3528d658fdb0684daecc157455c75be", "kind": "step", "p": 1.0, "step": 7, "token": 148}
+{"chain": "ecadd41894fc720e29bff84fd8af64fed4f14363c638d3627bb29a3cfe4081da", "kind": "step", "p": 1.0, "step": 8, "token": 440}
+{"chain": "c02739240feddd5b3d014e8e8690ae27ceab61b5945bcbb2c4af1b21cc4d8492", "kind": "step", "p": 1.0, "step": 9, "token": 440}
+{"chain": "1a1374b40e2987f1ff0d64626f444251d5bd8c7a491c6538ba0689236702fc95", "kind": "step", "p": 1.0, "step": 10, "token": 440}
+{"chain": "75433691ed7e3388ba27470e76eb6bff78d9111dff97da94d5cae0a080bd9af2", "kind": "step", "p": 1.0, "step": 11, "token": 89}
+{"chain": "cf8963e40dd9cf15fd4e5638e2f69acca6643599ca7091f82cd812f27556d95b", "kind": "step", "p": 1.0, "step": 12, "token": 472}
+{"chain": "c412ae54e2d67c0062e178ec1798b1dfd1642177c0af6ac06a8cb068b5f9983f", "kind": "step", "p": 1.0, "step": 13, "token": 61}
+{"chain": "b8582ad75ff1af79cdeb0e9d9e2395abf11cc13d23f99a50fe0af2b8203d7ef6", "kind": "step", "p": 1.0, "step": 14, "token": 148}
+{"chain": "c69e72b20fc9f771bd91b5d24a0872c57b469132ed7ea7ea2bcaded151030754", "kind": "step", "p": 1.0, "step": 15, "token": 148}
+{"final_chain": "c69e72b20fc9f771bd91b5d24a0872c57b469132ed7ea7ea2bcaded151030754", "kind": "trailer", "steps": 16}

@@ -1,0 +1,5 @@
+# silicon_nitride (item icon): warm grey ceramic chunks (JD materials
+# 2026-10-14).
+voronoi scale=3 mode=f1 seed=731
+curve gamma=0.9 contrast=1.2
+palette stops=0:#221d18,0.35:#4a4238,0.6:#776a58,0.85:#a3937c,1:#d6c9b2

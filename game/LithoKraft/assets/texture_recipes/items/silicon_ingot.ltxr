@@ -1,0 +1,7 @@
+# silicon (item icon): the plain material -- deep indigo crystal lump,
+# circuit-etched like the wafer it came from (JD materials 2026-10-14).
+noise kind=gradient scale=4 octaves=4 seed=711
+curve contrast=1.25 gamma=1.05 clamp_max=0.55
+grid cells=4 width=0.18 sharpness=1.2
+blend mode=max mix=1
+palette stops=0:#070a24,0.4:#10173a,0.55:#1d2a58,0.8:#2a3f7d,0.93:#35e0ff,1:#bffbff

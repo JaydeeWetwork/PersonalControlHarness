@@ -1,0 +1,5 @@
+# aluminum (item icon): bright silver lump, the light interconnect
+# metal (JD materials 2026-10-14).
+noise kind=gradient scale=4 octaves=3 seed=747
+curve contrast=1.1 gamma=1.12
+palette stops=0:#232830,0.35:#565f6e,0.6:#8b95a5,0.85:#ccd4df,1:#ffffff

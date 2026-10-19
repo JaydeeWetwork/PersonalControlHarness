@@ -1,0 +1,4 @@
+add_library(litholattice_storage STATIC storage.cpp block_names.cpp anvil_region.cpp file_contract.cpp async_io.cpp sandboxed_io.cpp)
+target_include_directories(litholattice_storage PUBLIC include)
+target_link_libraries(litholattice_storage PUBLIC litholattice_world litholattice_core)
+litholattice_module_options(litholattice_storage)

@@ -1,0 +1,7 @@
+# structure_block: technical slate block -- cells=2 blueprint grid, orange
+# registration accents at the palette top.
+noise kind=gradient scale=4 octaves=4 seed=371
+curve contrast=1.25 clamp_max=0.52
+grid cells=2 width=0.12 sharpness=1.4
+blend mode=max mix=1
+palette stops=0:#0b0e20,0.3:#161c36,0.52:#27304f,0.75:#35e0ff,0.9:#e86a17,1:#ffb03a

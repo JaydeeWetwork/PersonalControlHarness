@@ -1,0 +1,8 @@
+# substrate: smoky blue-grey stratum with a pale cross-hatch -- the
+# Wafer's semi-transparent bedrock layer (JD 2026-10-14; generated
+# placeholder art -- the kTransparent flag carries the see-through).
+noise kind=gradient scale=4 octaves=4 seed=619
+curve contrast=1.15 gamma=1.0 clamp_max=0.55
+grid cells=4 width=0.2 sharpness=1.0
+blend mode=max mix=1
+palette stops=0:#10151d,0.35:#2b3542,0.6:#4b5a6c,0.8:#76879a,0.93:#aebfce,1:#e8f2fa

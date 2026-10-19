@@ -1,0 +1,5 @@
+# silicon_copper (item icon): darker bronze lump, JD's pairing applied
+# down the list (JD materials 2026-10-14).
+noise kind=gradient scale=4 octaves=4 seed=743
+curve contrast=1.25 gamma=1.0
+palette stops=0:#1d0e06,0.35:#4d2812,0.6:#7d4a22,0.85:#a87840,1:#d9b878

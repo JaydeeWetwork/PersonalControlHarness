@@ -1,0 +1,6 @@
+# callback (item icon): the returning thrown weapon -- steel prongs and
+# the copper return ring, blue-hot tips.
+voronoi scale=3 mode=f1 seed=481
+curve invert=1 gamma=0.8 contrast=1.2
+palette stops=0:#0b0d16,0.3:#1d2438,0.52:#7a4a1e,0.72:#c98a3a,0.88:#aeb6c2,1:#4dc3ff
+glow threshold=0.85 intensity=0.55 color=#4dc3ff

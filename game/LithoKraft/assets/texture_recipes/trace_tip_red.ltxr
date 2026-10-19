@@ -1,0 +1,5 @@
+# trace_tip_red: red glow orb, same construction as trace_tip.
+voronoi scale=1 mode=f1 seed=95
+curve invert=1 gamma=0.75 contrast=1.15
+palette stops=0:#1c0414,0.3:#a11234,0.58:#ff3b5c,0.82:#ffd3dc,1:#ffffff
+glow threshold=0.55 intensity=0.7 color=#ff3b5c

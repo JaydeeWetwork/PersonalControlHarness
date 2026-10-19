@@ -1,0 +1,10 @@
+# wafer_ground_capacitor: dense dark metal + copper flecks (sparse noise peaks).
+noise kind=gradient scale=5 octaves=4 seed=41
+curve contrast=1.3 clamp_max=0.55
+noise kind=value scale=14 octaves=1 seed=42
+noise kind=value scale=11 octaves=1 seed=43
+blend mode=multiply mix=1
+curve contrast=2.4 gamma=0.7
+blend mode=max mix=0.85
+palette stops=0:#0b0d1e,0.35:#171b31,0.55:#262c47,0.75:#6e4520,0.9:#b5762e,1:#e8a84c
+glow threshold=0.85 intensity=0.4 color=#e8a84c

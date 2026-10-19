@@ -1,0 +1,6 @@
+# trace_tip: electric blue glow orb (voronoi F1 at scale 1: bright core at the
+# feature point, deep indigo falloff to the edge).
+voronoi scale=1 mode=f1 seed=91
+curve invert=1 gamma=0.75 contrast=1.15
+palette stops=0:#060a2e,0.3:#1460c8,0.58:#35a8ff,0.82:#aee9ff,1:#ffffff
+glow threshold=0.55 intensity=0.7 color=#35a8ff

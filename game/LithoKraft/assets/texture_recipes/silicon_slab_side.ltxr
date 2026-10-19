@@ -1,0 +1,6 @@
+# silicon_slab_side: silicon slab side, segmented etch frame.
+noise kind=gradient scale=4 octaves=4 seed=291
+curve contrast=1.25 clamp_max=0.6
+grid cells=2 width=0.1 sharpness=1.4
+blend mode=max mix=0.8
+palette stops=0:#070a24,0.4:#10173a,0.6:#1d2a58,0.82:#2a7fa8,1:#35e0ff

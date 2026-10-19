@@ -1,0 +1,5 @@
+# signal_transmittor: violet/electric-blue broadcast rings, tighter than the
+# receivor (scale 3, more bands).
+voronoi scale=3 mode=f1 seed=331
+curve posterize=12 gamma=0.85 contrast=1.3
+palette stops=0:#efe6ff,0.08:#9d7bff,0.16:#1a2a6e,0.24:#35a8ff,0.32:#182154,0.42:#3d1c78,0.6:#060a24,1:#060a24

@@ -1,0 +1,5 @@
+# resist (item icon): matte rust-red coating, JD's second entry as
+# written (JD materials 2026-10-14; in-game role JD-to-define).
+noise kind=gradient scale=5 octaves=3 seed=753
+curve contrast=1.1 gamma=1.0 clamp_max=0.62
+palette stops=0:#200a06,0.35:#4f1e12,0.6:#7d3420,0.85:#a85538,1:#d18a68

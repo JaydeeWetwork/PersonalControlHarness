@@ -1,0 +1,8 @@
+# seedor (item icon): the hoe -- copper tines over tilled earth, procgen
+# seed sparks in blue.
+noise kind=gradient scale=5 octaves=3 seed=441
+curve contrast=1.15 clamp_max=0.5
+grid cells=4 width=0.14 sharpness=1.2
+blend mode=max mix=1
+palette stops=0:#100c06,0.35:#2a1d0d,0.55:#4a3520,0.7:#b5762e,0.88:#e8a84c,1:#4dc3ff
+glow threshold=0.9 intensity=0.5 color=#4dc3ff

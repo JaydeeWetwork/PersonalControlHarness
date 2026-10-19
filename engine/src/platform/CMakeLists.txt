@@ -1,0 +1,5 @@
+add_library(litholattice_platform STATIC window.cpp glfw_input_backend.cpp)
+target_include_directories(litholattice_platform PUBLIC include)
+target_link_libraries(litholattice_platform PUBLIC litholattice_input litholattice_core PRIVATE glfw Vulkan::Headers)
+target_compile_definitions(litholattice_platform PRIVATE GLFW_INCLUDE_NONE)
+litholattice_module_options(litholattice_platform)

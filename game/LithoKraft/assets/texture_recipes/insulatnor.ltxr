@@ -1,0 +1,8 @@
+# insulatnor: insulator type 1 -- pale ice ceramic, matte with a fine
+# grid (JD insulator family 2026-10-14; color is a presentation
+# placeholder).
+noise kind=gradient scale=6 octaves=3 seed=631
+curve contrast=0.9 gamma=1.15 clamp_max=0.62
+grid cells=4 width=0.1 sharpness=1.0
+blend mode=max mix=0.7
+palette stops=0:#5d6d73,0.35:#93a7ad,0.6:#c3d5da,0.85:#e6f1f3,1:#ffffff

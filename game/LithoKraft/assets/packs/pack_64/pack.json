@@ -1,0 +1,13 @@
+{
+ "name": "LithoKraft default textures (64px)",
+ "game": "LithoKraft (formerly LithoCraft / VOXEL COMPUTE)",
+ "engine": "LithoLattice",
+ "engine_display": "LithoLattice Engine",
+ "tile_size": 64,
+ "format": "png",
+ "alpha": "straight (non-premultiplied)",
+ "packing": "one PNG per texture; engine builds the GPU array at load",
+ "naming": "lowercase snake_case = block[_face|_state|_piece]",
+ "animation": "vertical strip + <name>.png.json sidecar",
+ "version": "art v2.1 (2026-10-10, batch 3: catchor, redirector split/overlays, red/blue via, glass family, pattern ROM)"
+}

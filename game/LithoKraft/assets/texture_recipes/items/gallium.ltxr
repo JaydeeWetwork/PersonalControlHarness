@@ -1,0 +1,6 @@
+# gallium (item icon): silvery liquid-metal pool, cool blue-grey (JD
+# materials 2026-10-14).
+noise kind=gradient scale=3 octaves=3 seed=723
+curve contrast=1.1 gamma=1.1
+palette stops=0:#1a2029,0.35:#45505f,0.6:#77879a,0.85:#aebfce,1:#f2f8ff
+glow threshold=0.86 intensity=0.35 color=#aebfce

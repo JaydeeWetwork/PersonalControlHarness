@@ -1,0 +1,5 @@
+# carbide (item icon): near-black carbon lump, hard facets (JD
+# materials 2026-10-14).
+voronoi scale=3 mode=f1 seed=713
+curve gamma=0.8 contrast=1.4
+palette stops=0:#050505,0.35:#17181c,0.6:#2e3038,0.85:#4a4e5a,1:#787e8f

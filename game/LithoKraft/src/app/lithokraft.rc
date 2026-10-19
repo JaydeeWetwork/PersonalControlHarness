@@ -1,0 +1,2 @@
+// Windows resources: the exe icon (Explorer, taskbar before the window sets its own).
+IDI_ICON1 ICON "lithokraft.ico"

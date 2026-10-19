@@ -1,0 +1,32 @@
+{
+ "name": "cga16",
+ "size": 16,
+ "colors": [
+  "#000000",
+  "#0000AA",
+  "#00AA00",
+  "#00AAAA",
+  "#AA0000",
+  "#AA00AA",
+  "#AA5500",
+  "#AAAAAA",
+  "#555555",
+  "#5555FF",
+  "#55FF55",
+  "#55FFFF",
+  "#FF5555",
+  "#FF55FF",
+  "#FFFF55",
+  "#FFFFFF"
+ ],
+ "strength_0": "off (color_lamp_16_off.png)",
+ "mapping": "wrap",
+ "index": "idx = (s-1) mod N",
+ "alternate_modes": {
+  "clamp": "idx = min(s,N)-1",
+  "scale": "idx = ceil(s*N/64)-1"
+ },
+ "shader": "color_lamp_v5.frag, uPaletteSize=16, uMapMode=2 (wrap, default)",
+ "rim_glow": "palette starts with black -> rim 0.60*(1-luma)^10, colour #B9A8F0",
+ "source": "standard CGA/EGA order 0-15 (6 = brown #AA5500)"
+}

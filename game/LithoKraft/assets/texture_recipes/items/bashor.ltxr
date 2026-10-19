@@ -1,0 +1,8 @@
+# bashor (item icon): the hammer -- steel head mass on a warm handle-brown
+# field, blue trace spark at the striking face.
+noise kind=gradient scale=3 octaves=3 seed=401
+curve contrast=1.3 clamp_max=0.5
+voronoi scale=2 mode=f1 seed=402
+blend mode=max mix=0.7
+palette stops=0:#17100a,0.35:#3a2413,0.55:#5a3d20,0.72:#6b7280,0.88:#aeb6c2,1:#35e0ff
+glow threshold=0.9 intensity=0.5 color=#35e0ff

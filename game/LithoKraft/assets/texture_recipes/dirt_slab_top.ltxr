@@ -1,0 +1,6 @@
+# dirt_slab_top: packed dirt slab, edge frame over clod field.
+noise kind=value scale=5 octaves=4 seed=241
+curve contrast=1.6 clamp_max=0.8
+grid cells=1 width=0.07 sharpness=1.5
+blend mode=max mix=0.75
+palette stops=0:#160d07,0.3:#2a1a0c,0.55:#453015,0.8:#6b4722,1:#86603a

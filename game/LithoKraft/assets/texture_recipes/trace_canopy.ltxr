@@ -1,0 +1,11 @@
+# trace_canopy: dark copper canopy with cyan pin lights (sparse bright peaks
+# max-blended over a clamped dark base).
+noise kind=gradient scale=4 octaves=4 seed=81
+curve contrast=1.3 clamp_max=0.5
+noise kind=value scale=16 octaves=1 seed=82
+noise kind=value scale=13 octaves=1 seed=83
+blend mode=multiply mix=1
+curve contrast=2.2 gamma=0.7
+blend mode=max mix=1
+palette stops=0:#0e0a14,0.3:#241610,0.5:#4a2c14,0.68:#7a4d22,0.85:#0e6d86,0.95:#35e0ff,1:#e0feff
+glow threshold=0.82 intensity=0.6 color=#35e0ff

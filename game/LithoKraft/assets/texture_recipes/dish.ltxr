@@ -1,0 +1,5 @@
+# dish: collector dish -- radial voronoi bowl, metallic violet-gray with a
+# cyan receiver core at the feature point.
+voronoi scale=1 mode=f1 seed=301
+curve gamma=0.8 contrast=1.25 posterize=10
+palette stops=0:#bffbff,0.1:#35e0ff,0.2:#4a5578,0.3:#2c3350,0.42:#4a5578,0.55:#232a44,1:#131830

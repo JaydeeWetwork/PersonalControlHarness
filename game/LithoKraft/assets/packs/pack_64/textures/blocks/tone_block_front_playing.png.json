@@ -1,0 +1,12 @@
+{
+ "frametime_ms": 100,
+ "frames": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "interpolate": false,
+ "loop": true,
+ "note": "loops while a tone is playing (s >= 1); idle = tone_block_front"
+}

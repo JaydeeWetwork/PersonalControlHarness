@@ -1,0 +1,5 @@
+# signal_receivor: cyan signal rings -- posterised radial field = concentric
+# reception rings around the feature point, deep indigo dish behind.
+voronoi scale=2 mode=f1 seed=321
+curve posterize=12 gamma=0.85 contrast=1.3
+palette stops=0:#d8fdff,0.08:#35e0ff,0.16:#0e4a63,0.24:#35e0ff,0.32:#0e4a63,0.42:#182154,0.6:#05081c,1:#05081c

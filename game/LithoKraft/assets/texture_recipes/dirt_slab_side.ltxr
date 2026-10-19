@@ -1,0 +1,6 @@
+# dirt_slab_side: dirt slab side, segmented frame over clods.
+noise kind=value scale=5 octaves=4 seed=251
+curve contrast=1.6 clamp_max=0.78
+grid cells=2 width=0.1 sharpness=1.4
+blend mode=max mix=0.7
+palette stops=0:#120a05,0.3:#251609,0.55:#3f2812,0.82:#63401f,1:#7d5228

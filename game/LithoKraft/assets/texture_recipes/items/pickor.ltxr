@@ -1,0 +1,8 @@
+# pickor (item icon): the pickaxe -- twin steel points, blue-hot tips over
+# dark handle brown.
+voronoi scale=3 mode=edge seed=411
+curve contrast=1.25 clamp_max=0.55
+grid cells=2 width=0.12 sharpness=1.2
+blend mode=max mix=0.8
+palette stops=0:#120d08,0.4:#33200f,0.6:#4a5568,0.8:#9aa5b5,0.93:#4dc3ff,1:#bffbff
+glow threshold=0.85 intensity=0.55 color=#4dc3ff
