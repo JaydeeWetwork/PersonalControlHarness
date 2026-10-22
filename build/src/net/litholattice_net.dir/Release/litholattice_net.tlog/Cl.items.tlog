@@ -1,9 +1,0 @@
-R:\repos\PersonalControlHarness\engine\src\net\quantize.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\quantize.obj
-R:\repos\PersonalControlHarness\engine\src\net\protocol.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\protocol.obj
-R:\repos\PersonalControlHarness\engine\src\net\snapshot.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\snapshot.obj
-R:\repos\PersonalControlHarness\engine\src\net\priority.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\priority.obj
-R:\repos\PersonalControlHarness\engine\src\net\channels.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\channels.obj
-R:\repos\PersonalControlHarness\engine\src\net\confinement.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\confinement.obj
-R:\repos\PersonalControlHarness\engine\src\net\confinement_selftest.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\confinement_selftest.obj
-R:\repos\PersonalControlHarness\engine\src\net\handshake.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\handshake.obj
-R:\repos\PersonalControlHarness\engine\src\net\encryption.cpp;R:\repos\PersonalControlHarness\build\src\net\litholattice_net.dir\Release\encryption.obj

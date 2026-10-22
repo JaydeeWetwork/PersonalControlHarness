@@ -1,8 +1,0 @@
-R:\repos\PersonalControlHarness\engine\src\mods\mod_loader.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\mod_loader.obj
-R:\repos\PersonalControlHarness\engine\src\mods\mod_permissions.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\mod_permissions.obj
-R:\repos\PersonalControlHarness\engine\src\mods\extension_registry.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\extension_registry.obj
-R:\repos\PersonalControlHarness\engine\src\mods\extension_loader.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\extension_loader.obj
-R:\repos\PersonalControlHarness\engine\src\mods\extension_budget.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\extension_budget.obj
-R:\repos\PersonalControlHarness\engine\src\mods\extension_runtime.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\extension_runtime.obj
-R:\repos\PersonalControlHarness\engine\src\mods\mod_save_data.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\mod_save_data.obj
-R:\repos\PersonalControlHarness\engine\src\mods\mods_selftest.cpp;R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.dir\Release\mods_selftest.obj

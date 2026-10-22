@@ -1,4 +1,14 @@
+# Python / PCH
 .venv/
 __pycache__/
 *.pyc
 DeepSeek-V3/
+
+# C++ / CMake / Visual Studio build outputs
+build/
+out/
+.vs/
+CMakeLists-FIXED-*.txt
+
+# Release archives
+*.zip

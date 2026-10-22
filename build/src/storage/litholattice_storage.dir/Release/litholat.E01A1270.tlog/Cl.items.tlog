@@ -1,6 +1,0 @@
-R:\repos\PersonalControlHarness\engine\src\storage\storage.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\storage.obj
-R:\repos\PersonalControlHarness\engine\src\storage\block_names.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\block_names.obj
-R:\repos\PersonalControlHarness\engine\src\storage\anvil_region.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\anvil_region.obj
-R:\repos\PersonalControlHarness\engine\src\storage\file_contract.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\file_contract.obj
-R:\repos\PersonalControlHarness\engine\src\storage\async_io.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\async_io.obj
-R:\repos\PersonalControlHarness\engine\src\storage\sandboxed_io.cpp;R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.dir\Release\sandboxed_io.obj

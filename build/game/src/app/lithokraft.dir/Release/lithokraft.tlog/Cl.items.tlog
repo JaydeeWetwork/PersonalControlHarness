@@ -1,9 +1,0 @@
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\main.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\main.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\scripts_dir.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\scripts_dir.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\selftest.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\selftest.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\perf_headless.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\perf_headless.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\noise_preview.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\noise_preview.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\handshake_test.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\handshake_test.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\control_latency.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\control_latency.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\control_stream_test.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\control_stream_test.obj
-R:\repos\PersonalControlHarness\game\LithoKraft\src\app\demo_record_test.cpp;R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.dir\Release\demo_record_test.obj
