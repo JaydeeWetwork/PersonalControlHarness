@@ -13,6 +13,8 @@
 #include "litholattice/render/binary_greedy_mesher.h"
 #include "litholattice/world/block.h"
 
+#include <bit>  // std::countr_zero (MSVC has no __builtin_ctz)
+
 namespace litholattice {
 namespace {
 
@@ -87,7 +89,7 @@ void mergeSlice(int a, int d, int i, const uint64_t in[4], const uint8_t* materi
   for (int q = 0; q < kN; ++q) {
     uint32_t row = rowOf(q);
     while (row) {
-      const int p0 = __builtin_ctz(row);
+      const int p0 = std::countr_zero(row);
       const uint8_t m0 = matOf(material, a, i, p0, q);
       int p1 = p0;  // expand along the row while bits are set and material matches
       while (p1 + 1 < kN && (row & (1u << (p1 + 1))) && matOf(material, a, i, p1 + 1, q) == m0) ++p1;
@@ -133,7 +135,7 @@ void cullSameTransparentFaces(const MeshInput& in, const BlockRegistry& reg, Fac
         for (int w = 0; w < 4; ++w) {
           uint64_t word = m.face[a][d][i][w];
           while (word) {
-            const int b = __builtin_ctzll(word);
+            const int b = std::countr_zero(word);
             word &= word - 1;
             const int bit = (w << 6) + b;
             int x, y, z;

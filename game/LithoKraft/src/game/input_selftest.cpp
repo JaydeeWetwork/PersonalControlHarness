@@ -6,7 +6,12 @@
 #include <cstdio>
 #include <filesystem>
 #include <string>
+#ifdef _WIN32
+#include <process.h>  // _getpid: per-run unique temp dirs (G-M7, P2b-2)
+#define getpid _getpid
+#else
 #include <unistd.h>  // getpid: per-run unique temp dirs (G-M7, P2b-2)
+#endif
 #include "litholattice/input/input_system.h"
 #include "lithokraft/game/actions.h"
 

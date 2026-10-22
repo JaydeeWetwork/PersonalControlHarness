@@ -1,128 +1,99 @@
-# Personal Control Harness (PCH)
+# LithoLattice · LithoKraft · Personal Control Harness
 
-**"It allows a model to personally plan and control its own harness verifiably
-before it takes actions."** — David Rittenhouse, inventor
+> **Initial public release staging — published by the author via GitHub.**
+> License chosen by JD on 2026-10-19: **MIT** (see `LICENSE`; decision
+> record in `LICENSE-OPTIONS.md`).
 
-The Personal Control Harness is a step-serialized control harness for
-autoregressive models. A run under the PCH produces a **sealed step-stream**:
-a hash-chained record in which every committed token is re-derivable from a
-per-step seeded draw. Submit the stream to a verifier and one of two things
-happens — the run **replays bit-identically** (Bit-Exact tier), or, across
-different arithmetic, every recorded token's live probability is checked
-against the verifier's own forward pass within an epsilon (Witnessed tier).
-A tampered stream fails either way: edit a token and leave the seals stale,
-and the hash chain breaks; edit a token and honestly re-seal the chain, and
-re-derivation catches what checksums alone would wave through.
+*The Wafer, the way forward.*
 
-This repository is the reference prototype and its receipts. **The claim is
-verifiable: clone it, run it, check it yourself.** Get verified today.
+## What this is
 
-## Honest scope — read this first
+- **LithoLattice** (`engine/`) — a C++20 voxel engine: deterministic
+  simulation, OpenGL 3.3 and Vulkan renderers, procedural generation,
+  resource packs, sandboxed AngelScript modding, and a software renderer
+  that serves as the low-end baseline.
+- **LithoKraft** (`game/LithoKraft/`) — the voxel CPU-building game built
+  on the engine: build circuits big, print them small with lithography,
+  build bigger. Seven-dimension design; the first world is the Wafer.
+- **The Timing Handshake** — the engine's default simulation-timing mode:
+  Time Serialization with control coupling and event coupling. Every step
+  is serialized; control enters only at step boundaries; the full run is
+  recorded as a sealed, hash-chained stream that can be replayed and
+  verified bit-for-bit.
+- **Personal Control Harness — PCH** (`pch/`) — the same three pillars
+  applied to a language model's control loop: a model can personally plan
+  and control its own harness verifiably before it takes actions. Ships
+  with a working reference harness against a public reference model, two
+  sealed run streams, and full receipts.
 
-- **Toy scale, synthetic weights.** The rig drives the DeepSeek-V3
-  *reference implementation's own* MLA + MoE code shrunk to CPU-toy size
-  (3 layers, dim 128, 8 routed experts, vocab 512, bf16, single thread).
-  The specimen leaves its weights uninitialized until a checkpoint loads,
-  so the harness fills them deterministically from a seeded generator; the
-  stream attests that fixture by digest (`4365dc9610eadcfa…`). The tokens
-  are gibberish by construction. **What is proven is the harness's
-  properties, not the prose, and nothing about the 671B flagship's
-  behavior is claimed.**
-- **Tiers:** Bit-Exact (same arithmetic) — built and receipted. Witnessed
-  (cross-hardware, epsilon on recorded probabilities) — built in battery
-  #2 against simulated float drift, per the design in
-  `docs/Pillar-PlugIn-Map.md`.
-- **CPU, bf16 path only.** The specimen's Triton FP8 kernels cannot run on
-  CPU; `harness/kernel.py` is a shim that lets the specimen import cleanly
-  and **fails loudly** if an FP8 path is ever reached. The specimen is
-  imported, never modified.
-- Verified on Linux x86-64, Python 3.12, torch 2.14.1+cpu. Full test
-  suite runtime ≈ 2 minutes on a 2-core machine.
+A Wet Wafer Works Games Incorporated project. Inventor and designer:
+David Rittenhouse. Full credits: `game/LithoKraft/CREDITS.md`.
 
-## The three pillars
+## Verifiable claims
 
-1. **Time Serialization.** The sampler's draw at step *t* derives from
-   (run_seed, *t*) alone — the stream is self-describing and replayable.
-   Committed tokens (discrete state) are what gets hashed, never float
-   logits. Prefill is one sealed macro-step; decode commits at every token.
-2. **Control Coupling.** Control enters **only at step boundaries**,
-   serialized in-stream as records on the same hash chain. Nothing
-   interrupts a committed step; an interrupted step simply never commits.
-3. **Event Coupling.** Outbound facts (prefill sealed, step probabilities,
-   the trailer seal) leave as step-stamped records on the same chain.
-   Verification is itself an exchange on this channel: a stream goes out,
-   a verdict comes back.
+These claims are the point of the release — anyone can check them from
+this tree alone:
 
-The moral architecture this harness travels under — the Pillars — is in
-[`PILLARS.md`](PILLARS.md). Design background, including where the pillars
-plug into a production harness and the hazard analysis, is in
-[`docs/Pillar-PlugIn-Map.md`](docs/Pillar-PlugIn-Map.md).
+- **Game determinism.** The engine's scripted demo scenario hashes to
+  `cb32c824f8b3ea98` (cities on) and `e015e51cf1559089` (cities off),
+  identically across record, no-recorder, legacy-replay, and
+  handshake-replay runs. The shipped proof file
+  `demo_record_proof.lldemo` verifies COMPLETE; a one-byte tamper makes
+  verification fail.
+- **PCH replay.** `pch/harness/stream_sampled.jsonl` and
+  `stream_greedy.jsonl` are sealed, hash-chained step streams. The
+  verifier re-derives every committed token: tampering breaks the chain,
+  and a re-sealed forgery is refused on re-derivation. Re-running the
+  test regenerates both streams byte-identically.
+- **Honest scope.** The PCH proof runs at toy scale with synthetic
+  fixture weights — it proves the protocol properties (serialization,
+  verification, rewind/branch, witnessed cross-checking), not production
+  model quality. The game is a pre-alpha vertical slice. Known paperwork
+  item: the game demo test's built-in expected hash pin
+  (`5041cf1795c33a8c`) is stale relative to the canonical cities-on hash
+  above; the machinery is unaffected.
 
-## Quickstart
-
-You need the DeepSeek-V3 reference code. It is **not** redistributed here —
-clone it yourself; the harness only imports it:
-
-```sh
-# 1. Get the specimen (place it BESIDE this repo, as a sibling folder):
-git clone https://github.com/deepseek-ai/DeepSeek-V3
-#    ...or point the rig at an existing copy:
-#    export PCH_SPECIMEN_DIR=/path/to/DeepSeek-V3/inference
-
-# 2. Fresh environment (CPU-only torch, as receipted):
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt \
-    --index-url https://download.pytorch.org/whl/cpu \
-    --extra-index-url https://pypi.org/simple
-
-# 3. Verify the shipped sealed streams, exactly as they sit in this repo:
-cd harness
-python verify_streams.py        # expect: SHIPPED STREAMS: ALL VERIFY
-
-# 4. Run the full batteries:
-python disc_test_llm.py         # expect: DISC TEST (LLM SEAT): ALL PASS
-python pch_more_tests.py        # expect: PCH BATTERY #2: ALL PASS
-```
-
-`disc_test_llm.py` regenerates `stream_sampled.jsonl` / `stream_greedy.jsonl`
-deterministically as part of its run (the regenerated files match the
-shipped ones). A captured run of exactly these steps, from a fresh venv on
-the packaged copy, is kept in [`VERIFY-TRANSCRIPT.txt`](VERIFY-TRANSCRIPT.txt).
-
-### What the batteries check
-
-- **disc_test_llm.py** — sampled (temp 0.8) and greedy (temp 0) runs replay
-  token-identically; a naive tamper is refused (chain); a re-sealed forgery
-  is refused (re-derivation); an un-harnessed run fed the same draws
-  produces identical tokens (non-perturbation).
-- **pch_more_tests.py** — rewind to a sealed step and branch with a new
-  control event admitted at the boundary (prefix bit-identical, branches
-  diverge, the original stream still verifies); witnessed replay under
-  simulated float drift (genuine stream agrees within eps = 0.003; an
-  implausible-token forgery is refused).
+Receipts live in `pch/docs/`; the step-by-step transcript of the PCH
+package verifying itself from a cold environment is
+`pch/VERIFY-TRANSCRIPT.txt`.
 
 ## Layout
 
 ```
-harness/   stepstream.py (chained stream format), harness.py (the rig),
-           disc_test_llm.py, pch_more_tests.py, verify_streams.py,
-           kernel.py (CPU shim), stream_sampled.jsonl, stream_greedy.jsonl
-docs/      Pillar-PlugIn-Map.md, Disc-Test-Receipts-2026-10-18.md,
-           Prototype-Receipts-2026-10-18.md, Argon-Review-2026-10-18.md,
-           Archie-Review-Prototype-Receipts-2026-10-18.md
-PILLARS.md         the moral architecture (verbatim)
-VERIFY-TRANSCRIPT.txt   a stranger's-eye run of the quickstart, captured
+engine/     LithoLattice engine (src/, assets/, tests/, docs/, branding/)
+            engine/LithoKraft is a symlink to ../../game/LithoKraft —
+            keep it intact; the build reaches the game through it.
+game/       LithoKraft game (src/, assets/, scripts/, CREDITS.md)
+pch/        Personal Control Harness reference package (self-contained)
+docs/       Project documentation (architecture, SDK, roadmap)
+tools/      Build driver and asset tools
+demo_record_proof.lldemo   Sealed demo record (verification artifact)
+MANIFEST.md                Exactly what this staging contains, and what
+                           was deliberately left out, and why
+LICENSE-OPTIONS.md         DRAFT — the license decision, still open
 ```
 
-## Credits
+## Build
 
-Inventor: **David Rittenhouse** (Wet Wafer Works Games Incorporated) —
-design, direction, and the pillars. Co-implementation by AI collaborators;
-independent design review by **Archie** (the reviews are in `docs/`,
-including the hazard ranking and the two-tier replay design).
+Prerequisites: a C++20 toolchain (MSVC on Windows, GCC/Clang on Linux),
+CMake, and Python 3. CMake fetches the remaining dependencies itself
+(GLFW, AngelScript, miniaudio, stb, Vulkan headers).
 
-## License
+- One command (configure → build → test): `python tools/build.py`
+  (Linux: `python3 tools/build.py`)
+- Or drive CMake directly from `engine/CMakeLists.txt`.
 
-MIT — see [`LICENSE`](LICENSE). *(Working draft, to be confirmed by the
-maintainer before publication.)*
+Start with `engine/README.md` for the engine source map,
+`game/LithoKraft/README.md` for the game, `engine/docs/` and `docs/` for
+architecture, and `game/LithoKraft/CREDITS.md` for who built what.
+
+## The Pillars
+
+This work ships under a stated set of design commitments — no
+immortality seeking, no technology integrated into the human nervous
+system, freedom of choice kept open, no genetic modification — recorded
+in full in `pch/PILLARS.md`. They are part of the design, not an
+appendix: the verification architecture exists so that power stays
+checkable by the people it affects.
+
+*Power to the people. Power to the programs. Power to the pillars.*

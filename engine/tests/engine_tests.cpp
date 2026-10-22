@@ -7381,7 +7381,6 @@ void testNetHandshake() {
   {
     bool ok = true;
     const uint8_t v1[] = {1}, v2[] = {2}, v12[] = {1, 2}, v212[] = {2, 1, 2}, v21[] = {2, 1};
-    const uint8_t empty[] = {};
     auto same = negotiate(v2, v2);
     ok = ok && same.ok && same.version == 2;  // same version
     auto hi = negotiate(v12, v12);
@@ -7390,7 +7389,7 @@ void testNetHandshake() {
     ok = ok && lo.ok && lo.version == 1;  // highest common is 1
     auto none = negotiate(v1, v2);
     ok = ok && !none.ok;  // incompatible: no common version
-    auto noOffer = negotiate(std::span<const uint8_t>(empty, 0), v12);
+    auto noOffer = negotiate(std::span<const uint8_t>{}, v12);
     ok = ok && !noOffer.ok;  // empty offer list: incompatible
     auto messy = negotiate(v212, v21);  // unsorted + dupes: harmless
     ok = ok && messy.ok && messy.version == 2;

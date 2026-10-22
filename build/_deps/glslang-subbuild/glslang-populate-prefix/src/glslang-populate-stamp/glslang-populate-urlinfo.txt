@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/glslang-subbuild/glslang-populate-prefix/src/glslang-populate-stamp/download-glslang-populate.cmake;COMMAND;C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/glslang-subbuild/glslang-populate-prefix/src/glslang-populate-stamp/verify-glslang-populate.cmake;COMMAND;C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/glslang-subbuild/glslang-populate-prefix/src/glslang-populate-stamp/extract-glslang-populate.cmake
+source_dir=R:/repos/PersonalControlHarness/build/_deps/glslang-src
+work_dir=R:/repos/PersonalControlHarness/build/_deps
+url(s)=https://github.com/KhronosGroup/glslang/archive/refs/tags/16.6.0.tar.gz
+hash=SHA256=9c09b901149c729df745057dafa815278aaa101b84d2b6e14f16a42de52f97f2
+      no_extract=
+

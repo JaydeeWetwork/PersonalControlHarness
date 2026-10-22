@@ -1,0 +1,10 @@
+R:\repos\PersonalControlHarness\engine\src\assets\image.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\image.obj
+R:\repos\PersonalControlHarness\engine\src\assets\resource_pack.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\resource_pack.obj
+R:\repos\PersonalControlHarness\engine\src\assets\texture_registry.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\texture_registry.obj
+R:\repos\PersonalControlHarness\engine\src\assets\block_model.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\block_model.obj
+R:\repos\PersonalControlHarness\engine\src\assets\box_model.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\box_model.obj
+R:\repos\PersonalControlHarness\engine\src\assets\mod_manifest.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\mod_manifest.obj
+R:\repos\PersonalControlHarness\engine\src\assets\mod_signature.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\mod_signature.obj
+R:\repos\PersonalControlHarness\engine\src\assets\resource_loader.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\resource_loader.obj
+R:\repos\PersonalControlHarness\engine\src\assets\shader_library.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\shader_library.obj
+R:\repos\PersonalControlHarness\engine\src\assets\assets_selftest.cpp;R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.dir\Release\assets_selftest.obj

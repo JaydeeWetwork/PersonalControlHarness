@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\painter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\theme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\ui_root.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\containers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\text_buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\text_edit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\lists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\menus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\widget_factory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\mod_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\ui\ui_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\engine\src\ui\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BF912724-0768-3BA3-9169-AC3C1C2A355F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

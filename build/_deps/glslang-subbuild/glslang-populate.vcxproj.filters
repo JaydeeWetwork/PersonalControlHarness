@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\5d29f8edaf6015b354e9a2b873fa5103\glslang-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\a3ea8c0d2e4826d6b0a8cfff7a1fbbae\glslang-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\cf5756f51825192f1b4867ade70ca1cd\glslang-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="R:\repos\PersonalControlHarness\build\_deps\glslang-subbuild\CMakeFiles\glslang-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2210F40E-E5D9-31C5-97D3-DD8381EDFA83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

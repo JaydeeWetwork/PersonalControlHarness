@@ -1,0 +1,5 @@
+R:\repos\PersonalControlHarness\engine\src\script\script_engine.cpp;R:\repos\PersonalControlHarness\build\src\script\litholattice_script.dir\Release\script_engine.obj
+R:\repos\PersonalControlHarness\engine\src\script\script_binding_allowlist.cpp;R:\repos\PersonalControlHarness\build\src\script\litholattice_script.dir\Release\script_binding_allowlist.obj
+R:\repos\PersonalControlHarness\engine\src\script\script_memory_hook.cpp;R:\repos\PersonalControlHarness\build\src\script\litholattice_script.dir\Release\script_memory_hook.obj
+R:\repos\PersonalControlHarness\engine\src\script\suspension_policy.cpp;R:\repos\PersonalControlHarness\build\src\script\litholattice_script.dir\Release\suspension_policy.obj
+R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on\scriptstdstring\scriptstdstring.cpp;R:\repos\PersonalControlHarness\build\src\script\litholattice_script.dir\Release\scriptstdstring.obj

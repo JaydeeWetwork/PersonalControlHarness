@@ -1,0 +1,10 @@
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\ANGELSCRIPT-SUBBUILD\CMAKEFILES\F73B3BBAF08FE9E908871797D2A56A9C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild -BR:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/angelscript-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

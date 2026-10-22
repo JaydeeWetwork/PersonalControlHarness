@@ -166,4 +166,4 @@ option(LITHOLATTICE_BUILD_FUZZERS "Build the litholattice_fuzz harnesses (tools/
 if(LITHOLATTICE_BUILD_FUZZERS)
   add_subdirectory(tools/fuzz)
 endif()
-add_subdirectory(LithoKraft game)  # binary dir "game": the exe LithoKraft sits in the build root
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../game/LithoKraft game)  # the game lives at the repo root game/LithoKraft; no symlink needed (fix 2026-10-19: fresh clones cannot carry the old engine/LithoKraft symlink)

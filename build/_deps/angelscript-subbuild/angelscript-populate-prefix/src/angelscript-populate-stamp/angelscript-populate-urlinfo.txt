@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/angelscript-populate-prefix/src/angelscript-populate-stamp/download-angelscript-populate.cmake;COMMAND;C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/angelscript-populate-prefix/src/angelscript-populate-stamp/verify-angelscript-populate.cmake;COMMAND;C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/angelscript-populate-prefix/src/angelscript-populate-stamp/extract-angelscript-populate.cmake
+source_dir=R:/repos/PersonalControlHarness/build/_deps/angelscript-src
+work_dir=R:/repos/PersonalControlHarness/build/_deps
+url(s)=https://www.angelcode.com/angelscript/sdk/files/angelscript_2.38.0.zip
+hash=SHA256=b33b5dbcda10317ef67d628353d83246984ce6fcac102d4dc2aed121eba52e6f
+      no_extract=
+

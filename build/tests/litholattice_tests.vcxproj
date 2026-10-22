@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{267C5D66-8D17-3EDF-A491-5C3D0C81512D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>litholattice_tests</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\tests\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">litholattice_tests.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">litholattice_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\tests\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">litholattice_tests.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">litholattice_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\tests\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">litholattice_tests.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">litholattice_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\tests\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">litholattice_tests.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">litholattice_tests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;LITHOKRAFT_MATERIALS_PATH=\"R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials\";CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\src\render_vk\Debug\litholattice_render_vk.lib;..\src\storage\Debug\litholattice_storage.lib;..\src\ai\Debug\litholattice_ai.lib;..\src\sim\Debug\litholattice_sim.lib;..\src\render\Debug\litholattice_render.lib;..\src\world\Debug\litholattice_world.lib;..\src\procgen\Debug\litholattice_procgen.lib;..\src\ui\Debug\litholattice_ui.lib;..\src\assets\Debug\litholattice_assets.lib;..\src\audio\Debug\litholattice_audio.lib;..\src\input\Debug\litholattice_input.lib;..\src\net\Debug\litholattice_net.lib;..\src\script\Debug\litholattice_script.lib;..\src\mods\Debug\litholattice_mods.lib;..\src\console\Debug\litholattice_console.lib;..\src\crypto\Debug\litholattice_crypto.lib;..\src\index\Debug\litholattice_index.lib;..\src\mcp\Debug\litholattice_mcp.lib;..\src\defrag\Debug\litholattice_defrag.lib;..\src\subdiv\Debug\litholattice_subdiv.lib;..\src\anim\Debug\litholattice_anim.lib;..\src\texture\Debug\litholattice_texture.lib;..\src\core\Debug\litholattice_core.lib;..\src\systerian\Debug\litholattice_systerian.lib;..\src\ui\Debug\litholattice_ui.lib;..\src\input\Debug\litholattice_input.lib;..\src\script\Debug\litholattice_script.lib;..\src\mods\Debug\litholattice_mods.lib;..\_deps\angelscript-build\Debug\angelscriptd.lib;..\src\storage\Debug\litholattice_storage.lib;..\src\world\Debug\litholattice_world.lib;..\src\procgen\Debug\litholattice_procgen.lib;..\src\subdiv\Debug\litholattice_subdiv.lib;..\src\index\Debug\litholattice_index.lib;..\src\assets\Debug\litholattice_assets.lib;..\src\crypto\Debug\litholattice_crypto.lib;..\src\core\Debug\litholattice_core.lib;winmm.lib;psapi.lib;..\src\assets\Debug\litholattice_stb.lib;..\src\assets\Debug\litholattice_nanosvg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>R:/repos/PersonalControlHarness/build/tests/Debug/litholattice_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>R:/repos/PersonalControlHarness/build/tests/Debug/litholattice_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH=\"R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials\";CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\src\render_vk\Release\litholattice_render_vk.lib;..\src\storage\Release\litholattice_storage.lib;..\src\ai\Release\litholattice_ai.lib;..\src\sim\Release\litholattice_sim.lib;..\src\render\Release\litholattice_render.lib;..\src\world\Release\litholattice_world.lib;..\src\procgen\Release\litholattice_procgen.lib;..\src\ui\Release\litholattice_ui.lib;..\src\assets\Release\litholattice_assets.lib;..\src\audio\Release\litholattice_audio.lib;..\src\input\Release\litholattice_input.lib;..\src\net\Release\litholattice_net.lib;..\src\script\Release\litholattice_script.lib;..\src\mods\Release\litholattice_mods.lib;..\src\console\Release\litholattice_console.lib;..\src\crypto\Release\litholattice_crypto.lib;..\src\index\Release\litholattice_index.lib;..\src\mcp\Release\litholattice_mcp.lib;..\src\defrag\Release\litholattice_defrag.lib;..\src\subdiv\Release\litholattice_subdiv.lib;..\src\anim\Release\litholattice_anim.lib;..\src\texture\Release\litholattice_texture.lib;..\src\core\Release\litholattice_core.lib;..\src\systerian\Release\litholattice_systerian.lib;..\src\ui\Release\litholattice_ui.lib;..\src\input\Release\litholattice_input.lib;..\src\script\Release\litholattice_script.lib;..\src\mods\Release\litholattice_mods.lib;..\_deps\angelscript-build\Release\angelscript.lib;..\src\storage\Release\litholattice_storage.lib;..\src\world\Release\litholattice_world.lib;..\src\procgen\Release\litholattice_procgen.lib;..\src\subdiv\Release\litholattice_subdiv.lib;..\src\index\Release\litholattice_index.lib;..\src\assets\Release\litholattice_assets.lib;..\src\crypto\Release\litholattice_crypto.lib;..\src\core\Release\litholattice_core.lib;winmm.lib;psapi.lib;..\src\assets\Release\litholattice_stb.lib;..\src\assets\Release\litholattice_nanosvg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>R:/repos/PersonalControlHarness/build/tests/Release/litholattice_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>R:/repos/PersonalControlHarness/build/tests/Release/litholattice_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH=\"R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials\";CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\src\render_vk\MinSizeRel\litholattice_render_vk.lib;..\src\storage\MinSizeRel\litholattice_storage.lib;..\src\ai\MinSizeRel\litholattice_ai.lib;..\src\sim\MinSizeRel\litholattice_sim.lib;..\src\render\MinSizeRel\litholattice_render.lib;..\src\world\MinSizeRel\litholattice_world.lib;..\src\procgen\MinSizeRel\litholattice_procgen.lib;..\src\ui\MinSizeRel\litholattice_ui.lib;..\src\assets\MinSizeRel\litholattice_assets.lib;..\src\audio\MinSizeRel\litholattice_audio.lib;..\src\input\MinSizeRel\litholattice_input.lib;..\src\net\MinSizeRel\litholattice_net.lib;..\src\script\MinSizeRel\litholattice_script.lib;..\src\mods\MinSizeRel\litholattice_mods.lib;..\src\console\MinSizeRel\litholattice_console.lib;..\src\crypto\MinSizeRel\litholattice_crypto.lib;..\src\index\MinSizeRel\litholattice_index.lib;..\src\mcp\MinSizeRel\litholattice_mcp.lib;..\src\defrag\MinSizeRel\litholattice_defrag.lib;..\src\subdiv\MinSizeRel\litholattice_subdiv.lib;..\src\anim\MinSizeRel\litholattice_anim.lib;..\src\texture\MinSizeRel\litholattice_texture.lib;..\src\core\MinSizeRel\litholattice_core.lib;..\src\systerian\MinSizeRel\litholattice_systerian.lib;..\src\ui\MinSizeRel\litholattice_ui.lib;..\src\input\MinSizeRel\litholattice_input.lib;..\src\script\MinSizeRel\litholattice_script.lib;..\src\mods\MinSizeRel\litholattice_mods.lib;..\_deps\angelscript-build\MinSizeRel\angelscript.lib;..\src\storage\MinSizeRel\litholattice_storage.lib;..\src\world\MinSizeRel\litholattice_world.lib;..\src\procgen\MinSizeRel\litholattice_procgen.lib;..\src\subdiv\MinSizeRel\litholattice_subdiv.lib;..\src\index\MinSizeRel\litholattice_index.lib;..\src\assets\MinSizeRel\litholattice_assets.lib;..\src\crypto\MinSizeRel\litholattice_crypto.lib;..\src\core\MinSizeRel\litholattice_core.lib;winmm.lib;psapi.lib;..\src\assets\MinSizeRel\litholattice_stb.lib;..\src\assets\MinSizeRel\litholattice_nanosvg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>R:/repos/PersonalControlHarness/build/tests/MinSizeRel/litholattice_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>R:/repos/PersonalControlHarness/build/tests/MinSizeRel/litholattice_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH=\"R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials\";CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LITHOKRAFT_MATERIALS_PATH="R:/repos/PersonalControlHarness/engine/assets/materials/lithokraft.materials";CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\engine\src\storage\include;R:\repos\PersonalControlHarness\engine\src\ai\include;R:\repos\PersonalControlHarness\engine\src\sim\include;R:\repos\PersonalControlHarness\engine\src\audio\include;R:\repos\PersonalControlHarness\engine\src\input\include;R:\repos\PersonalControlHarness\engine\src\net\include;R:\repos\PersonalControlHarness\engine\src\script\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\add_on;R:\repos\PersonalControlHarness\engine\src\mods\include;R:\repos\PersonalControlHarness\build\_deps\angelscript-src\angelscript\projects\cmake\..\..\include;R:\repos\PersonalControlHarness\engine\src\console\include;R:\repos\PersonalControlHarness\engine\src\defrag\include;R:\repos\PersonalControlHarness\engine\src\index\include;R:\repos\PersonalControlHarness\engine\src\mcp\include;R:\repos\PersonalControlHarness\engine\src\anim\include;R:\repos\PersonalControlHarness\engine\src\texture\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\src\render_vk\RelWithDebInfo\litholattice_render_vk.lib;..\src\storage\RelWithDebInfo\litholattice_storage.lib;..\src\ai\RelWithDebInfo\litholattice_ai.lib;..\src\sim\RelWithDebInfo\litholattice_sim.lib;..\src\render\RelWithDebInfo\litholattice_render.lib;..\src\world\RelWithDebInfo\litholattice_world.lib;..\src\procgen\RelWithDebInfo\litholattice_procgen.lib;..\src\ui\RelWithDebInfo\litholattice_ui.lib;..\src\assets\RelWithDebInfo\litholattice_assets.lib;..\src\audio\RelWithDebInfo\litholattice_audio.lib;..\src\input\RelWithDebInfo\litholattice_input.lib;..\src\net\RelWithDebInfo\litholattice_net.lib;..\src\script\RelWithDebInfo\litholattice_script.lib;..\src\mods\RelWithDebInfo\litholattice_mods.lib;..\src\console\RelWithDebInfo\litholattice_console.lib;..\src\crypto\RelWithDebInfo\litholattice_crypto.lib;..\src\index\RelWithDebInfo\litholattice_index.lib;..\src\mcp\RelWithDebInfo\litholattice_mcp.lib;..\src\defrag\RelWithDebInfo\litholattice_defrag.lib;..\src\subdiv\RelWithDebInfo\litholattice_subdiv.lib;..\src\anim\RelWithDebInfo\litholattice_anim.lib;..\src\texture\RelWithDebInfo\litholattice_texture.lib;..\src\core\RelWithDebInfo\litholattice_core.lib;..\src\systerian\RelWithDebInfo\litholattice_systerian.lib;..\src\ui\RelWithDebInfo\litholattice_ui.lib;..\src\input\RelWithDebInfo\litholattice_input.lib;..\src\script\RelWithDebInfo\litholattice_script.lib;..\src\mods\RelWithDebInfo\litholattice_mods.lib;..\_deps\angelscript-build\RelWithDebInfo\angelscript.lib;..\src\storage\RelWithDebInfo\litholattice_storage.lib;..\src\world\RelWithDebInfo\litholattice_world.lib;..\src\procgen\RelWithDebInfo\litholattice_procgen.lib;..\src\subdiv\RelWithDebInfo\litholattice_subdiv.lib;..\src\index\RelWithDebInfo\litholattice_index.lib;..\src\assets\RelWithDebInfo\litholattice_assets.lib;..\src\crypto\RelWithDebInfo\litholattice_crypto.lib;..\src\core\RelWithDebInfo\litholattice_core.lib;winmm.lib;psapi.lib;..\src\assets\RelWithDebInfo\litholattice_stb.lib;..\src\assets\RelWithDebInfo\litholattice_nanosvg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>R:/repos/PersonalControlHarness/build/tests/RelWithDebInfo/litholattice_tests.lib</ImportLibrary>
+      <ProgramDataBaseFile>R:/repos/PersonalControlHarness/build/tests/RelWithDebInfo/litholattice_tests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\engine\tests\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\tests\engine_tests.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render\software_test.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\ZERO_CHECK.vcxproj">
+      <Project>{4E0082B7-AC67-339C-ABC2-27B0B0B8C43F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-build\angelscript.vcxproj">
+      <Project>{3B8A24FA-FF6E-3004-8560-876B272EAA57}</Project>
+      <Name>angelscript</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\ai\litholattice_ai.vcxproj">
+      <Project>{A6E0F627-934D-3147-98D0-CC0D9A504058}</Project>
+      <Name>litholattice_ai</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\anim\litholattice_anim.vcxproj">
+      <Project>{20D96365-891F-3DB4-8A35-53E07EE12C5B}</Project>
+      <Name>litholattice_anim</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.vcxproj">
+      <Project>{9C76B6D8-7D0E-3A0A-8DF7-FCACDC7C3F55}</Project>
+      <Name>litholattice_assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\audio\litholattice_audio.vcxproj">
+      <Project>{40964832-CC47-39C6-AB36-EF9CFC5AE1E3}</Project>
+      <Name>litholattice_audio</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\console\litholattice_console.vcxproj">
+      <Project>{82A46D0E-4F03-3EF9-A653-61466CFDB695}</Project>
+      <Name>litholattice_console</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\core\litholattice_core.vcxproj">
+      <Project>{99C1EB1A-2562-39BC-83A3-FCD25488C35A}</Project>
+      <Name>litholattice_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\crypto\litholattice_crypto.vcxproj">
+      <Project>{CFC8A2A4-C9E3-36EC-ABE1-133E0BC3B38E}</Project>
+      <Name>litholattice_crypto</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\defrag\litholattice_defrag.vcxproj">
+      <Project>{983141F6-5C0B-3957-936F-E9916D88D6FC}</Project>
+      <Name>litholattice_defrag</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\index\litholattice_index.vcxproj">
+      <Project>{A86BEC12-7085-3BA3-A993-E532E034D591}</Project>
+      <Name>litholattice_index</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\input\litholattice_input.vcxproj">
+      <Project>{61F83875-D0C3-360D-9D2B-8B5D835AE51A}</Project>
+      <Name>litholattice_input</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\mcp\litholattice_mcp.vcxproj">
+      <Project>{86800373-004D-3F01-8EF3-8A90FDE2E33E}</Project>
+      <Name>litholattice_mcp</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\mods\litholattice_mods.vcxproj">
+      <Project>{058D3ADB-4B37-3F70-919E-0C4214C7CDD2}</Project>
+      <Name>litholattice_mods</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_nanosvg.vcxproj">
+      <Project>{59F11F31-E4CC-32F9-9E15-0E72AC1ECA24}</Project>
+      <Name>litholattice_nanosvg</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\net\litholattice_net.vcxproj">
+      <Project>{FD0EFC23-AD54-3109-9E02-ACCE638CD55B}</Project>
+      <Name>litholattice_net</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\procgen\litholattice_procgen.vcxproj">
+      <Project>{DCEFC691-7662-3AAE-B9F1-2C9BABF6ECF4}</Project>
+      <Name>litholattice_procgen</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\render\litholattice_render.vcxproj">
+      <Project>{6CD7C224-B9ED-393C-A932-6C18D59D4843}</Project>
+      <Name>litholattice_render</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.vcxproj">
+      <Project>{83734FED-3A86-3FE4-8F28-BBBCF5515124}</Project>
+      <Name>litholattice_render_vk</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\script\litholattice_script.vcxproj">
+      <Project>{15C54C93-1279-32CA-AEC7-A595E4C6AE4F}</Project>
+      <Name>litholattice_script</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\sim\litholattice_sim.vcxproj">
+      <Project>{CB55DFDA-B39D-3DB4-81C7-973FDE6A94C4}</Project>
+      <Name>litholattice_sim</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_stb.vcxproj">
+      <Project>{A9465ADF-317E-37D4-B6C0-77E562ACD9C3}</Project>
+      <Name>litholattice_stb</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\storage\litholattice_storage.vcxproj">
+      <Project>{E01A1270-C1C2-33BC-86E8-AA4B07E7B79F}</Project>
+      <Name>litholattice_storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\subdiv\litholattice_subdiv.vcxproj">
+      <Project>{E5BC254A-EFFA-3064-9DE6-91B7EF65E367}</Project>
+      <Name>litholattice_subdiv</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\systerian\litholattice_systerian.vcxproj">
+      <Project>{4049F0C2-FFC2-39F2-B295-0FBA4FC21EB9}</Project>
+      <Name>litholattice_systerian</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\texture\litholattice_texture.vcxproj">
+      <Project>{FEF8528B-A4EF-3464-8FED-EA7BEEEF1D1D}</Project>
+      <Name>litholattice_texture</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.vcxproj">
+      <Project>{53BF5108-E893-38AB-ACD6-7303299737F4}</Project>
+      <Name>litholattice_ui</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\world\litholattice_world.vcxproj">
+      <Project>{85526E9F-7E7B-30D1-B937-2EB397F187B7}</Project>
+      <Name>litholattice_world</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

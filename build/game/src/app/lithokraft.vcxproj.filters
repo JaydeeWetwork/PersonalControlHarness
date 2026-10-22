@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\scripts_dir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\perf_headless.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\noise_preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\handshake_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\control_latency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\control_stream_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\demo_record_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\app\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BF912724-0768-3BA3-9169-AC3C1C2A355F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

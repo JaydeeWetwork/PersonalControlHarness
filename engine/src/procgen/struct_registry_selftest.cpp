@@ -114,7 +114,7 @@ void variantChecks(Check& check) {
     for (int i = 0; i < 3; ++i) {
       StructureFeature::Variant v;
       v.cells = testCells();
-      v.cells.front().material = MaterialId{10 + i};  // tag each variant
+      v.cells.front().material = MaterialId(10 + i);  // tag each variant
       v.weight = float(i + 1);                        // weights 1, 2, 3
       variants.push_back(std::move(v));
     }

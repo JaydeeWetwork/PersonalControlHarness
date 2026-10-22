@@ -100,13 +100,14 @@ void Sha512::update(const uint8_t* data, size_t len) {
 }
 
 std::array<uint8_t, 64> Sha512::final() {
-  const __uint128_t bitlen = total_ * 8;
+  const uint64_t bitlen = total_ * 8;  // high 64 bits of the 128-bit length are 0 for total_ < 2^61 bytes
   uint8_t pad = 0x80;
   update(&pad, 1);
   uint8_t zero = 0x00;
   while (buflen_ != 112) update(&zero, 1);
   uint8_t lenbuf[16];
-  for (int i = 0; i < 16; ++i) lenbuf[i] = uint8_t(bitlen >> (120 - 8 * i));
+  for (int i = 0; i < 8; ++i) lenbuf[i] = 0;
+  for (int i = 0; i < 8; ++i) lenbuf[8 + i] = uint8_t(bitlen >> (56 - 8 * i));
   std::memcpy(buf_ + buflen_, lenbuf, 16);
   buflen_ += 16;
   compress(buf_);

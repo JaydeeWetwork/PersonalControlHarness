@@ -246,12 +246,12 @@ bool AnvilRegion::open(std::string* err) {
     opened_ = false;
     return false;
   };
-  f_ = std::fopen(path_.c_str(), "r+b");
+  f_ = std::fopen(path_.string().c_str(), "r+b");
   if (!f_) {
     // Never truncate a file we could not read: only create when it does not exist.
     std::error_code ec;
     if (std::filesystem::exists(path_, ec)) return fail("cannot open region file for update");
-    f_ = std::fopen(path_.c_str(), "w+b");
+    f_ = std::fopen(path_.string().c_str(), "w+b");
     if (!f_) return fail("cannot create region file '" + path_.string() + "'");
   }
   uint64_t size = fileSize(f_);
@@ -346,7 +346,7 @@ AnvilRegion::Staged AnvilRegion::stage(int lx, int lz, uint8_t codec,
     // so the same payload-first ordering protects the external path.
     const auto rec = buildRecord(codec, payload);
     const auto sp = sidecarPath(path_, rx_ * kSpan + lx, rz_ * kSpan + lz);
-    std::FILE* sf = std::fopen(sp.c_str(), "wb");
+    std::FILE* sf = std::fopen(sp.string().c_str(), "wb");
     if (!sf) {
       if (err) *err = "cannot write sidecar '" + sp.string() + "'";
       return none;
@@ -403,7 +403,7 @@ bool AnvilRegion::commit(int lx, int lz, uint8_t codec, const Staged& s, uint32_
     bool ok = false;
     if (s.external) {
       const auto sp = sidecarPath(path_, rx_ * kSpan + lx, rz_ * kSpan + lz);
-      std::FILE* sf = std::fopen(sp.c_str(), "rb");
+      std::FILE* sf = std::fopen(sp.string().c_str(), "rb");
       if (sf) {
         const uint64_t n = fileSize(sf);
         if (n <= 64 * 1024 * 1024 && seekAbs(sf, 0)) {
@@ -526,7 +526,7 @@ std::optional<AnvilRegion::Record> AnvilRegion::readInline(uint32_t sector, uint
 std::optional<AnvilRegion::Record> AnvilRegion::readExternal(int lx, int lz, uint32_t gen,
                                                             std::string* err) const {
   const auto sp = sidecarPath(path_, rx_ * kSpan + lx, rz_ * kSpan + lz);
-  std::FILE* sf = std::fopen(sp.c_str(), "rb");
+  std::FILE* sf = std::fopen(sp.string().c_str(), "rb");
   if (!sf) {
     if (err) *err = "external sidecar missing: '" + sp.string() + "'";
     return std::nullopt;

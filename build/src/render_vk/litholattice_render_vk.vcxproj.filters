@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_handles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_resources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_vertex_arena.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_swapchain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_texture_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_pipelines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_probe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\chunk_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\chunk_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\hud_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\hud_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\line_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\line_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\sprite_vert.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\sprite_frag.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\engine\src\render_vk\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3886F2F8-9205-3A6D-A992-A32195D89271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{98FC6587-96BE-3B79-9C5F-0E7363591061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BF912724-0768-3BA3-9169-AC3C1C2A355F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -5,7 +5,12 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#ifdef _WIN32
+#include <process.h>  // _getpid: per-run unique temp dirs (G-M7, P2b-2)
+#define getpid _getpid
+#else
 #include <unistd.h>  // getpid: per-run unique temp dirs (G-M7, P2b-2)
+#endif
 #include "lithokraft/game/game_ui.h"
 #include "lithokraft/content/items.h"  // kItemFragment / kItemBashor / itemIconRef (P2b-1 HUD binding)
 #include "lithokraft/game/script_editor.h"

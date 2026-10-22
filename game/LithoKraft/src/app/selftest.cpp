@@ -5,7 +5,12 @@
 #include <chrono>
 #include <stdexcept>
 #include <cstdio>
+#ifdef _WIN32
+#include <process.h>  // _getpid: per-run unique temp dirs (G-M7)
+#define getpid _getpid
+#else
 #include <unistd.h>  // getpid: per-run unique temp dirs (G-M7)
+#endif
 #include <cstring>
 #include <filesystem>
 #include <fstream>

@@ -3,9 +3,11 @@
 
 #include <algorithm>
 #include <array>
+#if defined(__unix__) || defined(__APPLE__)
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#endif
 #include <cstdio>
 #include <cstring>
 #include <fstream>

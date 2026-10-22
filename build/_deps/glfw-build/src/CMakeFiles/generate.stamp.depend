@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+R:/repos/PersonalControlHarness/build/CMakeFiles/cmake.verify_globs
+R:/repos/PersonalControlHarness/build/_deps/glfw-src/CMake/glfw3.pc.in
+R:/repos/PersonalControlHarness/build/_deps/glfw-src/src/CMakeLists.txt

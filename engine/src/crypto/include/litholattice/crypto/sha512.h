@@ -17,7 +17,7 @@ class Sha512 {
 
  private:
   uint64_t h_[8];
-  __uint128_t total_ = 0;  // bytes fed so far
+  uint64_t total_ = 0;  // bytes fed so far (2^61 bytes = 2 EiB before 64-bit bit-length overflows)
   uint8_t buf_[128];
   size_t buflen_ = 0;
   void compress(const uint8_t block[128]);

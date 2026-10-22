@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D96B923E-B5CF-33C4-A77E-258E97C461C8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>glslang</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glslang.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glslangd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glslang.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glslang</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glslang.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glslang</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glslang.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glslang</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703 /GR-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703 /GR-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703 /GR-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;ENABLE_SPIRV;GLSLANG_OSINCLUDE_WIN32;ENABLE_OPT=0;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /w14146 /w14308 /w14700 /w14703 /GR-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\..;R:\repos\PersonalControlHarness\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule R:/repos/PersonalControlHarness/build/_deps/glslang-src/glslang/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/_deps/glslang-build/glslang/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule R:/repos/PersonalControlHarness/build/_deps/glslang-src/glslang/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/_deps/glslang-build/glslang/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule R:/repos/PersonalControlHarness/build/_deps/glslang-src/glslang/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/_deps/glslang-build/glslang/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule R:/repos/PersonalControlHarness/build/_deps/glslang-src/glslang/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/_deps/glslang-build/glslang/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\glslang\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\CInterface\glslang_c_interface.cpp" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Public\ShaderLang.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\arrays.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\BaseTypes.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\Common.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\ConstantUnion.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\glslang_c_interface.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\glslang_c_shader_types.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\InfoSink.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\InitializeGlobals.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\intermediate.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\PoolAlloc.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\ResourceLimits.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\ShHandle.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\SpirvIntrinsics.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\Types.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\Include\visibility.h" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\GenericCodeGen\CodeGen.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\GenericCodeGen\Link.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\OSDependent\Windows\ossource.cpp" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\OSDependent\osinclude.h" />
+    <None Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\glslang.y">
+    </None>
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\glslang_tab.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\attribute.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Constant.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\iomapper.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\InfoSink.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Initialize.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\IntermTraverse.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Intermediate.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\ParseContextBase.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\ParseHelper.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\PoolAlloc.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\RemoveTree.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Scan.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\ShaderLang.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\SpirvIntrinsics.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\SymbolTable.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Versions.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\intermOut.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\limits.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\linkValidate.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\parseConst.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\reflection.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\Pp.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpAtom.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpContext.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpScanner.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpTokens.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\propagateNoContraction.cpp" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\attribute.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\glslang_tab.cpp.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\gl_types.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Initialize.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\iomapper.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\LiveTraverser.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\localintermediate.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\ParseHelper.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\reflection.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\RemoveTree.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Scan.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\ScanContext.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\SymbolTable.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\Versions.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\parseVersions.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\propagateNoContraction.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpContext.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\glslang\MachineIndependent\preprocessor\PpTokens.h" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GlslangToSpv.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\InReadableOrder.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\Logger.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\SpvBuilder.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\SpvPostProcess.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\doc.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\SpvTools.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\disassemble.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\CInterface\spirv_c_interface.cpp" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\bitutils.h" />
+    <None Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\spirv.hpp11">
+    </None>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.std.450.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.EXT.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.KHR.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GlslangToSpv.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\hex_float.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\Logger.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\SpvBuilder.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\spvIR.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\spvUtil.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\doc.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\SpvTools.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\disassemble.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.AMD.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.NV.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.ARM.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\GLSL.ext.QCOM.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\NonSemanticDebugPrintf.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\_deps\glslang-src\SPIRV\NonSemanticShaderDebugInfo.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\ZERO_CHECK.vcxproj">
+      <Project>{4E0082B7-AC67-339C-ABC2-27B0B0B8C43F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

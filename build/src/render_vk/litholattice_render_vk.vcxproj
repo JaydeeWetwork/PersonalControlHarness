@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83734FED-3A86-3FE4-8F28-BBBCF5515124}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>litholattice_render_vk</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">litholattice_render_vk.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">litholattice_render_vk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">litholattice_render_vk.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">litholattice_render_vk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">litholattice_render_vk.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">litholattice_render_vk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">litholattice_render_vk.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">litholattice_render_vk</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <IncludePaths>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(IncludePaths)</IncludePaths>
+      <AdditionalOptions>%(AdditionalOptions) /W4 /permissive-</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>R:\repos\PersonalControlHarness\engine\src\render_vk\include;R:\repos\PersonalControlHarness\build\src\render_vk\generated;R:\repos\PersonalControlHarness\engine\src\render\include;R:\repos\PersonalControlHarness\engine\src\assets\include;R:\repos\PersonalControlHarness\engine\src\core\include;R:\repos\PersonalControlHarness\engine\src\world\include;R:\repos\PersonalControlHarness\engine\src\procgen\include;R:\repos\PersonalControlHarness\engine\src\subdiv\include;R:\repos\PersonalControlHarness\engine\src\crypto\include;R:\repos\PersonalControlHarness\engine\src\ui\include;R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\chunk_vert.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/chunk.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/chunk.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/chunk.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/chunk.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\chunk_frag.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/chunk.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/chunk.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/chunk.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/chunk.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvChunkFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/chunk_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/chunk.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\chunk.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\hud_vert.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/hud.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/hud.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/hud.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/hud.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\hud_frag.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/hud.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/hud.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/hud.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/hud.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvHudFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/hud_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/hud.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\hud.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\line_vert.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/line.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/line.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/line.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/line.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\line_frag.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/line.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/line.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/line.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/line.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvLineFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/line_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/line.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\line.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\sprite_vert.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/sprite.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/sprite.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/sprite.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/sprite.vert</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteVert -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_vert.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.vert
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.vert;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\fa217e3fe7c1012700a41bc14caecd54\sprite_frag.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SPIR-V: vk/sprite.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Debug\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Debug\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SPIR-V: vk/sprite.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\Release\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\Release\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SPIR-V: vk/sprite.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\MinSizeRel\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SPIR-V: vk/sprite.frag</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe -V --target-env vulkan1.0 --quiet -IR:/repos/PersonalControlHarness/engine/assets/shaders --vn kSpvSpriteFrag -o R:/repos/PersonalControlHarness/build/src/render_vk/generated/spv/sprite_frag.h R:/repos/PersonalControlHarness/engine/assets/shaders/vk/sprite.frag
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\RelWithDebInfo\glslang.exe;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\sprite.frag;R:\repos\PersonalControlHarness\engine\assets\shaders\vk\frame.glsl;R:\repos\PersonalControlHarness\engine\assets\shaders\chunk_shading.glsl;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\engine\src\render_vk\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/src/render_vk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/src/render_vk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/src/render_vk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/src/render_vk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/src/render_vk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/src/render_vk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule R:/repos/PersonalControlHarness/engine/src/render_vk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/src/render_vk/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\src\render_vk\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_loader.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_handles.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_device.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_resources.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_vertex_arena.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_swapchain.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_texture_array.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_pipelines.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_renderer.cpp" />
+    <ClCompile Include="R:\repos\PersonalControlHarness\engine\src\render_vk\vk_probe.cpp" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_vert.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\chunk_frag.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_vert.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\hud_frag.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_vert.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\line_frag.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_vert.h" />
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\src\render_vk\generated\spv\sprite_frag.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\ZERO_CHECK.vcxproj">
+      <Project>{4E0082B7-AC67-339C-ABC2-27B0B0B8C43F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\_deps\glslang-build\StandAlone\glslang-standalone.vcxproj">
+      <Project>{108275B0-08EB-3729-B023-5C7E3C19F67C}</Project>
+      <Name>glslang-standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_assets.vcxproj">
+      <Project>{9C76B6D8-7D0E-3A0A-8DF7-FCACDC7C3F55}</Project>
+      <Name>litholattice_assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\core\litholattice_core.vcxproj">
+      <Project>{99C1EB1A-2562-39BC-83A3-FCD25488C35A}</Project>
+      <Name>litholattice_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\crypto\litholattice_crypto.vcxproj">
+      <Project>{CFC8A2A4-C9E3-36EC-ABE1-133E0BC3B38E}</Project>
+      <Name>litholattice_crypto</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_nanosvg.vcxproj">
+      <Project>{59F11F31-E4CC-32F9-9E15-0E72AC1ECA24}</Project>
+      <Name>litholattice_nanosvg</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\procgen\litholattice_procgen.vcxproj">
+      <Project>{DCEFC691-7662-3AAE-B9F1-2C9BABF6ECF4}</Project>
+      <Name>litholattice_procgen</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\render\litholattice_render.vcxproj">
+      <Project>{6CD7C224-B9ED-393C-A932-6C18D59D4843}</Project>
+      <Name>litholattice_render</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\assets\litholattice_stb.vcxproj">
+      <Project>{A9465ADF-317E-37D4-B6C0-77E562ACD9C3}</Project>
+      <Name>litholattice_stb</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\subdiv\litholattice_subdiv.vcxproj">
+      <Project>{E5BC254A-EFFA-3064-9DE6-91B7EF65E367}</Project>
+      <Name>litholattice_subdiv</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\systerian\litholattice_systerian.vcxproj">
+      <Project>{4049F0C2-FFC2-39F2-B295-0FBA4FC21EB9}</Project>
+      <Name>litholattice_systerian</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.vcxproj">
+      <Project>{53BF5108-E893-38AB-ACD6-7303299737F4}</Project>
+      <Name>litholattice_ui</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\src\world\litholattice_world.vcxproj">
+      <Project>{85526E9F-7E7B-30D1-B937-2EB397F187B7}</Project>
+      <Name>litholattice_world</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

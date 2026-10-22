@@ -1,0 +1,10 @@
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\GLSLANG-SUBBUILD\CMAKEFILES\CF5756F51825192F1B4867ADE70CA1CD\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/build/_deps/glslang-subbuild -BR:/repos/PersonalControlHarness/build/_deps/glslang-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file R:/repos/PersonalControlHarness/build/_deps/glslang-subbuild/glslang-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

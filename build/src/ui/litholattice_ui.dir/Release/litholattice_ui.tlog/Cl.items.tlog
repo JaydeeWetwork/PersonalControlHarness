@@ -1,0 +1,14 @@
+R:\repos\PersonalControlHarness\engine\src\ui\widget.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\widget.obj
+R:\repos\PersonalControlHarness\engine\src\ui\painter.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\painter.obj
+R:\repos\PersonalControlHarness\engine\src\ui\theme.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\theme.obj
+R:\repos\PersonalControlHarness\engine\src\ui\ui_root.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\ui_root.obj
+R:\repos\PersonalControlHarness\engine\src\ui\controls.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\controls.obj
+R:\repos\PersonalControlHarness\engine\src\ui\containers.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\containers.obj
+R:\repos\PersonalControlHarness\engine\src\ui\text_buffer.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\text_buffer.obj
+R:\repos\PersonalControlHarness\engine\src\ui\text_edit.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\text_edit.obj
+R:\repos\PersonalControlHarness\engine\src\ui\lists.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\lists.obj
+R:\repos\PersonalControlHarness\engine\src\ui\menus.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\menus.obj
+R:\repos\PersonalControlHarness\engine\src\ui\dialog.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\dialog.obj
+R:\repos\PersonalControlHarness\engine\src\ui\widget_factory.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\widget_factory.obj
+R:\repos\PersonalControlHarness\engine\src\ui\mod_ui.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\mod_ui.obj
+R:\repos\PersonalControlHarness\engine\src\ui\ui_selftest.cpp;R:\repos\PersonalControlHarness\build\src\ui\litholattice_ui.dir\Release\ui_selftest.obj

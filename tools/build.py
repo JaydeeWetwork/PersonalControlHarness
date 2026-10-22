@@ -36,6 +36,21 @@ def run(cmd, cwd=None):
 
 def check_tool(name, hint):
     path = shutil.which(name)
+    if not path and platform.system() == "Windows" and name in ("cmake", "ctest"):
+        import glob
+        for root in (os.environ.get("ProgramFiles(x86)", r"C:\Program Files (x86)"),
+                     os.environ.get("ProgramFiles", r"C:\Program Files")):
+            pattern = os.path.join(
+                root, "Microsoft Visual Studio", "2022", "*",
+                "Common7", "IDE", "CommonExtensions", "Microsoft", "CMake", "CMake", "bin"
+            )
+            for candidate in glob.glob(pattern):
+                if os.path.isfile(os.path.join(candidate, f"{name}.exe")):
+                    os.environ["PATH"] = candidate + os.pathsep + os.environ.get("PATH", "")
+                    path = shutil.which(name)
+                    break
+            if path:
+                break
     if not path:
         sys.exit(f"Missing '{name}'. {hint}")
     print(f"  [ok] {name}: {path}")

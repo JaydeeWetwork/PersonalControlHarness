@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/angelscript-populate"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/f73b3bbaf08fe9e908871797d2a56a9c/angelscript-populate.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/c9efe41d3fd1014fadba838ecd516daf/angelscript-populate-complete.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-build.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-configure.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-download.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-install.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-mkdir.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-patch.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-test.rule"
+		},
+		{
+			"file" : "R:/repos/PersonalControlHarness/build/_deps/angelscript-subbuild/CMakeFiles/54a5e7c2111f1e3af3d94bbfaaffc8ba/angelscript-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"angelscript-populate"
+		],
+		"name" : "angelscript-populate"
+	}
+}

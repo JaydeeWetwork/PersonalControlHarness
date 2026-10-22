@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\world_save.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\chunk_streamer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\bench_stream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\actions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\input_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\dimensions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\wafer_biomes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\wafer_pulse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\structures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\controls_panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\resource_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\sound_director.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\game_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\game_ui_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\script_editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\ui_input_bridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\ui_script_bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\extensible_facet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\settings_cvars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\game_commands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\world_query.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\silica_biome.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\etching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\signing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\wiring_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\screenshot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\fragment_gallery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\screenshot_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\fragment_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\fragment_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\fragment_markdown.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\fragment_markdown_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\scout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\map_render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\scout_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\mcp_player_control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\mcp_senses_adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\camera_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\player_adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\player_locomotion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\locomotion_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\sprite_host.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\sprite_host_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\ai_host.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\ai_host_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\deceitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\deceitor_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\interchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\interchange_selftest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="R:\repos\PersonalControlHarness\build\game\src\game\generated\builtin_worldgen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\CMakeFiles\20dc07329f79f77501d457cafd80e683\builtin_worldgen.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\game\LithoKraft\src\game\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3886F2F8-9205-3A6D-A992-A32195D89271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{98FC6587-96BE-3B79-9C5F-0E7363591061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BF912724-0768-3BA3-9169-AC3C1C2A355F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

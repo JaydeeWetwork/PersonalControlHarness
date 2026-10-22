@@ -7,6 +7,7 @@
 #include <cstring>
 
 #include "litholattice/crypto/sha512.h"
+#include "litholattice/crypto/uint128.h"
 
 namespace litholattice::crypto::ed25519 {
 namespace {
@@ -22,21 +23,21 @@ constexpr uint64_t kP[4] = {0xffffffffffffffedULL, 0xffffffffffffffffULL,
 // Reduce 8-limb (512-bit) t mod p into r. Uses 2^256 = 38 (mod p).
 void fe_reduce(Fe& r, const uint64_t t[8]) {
   uint64_t w[4];
-  __uint128_t carry = 0;
+  uint64_t carry = 0;
   for (int i = 0; i < 4; ++i) {
-    __uint128_t s = (__uint128_t)t[i] + (__uint128_t)t[i + 4] * 38 + (uint64_t)carry;
-    w[i] = (uint64_t)s;
-    carry = s >> 64;
+    U128 s = muladd(t[i + 4], 38, t[i], carry);
+    w[i] = s.lo;
+    carry = s.hi;
   }
   // carry * 2^256 = carry * 38
-  __uint128_t c = carry * 38;
-  __uint128_t s = (__uint128_t)w[0] + (uint64_t)c;
-  w[0] = (uint64_t)s;
-  uint64_t cc = (uint64_t)(s >> 64) + (uint64_t)(c >> 64);
+  U128 c = mul64(carry, 38);
+  U128 s = add3(w[0], c.lo, 0);
+  w[0] = s.lo;
+  uint64_t cc = s.hi + c.hi;
   for (int i = 1; i < 4 && cc; ++i) {
-    __uint128_t s2 = (__uint128_t)w[i] + cc;
-    w[i] = (uint64_t)s2;
-    cc = (uint64_t)(s2 >> 64);
+    U128 s2 = add3(w[i], cc, 0);
+    w[i] = s2.lo;
+    cc = s2.hi;
   }
   // w < 2^257 now; subtract p until < p (at most 2 iterations).
   for (int k = 0; k < 3; ++k) {
@@ -44,9 +45,9 @@ void fe_reduce(Fe& r, const uint64_t t[8]) {
     if (!ge) break;
     uint64_t borrow = 0;
     for (int i = 0; i < 4; ++i) {
-      __uint128_t d = (__uint128_t)w[i] - kP[i] - borrow;
-      w[i] = (uint64_t)d;
-      borrow = (uint64_t)(d >> 64) & 1u;
+      U128 d = sub3(w[i], kP[i], borrow);
+      w[i] = d.lo;
+      borrow = d.hi & 1u;
     }
   }
   std::memcpy(r.w, w, sizeof w);
@@ -56,9 +57,9 @@ void fe_add(Fe& r, const Fe& a, const Fe& b) {
   uint64_t t[8] = {0, 0, 0, 0, 0, 0, 0, 0};
   uint64_t carry = 0;
   for (int i = 0; i < 4; ++i) {
-    __uint128_t s = (__uint128_t)a.w[i] + b.w[i] + carry;
-    t[i] = (uint64_t)s;
-    carry = (uint64_t)(s >> 64);
+    U128 s = add3(a.w[i], b.w[i], carry);
+    t[i] = s.lo;
+    carry = s.hi;
   }
   t[4] = carry;
   fe_reduce(r, t);
@@ -72,9 +73,9 @@ void fe_sub(Fe& r, const Fe& a, const Fe& b) {
   {
     uint64_t borrow = 0;
     for (int i = 0; i < 4; ++i) {
-      __uint128_t d = (__uint128_t)pb.w[i] - b.w[i] - borrow;
-      negb.w[i] = (uint64_t)d;
-      borrow = (uint64_t)(d >> 64) & 1u;
+      U128 d = sub3(pb.w[i], b.w[i], borrow);
+      negb.w[i] = d.lo;
+      borrow = d.hi & 1u;
     }
   }
   fe_add(r, a, negb);
@@ -85,9 +86,9 @@ void fe_mul(Fe& r, const Fe& a, const Fe& b) {
   for (int i = 0; i < 4; ++i) {
     uint64_t carry = 0;
     for (int j = 0; j < 4; ++j) {
-      __uint128_t s = (__uint128_t)a.w[i] * b.w[j] + t[i + j] + carry;
-      t[i + j] = (uint64_t)s;
-      carry = (uint64_t)(s >> 64);
+      U128 s = muladd(a.w[i], b.w[j], t[i + j], carry);
+      t[i + j] = s.lo;
+      carry = s.hi;
     }
     t[i + 4] = carry;
   }
@@ -342,9 +343,9 @@ int cmp512(const uint64_t a[8], const uint64_t b[8]) {
 void sub512(uint64_t r[8], const uint64_t a[8], const uint64_t b[8]) {
   uint64_t borrow = 0;
   for (int i = 0; i < 8; ++i) {
-    __uint128_t d = (__uint128_t)a[i] - b[i] - borrow;
-    r[i] = (uint64_t)d;
-    borrow = (uint64_t)(d >> 64) & 1u;
+    U128 d = sub3(a[i], b[i], borrow);
+    r[i] = d.lo;
+    borrow = d.hi & 1u;
   }
 }
 
@@ -376,9 +377,9 @@ void scalar_add(Scalar& r, const Scalar& a, const Scalar& b) {
   uint8_t buf[64] = {0};
   uint64_t carry = 0;
   for (int i = 0; i < 4; ++i) {
-    __uint128_t s = (__uint128_t)a.w[i] + b.w[i] + carry;
-    uint64_t lo = (uint64_t)s;
-    carry = (uint64_t)(s >> 64);
+    U128 s = add3(a.w[i], b.w[i], carry);
+    uint64_t lo = s.lo;
+    carry = s.hi;
     for (int j = 0; j < 8; ++j) buf[i * 8 + j] = (uint8_t)(lo >> (8 * j));
   }
   // buf[32..64) = 0; reduce
@@ -390,9 +391,9 @@ void scalar_mul(Scalar& r, const Scalar& a, const Scalar& b) {
   for (int i = 0; i < 4; ++i) {
     uint64_t carry = 0;
     for (int j = 0; j < 4; ++j) {
-      __uint128_t s = (__uint128_t)a.w[i] * b.w[j] + t[i + j] + carry;
-      t[i + j] = (uint64_t)s;
-      carry = (uint64_t)(s >> 64);
+      U128 s = muladd(a.w[i], b.w[j], t[i + j], carry);
+      t[i + j] = s.lo;
+      carry = s.hi;
     }
     t[i + 4] = carry;
   }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\54a5e7c2111f1e3af3d94bbfaaffc8ba\angelscript-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\c9efe41d3fd1014fadba838ecd516daf\angelscript-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\f73b3bbaf08fe9e908871797d2a56a9c\angelscript-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="R:\repos\PersonalControlHarness\build\_deps\angelscript-subbuild\CMakeFiles\angelscript-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6AF5FA20-DE39-364B-AE6B-64170EACE780}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

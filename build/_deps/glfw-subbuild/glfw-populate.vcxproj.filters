@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\6c1b4f21cbd12e3cfa809491477f65b1\glfw-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\ea761d78abac7e7c11dfbf841f16f930\glfw-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\479d51a9bf1d6b6a6a34709b29c100a3\glfw-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="R:\repos\PersonalControlHarness\build\_deps\glfw-subbuild\CMakeFiles\glfw-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1F34FD55-4455-3453-A5B8-577076ED022E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

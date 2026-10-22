@@ -1,0 +1,152 @@
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/tmp/vulkan_headers-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-DOWNLOAD.RULE
+setlocal
+cd R:\repos\PersonalControlHarness\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+R:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/download-vulkan_headers-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/verify-vulkan_headers-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/extract-vulkan_headers-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-UPDATE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-CONFIGURE.RULE
+setlocal
+cd R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-build
+if %errorlevel% neq 0 goto :cmEnd
+R:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-BUILD.RULE
+setlocal
+cd R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-build
+if %errorlevel% neq 0 goto :cmEnd
+R:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-INSTALL.RULE
+setlocal
+cd R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-build
+if %errorlevel% neq 0 goto :cmEnd
+R:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\758797B94A78552D32DA8F46DDA9E049\VULKAN_HEADERS-POPULATE-TEST.RULE
+setlocal
+cd R:\repos\PersonalControlHarness\build\_deps\vulkan_headers-build
+if %errorlevel% neq 0 goto :cmEnd
+R:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\6A51B17E53F7944AE8098C80BC9DF85D\VULKAN_HEADERS-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/CMakeFiles/Debug/vulkan_headers-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/vulkan_headers-populate-prefix/src/vulkan_headers-populate-stamp/Debug/vulkan_headers-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKEFILES\60AF1F2A7C7A90CD147686364AEDED95\VULKAN_HEADERS-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^R:\REPOS\PERSONALCONTROLHARNESS\BUILD\_DEPS\VULKAN_HEADERS-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild -BR:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild --check-stamp-file R:/repos/PersonalControlHarness/build/_deps/vulkan_headers-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

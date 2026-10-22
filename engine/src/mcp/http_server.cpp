@@ -10,10 +10,10 @@
 #include "litholattice/mcp/jsonrpc.h"
 
 #ifdef _WIN32
-// UNVERIFIED Windows branch (builder to verify).
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif
+#include <windows.h>  // bcrypt.h needs the base NT types (NTSTATUS, ULONG, ...) from windows.h first
 #include <bcrypt.h>
 #pragma comment(lib, "bcrypt.lib")
 #else

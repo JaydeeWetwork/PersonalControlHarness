@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AD68A423-A287-3B39-8286-3B37283D80E9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="R:\repos\PersonalControlHarness\game\LithoKraft\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule R:/repos/PersonalControlHarness/game/LithoKraft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">R:\repos\PersonalControlHarness\build\game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule R:/repos/PersonalControlHarness/game/LithoKraft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">R:\repos\PersonalControlHarness\build\game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule R:/repos/PersonalControlHarness/game/LithoKraft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">R:\repos\PersonalControlHarness\build\game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule R:/repos/PersonalControlHarness/game/LithoKraft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SR:/repos/PersonalControlHarness/engine -BR:/repos/PersonalControlHarness/build --check-stamp-file R:/repos/PersonalControlHarness/build/game/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">R:\repos\PersonalControlHarness\build\game\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\ZERO_CHECK.vcxproj">
+      <Project>{4E0082B7-AC67-339C-ABC2-27B0B0B8C43F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\agent_models_selftest.vcxproj">
+      <Project>{0A873397-9F06-3E79-B2EB-B3F35452D5EA}</Project>
+      <Name>agent_models_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\author_models.vcxproj">
+      <Project>{AC546A36-2008-3E2E-8B9B-4019A1181D1A}</Project>
+      <Name>author_models</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\vegetation\author_vegetation.vcxproj">
+      <Project>{7C3D88B2-9215-39A1-B09F-5C2AC621404A}</Project>
+      <Name>author_vegetation</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\authored_models_selftest.vcxproj">
+      <Project>{D14B7CCF-0551-3E06-A4F5-5F1490C1A0A8}</Project>
+      <Name>authored_models_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\bake_litho_formula.vcxproj">
+      <Project>{9B0CA54C-6188-30FD-89D8-38EFAECF52AC}</Project>
+      <Name>bake_litho_formula</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\biome_capture.vcxproj">
+      <Project>{1160BA22-7063-3051-8CE0-200166A254A9}</Project>
+      <Name>biome_capture</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\interchange_capture.vcxproj">
+      <Project>{3FE03B25-28A9-3F6D-9197-DCA1AAD3CE4C}</Project>
+      <Name>interchange_capture</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\litho_formula_gallery_selftest.vcxproj">
+      <Project>{8AF6B4AE-BA2E-350B-B4E5-4DBF4D41D132}</Project>
+      <Name>litho_formula_gallery_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft.vcxproj">
+      <Project>{9B51ABFB-76D0-3C8A-B82E-43CE0D4AF86E}</Project>
+      <Name>lithokraft</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\lithokraft_agent_models.vcxproj">
+      <Project>{B06747B1-C514-3902-962A-F838270AC824}</Project>
+      <Name>lithokraft_agent_models</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\lithokraft_authored_models.vcxproj">
+      <Project>{1A5EFD0A-8083-3666-9093-1455BC0D4E80}</Project>
+      <Name>lithokraft_authored_models</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_chipor_selftest.vcxproj">
+      <Project>{62E95175-977D-3C01-B105-F1D7DCCBF0DB}</Project>
+      <Name>lithokraft_chipor_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\lithokraft_content.vcxproj">
+      <Project>{90A1A0F3-6999-3C63-9023-458E09C31BD9}</Project>
+      <Name>lithokraft_content</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_fragment_selftest.vcxproj">
+      <Project>{2070BF85-9957-39C6-AE48-69D318AA3B1F}</Project>
+      <Name>lithokraft_fragment_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\game\lithokraft_game.vcxproj">
+      <Project>{A22D0F8F-D6A2-3901-A516-1C456C7136E4}</Project>
+      <Name>lithokraft_game</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\headless\lithokraft_headless.vcxproj">
+      <Project>{A5DBEC64-3D46-3936-9B54-59560A8E8D19}</Project>
+      <Name>lithokraft_headless</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_items_selftest.vcxproj">
+      <Project>{460DBD59-E36E-316B-A4DF-BAFFF8242FD1}</Project>
+      <Name>lithokraft_items_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\lithokraft_litho_formula_bake.vcxproj">
+      <Project>{B64E66DC-5822-308D-BD2B-21F315367598}</Project>
+      <Name>lithokraft_litho_formula_bake</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_markdown_selftest.vcxproj">
+      <Project>{63FC3B60-20DF-3C40-AC4D-BC36DEA4C19A}</Project>
+      <Name>lithokraft_markdown_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\headless\lithokraft_mcp_wiring_selftest.vcxproj">
+      <Project>{CEC4457C-1789-378D-8B37-FDEAB30C6A56}</Project>
+      <Name>lithokraft_mcp_wiring_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\lithokraft_model.vcxproj">
+      <Project>{3BC97781-0EE4-3F87-8426-3B32178007D6}</Project>
+      <Name>lithokraft_model</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_scout_selftest.vcxproj">
+      <Project>{C13814F7-044C-341A-8711-07CD75B0EA46}</Project>
+      <Name>lithokraft_scout_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_screenshot_selftest.vcxproj">
+      <Project>{5A831A12-55DC-3B4D-8C07-C8B7E32C8DC2}</Project>
+      <Name>lithokraft_screenshot_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\lithokraft_silica_selftest.vcxproj">
+      <Project>{95B3B67B-5902-3BB9-9671-D2934EE97706}</Project>
+      <Name>lithokraft_silica_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\vegetation\lithokraft_vegetation.vcxproj">
+      <Project>{B7E81020-A5A6-31A7-9FFF-2CC9AD342C81}</Project>
+      <Name>lithokraft_vegetation</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\model\model_selftest.vcxproj">
+      <Project>{62023F80-29DF-3FFF-A86B-986EF101C687}</Project>
+      <Name>model_selftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\app\texture_gen.vcxproj">
+      <Project>{14D8435C-1385-3E9F-8FC5-76EA7C1AAB82}</Project>
+      <Name>texture_gen</Name>
+    </ProjectReference>
+    <ProjectReference Include="R:\repos\PersonalControlHarness\build\game\src\content\vegetation\vegetation_selftest.vcxproj">
+      <Project>{19756EC3-E00F-39CB-AD63-2B1BEEC0CD76}</Project>
+      <Name>vegetation_selftest</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

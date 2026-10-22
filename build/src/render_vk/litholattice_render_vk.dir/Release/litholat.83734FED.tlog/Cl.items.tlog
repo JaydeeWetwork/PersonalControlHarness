@@ -1,0 +1,10 @@
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_loader.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_loader.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_handles.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_handles.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_device.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_device.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_resources.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_resources.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_vertex_arena.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_vertex_arena.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_swapchain.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_swapchain.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_texture_array.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_texture_array.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_pipelines.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_pipelines.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_renderer.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_renderer.obj
+R:\repos\PersonalControlHarness\engine\src\render_vk\vk_probe.cpp;R:\repos\PersonalControlHarness\build\src\render_vk\litholattice_render_vk.dir\Release\vk_probe.obj

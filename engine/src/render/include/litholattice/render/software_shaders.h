@@ -3,6 +3,7 @@
 // Fragment shader: texture sample + diffuse lighting (N.L) + ambient.
 // Enough for Chromebooks and GPU-less machines to run the game.
 #pragma once
+#include <cmath>  // std::sqrt (MSVC has no __builtin_sqrtf)
 #include <cstdint>
 
 namespace litholattice {
@@ -69,7 +70,7 @@ inline void applyBumpMap(const FragmentInput& in, float u, float v, uint32_t lay
   *nx -= dx; *ny -= dy;
   // Renormalize
   float len = *nx**nx + *ny**ny + *nz**nz;
-  if (len > 1e-6f) { len = 1.0f / __builtin_sqrtf(len); *nx*=len; *ny*=len; *nz*=len; }
+  if (len > 1e-6f) { len = 1.0f / std::sqrt(len); *nx*=len; *ny*=len; *nz*=len; }
 }
 
 /// Basic shader: diffuse + ambient + texture.
