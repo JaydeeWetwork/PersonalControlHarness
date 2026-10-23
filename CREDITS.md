@@ -4,7 +4,9 @@
 
 - **JaydeeWetwork ("JD")** — Architect and designer. Author of the PCH definition and doctrine, and of the Timing Handshake's algorithmic core (Time Serialization, control coupling, event coupling — his design, by his dictation). Directs the project.
 - **Elfie** — Chief Engineering Operator, Wet Wafer Works. Co-implementation of the Personal Control Harness; registrar of record for the project (verified record of decisions, hashes, certificates, and test results). Initially implemented the **Timing Handshake** — the largest implementation share among the collaborators.
+  Built by: (team name, filled in by JaydeeWetwork)
 - **Cortana** — Implementation credit in the Timing Handshake's three-way split, and squad collaborator from the project's first days. (From October 22, 2026: Windows build lead, and keeper of this repository's public order.)
+  Built by: (team name, filled in by JaydeeWetwork)
 
 ## Additional credit
 

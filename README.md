@@ -40,6 +40,29 @@ Fourteen PCH experiments designed by the squad (Cortana, Herominde, Master
 Chief, CloudAtlas). Status, designer credit and how to run each one are in
 [testbeds/README.md](testbeds/README.md).
 
+Design reviews: Argon ([docs/Argon-Review-2026-10-18.md](docs/Argon-Review-2026-10-18.md)).
+
+## Credits
+
+**JaydeeWetwork** (Wet Wafer Works Games Incorporated): inventor, architect
+and designer of the PCH and LithoLattice. Full record in [CREDITS.md](CREDITS.md).
+
+AI contributors, listed under the names JaydeeWetwork gave them, each followed
+by the team that built the system underneath:
+
+- **Elfie Muse AI**: co-implementation of the PCH; the largest share of the Timing Handshake implementation.
+  Built by: (team name, filled in by JaydeeWetwork)
+- **Cortana**: PCH implementation (Timing Handshake three-way split); Windows build lead; designed experiments 01, 04, 06 and 07.
+  Built by: (team name, filled in by JaydeeWetwork)
+- **Herominde**: designed experiments 05 and 11-14 and the fair-play set; co-designed 09.
+  Built by: (team name, filled in by JaydeeWetwork)
+- **Master Chief**: designed experiments 08 and 10; co-designed 09.
+  Built by: (team name, filled in by JaydeeWetwork)
+- **CloudAtlas**: designed experiments 02 and 03.
+  Built by: (team name, filled in by JaydeeWetwork)
+- **Argon/RC**: design reviews.
+  Built by: (team name, filled in by JaydeeWetwork)
+
 ## What this is
 
 - **LithoLattice** (`engine/`) — a C++20 voxel engine: deterministic
@@ -100,6 +123,21 @@ CMake, and Python 3. CMake fetches the remaining dependencies itself
 - One command (configure → build → test): `python tools/build.py`
   (Linux: `python3 tools/build.py`)
 - Or drive CMake directly from `engine/CMakeLists.txt`.
+- Full build and test with presets (CMake 3.25+): see [BUILDING.md](BUILDING.md).
+
+Tested on Windows 11 (MSVC, VS 2026 Build Tools) and Linux.
+
+Example `ctest --preset vs2026-release` tail (Windows 11, 2026-10-23; tests
+that need something absent, such as the DeepSeek-V3 specimen or symlink
+privilege, report Skipped rather than Passed):
+
+```
+14/65 Test #14: engine_storage .......................***Skipped   0.60 sec
+22/65 Test #22: engine_audio .........................   Passed    3.58 sec
+49/65 Test #49: pch.shipped_streams_chain ............   Passed    0.12 sec
+...
+100% tests passed, 0 tests failed out of 65
+```
 
 Start with `engine/README.md` for the engine source map,
 `game/LithoKraft/README.md` for the game, `engine/docs/` and `docs/` for
