@@ -21,6 +21,20 @@ runs against. Issues and pull requests are welcome.
    the commit message.
 4. Do not commit machine-specific paths, credentials or key material.
 
+## Claims, docs and versions
+
+- Any change that adds, changes or removes a public claim (README, a test-bed
+  status, a hash pin) must update `docs/CLAIMS.md` and `CHANGELOG.md` in the
+  same change, and `docs/pins.json` for a pin.
+- Unbuilt features are labeled `Planned:` in the README and linked to
+  `testbeds/DECISIONS.md` or `docs/BLOCKERS.md`; a skipped test bed needs a
+  DECISIONS.md row.
+- `ctest -R pch.docs_check` (or `python tools/check_docs.py`) must pass.
+- Bump `VERSION` (and the matching CMake/CITATION versions) once per
+  released section of work, with a CHANGELOG entry.
+- All AI-authored work is human-reviewed and verified by JaydeeWetwork before
+  it is merged or posted.
+
 ## Changes to the PCH core
 
 `pch/harness/` is the PCH core. Changes there (for example to the receipt
