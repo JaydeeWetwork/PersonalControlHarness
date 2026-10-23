@@ -26,3 +26,12 @@ target_link_libraries(litholattice_procgen PUBLIC litholattice_core litholattice
 # private include dir only -- procgen still does not link the world module.
 target_include_directories(litholattice_procgen PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../world/include)
 litholattice_module_options(litholattice_procgen)
+
+# The lithoform_stamp self-test loads the game's real wafer.json as an
+# integration check. In this repository the game tree sits beside the engine,
+# so pass its absolute path in; the LITHOKRAFT_WAFER_JSON env var overrides it.
+set(LITHOKRAFT_WAFER_JSON "${LithoLattice_SOURCE_DIR}/../game/LithoKraft/assets/worldgen/wafer.json")
+if(EXISTS "${LITHOKRAFT_WAFER_JSON}")
+  set_source_files_properties(litho_stamp_feature_selftest.cpp PROPERTIES
+    COMPILE_DEFINITIONS "LITHOKRAFT_WAFER_JSON_PATH=\"${LITHOKRAFT_WAFER_JSON}\"")
+endif()

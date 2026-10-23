@@ -1,6 +1,7 @@
 // Self-test for LithoStampFeature and the "lithoform_stamp" generator JSON type:
 // baked .lthm models scattered as world structures via an in-memory ModelResolver.
 #include <cstdio>
+#include <cstdlib>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -100,13 +101,20 @@ void stampChecks(Checker& check) {
   // 0. The real wafer.json loads end-to-end (stub models + permissive materials):
   // catches typos in biome names, material keys, and feature schema.
   {
+    // Lookup order: LITHOKRAFT_WAFER_JSON env var, the path CMake bakes in,
+    // then paths relative to the working directory.
+    const char* envPath = std::getenv("LITHOKRAFT_WAFER_JSON");
     const char* candidates[] = {
+        (envPath && *envPath) ? envPath : nullptr,
+#ifdef LITHOKRAFT_WAFER_JSON_PATH
+        LITHOKRAFT_WAFER_JSON_PATH,
+#endif
         "game/LithoKraft/assets/worldgen/wafer.json",
         "../game/LithoKraft/assets/worldgen/wafer.json",
-        "/home/hatch/workspace/litholattice/game/LithoKraft/assets/worldgen/wafer.json",
     };
     std::string text;
     for (const char* p : candidates) {
+      if (!p) continue;
       std::ifstream f(p);
       if (f) {
         std::ostringstream ss;
