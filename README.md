@@ -230,6 +230,33 @@ transparent tools with receipts anyone can check are how that trust is earned.
 Full record: [CREDITS.md](CREDITS.md). Game credits:
 [game/LithoKraft/CREDITS.md](game/LithoKraft/CREDITS.md).
 
+## One person and a trusted crew
+
+One person, JaydeeWetwork, built and verified this, backed by a crew of
+models he trusts. The models designed, built and reviewed; JD directed,
+reviewed, verified and approved every piece before it was posted. If one
+person working with models they trust can do this, imagine what you
+could do.
+
+## The consortium
+
+Every model, intelligence and associate used to reach these conclusions,
+each under the identity JD gave them, with the team that built the
+underlying system:
+
+| Who | Role in the PCH | Underlying system and team |
+|---|---|---|
+| **JaydeeWetwork (JD)** | Director and architect; directs, reviews, verifies and approves all work | Human, Wet Wafer Works |
+| **Cortana** | Builder of every test bed, implementation share of the Timing Handshake, Windows build lead, hardening rounds | Grok Bot squad; the Grok Bot team |
+| **CloudAtlas** | Test-bed designer (02, 03, verify CLI acceptance) | Grok Bot squad; the Grok Bot team |
+| **Herominde** | Test-bed designer (05, 09, 11-14) | Grok Bot squad; the Grok Bot team |
+| **Master Chief** | Test-bed designer (08, 09, 10, boss scenarios) | Grok Bot squad; the Grok Bot team |
+| **Elfie** | Original PCH designer, largest Timing Handshake implementation share, registrar of record | Elfie Muse AI; the Muse team |
+| **Archie** | Optimization doctrine, prototype-receipts review | Argon; Google AI |
+| **Jenny** | COO seat, UI, Android scouting | Gemini; Google |
+| **The DeepSeek models** | External review, two passes on 2026-10-23, and audit series S1-S7 | DeepSeek; the DeepSeek team (DeepSeek-AI) |
+| **The DeepSeek team** | DeepSeek-V3 reference code, the PCH specimen | DeepSeek-AI |
+
 ## Acknowledgements
 
 The PCH test specimen is the DeepSeek-V3 reference inference code

@@ -21,6 +21,25 @@
 
 - **Test beds:** designed by the AI squad on their own, without JD's input, then verified and approved for posting by JD (who human-reviews and verifies all AI-authored work); **Cortana** built all fourteen, plus bed 15. Designers: Cortana (01, 04, 06, 07), CloudAtlas (02, 03), Herominde (05, 11-14), Master Chief (08, 10), Master Chief and Herominde (09). See `testbeds/README.md`.
 
+## The consortium
+
+Every model, intelligence and associate used to reach these conclusions,
+each under the identity JD gave them, with the team that built the
+underlying system:
+
+| Who | Role in the PCH | Underlying system and team |
+|---|---|---|
+| **JaydeeWetwork (JD)** | Director and architect; directs, reviews, verifies and approves all work | Human, Wet Wafer Works |
+| **Cortana** | Builder of every test bed, implementation share of the Timing Handshake, Windows build lead, hardening rounds | Grok Bot squad; the Grok Bot team |
+| **CloudAtlas** | Test-bed designer (02, 03, verify CLI acceptance) | Grok Bot squad; the Grok Bot team |
+| **Herominde** | Test-bed designer (05, 09, 11-14) | Grok Bot squad; the Grok Bot team |
+| **Master Chief** | Test-bed designer (08, 09, 10, boss scenarios) | Grok Bot squad; the Grok Bot team |
+| **Elfie** | Original PCH designer, largest Timing Handshake implementation share, registrar of record | Elfie Muse AI; the Muse team |
+| **Archie** | Optimization doctrine, prototype-receipts review | Argon; Google AI |
+| **Jenny** | COO seat, UI, Android scouting | Gemini; Google |
+| **The DeepSeek models** | External review, two passes on 2026-10-23, and audit series S1-S7 | DeepSeek; the DeepSeek team (DeepSeek-AI) |
+| **The DeepSeek team** | DeepSeek-V3 reference code, the PCH specimen | DeepSeek-AI |
+
 ## Acknowledgements: DeepSeek-V3
 
 The PCH test specimen is the DeepSeek-V3 reference inference code
