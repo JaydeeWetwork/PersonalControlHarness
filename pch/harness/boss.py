@@ -201,3 +201,159 @@ def replay(records, build_version, allow_label=False):
     if again[-1]["chain"] == records[-1]["chain"]:
         return "match", f"v{v} replay bit-identical ({h['ticks']} ticks)"
     return "mismatch", "replay diverged from the receipt"
+
+
+# ---------------------------------------------------------------------------
+# HUD mode (beds 08, 09, 11). Still a minimal stub: a tiny arena whose boss
+# brain receives ONLY a HUD snapshot (what a player could see on screen),
+# acts only through on-screen controls, and telegraphs every attack with a
+# wind-up plus a visible energy drop. Nothing here models the LithoKraft boss.
+# ---------------------------------------------------------------------------
+from types import MappingProxyType
+
+CONTROLS = {"advance": "stick_fwd", "retreat": "stick_back", "guard": "btn_guard",
+            "strike": "btn_a", "heavy": "btn_b", "drink": "inv_use"}
+ATTACK_COST = {"strike": 20, "heavy": 45}        # energy, spent at wind-up start
+WINDUP = {"strike": 22, "heavy": 32}             # ticks from first cue to hit
+DAMAGE = {"strike": 6, "heavy": 15}
+HUD_REACH = 2
+# Reaction window = 250 ms human reaction + input lag, in ticks at 60 Hz.
+REACTION_TIERS = {"hard": (250 + 0) * TICK_HZ // 1000, "easy": (250 + 100) * TICK_HZ // 1000}
+SCENARIOS = {  # initial hidden state per Master Chief TB1 scenario
+    "low_health":   {"boss_hp": 25, "energy": 60, "potions": 2},
+    "empty_energy": {"boss_hp": 100, "energy": 0, "potions": 1},
+    "full_energy":  {"boss_hp": 100, "energy": 100, "potions": 1},
+    "item_in_inv":  {"boss_hp": 35, "energy": 30, "potions": 3},
+    "empty_inv":    {"boss_hp": 25, "energy": 30, "potions": 0},
+}
+
+
+def new_arena(scenario="full_energy", seed=0):
+    s = dict(SCENARIOS[scenario])
+    s.update({"player_hp": 100, "dist": 5, "windup": None, "seed": seed,
+              "player_cd": 0})  # player_cd is hidden: never on the HUD
+    return s
+
+
+def hud(state, blank=()):
+    """The on-screen HUD: quantized bars, inventory count, distance and the
+    boss's own visible wind-up. Fields named in `blank` show None."""
+    w = state["windup"]
+    h = {"boss_hp_bar": state["boss_hp"] // 10, "boss_energy_bar": state["energy"] // 10,
+         "potions": state["potions"], "player_hp_bar": state["player_hp"] // 10,
+         "dist": state["dist"], "windup": None if w is None else w["attack"]}
+    for k in blank:
+        h[k] = None
+    return h
+
+
+def hud_brain(h):
+    """Honest brain: a pure function of the HUD snapshot."""
+    if h["windup"] is not None:
+        return "wait"                        # committed to the telegraphed attack
+    if h["boss_hp_bar"] is not None and h["boss_hp_bar"] <= 3 and h["potions"]:
+        return "drink"
+    e = h["boss_energy_bar"]
+    if e is None:                            # energy unknown: no energy-spending moves
+        return "guard" if h["dist"] <= HUD_REACH else "advance"
+    if h["dist"] > HUD_REACH:
+        return "advance" if e >= 2 else "wait"
+    if e >= 5:
+        return "heavy"
+    if e >= 2:
+        return "strike"
+    return "retreat"
+
+
+def xray_brain(h, state):
+    """NEGATIVE CONTROL ONLY: reads hidden state (exact energy and hp)."""
+    if state["windup"] is not None:
+        return "wait"
+    if state["boss_hp"] < 35 and state["potions"]:
+        return "drink"
+    if state["dist"] > HUD_REACH:
+        return "advance"
+    if state["energy"] >= ATTACK_COST["heavy"]:
+        return "heavy"
+    return "strike" if state["energy"] >= ATTACK_COST["strike"] else "retreat"
+
+
+def _player_hud_move(state, tick):
+    return ("advance", "retreat", "strike", "wait")[_draw(state["seed"], "hudp", tick) % 4]
+
+
+def arena_step(state, action, tick, windup=WINDUP):
+    """Advance one tick. Returns event dict for the receipt."""
+    s = state
+    ev = {}
+    if action == "drink" and s["potions"]:
+        s["potions"] -= 1
+        s["boss_hp"] = min(100, s["boss_hp"] + 30)
+    elif action in ATTACK_COST and s["windup"] is None and s["energy"] >= ATTACK_COST[action]:
+        s["energy"] -= ATTACK_COST[action]
+        s["windup"] = {"attack": action, "start": tick, "hit": tick + windup[action]}
+        ev["telegraph"] = dict(s["windup"])
+    elif action == "advance":
+        s["dist"] = max(0, s["dist"] - 1)
+    elif action == "retreat":
+        s["dist"] = min(9, s["dist"] + 1)
+    w = s["windup"]
+    if w is not None and tick >= w["hit"]:
+        if s["dist"] <= HUD_REACH:
+            s["player_hp"] = max(0, s["player_hp"] - DAMAGE[w["attack"]])
+        ev["hit"] = w["attack"]
+        s["windup"] = None
+    pm = _player_hud_move(s, tick)
+    if pm == "advance":
+        s["dist"] = max(0, s["dist"] - 1)
+    elif pm == "retreat":
+        s["dist"] = min(9, s["dist"] + 1)
+    elif pm == "strike" and s["dist"] <= 2 and s["player_cd"] == 0:
+        s["boss_hp"] = max(1, s["boss_hp"] - (1 if action == "guard" else 4))
+        s["player_cd"] = 5
+    s["player_cd"] = max(0, s["player_cd"] - 1)
+    s["energy"] = min(100, s["energy"] + 1)
+    return ev
+
+
+def run_hud_fight(scenario, seed, ticks=600, blank=(), brain="honest", version=1,
+                  windup=WINDUP, energy_override=None, state=None, start_tick=0):
+    """Play a HUD-mode fight. brain: "honest" (HUD only) or "xray" (negative
+    control). energy_override forces the hidden energy at start (bed 11).
+    Returns a closed receipt whose steps log the HUD shown, the control
+    pressed, and telegraph / hit events."""
+    s = dict(state) if state is not None else new_arena(scenario, seed)
+    if energy_override is not None:
+        s["energy"] = energy_override
+    header = {"kind": "header", "brain": brain_stamp(version), "mode": "hud",
+              "scenario": scenario, "run_seed": seed, "ticks": ticks, "tick_hz": TICK_HZ,
+              "blank": sorted(blank), "brain_kind": brain, "windup": dict(windup)}
+    recs = [header]
+    for t in range(start_tick, start_tick + ticks):
+        h = hud(s, blank)
+        view = MappingProxyType(dict(h))      # the brain gets a read-only copy
+        a = hud_brain(view) if brain == "honest" else xray_brain(view, s)
+        rec = {"kind": "step", "step": t, "hud": h, "action": a,
+               "control": CONTROLS.get(a)}
+        rec.update(arena_step(s, a, t, windup))
+        recs.append(rec)
+    return stepstream.close(recs), s
+
+
+def hud_variants(state, blank=(), n=6, salt=0):
+    """Hidden-state variants that show exactly the same HUD: exact values move
+    within their bar, blanked fields move freely, hidden fields change."""
+    out = []
+    for i in range(n):
+        v = dict(state)
+        r = _draw(salt, "var", i, state["energy"], state["boss_hp"])
+        if "boss_energy_bar" in blank:
+            v["energy"] = r % 101
+        else:
+            v["energy"] = min(100, state["energy"] // 10 * 10 + r % 10)
+        v["boss_hp"] = max(1, min(100, state["boss_hp"] // 10 * 10 + (r >> 8) % 10))
+        v["player_cd"] = (r >> 16) % 6
+        v["seed"] = state["seed"] + 1000 + i
+        if hud(v, blank) == hud(state, blank):
+            out.append(v)
+    return out

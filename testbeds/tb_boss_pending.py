@@ -7,7 +7,6 @@ import sys
 import pch_testlib
 
 REASONS = {
-    "hud_reading": "Master Chief TB1: needs a boss brain + HUD feed in PCH (not present); decision: Implement, see testbeds/DECISIONS.md",
     "telegraph_fairness": "Master Chief TB2 / Herominde #2: needs boss attacks with wind-up/HUD ticks (not present); decision: Implement, see testbeds/DECISIONS.md",
     "hud_only_honesty": "Herominde #3: needs a HUD-only observation path (not present); decision: Implement, see testbeds/DECISIONS.md",
 }
