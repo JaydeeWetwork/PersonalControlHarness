@@ -7,22 +7,23 @@ Built by: Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
-See the design file for the full goal and pass/fail rules. This one needs a configurable branch-count budget.
+In ranked mode the branch count is locked, so a "phone" budget (1 worker) and a "PC" budget (8 workers) must give identical decisions and an identical receipt hash.
+It runs on the PCH reference boss (`pch/harness/boss.py`), a deliberately minimal, documented stub, not the LithoKraft boss.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
 
     cd testbeds
-    python tb_boss_pending.py ranked_fixed_branch_count
+    python tb_boss_fixture.py ranked_fixed_branch_count
 
 Or through CMake: `ctest --preset testbeds-only -R boss.ranked_fixed_branch_count` (after `cmake --preset testbeds-only`).
-Today it prints SKIPPED with the missing feature. Once that feature exists, the design's pass/fail rules apply.
+Exit 0 means every check passed.
 
 ## 4. Status
-**skipped**: the public PCH has no a configurable branch-count budget yet. Nothing is faked.
+**passed** (2026-10-23, on the reference boss stub): 5 seeds x brain v1/v2: ranked phone and PC receipts are hash-identical with the branch count locked at 4 and recorded; control: unranked phone (2 branches) vs PC (6 branches) budgets change decisions.
 
 ## 5. Safety
-Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
+Imports `pch/harness/boss.py` and `stepstream.py`; builds receipts in memory and writes no files.
 
 ## 6. Further experiments and design notes
-A good first contribution: build the missing piece, then replace the skip with the real check.
+Next: run the same checks against the LithoKraft boss once it emits PCH receipts (see `../DECISIONS.md`).

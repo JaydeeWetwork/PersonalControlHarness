@@ -75,7 +75,7 @@ nothing is faked.
 | 10 | Versioned receipts and rematch | Master Chief | Cortana | Rematches replay the same and receipts carry a version stamp and gap-free counter | **Passed** on the reference boss stub: 5 seeds x v1/v2 x 1-12 workers identical, v1 rematch hash-identical, gap-free counter | Port to the LithoKraft boss |
 | 11 | HUD-only honesty | Herominde | Cortana | Blank the on-screen bar; boss must not "x-ray" the real value | Skipped: no HUD-only observation path yet | Same as 08 |
 | 12 | Human input rate | Herominde | Cortana | No burst of boss actions exceeds a human rate cap | **Passed** on the reference boss stub: max burst <= 10 actions/60 ticks for 5 seeds x v1/v2; uncapped control bursts 58 | Port to the LithoKraft boss |
-| 13 | Fixed branch count (ranked) | Herominde | Cortana | "Phone" and "PC" budgets give identical decisions | Skipped: no configurable branch budget yet | Same as 08 |
+| 13 | Fixed branch count (ranked) | Herominde | Cortana | "Phone" and "PC" budgets give identical decisions | **Passed** on the reference boss stub: ranked phone (1 worker) == PC (8 workers) receipt hash, 5 seeds x v1/v2; unranked budgets differ | Port to the LithoKraft boss |
 | 14 | Brain-version stamp | Herominde | Cortana | Old receipts on a new build are refused or labeled, not silently replayed | Skipped: no brain-version field yet | Same as 08 |
 
 Every test bed uses the harness read-only and doesn't change PCH core.
