@@ -7,6 +7,5 @@ import sys
 import pch_testlib
 
 REASONS = {
-    "hud_only_honesty": "Herominde #3: needs a HUD-only observation path (not present); decision: Implement, see testbeds/DECISIONS.md",
 }
 pch_testlib.skip(REASONS.get(sys.argv[1], "unknown test bed"))

@@ -7,22 +7,23 @@ Built by: Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
-See the design file for the full goal and pass/fail rules. This one needs a HUD-only observation path.
+Blank the energy bar on the HUD while the real value stays full. The boss must act as though energy is unknown: no x-ray of the hidden value.
+It runs on the PCH reference boss (`pch/harness/boss.py`), a deliberately minimal, documented stub, not the LithoKraft boss.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
 
     cd testbeds
-    python tb_boss_pending.py hud_only_honesty
+    python tb_boss_fixture.py hud_only_honesty
 
 Or through CMake: `ctest --preset testbeds-only -R boss.hud_only_honesty` (after `cmake --preset testbeds-only`).
-Today it prints SKIPPED with the missing feature. Once that feature exists, the design's pass/fail rules apply.
+Exit 0 means every check passed.
 
 ## 4. Status
-**skipped**: the public PCH has no a HUD-only observation path yet. Nothing is faked.
+**passed** (2026-10-23, on the reference boss stub): 5 seeds: with the bar blanked, real energy 100 and 0 give identical action sequences and no energy-spending moves; control: with the bar shown the boss attacks; 0 leaks for the honest brain, while an x-ray brain is caught reading the blanked value.
 
 ## 5. Safety
-Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
+Imports `pch/harness/boss.py` and `stepstream.py`; builds receipts in memory and writes no files.
 
 ## 6. Further experiments and design notes
-A good first contribution: build the missing piece, then replace the skip with the real check.
+Next: run the same checks against the LithoKraft boss once it emits PCH receipts (see `../DECISIONS.md`).

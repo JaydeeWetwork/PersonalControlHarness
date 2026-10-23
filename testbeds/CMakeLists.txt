@@ -46,6 +46,7 @@ pch_testbed(pch.boss.ranked_fixed_branch_count tb_boss_fixture.py ranked_fixed_b
 pch_testbed(pch.boss.brain_version_stamp tb_boss_fixture.py brain_version_stamp)
 pch_testbed(pch.boss.hud_reading tb_boss_fixture.py hud_reading)
 pch_testbed(pch.boss.telegraph_fairness tb_boss_fixture.py telegraph_fairness)
-foreach(tb telegraph_fairness hud_only_honesty)
+pch_testbed(pch.boss.hud_only_honesty tb_boss_fixture.py hud_only_honesty)
+foreach(tb telegraph_fairness)
   pch_testbed(pch.boss.${tb} tb_boss_pending.py ${tb})
 endforeach()
