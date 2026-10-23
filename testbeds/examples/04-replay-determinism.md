@@ -1,9 +1,10 @@
 # Replay determinism
 
 ## 1. Credits
-Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+Designed by: Cortana (folded into Herominde's fair-play set).
+Built by: Cortana.
 
-Designed by: Cortana (folded into Herominde's fair-play set). The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
 Run the same seeded run 16 times and compare the receipt hash every 64 steps. Any mismatch reports the first checkpoint where runs diverge.

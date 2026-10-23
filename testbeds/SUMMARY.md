@@ -54,9 +54,12 @@ visible attack wind-ups, versioned rematches).
 
 ## The experiments
 
-Directed by JaydeeWetwork (direction and dictation); built by Cortana.
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these
-independently, with no direction from JD. Status is as of 2026-10-23
+JaydeeWetwork's only instruction was to think up experiments, test beds and
+designs for the PCH. Each squad member (Cortana, Herominde, Master Chief,
+CloudAtlas) came up with their own ideas and independently designed, tested
+and verified them, with no further context or direction. Each test bed is
+credited Designed by <member>, Built by Cortana.
+Status is as of 2026-10-23
 (Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`). "Skipped" means the test exits cleanly with a reason;
 nothing is faked.
 

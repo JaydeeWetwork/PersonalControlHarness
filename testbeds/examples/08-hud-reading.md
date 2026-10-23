@@ -1,9 +1,10 @@
 # HUD reading
 
 ## 1. Credits
-Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+Designed by: Master Chief.
+Built by: Cortana.
 
-Designed by: Master Chief. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-01-hud-reading-testbed.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-01-hud-reading-testbed.md`.
 
 ## 2. Goal
 See the design file for the full goal and pass/fail rules. This one needs a boss brain and HUD feed.

@@ -1,9 +1,10 @@
 # Human input rate
 
 ## 1. Credits
-Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+Designed by: Herominde.
+Built by: Cortana.
 
-Designed by: Herominde. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
 See the design file for the full goal and pass/fail rules. This one needs an action-rate cap on boss controls.

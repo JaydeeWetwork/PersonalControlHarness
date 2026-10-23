@@ -1,9 +1,10 @@
 # Receipt fuzz (10,000 mutations)
 
 ## 1. Credits
-Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+Designed by: CloudAtlas.
+Built by: Cortana.
 
-Designed by: CloudAtlas. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
 
 ## 2. Goal
 Throw 10,000 random edits (value changes, added/removed fields, swapped/dropped records, byte damage) at a sealed receipt and require zero false accepts and zero crashes. The result is measured against the test-bed verifier (`testbeds/receipt_check.py`), not the PCH core verifier.

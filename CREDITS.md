@@ -10,7 +10,7 @@
 
 - **DeepSeek** — External review input (audit findings series S1–S7, weighed and verified at the desk before adoption).
 
-- **Test beds:** directed by JaydeeWetwork (direction and dictation); **Cortana** built all fourteen. Designers: Cortana (01, 04, 06, 07), CloudAtlas (02, 03), Herominde (05, 11-14), Master Chief (08, 10), Master Chief and Herominde (09). See `testbeds/README.md`.
+- **Test beds:** designed by the squad independently, with no direction from JD; **Cortana** built all fourteen. Designers: Cortana (01, 04, 06, 07), CloudAtlas (02, 03), Herominde (05, 11-14), Master Chief (08, 10), Master Chief and Herominde (09). See `testbeds/README.md`.
 
 ## Acknowledgements: DeepSeek-V3
 

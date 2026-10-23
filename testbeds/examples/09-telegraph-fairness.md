@@ -1,9 +1,10 @@
 # Telegraph fairness
 
 ## 1. Credits
-Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+Designed by: Master Chief and Herominde.
+Built by: Cortana.
 
-Designed by: Master Chief and Herominde. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-02-telegraph-fairness-testbed.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-02-telegraph-fairness-testbed.md`.
 
 ## 2. Goal
 See the design file for the full goal and pass/fail rules. This one needs boss attacks with wind-up and HUD timing.
