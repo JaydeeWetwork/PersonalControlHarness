@@ -82,27 +82,31 @@ architecture also need CPU PyTorch and the DeepSeek-V3 reference code (see
 ## Results
 
 Tested on Windows 11 (MSVC, VS 2026 Build Tools) and Linux. On
-2026-10-23, the full `ctest --preset vs2026-release` run on Windows 11
-reported **65 of 65 tests with 0 failures: 56 passed and 9 skipped**.
-A skipped test exits cleanly and prints why; nothing is faked.
+2026-10-23 (round 2, commit `86f1c2e`), the full
+`ctest --preset vs2026-release -j 8 --repeat until-fail:3` run on Windows 11
+reported **78 of 78 tests with 0 failures: 75 passed and 3 skipped**, three
+times in a row. The same run with `PCH_SPECIMEN_DIR` unset (vendored
+DeepSeek-V3 code) also passed 78 of 78. On Linux (box, GCC, Python 3.13, no
+torch), `ctest -j8 --repeat until-fail:3` passed 78 of 78: 70 passed and 8
+skipped. A skipped test exits cleanly and prints why; nothing is faked.
 
-- **2 skipped, environment:** `engine_storage` and `engine_assets` skip their
-  symlink checks when Windows can't create symlinks. Turn on Developer Mode to
-  run them (see [BUILDING.md](BUILDING.md)). Their other checks still run.
-- **7 skipped, not built yet** (that run predates 0.0.0.4): test beds 08-14.
-  Since then all seven run on the PCH reference boss stub, a documented
-  minimal stand-in for the game's boss (see [testbeds/DECISIONS.md](testbeds/DECISIONS.md)).
+- **Windows, 3 skipped:** `engine_storage` and `engine_assets` skip their
+  symlink checks when Windows can't create symlinks (turn on Developer Mode;
+  see [BUILDING.md](BUILDING.md)); `pch.weights_local` skips because no model
+  weights are downloaded.
+- **Linux, 8 skipped:** `pch.weights_local`, plus seven model beds that need
+  torch, which that machine does not have.
 
 ```
-52/65 Test #52: pch.verify_shipped_streams ...........   Passed   12.25 sec
-55/65 Test #55: pch.replay_determinism ...............   Passed   75.82 sec
-56/65 Test #56: pch.thread_determinism ...............   Passed   19.30 sec
-59/65 Test #59: pch.boss.hud_reading .................***Skipped   0.04 sec
-...
-100% tests passed, 0 tests failed out of 65
+100% tests passed, 0 tests failed out of 78
+Total Test time (real) = 275.82 sec
+The following tests did not run:
+	 14 - engine_storage (Skipped)
+	 21 - engine_assets (Skipped)
+	 59 - pch.weights_local (Skipped)
 ```
 
-Since 0.0.0.4-alpha, receipts are signed with Ed25519 at close, the
+Since 0.0.0.4, receipts are signed with Ed25519 at close, the
 trailer is part of the hash chain, and `pch/tools/pch_verify.py` checks a
 receipt offline with only a public key
 ([ADR-001](pch/docs/ADR-001-signing.md),

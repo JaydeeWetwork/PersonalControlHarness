@@ -58,7 +58,7 @@ The moral architecture this harness travels under — the Pillars — is in
 plug into a production harness and the hazard analysis, is in
 [`docs/Pillar-PlugIn-Map.md`](docs/Pillar-PlugIn-Map.md).
 
-## Signed receipts (since 0.0.0.4-alpha)
+## Signed receipts (since 0.0.0.4)
 
 Every stream closes with a schema-2 trailer that is itself in the hash chain,
 and can be signed once at close with Ed25519 (`harness.run_live_signed`,
