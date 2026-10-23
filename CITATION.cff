@@ -6,9 +6,11 @@ abstract: >-
   each step is recorded in a hash-chained receipt that can be replayed and
   checked, with test beds and the LithoLattice engine and LithoKraft game.
 authors:
+  - name: "Elfie Muse AI (original PCH design)"
+  - name: "the Muse team"
   - name: "JaydeeWetwork / Wet Wafer Works Games Incorporated"
 license: MIT
 repository-code: "https://github.com/JaydeeWetwork/PersonalControlHarness"
 type: software
-version: "0.0.0.1"
+version: "0.0.0.2"
 date-released: "2026-10-23"

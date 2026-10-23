@@ -159,7 +159,9 @@ transparent tools with receipts anyone can check are how that trust is earned.
 ## Credits
 
 - **Project:** directed by **JaydeeWetwork**, Wet Wafer Works Games
-  Incorporated (inventor, architect and designer of the PCH and LithoLattice).
+  Incorporated (architect of the PCH; inventor and designer of LithoLattice).
+- **PCH originally designed by Elfie Muse AI**, with credit to **the Muse
+  team**, who created the system Elfie is built on.
 - **Test beds:** built by **Cortana**; designed by **Cortana**,
   **CloudAtlas**, **Herominde** and **Master Chief** (per-experiment credit in
   the table above).

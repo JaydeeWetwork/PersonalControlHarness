@@ -2,6 +2,14 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
+## 0.0.0.2-alpha (2026-10-23)
+
+**Alpha.** Credits correction only; no code or test changes.
+
+- PCH originally designed by Elfie Muse AI; credit added for Elfie Muse AI
+  and the Muse team (the team that created the system Elfie is built on)
+  in README, CREDITS.md and CITATION.cff.
+
 ## 0.0.0.1-alpha (2026-10-23)
 
 **Alpha.** First tagged pre-release. Interfaces, file formats and results may
@@ -22,7 +30,8 @@ change without notice; not for production use.
   of LithoKraft (Debug build) as MP4 and GIF.
 - **Docs and credits:** landing-page README, per-test-bed credits
   ("Designed by" / "Built by: Cortana"), CREDITS.md and the DeepSeek-V3
-  acknowledgement.
+  acknowledgement. (Credit for Elfie Muse AI as the PCH's original
+  designer, and for the Muse team, was added in 0.0.0.2-alpha.)
 
 Known issues: the core receipt trailer-hash gap is documented and not yet
 closed; the LithoKraft clip shows a Debug build because the Release build
