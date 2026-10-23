@@ -31,5 +31,10 @@
       "value": "aa82e7afb1eff9d3",
       "note": "matches neither the code pin nor the README cities-on hash; not adopted without JD"
     }
-  ]
+  ],
+  "vendored": {
+    "deepseek_v3_commit": "9b4e9788e4a3a731f7567338ed15d3ec549ce03b",
+    "source": "third_party/DeepSeek-V3/UPSTREAM.md",
+    "checked_by": "tools/check_upstream_drift.py (ctest pch.upstream_drift)"
+  }
 }

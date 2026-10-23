@@ -29,6 +29,7 @@ pch_testbed(pch.weights_path             tb_weights_path.py)
 pch_testbed(pch.weights_local            tb_weights_path.py --local)
 pch_testbed(pch.review_regressions       tb_review_fixes.py)
 pch_testbed(pch.docs_check               ../tools/check_docs.py)
+pch_testbed(pch.upstream_drift           ../tools/check_upstream_drift.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it
 pch_testbed(pch.verify_shipped_streams   run_harness_script.py verify_streams.py)
