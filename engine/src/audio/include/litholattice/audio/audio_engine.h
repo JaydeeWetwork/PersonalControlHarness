@@ -9,6 +9,7 @@
 #include <atomic>
 #include <chrono>
 #include <cstddef>
+#include <memory>
 #include "litholattice/audio/synth.h"
 #include "litholattice/audio/effects.h"
 #include "litholattice/audio/degradation.h"
@@ -138,7 +139,10 @@ class AudioEngine {
   uint64_t shedVirtualized_[2] = {0, 0};
   // Tap ring: audio thread writes tapHead_, drainTap() reads tapTail_.
   // Single writer / single reader; overflow drops the oldest.
-  std::array<float, kTapCapacityFrames> tap_{};
+  // Heap-allocated once in the constructor (never on the audio thread): at
+  // 2 s of samples it is ~375 KiB, and holding it inline made AudioEngine too
+  // big to live on a 1 MiB Windows thread stack.
+  std::unique_ptr<float[]> tap_;
   std::atomic<size_t> tapHead_{0};
   std::atomic<size_t> tapTail_{0};
   std::atomic<bool> tapEnabled_{false};

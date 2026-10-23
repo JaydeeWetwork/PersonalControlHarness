@@ -624,9 +624,15 @@ int runAudioSelfTest() {
     std::vector<float> left;
     left.reserve(kTotal);
     size_t validTotal = 0;
-    for (int i = 0; i < 1000 && !streamer.finished(); ++i) {
+    // Bound the loop by wall time, not by a fixed number of render calls: on
+    // a loaded machine (ctest running in parallel) the worker can fall behind,
+    // and an underrun render returns 0 frames, so a call count alone could run
+    // out before the stream ends. Back off briefly on an underrun.
+    const auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(30);
+    while (!streamer.finished() && std::chrono::steady_clock::now() < deadline) {
       std::vector<float> chunk(8192 * 2, 0.f);
       const size_t valid = streamer.render(chunk.data(), 8192);  // the "audio thread"
+      if (valid == 0) std::this_thread::sleep_for(std::chrono::milliseconds(1));
       validTotal += valid;
       for (size_t f = 0; f < valid && left.size() < kTotal; ++f) left.push_back(chunk[f * 2]);
     }
@@ -867,7 +873,7 @@ int runAudioSelfTest() {
       flac.push_back(static_cast<uint8_t>(rate >> 12));
       flac.push_back(static_cast<uint8_t>((rate >> 4) & 0xFF));
       flac.push_back(static_cast<uint8_t>(((rate & 15) << 4) | ((2 - 1) << 1) | ((16 - 1) >> 4)));
-      flac.push_back(static_cast<uint8_t>((((16 - 1) & 15) << 4) | ((total >> 32) & 15)));
+      flac.push_back(static_cast<uint8_t>((((16 - 1) & 15) << 4) | ((uint64_t(total) >> 32) & 15)));  // top 4 of the 36-bit sample count
       put32be(flac, total);
       flac.insert(flac.end(), 16, 0);  // MD5 (stub does not verify)
       auto dec = makeAudioDecoder(flac.data(), flac.size(), err);

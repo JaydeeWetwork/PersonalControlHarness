@@ -8,7 +8,8 @@ AudioEngine::AudioEngine(float sampleRate)
     : sampleRate_(sampleRate),
       music_(SynthPreset::sid3(), sampleRate),
       effects_(SynthPreset::dmg(), sampleRate),
-      effect_(sampleRate) {}
+      effect_(sampleRate),
+      tap_(std::make_unique<float[]>(kTapCapacityFrames)) {}  // zero-initialised
 
 bool AudioEngine::post(const AudioCommand& cmd) {
   if (!enabled()) return false;
