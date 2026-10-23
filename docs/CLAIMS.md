@@ -18,7 +18,7 @@ below is registered in CMake.
 | C07 | Offline verifier needs only a public key | pch.verify_cli_offline | verified |
 | C08 | Re-hashed forgery accepted by hash-only check is rejected by signature check | pch.receipt_tamper | verified |
 | C09 | 10,000-mutation fuzz: zero false accepts, zero crashes (receipts, signatures) | pch.receipt_tamper_fuzz, pch.signature_fuzz | verified |
-| C10 | Lookahead fork budget measured for 1-16 branches | pch.fork_budget | verified |
+| C10 | Lookahead fork budget measured for 1-32 branches (horizon 32) and 4/16 branches at horizon 240 | pch.fork_budget | verified |
 | C11 | Vendored DeepSeek-V3 inference code is unmodified at the pinned commit | pch.vendored_specimen | verified |
 | C12 | Receipts carry a brain-version stamp and gap-free counter; rematch replays the same | pch.boss.versioned_rematch | verified (reference boss stub) |
 | C13 | Boss actions respect a human input-rate cap | pch.boss.human_input_rate | verified (reference boss stub) |

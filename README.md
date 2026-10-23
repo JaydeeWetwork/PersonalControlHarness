@@ -137,7 +137,7 @@ AI-authored work before it is merged.
 | 03 | [Receipt fuzz, 10,000 mutations](testbeds/examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | Ran, passed (core check; trailer now in the chain) |
 | 04 | [Replay determinism](testbeds/examples/04-replay-determinism.md) | Cortana | Cortana | Ran, passed |
 | 05 | [Thread-count determinism](testbeds/examples/05-thread-determinism.md) | Herominde | Cortana | Ran, passed (2, 4 and 12 threads matched 1 thread) |
-| 06 | [Rewind fidelity](testbeds/examples/06-rewind-fidelity.md) | Cortana | Cortana | Ran, passed at N = 1 and 64; larger N not run (beyond the toy model's 248-step context) |
+| 06 | [Rewind fidelity](testbeds/examples/06-rewind-fidelity.md) | Cortana | Cortana | Ran, passed at N = 1, 64 and 240 (the toy fixture's ceiling); larger N not run (needs a longer-context fixture) |
 | 07 | [Lookahead fork budget](testbeds/examples/07-fork-budget.md) | Cortana | Cortana | Ran, passed (1-16 branches) |
 | 08 | [HUD reading](testbeds/examples/08-hud-reading.md) | Master Chief | Cortana | Ran, passed on the reference boss stub (HUD-only brain, 0 hidden-state leaks) |
 | 09 | [Telegraph fairness](testbeds/examples/09-telegraph-fairness.md) | Master Chief, Herominde | Cortana | Ran, passed on the reference boss stub (524 attacks, all telegraphed in time) |

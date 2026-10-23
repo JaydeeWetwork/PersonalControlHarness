@@ -7,7 +7,7 @@ Built by: Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
-Snapshot, run N steps, rewind (fresh model + prefix replay), re-run. The snapshot digest and the re-run must match, with a replay check on each N. N = 1, 64, 1024, 16384, 65536.
+Snapshot, run N steps, rewind (fresh model + prefix replay), re-run. The snapshot digest and the re-run must match, with a replay check on each N. N = 1, 64, 240 (the fixture ceiling), 1024, 16384, 65536.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
@@ -19,7 +19,9 @@ Or through CMake: `ctest --preset testbeds-only -R rewind_fidelity` (after `cmak
 Pass: digest, re-run tokens and verify_replay all match for each N. Fail: names N and the check.
 
 ## 4. Status
-**verified** for N = 1 and N = 64 on 2026-10-23 (Windows 11 workstation, Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`): snapshot digest, re-run and replay all matched (CTest 18-23 s). Without torch and the DeepSeek-V3 code it prints SKIPPED and why. Even with them, N = 1024, 16384 and 65536 are **not run**: the toy model holds only 256 tokens of context.
+**verified** for N = 1, 64 and 240 on 2026-10-23 (Windows 11 workstation, Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`): snapshot digest, re-run and replay all matched (N = 240: all 248 committed tokens re-derived, chain and seal intact). Without torch and the DeepSeek-V3 code it prints SKIPPED and why.
+
+**Ceiling (honest):** the toy fixture has `max_seq_len` 256 and an 8-token prompt, so at most 248 steps fit and, with 8 sealed steps, the largest N is **240**. N = 1024, 16384 and 65536 are printed as **NOT RUN**: they need a longer-context fixture. The real-model N = 64 run waits for the specimen weights (BLOCKERS B3/B4).
 
 ## 5. Safety
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.

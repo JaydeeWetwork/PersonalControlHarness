@@ -20,7 +20,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 | [Receipt fuzz (10,000 mutations)](examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | verified (core check) |
 | [Replay determinism](examples/04-replay-determinism.md) | Cortana (folded into Herominde's fair-play set) | Cortana | verified |
 | [Thread-count determinism](examples/05-thread-determinism.md) | Herominde | Cortana | verified |
-| [Rewind fidelity](examples/06-rewind-fidelity.md) | Cortana | Cortana | verified (N = 1, 64) |
+| [Rewind fidelity](examples/06-rewind-fidelity.md) | Cortana | Cortana | verified (N = 1, 64, 240; ceiling 240) |
 | [Lookahead fork budget](examples/07-fork-budget.md) | Cortana | Cortana | verified |
 | [HUD reading](examples/08-hud-reading.md) | Master Chief | Cortana | verified (reference boss) |
 | [Telegraph fairness](examples/09-telegraph-fairness.md) | Master Chief and Herominde | Cortana | verified (reference boss) |

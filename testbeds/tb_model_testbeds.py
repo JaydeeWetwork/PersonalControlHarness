@@ -8,10 +8,12 @@
                       (fresh model + prefix replay), re-run; cache digest at
                       the rewind point and the re-run tokens must match, plus
                       verify_replay on each. N limited by the toy model's
-                      max_seq_len (256): N in {1, 64} run; 1024/16384/65536
+                      max_seq_len (256): N in {1, 64, 240} run (240 = the
+                      ceiling: 256 - 8 prompt - 8 sealed); 1024/16384/65536
                       need a longer-context fixture -> reported NOT RUN.
-  fork_budget         Cortana TB-2: fork a sealed prefix into 1,2,4,8,16
-                      branches over a fixed horizon; record wall time, peak
+  fork_budget         Cortana TB-2: fork a sealed prefix into 1..32
+                      branches over 32 steps, plus 4 and 16 branches over
+                      the full 240-step ceiling; record wall time, peak
                       RSS and best-branch score (mean log-prob). Informational:
                       passes if every branch keeps the sealed prefix.
 """
@@ -66,7 +68,10 @@ def thread_determinism():
 
 def rewind_fidelity():
     cap = harness.toy_args().max_seq_len - len(PROMPT)
-    for n in [1, 64, 1024, 16384, 65536]:
+    n_max = cap - 8          # largest N the toy fixture allows (8 sealed + N <= 248)
+    print(f"  ceiling: toy fixture max_seq_len {harness.toy_args().max_seq_len}, prompt {len(PROMPT)}, "
+          f"8 sealed steps -> largest N = {n_max}")
+    for n in [1, 64, n_max, 1024, 16384, 65536]:
         if 8 + n > cap:
             print(f"  [NOT RUN] N={n}: exceeds toy model context ({cap} steps); "
                   "needs a longer-context fixture")
@@ -96,9 +101,11 @@ def fork_budget():
         rss = lambda: psutil.Process().memory_info().rss  # noqa: E731
     except ImportError:
         rss = lambda: 0  # noqa: E731
-    sealed, horizon = 8, 32
+    sealed = 8
+    h_max = harness.toy_args().max_seq_len - len(PROMPT) - sealed   # 240: fixture ceiling
     base, base_toks = run(sealed)
-    for k in [1, 2, 4, 8, 16]:
+    print(f"  ceiling: horizon up to {h_max} steps (toy context), branches up to 32")
+    for k, horizon in [(1, 32), (2, 32), (4, 32), (8, 32), (16, 32), (32, 32), (4, h_max), (16, h_max)]:
         t0, peak, best, prefix_ok = time.perf_counter(), 0, None, True
         for b in range(k):
             m = harness.build_model()
@@ -118,9 +125,9 @@ def fork_budget():
             best = lp if best is None else max(best, lp)
             peak = max(peak, rss())
         dt = time.perf_counter() - t0
-        print(f"  branches={k:2d} wall={dt:7.2f}s peakRSS={peak / 2**20:7.1f}MiB "
+        print(f"  branches={k:2d} horizon={horizon:3d} wall={dt:7.2f}s peakRSS={peak / 2**20:7.1f}MiB "
               f"best_score={best / horizon:.4f}")
-        c(f"{k} branches keep sealed prefix", prefix_ok)
+        c(f"{k} branches x {horizon} steps keep sealed prefix", prefix_ok)
 
 
 {"replay_determinism": replay_determinism, "thread_determinism": thread_determinism,
