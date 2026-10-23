@@ -23,7 +23,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 | [Rewind fidelity](examples/06-rewind-fidelity.md) | Cortana | Cortana | verified (N = 1, 64) |
 | [Lookahead fork budget](examples/07-fork-budget.md) | Cortana | Cortana | verified |
 | [HUD reading](examples/08-hud-reading.md) | Master Chief | Cortana | verified (reference boss) |
-| [Telegraph fairness](examples/09-telegraph-fairness.md) | Master Chief and Herominde | Cortana | skipped |
+| [Telegraph fairness](examples/09-telegraph-fairness.md) | Master Chief and Herominde | Cortana | verified (reference boss) |
 | [Versioned receipts and rematch](examples/10-versioned-rematch.md) | Master Chief | Cortana | verified (reference boss) |
 | [HUD-only honesty](examples/11-hud-only-honesty.md) | Herominde | Cortana | skipped |
 | [Human input rate](examples/12-human-input-rate.md) | Herominde | Cortana | verified (reference boss) |

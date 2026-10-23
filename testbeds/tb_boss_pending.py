@@ -7,7 +7,6 @@ import sys
 import pch_testlib
 
 REASONS = {
-    "telegraph_fairness": "Master Chief TB2 / Herominde #2: needs boss attacks with wind-up/HUD ticks (not present); decision: Implement, see testbeds/DECISIONS.md",
     "hud_only_honesty": "Herominde #3: needs a HUD-only observation path (not present); decision: Implement, see testbeds/DECISIONS.md",
 }
 pch_testlib.skip(REASONS.get(sys.argv[1], "unknown test bed"))
