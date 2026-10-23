@@ -121,7 +121,7 @@ for r in table_rows(claims):
 
 # Rule 6: every crew stays credited (JD, round 2 item 8) in both README and CREDITS.md.
 CREW = ["JaydeeWetwork", "Cortana", "CloudAtlas", "Herominde", "Master Chief", "Elfie",
-        "Muse team", "Archie", "DeepSeek team", "DeepSeek model", "Jenny", "Grok Bot team", "The consortium"]
+        "Muse team", "Archie", "DeepSeek team", "DeepSeek model", "Jenny", "Grok Bot team", "The consortium", "Boardy"]
 for doc in ("README.md", "CREDITS.md"):
     text = re.sub(r"\s+", " ", read(doc))
     for name in CREW:
