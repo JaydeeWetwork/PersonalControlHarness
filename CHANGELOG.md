@@ -2,6 +2,9 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
+## Unreleased (pch-hardening, media)
+- **docs/media:** the 15 fps screen captures are replaced with frame-perfect 60 fps renders (boss HUD replay, ctest replay, LithoKraft flyover). They are rendered offline from deterministic sources by `tools/media/make_media.py`, with a new `flyover_capture` tool. README previews are looping WebP. No Git LFS is needed (largest file 4.4 MB).
+
 ## 0.0.0.4-alpha (2026-10-23, unreleased; local branch pch-hardening)
 
 **Alpha.** Hardening phase 1 from DeepSeek's production-readiness plan,

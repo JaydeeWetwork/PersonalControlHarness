@@ -9,10 +9,12 @@ a way for an AI model to plan and control its own steps inside a sealed,
 replayable loop that anyone can check. MIT licensed. Built and tested with
 free tools only.
 
-| PCH test beds in a terminal | LithoKraft (this repo's Debug build) |
-|---|---|
-| [![PCH test beds running in a terminal](docs/media/pch-testbeds-terminal.gif)](docs/media/pch-testbeds-terminal.mp4) | [![LithoKraft flyover benchmark](docs/media/lithokraft-gameplay.gif)](docs/media/lithokraft-gameplay.mp4) |
-| Real screen capture: `tb_shipped_streams_chain.py` and `tb_receipt_tamper.py`. Click for the MP4. | Real screen capture of an unoptimized Debug build (low frame rate), throwaway save directory, `--bench-path flyover`. Click for the MP4. |
+| PCH boss bed 08 (HUD-only brain) | PCH test beds (full ctest) | LithoKraft Wafer flyover |
+|---|---|---|
+| [![PCH boss HUD replay](docs/media/pch-boss-hud-replay.webp)](docs/media/pch-boss-hud-replay.mp4) | [![PCH ctest run replay](docs/media/pch-testbeds-terminal.webp)](docs/media/pch-testbeds-terminal.mp4) | [![LithoKraft flyover](docs/media/lithokraft-flyover.webp)](docs/media/lithokraft-flyover.mp4) |
+| One frame per 60 Hz sim tick, drawn from the sealed receipt of `run_hud_fight("full_energy", 7)`. | Replay of a real Windows `ctest --preset vs2026-release` log (75/75), paths stripped. | Real worldgen, mesher and software renderer, fixed seed, one orbit (loops). |
+
+All three are rendered offline at a fixed 1/60 s timestep and encoded as 60 fps H.264 (`tools/media/make_media.py`). They are not screen captures, so they look the same however loaded the machine is. Click a preview for its MP4. The previews are 400 px WebP: 60 fps, except the flyover at 30 fps.
 
 ## What the PCH is, in plain English
 

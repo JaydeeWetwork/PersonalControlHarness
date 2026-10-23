@@ -83,6 +83,15 @@ target_compile_definitions(biome_capture PRIVATE LITHOKRAFT_SOURCE_DIR="${LithoK
                           LITHOKRAFT_ENGINE_ASSETS_DIR="${LithoLattice_SOURCE_DIR}/assets")
 set_target_properties(biome_capture PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 litholattice_module_options(biome_capture)
+
+# flyover_capture: frame-perfect 60 fps docs/media flyover (raw RGB to stdout;
+# run via tools/media/make_media.py).
+add_executable(flyover_capture flyover_capture.cpp)
+target_link_libraries(flyover_capture PRIVATE lithokraft_game)
+target_compile_definitions(flyover_capture PRIVATE LITHOKRAFT_SOURCE_DIR="${LithoKraft_SOURCE_DIR}"
+                          LITHOKRAFT_ENGINE_ASSETS_DIR="${LithoLattice_SOURCE_DIR}/assets")
+set_target_properties(flyover_capture PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+litholattice_module_options(flyover_capture)
 # Interchange capture: headless screenshots of a generated Wafer
 # interchange + its population manifest (not a ctest entry;
 # run manually: ./interchange_capture <outdir>).
