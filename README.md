@@ -82,9 +82,13 @@ A skipped test exits cleanly and prints why; nothing is faked.
 100% tests passed, 0 tests failed out of 65
 ```
 
-Known issues, stated openly: receipts are hashed, not yet signed, and the
-receipt trailer is not yet covered by the hash chain (the test-bed verifier
-checks it as a stopgap). Details in [testbeds/SUMMARY.md](testbeds/SUMMARY.md).
+Since 0.0.0.4-alpha, receipts are signed with Ed25519 at close, the
+trailer is part of the hash chain, and `pch/tools/pch_verify.py` checks a
+receipt offline with only a public key
+([ADR-001](pch/docs/ADR-001-signing.md),
+[key management](pch/docs/KEY-MANAGEMENT.md)). The shipped reference streams
+predate this and are labeled `legacy-unchained`. Open limits are in
+[testbeds/SUMMARY.md](testbeds/SUMMARY.md) and [docs/BLOCKERS.md](docs/BLOCKERS.md).
 
 ## The test beds
 
@@ -96,8 +100,8 @@ direction. Every test bed was built by Cortana.
 | # | Experiment | Designed by | Built by | Status (2026-10-23) |
 |---|---|---|---|---|
 | 01 | [Shipped streams: chain check](testbeds/examples/01-shipped-streams-chain.md) | Cortana | Cortana | Ran, passed |
-| 02 | [Receipt tamper and replay check](testbeds/examples/02-receipt-tamper.md) | CloudAtlas | Cortana | Ran, passed (case 3 skipped: receipts not signed yet) |
-| 03 | [Receipt fuzz, 10,000 mutations](testbeds/examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | Ran, passed against the test-bed verifier |
+| 02 | [Receipt tamper and replay check](testbeds/examples/02-receipt-tamper.md) | CloudAtlas | Cortana | Ran, passed (all 8 cases; case 3 uses Ed25519 signatures) |
+| 03 | [Receipt fuzz, 10,000 mutations](testbeds/examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | Ran, passed (core check; trailer now in the chain) |
 | 04 | [Replay determinism](testbeds/examples/04-replay-determinism.md) | Cortana | Cortana | Ran, passed |
 | 05 | [Thread-count determinism](testbeds/examples/05-thread-determinism.md) | Herominde | Cortana | Ran, passed (2, 4 and 12 threads matched 1 thread) |
 | 06 | [Rewind fidelity](testbeds/examples/06-rewind-fidelity.md) | Cortana | Cortana | Ran, passed at N = 1 and 64; larger N not run (beyond the toy model's 248-step context) |

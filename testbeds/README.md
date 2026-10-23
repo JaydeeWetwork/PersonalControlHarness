@@ -17,7 +17,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 |---|---|---|---|
 | [Shipped streams: chain check (start here)](examples/01-shipped-streams-chain.md) | Cortana | Cortana | verified |
 | [Receipt tamper and replay check (8 cases)](examples/02-receipt-tamper.md) | CloudAtlas | Cortana | verified |
-| [Receipt fuzz (10,000 mutations, against the test-bed verifier)](examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | verified (test-bed verifier; core trailer gap pending JD's go) |
+| [Receipt fuzz (10,000 mutations)](examples/03-receipt-tamper-fuzz.md) | CloudAtlas | Cortana | verified (core check) |
 | [Replay determinism](examples/04-replay-determinism.md) | Cortana (folded into Herominde's fair-play set) | Cortana | verified |
 | [Thread-count determinism](examples/05-thread-determinism.md) | Herominde | Cortana | verified |
 | [Rewind fidelity](examples/06-rewind-fidelity.md) | Cortana | Cortana | verified (N = 1, 64) |
@@ -29,6 +29,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 | [Human input rate](examples/12-human-input-rate.md) | Herominde | Cortana | skipped |
 | [Fixed branch count (ranked)](examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | skipped |
 | [Brain-version stamp](examples/14-brain-version-stamp.md) | Herominde | Cortana | skipped |
+| [Signature fuzz (10,000 mutations)](examples/15-signature-fuzz.md) | CloudAtlas | Cortana | verified |
 
 Status as of 2026-10-23 on a Windows 11 workstation (Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`).
 *skipped* = exits with code 77, so CTest shows "Skipped" with the reason in

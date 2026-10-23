@@ -58,6 +58,22 @@ The moral architecture this harness travels under — the Pillars — is in
 plug into a production harness and the hazard analysis, is in
 [`docs/Pillar-PlugIn-Map.md`](docs/Pillar-PlugIn-Map.md).
 
+## Signed receipts (since 0.0.0.4-alpha)
+
+Every stream closes with a schema-2 trailer that is itself in the hash chain,
+and can be signed once at close with Ed25519 (`harness.run_live_signed`,
+sidecar `<stream>.sig`). Anyone can check a receipt offline:
+
+```sh
+python tools/pch_keygen.py --name my-receipts     # key pair in ~/.pch/keys
+python tools/pch_sign.py stream.jsonl ~/.pch/keys/my-receipts.key
+python tools/pch_verify.py stream.jsonl ~/.pch/keys/my-receipts.pub   # exit 0 = valid
+```
+
+Design and byte-exact payload: [`docs/ADR-001-signing.md`](docs/ADR-001-signing.md).
+Keys, rotation and revocation: [`docs/KEY-MANAGEMENT.md`](docs/KEY-MANAGEMENT.md).
+Golden vectors: `testdata/sig_vectors.json`.
+
 ## Quickstart
 
 You need the DeepSeek-V3 reference code. It is **not** redistributed here —

@@ -13,9 +13,13 @@ The PCH records each step in a hash-chained receipt. Please keep these
 documented limitations in mind (details in
 [testbeds/SUMMARY.md](testbeds/SUMMARY.md)):
 
-- Receipts are hashed, not signed. They detect accidental or partial
-  tampering, not someone who recomputes the whole chain.
-- The receipt trailer is not yet covered by the hash chain. The test-bed
-  verifier checks it as a stopgap; a core fix is pending.
+- Receipts are signed with Ed25519 (since 0.0.0.4-alpha; ADR-001) and the
+  trailer is in the hash chain. A signature proves which key signed a
+  receipt, not that the signer was honest: protect signing keys
+  ([pch/docs/KEY-MANAGEMENT.md](pch/docs/KEY-MANAGEMENT.md)).
+- Shipped reference streams created before 0.0.0.4 have unchained trailers
+  and no signatures; the core labels them `legacy-unchained` and
+  `pch-verify` refuses them.
+- Revocation lists are not signed and revocation is per key, not per date.
 
 Reports that go beyond these known limitations are especially welcome.

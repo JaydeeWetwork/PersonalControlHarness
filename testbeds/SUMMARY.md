@@ -29,13 +29,11 @@ visible attack wind-ups, versioned rematches).
 
 ## Current limits (be honest about these)
 
-- **Receipts are hashed only, not signed.** Hashes catch accidental or
-  partial tampering, but not someone who deliberately recomputes the whole
-  chain. No signing key exists yet.
-- **The hash doesn't cover the trailer (known issue).** Fuzzing found this;
-  the test-side checker requires exactly the trailer's three fields as a
-  stopgap, so the fuzz result holds for the test-bed verifier, not the PCH
-  core verifier. Fixing it is a PCH core change and is pending JD's go.
+- **Signed receipts (fixed 2026-10-23, 0.0.0.4).** Receipts are signed with
+  Ed25519 once at close, and the trailer is part of the hash chain. A forger
+  who recomputes the whole chain now fails the signature check (bed 02
+  case 3; bed 15 fuzzes the signature). Old shipped streams are labeled
+  `legacy-unchained` and cannot be signed.
 - **No session tracking.** Replay and rollback checks use a small test-side
   ledger (`receipt_check.py`) instead.
 - **Model tests need extra free downloads:** CPU PyTorch plus the DeepSeek-V3
@@ -66,8 +64,8 @@ nothing is faked.
 | # | Experiment | Designed by | Built by | Goal | Status | Next step |
 |---|---|---|---|---|---|---|
 | 01 | Shipped streams: chain check | Cortana | Cortana | Prove the two shipped sealed runs are intact (chain, seal, no step gaps) | **Passed** (both streams, 16 steps each) | Edit a digit in a copy and watch it fail |
-| 02 | Receipt tamper and replay check | CloudAtlas | Cortana | Catch altered, reordered, replayed or rolled-back receipts (8 cases) | **Passed** cases 1, 2, 4-8; case 3 skipped (receipts aren't signed) | Enable case 3 once signing lands |
-| 03 | Receipt fuzz (10,000 mutations) | CloudAtlas | Cortana | Zero false accepts and zero crashes under random edits, measured against the test-bed verifier | **Passed** against the test-bed verifier (seed 20261023: 0 false accepts, 0 crashes, 92 no-ops) | Put the trailer inside the hash (needs JD's go) |
+| 02 | Receipt tamper and replay check | CloudAtlas | Cortana | Catch altered, reordered, replayed or rolled-back receipts (8 cases) | **Passed** all 8 cases (case 3 via Ed25519 signatures, 2026-10-23) | Signed real-specimen run (section 3) |
+| 03 | Receipt fuzz (10,000 mutations) | CloudAtlas | Cortana | Zero false accepts and zero crashes under random edits | **Passed** (seed 20261023: 0 false accepts, 0 crashes); verifier now uses the core check | Fuzz schema-2 streams from a real specimen |
 | 04 | Replay determinism | Cortana (folded into Herominde's fair-play set) | Cortana | 16 identical seeded runs match at every 64-step checkpoint | **Passed** (16/16 runs match, ~70 s) | Longer runs |
 | 05 | Thread-count determinism | Herominde | Cortana | Same final hash with 1, 2, 4 and all threads | **Passed** (2, 4, 12 threads == 1 thread) | Try other CPUs; a mismatch is useful evidence |
 | 06 | Rewind fidelity | Cortana | Cortana | Snapshot, run, rewind, re-run must match for N = 1 to 65536 | **Passed** N = 1 and 64; N = 1024+ not run (toy model context is 248 steps) | Longer-context fixture or engine tick simulation |

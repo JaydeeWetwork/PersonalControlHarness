@@ -7,7 +7,7 @@ Built by: Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
 
 ## 2. Goal
-Throw 10,000 random edits (value changes, added/removed fields, swapped/dropped records, byte damage) at a sealed receipt and require zero false accepts and zero crashes. The result is measured against the test-bed verifier (`testbeds/receipt_check.py`), not the PCH core verifier.
+Throw 10,000 random edits (value changes, added/removed fields, swapped/dropped records, byte damage) at a sealed receipt and require zero false accepts and zero crashes. Since 0.0.0.4 the test-bed verifier (`testbeds/receipt_check.py`) runs the PCH core check (`stepstream.check_sealed`) plus size caps.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
@@ -19,10 +19,10 @@ Or through CMake: `ctest --preset testbeds-only -R fuzz` (after `cmake --preset 
 Pass: `0 false accepts`, `0 crashes` (mutations that change nothing are counted separately as no-ops). Fail: prints the counts.
 
 ## 4. Status
-**verified against the test-bed verifier** (seed 20261023: 0 false accepts, 0 crashes, 92 no-op mutations). The test-bed verifier closes the trailer gap below with a stopgap; the PCH core verifier does not yet.
+**verified** (seed 20261023: 0 false accepts, 0 crashes; no-op mutations are counted and printed).
 
 ## 5. Safety
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
 
 ## 6. Further experiments and design notes
-**Known issue (PCH core):** early fuzzing found the trailer itself is not hashed, so the test-bed checker requires exactly its three fields as a stopgap. Making the trailer part of the chain is a PCH core change and is pending JD's go.
+**Fixed 2026-10-23 (S1.3):** early fuzzing found the trailer itself was not hashed. Schema-2 trailers are now part of the chain (`tb_trailer_chain.py`); the shipped streams keep their legacy trailer and are labeled `legacy-unchained`. Signatures are fuzzed by bed 15.

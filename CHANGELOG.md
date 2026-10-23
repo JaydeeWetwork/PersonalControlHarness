@@ -2,6 +2,30 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
+## 0.0.0.4-alpha (2026-10-23, unreleased; local branch pch-hardening)
+
+**Alpha.** Hardening phase 1 from DeepSeek's production-readiness plan,
+approved by JaydeeWetwork (Ed25519 chosen by JD).
+
+### Section 1: receipt signing (S1.1-S1.8)
+
+- **Trailer in chain (S1.3):** streams close with a schema-2 trailer that is
+  itself a chained record; `stepstream.check_sealed` is the core check and
+  `harness.verify_replay` uses it. Legacy trailers are labeled
+  `legacy-unchained`. Strict JSON loading (no duplicate keys, no NaN).
+- **Signatures (S1.1, S1.2, S1.4):** Ed25519 via `cryptography` (OpenSSL 3+),
+  one signature per receipt at close, `.sig` sidecar, byte-exact payload with
+  golden vectors (`pch/testdata/sig_vectors.json`, RFC 8032 public test key).
+- **Tools (S1.5, S1.6):** `pch/tools/pch_verify.py` (offline, exit 0/1),
+  `pch_sign.py`, `pch_keygen.py`; `pch/docs/KEY-MANAGEMENT.md`.
+- **Tests (S1.7, S1.8):** bed 02 case 3 un-skipped; new bed 15 signature fuzz
+  (10,000 mutations), which found and fixed a sidecar hex-encoding
+  malleability. New CTest entries: `pch.trailer_in_chain`,
+  `pch.sig_golden_vectors`, `pch.sign_at_close`, `pch.verify_cli_offline`,
+  `pch.signature_fuzz`. Fail-before/pass-after record:
+  `docs/hardening/FAIL-BEFORE.md`.
+- `cryptography>=44` added to `requirements.txt`.
+
 ## 0.0.0.3-alpha (2026-10-23)
 
 **Alpha.** Credits release; no code or test changes.
