@@ -55,6 +55,23 @@ compiler (Visual Studio 2026 Build Tools on Windows, GCC or Clang on Linux).
 
    Or, on any platform, `python tools/build.py` (configure, build and test).
 
+4. **Using your own model weights (optional):** the PCH never downloads
+   weights. Put them in any local folder (spaces are fine) and point the PCH
+   at it; the first one set wins:
+
+   | Order | How | Example |
+   |---|---|---|
+   | 1 | `--weights <path>` | `python pch/tools/pch_weights.py --weights "D:\My Models\R1-1.5B"` |
+   | 2 | `PCH_WEIGHTS_DIR` | `export PCH_WEIGHTS_DIR="$HOME/my models/r1"` |
+   | 3 | `"weights_dir"` in `pch.config.json` | in `PCH_CONFIG`, `./pch.config.json` or the per-user config folder |
+   | 4 | default folder | `models/weights/` in the repo (gitignored) |
+
+   `pch_weights.py` prints which folder was chosen and why, and exits 1 with
+   the expected files (`config.json` plus `*.safetensors`) if it is missing or
+   incomplete. This is separate from `PCH_SPECIMEN_DIR`, which points at the
+   specimen's Python *code* (vendored in `third_party/DeepSeek-V3`), not its
+   weights. Details: [pch/README.md](pch/README.md#model-weights).
+
 Full instructions, VS Code tasks and troubleshooting:
 **[BUILDING.md](BUILDING.md)**. The experiments that use a real model
 architecture also need CPU PyTorch and the DeepSeek-V3 reference code (see

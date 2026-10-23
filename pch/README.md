@@ -142,3 +142,26 @@ including the hazard ranking and the two-tier replay design).
 
 MIT — see [`LICENSE`](LICENSE). *(Working draft, to be confirmed by the
 maintainer before publication.)*
+
+## Model weights
+
+The harness's own tests use tiny seeded fixture weights and need no download.
+To use real weights you downloaded yourself, the PCH looks in this order:
+
+1. `--weights <path>` on the command line (`pch/tools/pch_weights.py`);
+2. the `PCH_WEIGHTS_DIR` environment variable;
+3. `"weights_dir"` in a JSON config file: the file named by `PCH_CONFIG`,
+   else `./pch.config.json`, else `%APPDATA%\pch\pch.config.json` (Windows) or
+   `~/.config/pch/pch.config.json` (Linux). A relative path is relative to the
+   config file. Example: `{"weights_dir": "D:/My Models/DeepSeek-R1-Distill-Qwen-1.5B"}`;
+4. the default folder `models/weights/` at the repo root (gitignored).
+
+Windows (`C:\Models\My Model`) and POSIX paths, spaces, `~` and environment
+variables all work. A folder must contain `config.json` and `*.safetensors`
+(or `model.safetensors.index.json` with every shard); otherwise
+`pch_weights.py` exits 1 and says what is missing. Tests: `pch.weights_path`
+(precedence and bad paths, always runs) and `pch.weights_local` (validates your
+configured folder; skipped when none is present).
+
+`PCH_WEIGHTS_DIR` (model **weights**) and `PCH_SPECIMEN_DIR` (specimen
+**code**, default `third_party/DeepSeek-V3/inference`) are independent.

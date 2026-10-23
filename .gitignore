@@ -30,3 +30,8 @@ venv/
 
 # runtime logs written by the game
 game/LithoKraft/logs/
+
+# Model weights: never committed (download them yourself; see pch/README.md)
+/models/
+*.safetensors
+pch.config.json

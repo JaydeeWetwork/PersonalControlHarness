@@ -25,6 +25,8 @@ pch_testbed(pch.sign_at_close            tb_sign_close.py)
 pch_testbed(pch.verify_cli_offline       tb_verify_cli.py)
 pch_testbed(pch.signature_fuzz           tb_signature_fuzz.py 10000)
 pch_testbed(pch.vendored_specimen        tb_vendored_specimen.py)
+pch_testbed(pch.weights_path             tb_weights_path.py)
+pch_testbed(pch.weights_local            tb_weights_path.py --local)
 pch_testbed(pch.docs_check               ../tools/check_docs.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it

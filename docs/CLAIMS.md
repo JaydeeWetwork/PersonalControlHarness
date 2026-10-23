@@ -30,4 +30,5 @@ below is registered in CMake.
 | C19 | Boss cannot read a blanked HUD value (bed 11) | pch.boss.hud_only_honesty | verified (reference boss stub) |
 | C20 | Signed receipt from a real (non-fixture) DeepSeek specimen | - | planned |
 | C21 | CI runs the docs check and tests on every push | - | planned |
+| C23 | Users can point the PCH at local weights (--weights > PCH_WEIGHTS_DIR > config > default) with clear errors | pch.weights_path, pch.weights_local | verified |
 | C22 | The PCH shows nothing about large-model quality (toy scale only) | - | verified (scope statement) |

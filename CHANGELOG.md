@@ -33,6 +33,13 @@ approved by JaydeeWetwork (Ed25519 chosen by JD).
   (MIT), attribution and a sha256 manifest (`UPSTREAM.md`) checked by
   `pch.vendored_specimen`. `PCH_SPECIMEN_DIR` still overrides it.
 
+### Local model weights (JD request)
+
+- `pch/harness/weights.py` and `pch/tools/pch_weights.py`: `--weights`,
+  `PCH_WEIGHTS_DIR`, `"weights_dir"` in `pch.config.json`, default
+  `models/weights/`, in that order; clear errors naming the expected files.
+  Nothing is downloaded. Tests: `pch.weights_path`, `pch.weights_local`.
+
 ### Section 2: test beds (T2.1, T2.2)
 
 - `testbeds/DECISIONS.md`: owner decision (JD) to keep and implement all 14.
