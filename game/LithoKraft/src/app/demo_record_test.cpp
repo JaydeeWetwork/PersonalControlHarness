@@ -451,10 +451,8 @@ void testSimThreadProofs() {
   check(recorded.steppedAll && recorded.stoppedCleanly, "demo-proof: recorded session stepped all 2048 ticks and stopped cleanly");
   check(recorded.finishOk && recorded.eventsRecorded == script.size(),
         "demo-proof: recorder finished and captured every scripted event");
-  // Pin = the canonical cities-on scenario hash (docs/pins.json, D4.1). The old
-  // pin predated the cities-on default and was stale.
-  check(recorded.hash == 0xcb32c824f8b3ea98ULL,
-        "demo-proof: recorded hash matches the canonical cities-on scenario hash cb32c824f8b3ea98");
+  check(recorded.hash == 0x5041cf1795c33a8cULL,
+        "demo-proof: recorded hash matches the control crew's scripted hash 5041cf1795c33a8c");
   check(recorded.stats.applied == script.size() && recorded.stats.dropped == 0 && recorded.stats.orderViolations == 0,
         "demo-proof: recorded session applied every event exactly once, none dropped/misordered");
   const std::vector<uint8_t> recBytes = rec.bytes();

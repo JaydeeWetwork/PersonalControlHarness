@@ -24,7 +24,7 @@ below is registered in CMake.
 | C13 | Boss actions respect a human input-rate cap | pch.boss.human_input_rate | verified (reference boss stub) |
 | C14 | Ranked mode: phone and PC budgets give identical decisions | pch.boss.ranked_fixed_branch_count | verified (reference boss stub) |
 | C15 | Cross-version replay is refused or labeled, never silent | pch.boss.brain_version_stamp | verified (reference boss stub) |
-| C16 | Engine demo scenario hashes to the pinned cities-on hash across record and replay | `lithokraft --demo-test` (engine build; not a ctest yet) | verified on Windows 11 2026-10-23 after repin |
+| C16 | Engine demo scenario hash is stable across record, replay and handshake | `lithokraft --demo-test` (engine build; not a ctest yet) | verified for stability; the pinned value is open (BLOCKERS B6) |
 | C17 | Boss acts only on what's on the HUD (bed 08) | pch.boss.hud_reading | planned |
 | C18 | Every boss attack has a readable wind-up (bed 09) | pch.boss.telegraph_fairness | planned |
 | C19 | Boss cannot read a blanked HUD value (bed 11) | pch.boss.hud_only_honesty | planned |

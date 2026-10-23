@@ -43,8 +43,9 @@ approved by JaydeeWetwork (Ed25519 chosen by JD).
 
 ### Section 4: docs-to-reality sync (D4.1-D4.6)
 
-- Game demo test repinned to the cities-on hash `cb32c824f8b3ea98`;
-  `docs/pins.json` lists every pin.
+- `docs/pins.json` lists every pin. The game demo test repin (D4.1) was
+  reverted after a build measured `aa82e7afb1eff9d3`; open for JD
+  (`docs/BLOCKERS.md` B6).
 - `docs/CLAIMS.md` claims register; README labels unbuilt items `Planned:`.
 - Credit wording: the AI squad designed the test suites without JD's input;
   JD human-reviews, verifies and approves everything before posting.
