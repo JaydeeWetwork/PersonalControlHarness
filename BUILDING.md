@@ -88,7 +88,10 @@ Pinned, known-good specimen (checked 2026-10-23):
 
     git clone https://github.com/deepseek-ai/DeepSeek-V3.git pch/DeepSeek-V3
     git -C pch/DeepSeek-V3 checkout 9b4e9788e4a3a731f7567338ed15d3ec549ce03b   # 2025-08-28, latest V3 commit
-    pip install torch --index-url https://download.pytorch.org/whl/cpu
+    pip install torch psutil --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+
+(Checked 2026-10-23: torch 2.14.1+cpu installs on Python 3.14. Do not install the
+specimen's `requirements.txt` as-is: it pins `triton`, which is GPU-only.)
 
 (Or clone it anywhere and set `PCH_SPECIMEN_DIR` to its `inference/` folder.)
 

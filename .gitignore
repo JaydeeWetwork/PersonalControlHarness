@@ -12,3 +12,8 @@ CMakeLists-FIXED-*.txt
 
 # Release archives
 *.zip
+
+# Backups and local envs
+*.orig
+venv/
+.venv*/

@@ -16,7 +16,17 @@ Or through CMake: `ctest --preset testbeds-only -R fork_budget` (after `cmake --
 It's a measurement. Pass means every branch kept the sealed prefix, and the table is the result. Fail: a branch altered the prefix.
 
 ## 4. Status
-**skipped** on the reference workstation: needs CPU PyTorch and the DeepSeek-V3 reference code (free; see `pch/README.md`), which are not installed there. Without them it prints SKIPPED and why.
+**verified** 2026-10-23 (Windows 11 workstation, Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`, psutil 7.2.2): every branch count kept the sealed prefix (CTest 10-12 s).
+
+| Branches | Wall | Peak RSS | Best score |
+|---|---|---|---|
+| 1 | 0.12 s | 204.7 MiB | -6.3094 |
+| 2 | 0.23 s | 206.9 MiB | -6.0950 |
+| 4 | 0.45 s | 207.0 MiB | -5.9272 |
+| 8 | 0.97 s | 207.7 MiB | -5.7986 |
+| 16 | 1.83 s | 207.9 MiB | -5.7986 |
+
+Without torch and the DeepSeek-V3 code it prints SKIPPED and why.
 
 ## 5. Safety
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.

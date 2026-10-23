@@ -16,7 +16,7 @@ Or through CMake: `ctest --preset testbeds-only -R rewind_fidelity` (after `cmak
 Pass: digest, re-run tokens and verify_replay all match for each N. Fail: names N and the check.
 
 ## 4. Status
-**skipped** on the reference workstation: needs CPU PyTorch and the DeepSeek-V3 reference code (free; see `pch/README.md`), which are not installed there. Without them it prints SKIPPED and why. Even with them, N = 1024, 16384 and 65536 are **not run**: the toy model holds only 256 tokens of context.
+**verified** for N = 1 and N = 64 on 2026-10-23 (Windows 11 workstation, Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`): snapshot digest, re-run and replay all matched (CTest 18-23 s). Without torch and the DeepSeek-V3 code it prints SKIPPED and why. Even with them, N = 1024, 16384 and 65536 are **not run**: the toy model holds only 256 tokens of context.
 
 ## 5. Safety
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
