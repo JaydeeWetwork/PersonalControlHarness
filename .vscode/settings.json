@@ -1,0 +1,9 @@
+{
+  "cmake.useCMakePresets": "always",
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "cmake.configureOnOpen": false,
+  "cmake.ctest.parallelJobs": 4,
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "files.exclude": { "out/": true, "build/": true },
+  "search.exclude": { "out/**": true, "build/**": true, "**/_deps/**": true }
+}

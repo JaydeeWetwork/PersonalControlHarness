@@ -1,0 +1,91 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "cacheVariables": { "PCH_BUILD_ENGINE": "ON", "PCH_BUILD_TESTBEDS": "ON" }
+    },
+    {
+      "name": "windows-base",
+      "hidden": true,
+      "inherits": "base",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+    },
+    {
+      "name": "vs2026",
+      "displayName": "Visual Studio 2026 (multi-config, .sln)",
+      "description": "Works from a plain terminal; generates out/build/vs2026/PersonalControlHarness.slnx",
+      "inherits": "windows-base",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64"
+    },
+    {
+      "name": "vs2022",
+      "displayName": "Visual Studio 2022 (multi-config, .sln)",
+      "inherits": "windows-base",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64"
+    },
+    {
+      "name": "windows-msvc-ninja",
+      "hidden": true,
+      "inherits": "windows-base",
+      "generator": "Ninja",
+      "architecture": { "value": "x64", "strategy": "external" },
+      "toolset": { "value": "host=x64", "strategy": "external" },
+      "cacheVariables": { "CMAKE_C_COMPILER": "cl", "CMAKE_CXX_COMPILER": "cl" },
+      "vendor": { "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Windows" ] } }
+    },
+    {
+      "name": "windows-msvc-debug",
+      "displayName": "MSVC x64 Debug (Ninja; VS / VS Code / Developer prompt)",
+      "inherits": "windows-msvc-ninja",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "windows-msvc-release",
+      "displayName": "MSVC x64 Release (Ninja; VS / VS Code / Developer prompt)",
+      "inherits": "windows-msvc-ninja",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "testbeds-only",
+      "displayName": "PCH test beds only (no C++ build; Python + CTest)",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": { "PCH_BUILD_ENGINE": "OFF" }
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Linux GCC/Clang Release (Ninja)",
+      "inherits": "base",
+      "generator": "Ninja",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" },
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "vs2026-release", "configurePreset": "vs2026", "configuration": "Release" },
+    { "name": "vs2026-debug", "configurePreset": "vs2026", "configuration": "Debug" },
+    { "name": "vs2022-release", "configurePreset": "vs2022", "configuration": "Release" },
+    { "name": "windows-msvc-debug", "configurePreset": "windows-msvc-debug" },
+    { "name": "windows-msvc-release", "configurePreset": "windows-msvc-release" },
+    { "name": "testbeds-only", "configurePreset": "testbeds-only" },
+    { "name": "linux-release", "configurePreset": "linux-release" }
+  ],
+  "testPresets": [
+    { "name": "test-base", "hidden": true, "output": { "outputOnFailure": true }, "execution": { "noTestsAction": "error" } },
+    { "name": "vs2026-release", "inherits": "test-base", "configurePreset": "vs2026", "configuration": "Release" },
+    { "name": "vs2026-debug", "inherits": "test-base", "configurePreset": "vs2026", "configuration": "Debug" },
+    { "name": "vs2022-release", "inherits": "test-base", "configurePreset": "vs2022", "configuration": "Release" },
+    { "name": "windows-msvc-debug", "inherits": "test-base", "configurePreset": "windows-msvc-debug" },
+    { "name": "windows-msvc-release", "inherits": "test-base", "configurePreset": "windows-msvc-release" },
+    { "name": "testbeds-only", "inherits": "test-base", "configurePreset": "testbeds-only" },
+    { "name": "pch-testbeds", "inherits": "test-base", "configurePreset": "vs2026", "configuration": "Release", "filter": { "include": { "label": "testbed" } } },
+    { "name": "linux-release", "inherits": "test-base", "configurePreset": "linux-release" }
+  ]
+}

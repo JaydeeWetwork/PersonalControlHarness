@@ -1,0 +1,9 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "Debug CMake target (MSVC)", "type": "cppvsdbg", "request": "launch",
+      "program": "${command:cmake.launchTargetPath}", "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "Python: receipt tamper test bed", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/testbeds/tb_receipt_tamper.py", "cwd": "${workspaceFolder}/testbeds" }
+  ]
+}

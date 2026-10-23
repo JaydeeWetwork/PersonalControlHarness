@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "PCH: configure + build (vs2026 Release)", "type": "shell",
+      "command": "cmake --preset vs2026 && cmake --build --preset vs2026-release", "group": "build", "problemMatcher": "$msCompile" },
+    { "label": "PCH: ctest (vs2026 Release)", "type": "shell",
+      "command": "ctest --preset vs2026-release", "group": "test", "problemMatcher": [] },
+    { "label": "PCH: test beds only (no C++)", "type": "shell",
+      "command": "cmake --preset testbeds-only && ctest --preset testbeds-only", "group": "test", "problemMatcher": [] }
+  ]
+}
