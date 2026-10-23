@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Personal Control Harness (PCH)"
+abstract: >-
+  A harness that lets a model plan and control its own steps verifiably:
+  each step is recorded in a hash-chained receipt that can be replayed and
+  checked, with test beds and the LithoLattice engine and LithoKraft game.
+authors:
+  - name: "JaydeeWetwork / Wet Wafer Works Games Incorporated"
+license: MIT
+repository-code: "https://github.com/JaydeeWetwork/PersonalControlHarness"
+type: software
