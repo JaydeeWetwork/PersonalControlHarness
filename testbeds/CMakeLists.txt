@@ -31,6 +31,7 @@ pch_testbed(pch.review_regressions       tb_review_fixes.py)
 pch_testbed(pch.docs_check               ../tools/check_docs.py)
 pch_testbed(pch.upstream_drift           ../tools/check_upstream_drift.py)
 pch_testbed(pch.key_rotation             tb_key_rotation.py)
+pch_testbed(pch.boss.stub_conformance     tb_stub_conformance.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it
 pch_testbed(pch.verify_shipped_streams   run_harness_script.py verify_streams.py)

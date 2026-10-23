@@ -140,6 +140,12 @@ AI-authored work before it is merged.
 | 13 | [Fixed branch count (ranked)](testbeds/examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | Ran, passed on the reference boss stub (phone == PC with branch count locked) |
 | 14 | [Brain-version stamp](testbeds/examples/14-brain-version-stamp.md) | Herominde | Cortana | Ran, passed on the reference boss stub (cross-version replay refused or labeled) |
 
+Beds 08-14 rely on the reference boss stub, so `pch.boss.stub_conformance`
+(`testbeds/tb_stub_conformance.py`) checks the stub against the HUD and
+telegraph contract (C1-C8) that the real LithoKraft boss must also meet. Five
+deliberately broken copies of the stub must each fail the clause they break.
+To check another boss, point `PCH_BOSS_IMPL` at an adapter module.
+
 Index and how to run each one: [testbeds/README.md](testbeds/README.md).
 Plain-English summary: [testbeds/SUMMARY.md](testbeds/SUMMARY.md).
 
