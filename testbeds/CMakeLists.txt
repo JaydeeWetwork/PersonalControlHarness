@@ -36,7 +36,10 @@ pch_testbed(pch.rewind_fidelity          tb_model_testbeds.py rewind_fidelity)
 pch_testbed(pch.fork_budget              tb_model_testbeds.py fork_budget)
 set_tests_properties(pch.fork_budget pch.rewind_fidelity PROPERTIES TIMEOUT 3600 LABELS "pch;testbed;slow")
 
-# Boss / fair-play designs: no boss brain in the public PCH yet -> skipped with reason
-foreach(tb hud_reading telegraph_fairness versioned_rematch human_input_rate ranked_fixed_branch_count brain_version_stamp hud_only_honesty)
+# Boss / fair-play beds. Implemented ones run on the PCH reference boss stub
+# (pch/harness/boss.py); the rest are skipped with a reason. Owner decision
+# for every bed: testbeds/DECISIONS.md.
+pch_testbed(pch.boss.versioned_rematch tb_boss_fixture.py versioned_rematch)
+foreach(tb hud_reading telegraph_fairness human_input_rate ranked_fixed_branch_count brain_version_stamp hud_only_honesty)
   pch_testbed(pch.boss.${tb} tb_boss_pending.py ${tb})
 endforeach()

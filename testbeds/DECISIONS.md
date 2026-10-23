@@ -16,12 +16,15 @@ registered and SKIPPED with its reason (exit code 77), never faked.
 | 07 | Lookahead fork budget | pch.fork_budget | Implement | implemented | - |
 | 08 | HUD reading | pch.boss.hud_reading | Implement | skipped (reason) | needs a HUD observation feed in the reference boss |
 | 09 | Telegraph fairness | pch.boss.telegraph_fairness | Implement | skipped (reason) | needs boss attacks with wind-up / HUD timing |
-| 10 | Versioned receipts and rematch | pch.boss.versioned_rematch | Implement | skipped (reason) | being implemented on the PCH reference boss stub (T2.2) |
+| 10 | Versioned receipts and rematch | pch.boss.versioned_rematch | Implement | implemented on the reference boss stub | port to the LithoKraft boss |
 | 11 | HUD-only honesty | pch.boss.hud_only_honesty | Implement | skipped (reason) | needs a HUD-only observation path |
-| 12 | Human input rate | pch.boss.human_input_rate | Implement | skipped (reason) | being implemented on the PCH reference boss stub (T2.2) |
-| 13 | Fixed branch count (ranked) | pch.boss.ranked_fixed_branch_count | Implement | skipped (reason) | being implemented on the PCH reference boss stub (T2.2) |
-| 14 | Brain-version stamp | pch.boss.brain_version_stamp | Implement | skipped (reason) | being implemented on the PCH reference boss stub (T2.2) |
+| 12 | Human input rate | pch.boss.human_input_rate | Implement | implemented on the reference boss stub | inventory-swap timing not modeled; port to the LithoKraft boss |
+| 13 | Fixed branch count (ranked) | pch.boss.ranked_fixed_branch_count | Implement | implemented on the reference boss stub | port to the LithoKraft boss |
+| 14 | Brain-version stamp | pch.boss.brain_version_stamp | Implement | implemented on the reference boss stub | port to the LithoKraft boss |
 
 Added beds (not part of the 14): 15 Signature fuzz (pch.signature_fuzz), implemented.
 
-Beds 10, 12, 13 and 14 are scheduled first (they need only PCH-side features).
+The reference boss (`pch/harness/boss.py`) is a deliberately minimal,
+documented stub, not the game's boss. Passing beds 10/12/13/14 shows the PCH
+features (version stamp, rolling counter, rate cap, locked branch count,
+refuse-or-label replay) work; it does not claim the LithoKraft boss is fair.

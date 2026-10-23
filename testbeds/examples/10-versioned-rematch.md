@@ -7,22 +7,23 @@ Built by: Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-03-versioned-receipt-rematch-testbed.md`.
 
 ## 2. Goal
-See the design file for the full goal and pass/fail rules. This one needs brain-version stamps and a rolling counter in receipts.
+Same seed and same brain version must give the same receipt at every worker count; a v1 rematch after v2 exists must match the v1 original; every receipt names its brain version; the rolling receipt counter must be gap-free.
+It runs on the PCH reference boss (`pch/harness/boss.py`), a deliberately minimal, documented stub, not the LithoKraft boss.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
 
     cd testbeds
-    python tb_boss_pending.py versioned_rematch
+    python tb_boss_fixture.py versioned_rematch
 
 Or through CMake: `ctest --preset testbeds-only -R boss.versioned_rematch` (after `cmake --preset testbeds-only`).
-Today it prints SKIPPED with the missing feature. Once that feature exists, the design's pass/fail rules apply.
+Exit 0 means every check passed.
 
 ## 4. Status
-**skipped**: the public PCH has no brain-version stamps and a rolling counter in receipts yet. Nothing is faked.
+**passed** (2026-10-23, on the reference boss stub): 5 seeds x brain v1/v2 x 1, 2, 4 and all workers give identical decisions; v1 rematches are hash-identical to the originals; the counter check is gap-free and catches a planted gap and repeat.
 
 ## 5. Safety
-Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
+Imports `pch/harness/boss.py` and `stepstream.py`; builds receipts in memory and writes no files.
 
 ## 6. Further experiments and design notes
-A good first contribution: build the missing piece, then replace the skip with the real check.
+Next: run the same checks against the LithoKraft boss once it emits PCH receipts (see `../DECISIONS.md`).

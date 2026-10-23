@@ -72,7 +72,7 @@ nothing is faked.
 | 07 | Lookahead fork budget | Cortana | Cortana | Measure time, memory and score for 1-16 branches | **Passed** 1-16 branches (0.12-1.83 s, peak RSS 205-208 MiB) | Compare a laptop and a desktop |
 | 08 | HUD reading | Master Chief | Cortana | Boss acts only on what's on screen: no hidden-state leaks, 90%+ match rate | Skipped: no boss brain or HUD feed yet | Build the missing feature, then the real check |
 | 09 | Telegraph fairness | Master Chief and Herominde | Cortana | Every attack shows a readable wind-up before it lands | Skipped: no boss attacks with wind-up/HUD timing yet | Same as 08 |
-| 10 | Versioned receipts and rematch | Master Chief | Cortana | Rematches replay the same and receipts carry a version stamp and gap-free counter | Skipped: no version stamps or rolling counter yet | Same as 08 |
+| 10 | Versioned receipts and rematch | Master Chief | Cortana | Rematches replay the same and receipts carry a version stamp and gap-free counter | **Passed** on the reference boss stub: 5 seeds x v1/v2 x 1-12 workers identical, v1 rematch hash-identical, gap-free counter | Port to the LithoKraft boss |
 | 11 | HUD-only honesty | Herominde | Cortana | Blank the on-screen bar; boss must not "x-ray" the real value | Skipped: no HUD-only observation path yet | Same as 08 |
 | 12 | Human input rate | Herominde | Cortana | No burst of boss actions exceeds a human rate cap | Skipped: no action-rate cap yet | Same as 08 |
 | 13 | Fixed branch count (ranked) | Herominde | Cortana | "Phone" and "PC" budgets give identical decisions | Skipped: no configurable branch budget yet | Same as 08 |
