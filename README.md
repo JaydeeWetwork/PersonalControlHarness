@@ -134,9 +134,9 @@ Plain-English summary: [testbeds/SUMMARY.md](testbeds/SUMMARY.md).
 Checkable from this tree: the engine's scripted demo scenario hashes to
 `cb32c824f8b3ea98` (cities on) and `e015e51cf1559089` (cities off) across
 record and replay runs, and `demo_record_proof.lldemo` verifies; a one-byte
-tamper makes it fail. (The game demo test's built-in hash pin,
-`5041cf1795c33a8c`, is stale relative to the cities-on hash; the machinery is
-unaffected.) PCH receipts are in `pch/docs/`, and a cold-start verification
+tamper makes it fail. The game demo test pins the cities-on hash (repinned
+2026-10-23 from a stale `5041cf1795c33a8c`); every pin is listed in
+[docs/pins.json](docs/pins.json) and checked for drift by `pch.docs_check`. PCH receipts are in `pch/docs/`, and a cold-start verification
 transcript is [pch/VERIFY-TRANSCRIPT.txt](pch/VERIFY-TRANSCRIPT.txt).
 
 ```

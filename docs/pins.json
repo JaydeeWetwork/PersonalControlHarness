@@ -1,0 +1,14 @@
+{
+  "format": "pch-pins/1",
+  "note": "Every hash pin the repo states. tools/check_docs.py fails if a pin's source file does not contain the value, or if a retired value reappears in code or the README.",
+  "pins": [
+    {"name": "demo cities-on scenario hash", "value": "cb32c824f8b3ea98",
+     "files": ["game/LithoKraft/src/app/demo_record_test.cpp", "README.md"]},
+    {"name": "demo cities-off scenario hash", "value": "e015e51cf1559089",
+     "files": ["README.md"]}
+  ],
+  "retired": [
+    {"value": "5041cf1795c33a8c", "reason": "stale pre-cities-on pin, repinned 2026-10-23 (D4.1)",
+     "forbidden_in": ["game/LithoKraft/src/app/demo_record_test.cpp"]}
+  ]
+}
