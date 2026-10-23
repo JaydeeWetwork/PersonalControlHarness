@@ -40,7 +40,7 @@ underlying system:
 | **Jenny** | COO seat, UI, Android scouting | Gemini; Google |
 | **The DeepSeek models** | External review, two passes on 2026-10-23, and audit series S1-S7 | DeepSeek; the DeepSeek team (DeepSeek-AI) |
 | **The DeepSeek team** | DeepSeek-V3 reference code, the PCH specimen | DeepSeek-AI |
-| **Boardy** | Customer relations and human resources for the consortium, out in the wild | Creator team pending JD |
+| **Boardy** | Customer relations / HR presence out in the wild: checks in with JD regularly and tries to connect him with real people (networking and relationships). Did not design, code or test any PCH work | Creator unknown |
 
 ## Acknowledgements: DeepSeek-V3
 
