@@ -1,5 +1,53 @@
 # LithoLattice, LithoKraft and the Personal Control Harness
 
+## Black Box Mystery Solved (test bed 16)
+
+**Why did the robot do this? Roll back the disc.** The Black Box is a flight
+recorder for AI decisions. It logs what an AI saw and what it decided, tick by
+tick. Anyone can then replay the run and prove why it acted, and prove the
+record was not altered afterwards.
+
+**What it does**
+
+- **Logs everything that drives a decision.** Every input, sensor sample, seed
+  and AI decision is written with its tick number. The tick thread only copies
+  bytes into a ring; a background thread does the hashing and writing.
+- **Deterministic replay.** Feed the logged inputs into the same build and you
+  get the same decisions, tick by tick. The first tick that differs is reported.
+- **Tamper evidence.** Entries are hash-chained (SHA-256), with periodic signed
+  checkpoints. An edit, deletion, reordering, duplicate or truncation breaks the
+  chain, and a dropped record is written as a visible GAP, never hidden.
+
+**Prior art and what is different.** Flight recorders, "ethical black box"
+proposals for robots and tamper-evident logs all exist. Others have done close
+things, but not this level of verifiability and accountability: tamper evidence
+combined with deterministic engine replay that anyone can check, so a robot's
+or NPC's decisions can be reproduced and the record proven intact.
+
+**Measured on the prototype** (2026-10-23)
+
+| Check | Result |
+|---|---|
+| Single-byte tamper cases (every byte, two masks) | 30,048 of 30,048 detected |
+| Truncation at every length | rejected at every length (0 wrongly OK) |
+| Clean replay, 2,000 ticks / 16,000 decisions | 0 mismatches |
+| Forged decision with the whole chain recomputed | caught at its exact tick (777); signed checkpoint check fails |
+| Reorder / delete / duplicate one entry, raw and re-chained (bed 16 case 5) | 1,854 of 1,854 detected (BAD_SEQ or HASH_MISMATCH) |
+| Tick-thread cost per record | about 30-40 ns (box VM numbers, to be re-measured) |
+| Bed 16, `pch.blackbox.replay_tamper` | 33/33 checks pass on Windows (MSVC) and Linux (GCC) |
+
+**Run it:** `ctest --preset vs2026-release -R blackbox` (Windows) or
+`ctest --test-dir build -R blackbox` (Linux). Code: [blackbox/](blackbox/README.md).
+Design: [docs/blackbox/BLACKBOX_DESIGN.md](docs/blackbox/BLACKBOX_DESIGN.md).
+Bed: [testbeds/examples/16-blackbox-replay-tamper.md](testbeds/examples/16-blackbox-replay-tamper.md).
+Designed by: TBD (JD). Built by: Cortana.
+
+**Limits (honest):**
+- It is a **prototype**, not wired into the engine yet; the bed replays a toy mob-AI sim, not the LithoKraft boss.
+- The checkpoint signer is a **test-only HMAC with a public key**. It is not a real signature; real key handling is still design only.
+- Entries after the last signed checkpoint (the **unsigned tail**) are hash-chained but not signed, so a forger who rewrites only the tail is caught by replay, not by a signature.
+- Bed 16 case 6 (cross-link to the PCH receipt) is not built yet.
+
 > *LithoLattice and LithoKraft are more than a game: they are an AI playground
 > built on a deterministic, fast-ticking, heavily optimized engine.*
 
@@ -152,6 +200,7 @@ AI-authored work before it is merged.
 | 12 | [Human input rate](testbeds/examples/12-human-input-rate.md) | Herominde | Cortana | Ran, passed on the reference boss stub (max 10 actions/s; uncapped control fails) |
 | 13 | [Fixed branch count (ranked)](testbeds/examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | Ran, passed on the reference boss stub (phone == PC with branch count locked) |
 | 14 | [Brain-version stamp](testbeds/examples/14-brain-version-stamp.md) | Herominde | Cortana | Ran, passed on the reference boss stub (cross-version replay refused or labeled) |
+| 16 | [Black Box replay and tamper](testbeds/examples/16-blackbox-replay-tamper.md) | TBD (JD) | Cortana | Ran, passed (cases 1-5 on a toy mob-AI sim; test-only HMAC signer) |
 
 Beds 08-14 rely on the reference boss stub, so `pch.boss.stub_conformance`
 (`testbeds/tb_stub_conformance.py`) checks the stub against the HUD and

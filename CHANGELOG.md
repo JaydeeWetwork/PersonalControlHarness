@@ -2,6 +2,16 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
+## Unreleased (branch `local`, 2026-10-23; not pushed)
+
+- **B8 fixed:** `engine_sim` lost wakeup in `job_system.h` (notify now takes the
+  waiter's mutex first). 200-run `engine_sim` loop clean.
+- **R-TST-4 fixed:** `engine_assets` / `lithokraft_selftest` shared one temp
+  folder under `ctest -j`; temp roots and the symlink probe are now per process.
+  Test code only.
+- **Black Box prototype** (`blackbox/`, C11, Windows and Linux) and **test bed 16**
+  (`pch.blackbox.replay_tamper`). Test-only HMAC signer; designer credit TBD.
+
 ## 0.0.1.0 (2026-10-23)
 
 **Release** (no pre-release suffix), approved by JaydeeWetwork; version named

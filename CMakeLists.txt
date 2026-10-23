@@ -14,6 +14,7 @@ if(PCH_BUILD_ENGINE)
   enable_language(C)
   enable_language(CXX)
   add_subdirectory(engine)
+  add_subdirectory(blackbox)  # Black Box prototype + test bed 16 (C11)
 endif()
 
 if(PCH_BUILD_TESTBEDS AND BUILD_TESTING)

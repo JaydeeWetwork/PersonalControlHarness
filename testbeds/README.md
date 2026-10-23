@@ -30,6 +30,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 | [Fixed branch count (ranked)](examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | verified (reference boss) |
 | [Brain-version stamp](examples/14-brain-version-stamp.md) | Herominde | Cortana | verified (reference boss) |
 | [Signature fuzz (10,000 mutations)](examples/15-signature-fuzz.md) | CloudAtlas | Cortana | verified |
+| [Black Box replay and tamper (bed 16)](examples/16-blackbox-replay-tamper.md) | TBD (JD) | Cortana | verified (cases 1-5, toy mob-AI sim, test-only HMAC signer) |
 
 Status as of 2026-10-23 on a Windows 11 workstation (Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`).
 *skipped* = exits with code 77, so CTest shows "Skipped" with the reason in
