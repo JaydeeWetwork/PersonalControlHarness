@@ -2,6 +2,17 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
+## 0.0.0.3-alpha (2026-10-23)
+
+**Alpha.** Credits release; no code or test changes.
+
+- Includes both credit updates: PCH originally designed by Elfie Muse AI,
+  with credit to the Muse team (the team that created the system Elfie is
+  built on); and "Timing handshake, LithoLattice engine and LithoKraft game:
+  original algorithms designed by JaydeeWetwork (open source under MIT)."
+  The second line was committed after the 0.0.0.2-alpha tag, so this is the
+  first tag carrying both.
+
 ## 0.0.0.2-alpha (2026-10-23)
 
 **Alpha.** Credits correction only; no code or test changes.
