@@ -22,6 +22,7 @@ pch_testbed(pch.receipt_tamper_fuzz      tb_receipt_tamper.py --fuzz 10000)
 pch_testbed(pch.trailer_in_chain         tb_trailer_chain.py)
 pch_testbed(pch.sig_golden_vectors       tb_sig_vectors.py)
 pch_testbed(pch.sign_at_close            tb_sign_close.py)
+pch_testbed(pch.verify_cli_offline       tb_verify_cli.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it
 pch_testbed(pch.verify_shipped_streams   run_harness_script.py verify_streams.py)
