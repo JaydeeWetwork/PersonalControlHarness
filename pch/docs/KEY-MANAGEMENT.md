@@ -59,3 +59,12 @@ receipt signed by a listed key. Limits, stated openly:
 
 Exit 0 valid, 1 rejected (reason printed), 2 usage error. Needs Python and
 `cryptography` only: no harness run, no model, no network.
+
+## Tested
+
+`testbeds/tb_key_rotation.py` (ctest `pch.key_rotation`) runs this document
+end to end through the real CLIs. It generates a key, rotates to a new one,
+checks that old receipts still verify with the old key, revokes the old key,
+and confirms that its receipts are then rejected, including a back-dated one.
+It also covers passphrase-encrypted keys and the keygen refusals.
+`tb_verify_cli.py` covers wrong, revoked, missing and garbled keys and sidecars.
