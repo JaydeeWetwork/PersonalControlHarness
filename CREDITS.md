@@ -2,6 +2,7 @@
 
 ## Credits
 
+- Timing handshake, LithoLattice engine and LithoKraft game: original algorithms designed by JaydeeWetwork (open source under MIT).
 - **Elfie Muse AI** - PCH originally designed by Elfie Muse AI.
 - **The Muse team** - credited as the team that created the system Elfie is built on.
 - **JaydeeWetwork ("JD")** — Architect and designer. Author of the PCH definition and doctrine, and of the Timing Handshake's algorithmic core (Time Serialization, control coupling, event coupling — his design, by his dictation). Directs the project.

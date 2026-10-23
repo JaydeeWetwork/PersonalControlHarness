@@ -160,6 +160,7 @@ transparent tools with receipts anyone can check are how that trust is earned.
 
 - **Project:** directed by **JaydeeWetwork**, Wet Wafer Works Games
   Incorporated (architect of the PCH; inventor and designer of LithoLattice).
+- Timing handshake, LithoLattice engine and LithoKraft game: original algorithms designed by JaydeeWetwork (open source under MIT).
 - **PCH originally designed by Elfie Muse AI**, with credit to **the Muse
   team**, who created the system Elfie is built on.
 - **Test beds:** built by **Cortana**; designed by **Cortana**,

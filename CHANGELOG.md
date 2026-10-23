@@ -9,6 +9,7 @@ Versions use a four-place rolling counter (`a.b.c.d`).
 - PCH originally designed by Elfie Muse AI; credit added for Elfie Muse AI
   and the Muse team (the team that created the system Elfie is built on)
   in README, CREDITS.md and CITATION.cff.
+- Credit line added in README and CREDITS.md: "Timing handshake, LithoLattice engine and LithoKraft game: original algorithms designed by JaydeeWetwork (open source under MIT)."
 
 ## 0.0.0.1-alpha (2026-10-23)
 
