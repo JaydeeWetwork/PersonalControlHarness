@@ -8,7 +8,7 @@
 //   * the atlas builds with a version and per-frame rects;
 //   * the software (MCP vision) form of a spawned sprite actually lands in
 //     a software-rendered frame of real generated Wafer terrain — the
-//     capture and the atlas page are written to ~/workspace/user/files/.
+//     capture and the atlas page are written to the test output dir.
 #include "lithokraft/game/sprite_host.h"
 
 #include <cmath>
@@ -46,10 +46,13 @@ Mat4 translation(float x, float y, float z) {
   return t;
 }
 
+// Where the sprite capture writes its PNGs for a human to inspect.
+// LITHOKRAFT_TEST_OUT_DIR overrides it; otherwise a folder in the system temp
+// directory is used, so a test run never writes into the user's home tree.
 std::filesystem::path userFilesDir() {
-  if (const char* home = std::getenv("HOME"); home && *home)
-    return std::filesystem::path(home) / "workspace" / "user" / "files";
-  return "/home/hatch/workspace/user/files";
+  if (const char* out = std::getenv("LITHOKRAFT_TEST_OUT_DIR"); out && *out)
+    return std::filesystem::path(out);
+  return std::filesystem::temp_directory_path() / "lithokraft-selftest-out";
 }
 
 }  // namespace
@@ -258,7 +261,7 @@ int runSpriteHostSelfTest(const std::vector<std::filesystem::path>& packDirs) {
       const bool atlasSaved = !pages.empty() &&
                               pages[0].savePng(userFilesDir() / "sprite-atlas-2026-10-12.png", &err);
       check(capSaved && atlasSaved,
-            "sprite capture: capture PNG + atlas PNG written to ~/workspace/user/files/");
+            "sprite capture: capture PNG + atlas PNG written to the test output dir");
     }
   }
 

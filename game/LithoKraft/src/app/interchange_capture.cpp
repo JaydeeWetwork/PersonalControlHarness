@@ -123,7 +123,7 @@ int main(int argc, char** argv) {
   litholattice::WorldgenSettings settings;
   settings.seed = 20261011;
   const std::string waferJsonText =
-      readFile("/home/hatch/workspace/litholattice/game/LithoKraft/assets/worldgen/wafer.json");
+      readFile(std::string(LITHOKRAFT_SOURCE_DIR) + "/assets/worldgen/wafer.json");
   if (!waferJsonText.empty()) settings.generators["wafer"] = waferJsonText;
   litholattice::DimensionRegistry reg = lithokraft::createDimensions(settings);
   litholattice::Dimension* wafer = reg.find("wafer");
@@ -174,8 +174,9 @@ int main(int argc, char** argv) {
     std::printf("[OK] %s/interchange_manifest.json\n", outDir.c_str());
 
   // Real textures, same loading as biome_capture.
-  const std::string engineAssets = "/home/hatch/workspace/litholattice/engine/assets";
-  const std::string gameAssets = "/home/hatch/workspace/litholattice/game/LithoKraft/assets";
+  // Source-tree asset roots, baked in by CMake (see src/app/CMakeLists.txt).
+  const std::string engineAssets = LITHOKRAFT_ENGINE_ASSETS_DIR;
+  const std::string gameAssets = std::string(LITHOKRAFT_SOURCE_DIR) + "/assets";
   lithokraft::ResourceManager rm({engineAssets, gameAssets,
                                   std::filesystem::path(gameAssets) / "packs" / "pack_64"});
   rm.reload();

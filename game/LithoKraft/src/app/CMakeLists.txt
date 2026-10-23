@@ -79,6 +79,8 @@ add_test(NAME lithokraft_items_selftest COMMAND lithokraft_items_selftest WORKIN
 # run manually: ./biome_capture <outdir>).
 add_executable(biome_capture biome_capture.cpp)
 target_link_libraries(biome_capture PRIVATE lithokraft_game)
+target_compile_definitions(biome_capture PRIVATE LITHOKRAFT_SOURCE_DIR="${LithoKraft_SOURCE_DIR}"
+                          LITHOKRAFT_ENGINE_ASSETS_DIR="${LithoLattice_SOURCE_DIR}/assets")
 set_target_properties(biome_capture PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 litholattice_module_options(biome_capture)
 # Interchange capture: headless screenshots of a generated Wafer
@@ -86,6 +88,8 @@ litholattice_module_options(biome_capture)
 # run manually: ./interchange_capture <outdir>).
 add_executable(interchange_capture interchange_capture.cpp)
 target_link_libraries(interchange_capture PRIVATE lithokraft_game)
+target_compile_definitions(interchange_capture PRIVATE LITHOKRAFT_SOURCE_DIR="${LithoKraft_SOURCE_DIR}"
+                          LITHOKRAFT_ENGINE_ASSETS_DIR="${LithoLattice_SOURCE_DIR}/assets")
 set_target_properties(interchange_capture PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 litholattice_module_options(interchange_capture)
 # Texture generator: builds block textures from assets/texture_recipes/*.ltxr

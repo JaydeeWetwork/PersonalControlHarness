@@ -130,7 +130,8 @@ void registerSpriteCommands(litholattice::console::ConsoleRegistry& r, SpriteCom
 /// Host self-test (app selftest section): registration from every source
 /// kind, spawn/tick/emit counts, atlas build, and a software-renderer
 /// capture proving a sprite lands in a rendered world frame. Writes the
-/// capture + atlas PNGs to ~/workspace/user/files/. Returns failures.
+/// capture + atlas PNGs to the test output dir
+/// ($LITHOKRAFT_TEST_OUT_DIR, default <temp>/lithokraft-selftest-out). Returns failures.
 int runSpriteHostSelfTest(const std::vector<std::filesystem::path>& packDirs);
 
 }  // namespace lithokraft

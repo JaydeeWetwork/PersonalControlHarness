@@ -60,8 +60,7 @@ std::string readFile(const std::string& path) {
 // the generator invalid -- "duplicate feature name 'trace_trees'" -- and the
 // game silently fell back to the built-in copy of the same file.)
 std::string waferJson() {
-  return readFile(
-      "/home/hatch/workspace/litholattice/game/LithoKraft/assets/worldgen/wafer.json");
+  return readFile(std::string(LITHOKRAFT_SOURCE_DIR) + "/assets/worldgen/wafer.json");
 }
 
 litholattice::Mat4 translation(float x, float y, float z) {
@@ -97,9 +96,9 @@ int main(int argc, char** argv) {
   // the missing texture, layer 0) and fed the renderer a single all-white tile,
   // so every screenshot came out white regardless of the actual textures.
   // The ResourceManager (and the materials it builds) must outlive all meshing.
-  const std::string engineAssets = "/home/hatch/workspace/litholattice/engine/assets";
-  const std::string gameAssets =
-      "/home/hatch/workspace/litholattice/game/LithoKraft/assets";
+  // Source-tree asset roots, baked in by CMake (see src/app/CMakeLists.txt).
+  const std::string engineAssets = LITHOKRAFT_ENGINE_ASSETS_DIR;
+  const std::string gameAssets = std::string(LITHOKRAFT_SOURCE_DIR) + "/assets";
   lithokraft::ResourceManager rm({engineAssets, gameAssets,
                                   std::filesystem::path(gameAssets) / "packs" / "pack_64"});
   rm.reload();

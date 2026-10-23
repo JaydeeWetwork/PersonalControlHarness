@@ -110,8 +110,8 @@
 // lithoscript scripts and sends them to a KEYBOARD component; the keyboard
 // feeds them into larger contraptions built by the user, the proxy, or the
 // agent. This is the physical mechanism for the Fragment → lithoscript →
-// world pipeline. Full design note (reference, do not duplicate here):
-//   ~/workspace/user/files/ReadOR-Design-Note-2026-10-11.md
+// world pipeline. The full design note (ReadOR-Design-Note-2026-10-11) is
+// kept outside this repository.
 //
 // What the engine already provides for it (no changes needed): the single
 // executeLine() entry point, the swappable OutputFn sink, and the cvar

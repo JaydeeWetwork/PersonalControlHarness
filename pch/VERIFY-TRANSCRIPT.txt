@@ -1,6 +1,6 @@
 PCH RELEASE PACKAGE — SELF-VERIFICATION TRANSCRIPT
 Date: 2026-10-19 (America/New_York)
-Package copy: ~/workspace/pch-release (as shipped in the release zip)
+Package copy: <package dir> (as shipped in the release zip)
 Environment: fresh venv created inside the package per README quickstart;
   pip install -r requirements.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
 Python: 3.12.3
@@ -11,7 +11,7 @@ Specimen: NOT redistributed in this package. For this run it was wired
 
 ==================================================================
 $ cd harness && python verify_streams.py
-/home/hatch/workspace/pch-release/.venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+<venv>/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
   cpu = _conversion_method_template(device=torch.device("cpu"))
   [PASS] stream_sampled.jsonl -- all 16 committed tokens re-derived; chain + seal intact
   [PASS] stream_greedy.jsonl -- all 16 committed tokens re-derived; chain + seal intact
@@ -21,7 +21,7 @@ exit code: 0
 
 ==================================================================
 $ python disc_test_llm.py
-/home/hatch/workspace/pch-release/.venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+<venv>/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
   cpu = _conversion_method_template(device=torch.device("cpu"))
 == building toy DeepSeek-V3 (specimen code, CPU, float path pinned)
    weights digest: 4365dc9610eadcfa...
@@ -43,7 +43,7 @@ exit code: 0
 
 ==================================================================
 $ python pch_more_tests.py
-/home/hatch/workspace/pch-release/.venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+<venv>/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
   cpu = _conversion_method_template(device=torch.device("cpu"))
 == A. rewind and branch (the rehearsal move)
    original tokens: [138, 42, 251, 22, 175, 55, 234, 256, 507, 183, 376, 488, 208, 128, 28, 149]
