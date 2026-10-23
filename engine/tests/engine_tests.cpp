@@ -109,6 +109,7 @@
 #include "litholattice/script/script_engine.h"
 #include "litholattice/script/suspension_policy.h"
 #include "litholattice/core/log.h"
+#include "litholattice/core/test_env.h"
 #include "litholattice/script/script_binding_allowlist.h"
 #include "litholattice/console/console_selftest.h"
 #include "litholattice/index/index_selftest.h"
@@ -5218,18 +5219,22 @@ void testModSandbox() {
     err.clear();
     check(!sb.resolve(std::string("a\0b", 3), &err), "sandbox: NUL byte rejected");
   }
-  std::error_code ec;
-  std::filesystem::create_directory_symlink(dir, dir / "mod_a" / "link_out", ec);
-  std::filesystem::create_directory_symlink(dir / "mod_a" / "data", dir / "mod_a" / "link_in", ec);
-  check(!ec, "sandbox: test symlinks created");
-  check(!resolves("link_out/evil.txt"), "sandbox: symlink pointing outside the root rejected");
-  check(resolves("link_in/ok.txt"), "sandbox: symlink staying inside the root allowed");
-  std::filesystem::create_directories(dir / "mod_a_evil");  // sibling sharing the root's name prefix
-  std::filesystem::create_directory_symlink(dir / "mod_a_evil", dir / "mod_a" / "sib", ec);
-  check(!resolves("sib/x"), "sandbox: symlink to a prefix-sharing sibling rejected");
-  std::filesystem::create_symlink("loop_b", dir / "mod_a" / "loop_a", ec);
-  std::filesystem::create_symlink("loop_a", dir / "mod_a" / "loop_b", ec);
-  check(!resolves("loop_a/x"), "sandbox: symlink loop rejected");
+  if (!test_env::symlinksAvailable()) {
+    test_env::skip("sandbox: symlink escape, prefix-sibling and loop checks", test_env::symlinkSkipReason());
+  } else {
+    std::error_code ec;
+    std::filesystem::create_directory_symlink(dir, dir / "mod_a" / "link_out", ec);
+    std::filesystem::create_directory_symlink(dir / "mod_a" / "data", dir / "mod_a" / "link_in", ec);
+    check(!ec, "sandbox: test symlinks created");
+    check(!resolves("link_out/evil.txt"), "sandbox: symlink pointing outside the root rejected");
+    check(resolves("link_in/ok.txt"), "sandbox: symlink staying inside the root allowed");
+    std::filesystem::create_directories(dir / "mod_a_evil");  // sibling sharing the root's name prefix
+    std::filesystem::create_directory_symlink(dir / "mod_a_evil", dir / "mod_a" / "sib", ec);
+    check(!resolves("sib/x"), "sandbox: symlink to a prefix-sharing sibling rejected");
+    std::filesystem::create_symlink("loop_b", dir / "mod_a" / "loop_a", ec);
+    std::filesystem::create_symlink("loop_a", dir / "mod_a" / "loop_b", ec);
+    check(!resolves("loop_a/x"), "sandbox: symlink loop rejected");
+  }
   std::filesystem::remove_all(dir);
 }
 
@@ -5257,7 +5262,10 @@ void testSandboxedOpen() {
     const auto data = st::readSandboxedFile(sb, "data/ok.txt", &err);
     check(data && asString(*data) == "hello", "sandboxed open: normal read works");
   }
-  {  // 2. trailing-component swap: resolve a real file, then the attacker replaces
+  const bool links = test_env::symlinksAvailable();
+  if (!links)
+    test_env::skip("sandboxed open: symlink-swap race checks (cases 2 and 3)", test_env::symlinkSkipReason());
+  if (links) {  // 2. trailing-component swap: resolve a real file, then the attacker replaces
       // the validated file itself with a symlink pointing outside. (resolve()
       // canonicalizes, so a swapped *link* never survives in the returned path —
       // the dangerous race is the validated file becoming a link.)
@@ -5288,7 +5296,7 @@ void testSandboxedOpen() {
     check(again && asString(*again) == "hello",
           "sandboxed open: legit file readable after the attack");
   }
-  {  // 3. intermediate-component swap: O_NOFOLLOW cannot see this one; the fd
+  if (links) {  // 3. intermediate-component swap: O_NOFOLLOW cannot see this one; the fd
       // containment re-check must catch it.
     std::filesystem::create_directories(dir / "mod" / "sub");
     std::filesystem::create_directories(dir / "outside" / "sub");
@@ -7972,10 +7980,20 @@ int runModule(const std::string& m) {
 }  // namespace
 
 int main(int argc, char** argv) {
+  // Unbuffered stdout: when a check crashes the process, CTest still shows
+  // every line printed up to the crash, which pinpoints the failing check.
+  std::setvbuf(stdout, nullptr, _IONBF, 0);
   const char* all[] = {"core", "world", "render", "sim", "anim", "storage", "procgen", "trees", "shrubs", "litho_formula", "ui", "assets", "audio", "input", "net", "script", "mods", "console", "index", "mcp", "defrag", "subdiv", "texture"};
   int fails = 0;
   if (argc > 1) for (int i = 1; i < argc; ++i) fails += runModule(argv[i]);
   else for (const char* m : all) fails += runModule(m);
   std::printf(fails ? "ENGINE TESTS FAILED (%d)\n" : "ENGINE TESTS OK\n", fails);
-  return fails ? 1 : 0;
+  if (fails) return 1;
+  // Nothing failed, but a section needed an OS capability this machine lacks.
+  // Report that as a CTest skip rather than a pass (see core/test_env.h).
+  if (const int skipped = test_env::skipCount()) {
+    std::printf("ENGINE TESTS SKIPPED %d SECTION(S); see the [SKIP] lines above\n", skipped);
+    return test_env::kSkipReturnCode;
+  }
+  return 0;
 }

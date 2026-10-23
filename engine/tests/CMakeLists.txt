@@ -8,4 +8,7 @@ target_link_libraries(litholattice_tests PRIVATE litholattice_render_vk litholat
 litholattice_module_options(litholattice_tests)
 foreach(module core world render sim ai anim storage procgen trees shrubs water litho_formula ui assets audio input net script mods console crypto index mcp defrag subdiv texture)
   add_test(NAME engine_${module} COMMAND litholattice_tests ${module})
+  # Exit code 77 means "nothing failed, but a section needed an OS capability
+  # this machine lacks" (litholattice/core/test_env.h); CTest shows it as Skipped.
+  set_tests_properties(engine_${module} PROPERTIES SKIP_RETURN_CODE 77)
 endforeach()

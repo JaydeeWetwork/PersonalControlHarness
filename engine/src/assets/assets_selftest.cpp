@@ -9,6 +9,7 @@
 #include "litholattice/assets/shader_library.h"
 #include "litholattice/assets/mod_manifest.h"
 #include "litholattice/assets/mod_signature.h"
+#include "litholattice/core/test_env.h"
 #include "litholattice/crypto/signing.h"
 
 namespace litholattice {
@@ -370,7 +371,9 @@ int runAssetsSelfTest() {
     // loader would read, so a signed tree containing any link is refused;
     // the same tree verifies without the link (checked below), and
     // signing itself is unaffected.
-    {
+    if (!test_env::symlinksAvailable()) {
+      test_env::skip("sig: signed mod containing a symlink (E M4)", test_env::symlinkSkipReason());
+    } else {
       const fs::path modDir = sigRoot / "link_mod";
       writeFile(modDir / "mod.json", R"({"id":"test_link","version":"1.0.0"})");
       writeFile(modDir / "real.txt", "real content");
