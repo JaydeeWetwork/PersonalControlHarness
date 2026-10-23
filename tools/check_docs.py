@@ -119,6 +119,15 @@ for r in table_rows(claims):
             if t.rstrip(".") not in registered:
                 errors.append(f"CLAIMS {r[0]} verified by unregistered ctest {t}")
 
+# Rule 6: every crew stays credited (JD, round 2 item 8) in both README and CREDITS.md.
+CREW = ["JaydeeWetwork", "Cortana", "CloudAtlas", "Herominde", "Master Chief", "Elfie",
+        "Muse team", "Archie", "DeepSeek team", "DeepSeek model"]
+for doc in ("README.md", "CREDITS.md"):
+    text = re.sub(r"\s+", " ", read(doc))
+    for name in CREW:
+        if name not in text:
+            errors.append(f"{doc} no longer credits {name}")
+
 if errors:
     print("DOCS CHECK: FAIL")
     for e in errors:

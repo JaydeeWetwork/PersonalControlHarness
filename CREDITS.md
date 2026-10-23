@@ -12,6 +12,12 @@
 ## Additional credit
 
 - **DeepSeek** — External review input (audit findings series S1–S7, weighed and verified at the desk before adoption).
+- **The DeepSeek model** — External review of this harness on 2026-10-23, in two passes: the production-readiness plan that hardening phase 1 implemented, and the re-review ("roughly 70% done; keep `-alpha`") that set round 2 (CI, stub conformance, drift check, key-rotation tests, rewind/fork ceiling, release sign-off).
+- **Archie** (Argon, Google AI) — The optimization doctrine and the prototype-receipts review (`docs/Archie-Review-Prototype-Receipts-2026-10-18.md`).
+- **CloudAtlas** — Test-bed designer (beds 02 and 03, receipt tamper and fuzz; the pch-verify CLI acceptance test).
+- **Herominde** — Test-bed designer (beds 05, 09 with Master Chief, 11–14).
+- **Master Chief** — Test-bed designer (beds 08, 09 with Herominde, 10; the TB1 boss scenarios).
+- **Cortana** — Builder of every test bed and of the hardening rounds (phase 1, round 2: CI, stub conformance, drift check, key rotation, release sign-off).
 
 - **Test beds:** designed by the AI squad on their own, without JD's input, then verified and approved for posting by JD (who human-reviews and verifies all AI-authored work); **Cortana** built all fourteen, plus bed 15. Designers: Cortana (01, 04, 06, 07), CloudAtlas (02, 03), Herominde (05, 11-14), Master Chief (08, 10), Master Chief and Herominde (09). See `testbeds/README.md`.
 

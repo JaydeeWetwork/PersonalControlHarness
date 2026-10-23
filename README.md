@@ -218,6 +218,14 @@ transparent tools with receipts anyone can check are how that trust is earned.
   Windows build lead.
 - **Argon/RC:** design reviews
   ([docs/Argon-Review-2026-10-18.md](docs/Argon-Review-2026-10-18.md)).
+- **Archie:** the optimization doctrine and the prototype-receipts review
+  ([docs/Archie-Review-Prototype-Receipts-2026-10-18.md](docs/Archie-Review-Prototype-Receipts-2026-10-18.md)).
+- **The DeepSeek team:** the DeepSeek-V3 reference code that the PCH runs as
+  its specimen (see Acknowledgements).
+- **The DeepSeek model:** an external review of this harness on 2026-10-23,
+  in two passes. The first was the production-readiness plan behind
+  0.0.0.4-alpha. The second was the re-review that set round 2 (CI, stub
+  conformance, drift check, key-rotation tests, release sign-off).
 
 Full record: [CREDITS.md](CREDITS.md). Game credits:
 [game/LithoKraft/CREDITS.md](game/LithoKraft/CREDITS.md).
