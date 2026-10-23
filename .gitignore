@@ -17,3 +17,6 @@ CMakeLists-FIXED-*.txt
 *.orig
 venv/
 .venv*/
+
+# runtime logs written by the game
+game/LithoKraft/logs/
