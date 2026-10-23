@@ -1,6 +1,6 @@
 // Systerian codec implementation. The geometry and SVG rendering are a
-// port of JD's reference generator (generate.py, the parametric model in
-// ~/workspace/user/files/cistercian/): 9 unit strokes + mirror/flip place
+// port of the reference generator (generate.py, the parametric model in
+// testdata/reference/): 9 unit strokes + mirror/flip place
 // transforms, rivets at every stroke-graph vertex, halo pass beneath the
 // main pass. The masters that generator produced are the verification
 // reference (see systerian_selftest.cpp).
