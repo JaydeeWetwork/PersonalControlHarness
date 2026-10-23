@@ -28,7 +28,7 @@ Design reviews: Argon (`../docs/Argon-Review-2026-10-18.md`).
 | [HUD-only honesty](examples/11-hud-only-honesty.md) | Herominde | Cortana | skipped |
 | [Human input rate](examples/12-human-input-rate.md) | Herominde | Cortana | verified (reference boss) |
 | [Fixed branch count (ranked)](examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | verified (reference boss) |
-| [Brain-version stamp](examples/14-brain-version-stamp.md) | Herominde | Cortana | skipped |
+| [Brain-version stamp](examples/14-brain-version-stamp.md) | Herominde | Cortana | verified (reference boss) |
 | [Signature fuzz (10,000 mutations)](examples/15-signature-fuzz.md) | CloudAtlas | Cortana | verified |
 
 Status as of 2026-10-23 on a Windows 11 workstation (Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`).

@@ -76,7 +76,7 @@ nothing is faked.
 | 11 | HUD-only honesty | Herominde | Cortana | Blank the on-screen bar; boss must not "x-ray" the real value | Skipped: no HUD-only observation path yet | Same as 08 |
 | 12 | Human input rate | Herominde | Cortana | No burst of boss actions exceeds a human rate cap | **Passed** on the reference boss stub: max burst <= 10 actions/60 ticks for 5 seeds x v1/v2; uncapped control bursts 58 | Port to the LithoKraft boss |
 | 13 | Fixed branch count (ranked) | Herominde | Cortana | "Phone" and "PC" budgets give identical decisions | **Passed** on the reference boss stub: ranked phone (1 worker) == PC (8 workers) receipt hash, 5 seeds x v1/v2; unranked budgets differ | Port to the LithoKraft boss |
-| 14 | Brain-version stamp | Herominde | Cortana | Old receipts on a new build are refused or labeled, not silently replayed | Skipped: no brain-version field yet | Same as 08 |
+| 14 | Brain-version stamp | Herominde | Cortana | Old receipts on a new build are refused or labeled, not silently replayed | **Passed** on the reference boss stub: v1 receipt on v2 build refused, or labeled CROSS-VERSION on request; edited/missing stamps refused; signature binds the brain | Port to the LithoKraft boss |
 
 Every test bed uses the harness read-only and doesn't change PCH core.
 Details per experiment are in `examples/`, and the original designs with

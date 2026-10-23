@@ -42,6 +42,7 @@ set_tests_properties(pch.fork_budget pch.rewind_fidelity PROPERTIES TIMEOUT 3600
 pch_testbed(pch.boss.versioned_rematch tb_boss_fixture.py versioned_rematch)
 pch_testbed(pch.boss.human_input_rate tb_boss_fixture.py human_input_rate)
 pch_testbed(pch.boss.ranked_fixed_branch_count tb_boss_fixture.py ranked_fixed_branch_count)
-foreach(tb hud_reading telegraph_fairness brain_version_stamp hud_only_honesty)
+pch_testbed(pch.boss.brain_version_stamp tb_boss_fixture.py brain_version_stamp)
+foreach(tb hud_reading telegraph_fairness hud_only_honesty)
   pch_testbed(pch.boss.${tb} tb_boss_pending.py ${tb})
 endforeach()
