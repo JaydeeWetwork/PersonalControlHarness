@@ -85,8 +85,10 @@ Tested on Windows 11 (MSVC, VS 2026 Build Tools) and Linux. On
 2026-10-23 (round 2, commit `86f1c2e`), the full
 `ctest --preset vs2026-release -j 8 --repeat until-fail:3` run on Windows 11
 reported **78 of 78 tests with 0 failures: 75 passed and 3 skipped**, three
-times in a row. The same run with `PCH_SPECIMEN_DIR` unset (vendored
-DeepSeek-V3 code) also passed 78 of 78. On Linux (box, GCC, Python 3.13, no
+times in a row. A second x3 run with `PCH_SPECIMEN_DIR` unset (vendored
+DeepSeek-V3 code) **hung in `engine_sim`** and was stopped: that engine test
+hangs intermittently (1 in 36 runs in isolation; see
+[BLOCKERS B8](docs/BLOCKERS.md)). On Linux (box, GCC, Python 3.13, no
 torch), `ctest -j8 --repeat until-fail:3` passed 78 of 78: 70 passed and 8
 skipped. A skipped test exits cleanly and prints why; nothing is faked.
 
