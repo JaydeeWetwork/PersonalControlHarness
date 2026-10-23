@@ -40,9 +40,14 @@ def stream_sets():
         if not os.path.isdir(d):
             continue
         plats = []
-        for name in STREAMS:
-            hdr = stepstream.load_stream(os.path.join(d, name))[0]
-            plats.append(hdr.get("platform"))
+        try:
+            for name in STREAMS:
+                hdr = stepstream.load_stream(os.path.join(d, name))[0]
+                plats.append(hdr.get("platform"))
+        except (OSError, ValueError, IndexError) as exc:
+            # A missing, empty or malformed file must not hide the other sets.
+            print(f"  [WARN] {os.path.basename(d)}: unreadable reference stream ({exc}); ignored")
+            continue
         if not plats[0] or any(harness.platform_key(p) != harness.platform_key(plats[0])
                                for p in plats):
             print(f"  [WARN] {os.path.basename(d)}: missing or inconsistent platform tags; ignored")

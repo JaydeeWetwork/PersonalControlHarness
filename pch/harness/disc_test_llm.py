@@ -11,8 +11,10 @@ Checks:
   5. Non-perturbation: running under the harness changes nothing -- a plain
      un-harnessed generation with identical draws produces identical tokens.
 """
+import atexit
 import copy
 import os
+import shutil
 import sys
 import tempfile
 
@@ -30,7 +32,12 @@ fails = 0
 # Fresh streams go to an output dir, never over the committed reference
 # streams in pch/harness/ (core fix approved by JD 2026-10-23).
 # Set PCH_OUT_DIR to choose it (e.g. to record new reference streams).
-OUT_DIR = os.environ.get("PCH_OUT_DIR") or tempfile.mkdtemp(prefix="pch-disc-")
+OUT_DIR = os.environ.get("PCH_OUT_DIR")
+if not OUT_DIR:
+    # Throwaway dir: remove it on exit so repeated runs leave nothing behind.
+    # A caller-chosen PCH_OUT_DIR is always kept.
+    OUT_DIR = tempfile.mkdtemp(prefix="pch-disc-")
+    atexit.register(shutil.rmtree, OUT_DIR, ignore_errors=True)
 os.makedirs(OUT_DIR, exist_ok=True)
 SAMPLED = os.path.join(OUT_DIR, "stream_sampled.jsonl")
 GREEDY = os.path.join(OUT_DIR, "stream_greedy.jsonl")
