@@ -362,8 +362,12 @@ void testSessionTier() {
 // -- Screenshot path confinement (P1b, App. F M6) -------------------------------
 void testPathConfinement() {
   namespace fs = std::filesystem;
-  const fs::path root =
-      fs::temp_directory_path() / "lithokraft-shot-selftest-root" / "screenshots";
+  // resolveScreenshotPath() canonicalises the root. Compare against the
+  // canonical form too: on Windows %TEMP% is often an 8.3 short path
+  // (C:\Users\ABCDEF~1\...), and canonicalising expands it to the long
+  // name, so a raw temp_directory_path() root would never compare equal.
+  const fs::path root = fs::weakly_canonical(
+      fs::temp_directory_path() / "lithokraft-shot-selftest-root" / "screenshots");
   auto insideRoot = [&](const fs::path& p) {
     auto ri = root.begin();
     auto pi = p.begin();
