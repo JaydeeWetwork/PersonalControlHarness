@@ -167,6 +167,9 @@ void testSigning(Checker& check) {
   check(signMod(dir, seed.data(), &err), "signing: re-sign works: " + err);
   std::ifstream f2(dir / "signature.json", std::ios::binary);
   const std::string sig2((std::istreambuf_iterator<char>(f2)), std::istreambuf_iterator<char>());
+  // Close it now: on Windows a file that is still open cannot be deleted, and
+  // the remove_all() cleanup below used to throw on it, aborting the process.
+  f2.close();
   check(sig1 == sig2 && !sig1.empty(), "signing: deterministic (identical signature.json)");
 
   check(verifyMod(dir, pub.data(), &err), "signing: verify with correct key: " + err);
@@ -221,7 +224,10 @@ void testSigning(Checker& check) {
   }
 #endif
 
-  fs::remove_all(dir);
+  // Non-throwing cleanup: a leftover temp file is reported, never fatal.
+  std::error_code rmEc;
+  fs::remove_all(dir, rmEc);
+  check(!rmEc, "signing: temp directory cleaned up");
 }
 
 }  // namespace
