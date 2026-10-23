@@ -24,7 +24,7 @@ litholattice_module_options(lithokraft)
 # Ship scripts/ next to the exe (used by shipping builds and --scripts exe).
 # Third-party license texts ship next to the exe.
 add_custom_command(TARGET lithokraft POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/THIRD_PARTY_LICENSES.md $<TARGET_FILE_DIR:lithokraft>/THIRD_PARTY_LICENSES.md)
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${LithoLattice_SOURCE_DIR}/THIRD_PARTY_LICENSES.md $<TARGET_FILE_DIR:lithokraft>/THIRD_PARTY_LICENSES.md)
 add_custom_command(TARGET lithokraft POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_if_different ${LithoKraft_SOURCE_DIR}/mod.json $<TARGET_FILE_DIR:lithokraft>/mod.json)
 add_custom_command(TARGET lithokraft POST_BUILD

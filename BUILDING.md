@@ -76,3 +76,25 @@ The older one-shot driver `python tools/build.py` still works.
 CTest reports PASS, FAIL or SKIPPED (exit code 77). Skipped tests print why:
 a missing prerequisite (torch / specimen) or a PCH feature that does not
 exist yet. See `testbeds/README.md`.
+
+## PCH reference-model specimen (optional, for the model-backed test beds)
+
+The PCH harness imports DeepSeek's open reference inference code (MIT
+licensed) as a read-only "specimen". It is not shipped in this repo, and no
+model weights are needed: the harness builds a tiny CPU model with seeded
+fixture weights.
+
+Pinned, known-good specimen (checked 2026-10-23):
+
+    git clone https://github.com/deepseek-ai/DeepSeek-V3.git pch/DeepSeek-V3
+    git -C pch/DeepSeek-V3 checkout 9b4e9788e4a3a731f7567338ed15d3ec549ce03b   # 2025-08-28, latest V3 commit
+    pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+(Or clone it anywhere and set `PCH_SPECIMEN_DIR` to its `inference/` folder.)
+
+Newer DeepSeek reference code was checked and is **not** compatible with the
+CPU harness yet. DeepSeek-V3.2-Exp (GitHub, `87e509a`, 2025-11-18) and
+DeepSeek-V4-Flash/Pro (`inference/` on Hugging Face, kernel updated
+2026-06-08) call TileLang GPU kernels (`act_quant`, `fp8_index`,
+`sparse_attn`, `hc_split_sinkhorn`) on every forward pass, and V4 replaces
+the MLA `kv_cache`/`pe_cache` that the harness digests. Stay on the V3 pin.
