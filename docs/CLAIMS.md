@@ -32,3 +32,5 @@ below is registered in CMake.
 | C21 | CI runs the docs check and tests on every push | - | planned |
 | C23 | Users can point the PCH at local weights (--weights > PCH_WEIGHTS_DIR > config > default) with clear errors | pch.weights_path, pch.weights_local | verified |
 | C22 | The PCH shows nothing about large-model quality (toy scale only) | - | verified (scope statement) |
+
+Open at release 0.0.1.0 (planned, not claimed): real-specimen signed receipt, first green CI run. See [RELEASE-SIGNOFF.md](RELEASE-SIGNOFF.md).
