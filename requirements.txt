@@ -1,3 +1,5 @@
 # CPU-only torch, as receipted: torch 2.14.1+cpu on Python 3.12 (Linux x86-64).
 # Install via the PyTorch CPU index -- full command in README.md (Quickstart).
 torch==2.14.1+cpu
+# Ed25519 receipt signing (ADR-001); wheels bundle OpenSSL 3+.
+cryptography>=44

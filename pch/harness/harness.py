@@ -201,6 +201,16 @@ def run_live(model, prompt, max_new, temperature, run_seed, control_at=None):
     return records, produced
 
 
+def run_live_signed(model, prompt, max_new, temperature, run_seed, private_key,
+                    control_at=None, timestamp=None):
+    """run_live, then sign the closed receipt once (S1.4). Returns
+    (records, produced, sidecar); save the sidecar next to the stream as
+    <stream>.sig. The key is used only here and never written anywhere."""
+    import receipt_sig  # noqa: E402  (needs the 'cryptography' package)
+    records, produced = run_live(model, prompt, max_new, temperature, run_seed, control_at)
+    return records, produced, receipt_sig.sign_receipt(records, private_key, timestamp)
+
+
 def verify_replay(model, records):
     """Replay a stream against fresh model state. Returns (ok, reason).
     Teacher-forced: recorded tokens are fed back as inputs; every committed
