@@ -1,8 +1,9 @@
 """CloudAtlas TB: receipt tamper and replay check (testbeds/designs/
 cloudatlas-receipt-tamper-check.md). Runs against the shipped sealed streams.
-Case 3 (re-hash forgery) is SKIPPED: receipts are not signed yet. Hash-only
-chains catch accidental/partial tampering, not a deliberate full-chain
-recompute. Usage: tb_receipt_tamper.py [--fuzz N]"""
+Case 3 (re-hash forgery) runs since 0.0.0.4 (S1.7): a hash-only chain cannot
+stop a forger who recomputes the whole chain, so the receipt is signed with
+Ed25519 at close and the forgery is caught by the signature check.
+Usage: tb_receipt_tamper.py [--fuzz N]"""
 import copy
 import hashlib
 import os
@@ -52,6 +53,46 @@ def reseal_prefix(recs, k):
     return body + [{"kind": "trailer", "steps": n, "final_chain": body[-1]["chain"]}]
 
 
+def case3(c, recs):
+    """Re-hash forgery vs. signed receipts. Fails (not skips) when the PCH
+    has no signature verifier, which is how it behaved before S1.7."""
+    try:
+        import receipt_sig as rs
+        from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+    except ImportError as e:
+        c("case 3 re-hash forgery rejected by signature check", False,
+          f"no signature verifier in the PCH ({e})")
+        return
+    body = [{k: v for k, v in r.items() if k != "chain"} for r in recs if r["kind"] != "trailer"]
+    honest_key, forger_key = Ed25519PrivateKey.generate(), Ed25519PrivateKey.generate()
+    honest, side = rs.close_and_sign(copy.deepcopy(body), honest_key, timestamp=1792800000)
+    pub = honest_key.public_key()
+    ok, why = rs.verify_receipt(honest, side, pub)
+    c("case 3 honest signed receipt accepted", ok, why)
+    fb = copy.deepcopy(body)
+    st = next(x for x in fb if x["kind"] == "step" and x["step"] == 3)
+    st["token"] = (st["token"] + 1) % 512
+    forged = stepstream.close(fb)  # forger recomputes every hash
+    acc, why = rejected(dumps(forged))
+    c("case 3 (the gap) hash-only check alone accepts the re-hashed forgery", acc is True, why)
+    ok, why = rs.verify_receipt(forged, side, pub)
+    c("case 3 re-hash forgery + original .sig rejected", not ok, why)
+    s2 = dict(side, chain_head=forged[-1]["chain"])
+    ok, why = rs.verify_receipt(forged, s2, pub)
+    c("case 3 re-hash forgery + .sig head patched rejected", not ok, why)
+    ok, why = rs.verify_receipt(forged, rs.sign_receipt(forged, forger_key), pub)
+    c("case 3 re-hash forgery re-signed with forger's key rejected", not ok, why)
+    s3 = dict(side, sig=side["sig"][:-2] + ("00" if side["sig"][-2:] != "00" else "01"))
+    ok, why = rs.verify_receipt(honest, s3, pub)
+    c("case 3 tampered signature rejected", not ok, why)
+    t = copy.deepcopy(honest)
+    t[-1]["steps"] += 1
+    ok, why = rs.verify_receipt(t, side, pub)
+    c("case 3 tampered trailer rejected", not ok, why)
+    ok, why = rs.verify_receipt(honest, side, forger_key.public_key())
+    c("case 3 wrong public key rejected", not ok, why)
+
+
 def cases(c):
     texts = {n: load(n) for n in STREAMS}
     recs = {n: parse(t) for n, t in texts.items()}
@@ -76,9 +117,7 @@ def cases(c):
     st["token"] = (st["token"] + 1) % 512
     expect_reject(c, "case 2 field edit (old hash kept)", dumps(r))
 
-    print("  [SKIP] case 3 re-hash forgery -- receipts not signed yet; a hash-only "
-          "chain cannot stop a forger who recomputes the whole chain (re-derivation "
-          "by model replay is the PCH's current defence; signing turns this on)")
+    case3(c, a)
 
     # 4 replay: same receipt twice / into another session
     L = Ledger()
@@ -177,6 +216,6 @@ if __name__ == "__main__":
         fuzz(c, int(sys.argv[sys.argv.index("--fuzz") + 1]))
         c.finish("RECEIPT TAMPER FUZZ")
     cases(c)
-    print("\n  NOTE: hash-only chains catch accidental/partial tampering but not a "
-          "deliberate full-chain recompute (case 3, skipped until signing lands).")
-    c.finish("RECEIPT TAMPER (cases 1,2,4-8; case 3 skipped)")
+    print("\n  NOTE: hash chains catch accidental/partial tampering; the Ed25519 "
+          "signature (case 3) catches a deliberate full-chain recompute.")
+    c.finish("RECEIPT TAMPER (cases 1-8)")

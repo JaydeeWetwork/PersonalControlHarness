@@ -31,3 +31,28 @@ After:
 TRAILER IN CHAIN (S1.3): ALL PASS
 exit 0
 ```
+
+## S1.7 bed 02 case 3 (re-hash forgery): `tb_receipt_tamper.py`
+
+Before (new test file run inside a checkout of 3198eee, so it uses the old harness and old test-side verifier):
+```
+  [FAIL] case 3 re-hash forgery rejected by signature check -- no signature verifier in the PCH (No module named 'receipt_sig')
+RECEIPT TAMPER (cases 1-8): 1 FAILED
+exit 1
+```
+The test also demonstrates the gap directly on the fixed tree: "hash-only check alone accepts the re-hashed forgery -- ACCEPTED".
+
+After:
+```
+  [PASS] case 3 honest signed receipt accepted -- signature OK: key <random>, brain weights:4365dc9610eadcfa, 16 steps, head 2757a34256c2c833
+  [PASS] case 3 (the gap) hash-only check alone accepts the re-hashed forgery -- ACCEPTED
+  [PASS] case 3 re-hash forgery + original .sig rejected -- binding: sidecar chain head does not match the receipt
+  [PASS] case 3 re-hash forgery + .sig head patched rejected -- signature: Ed25519 verification failed
+  [PASS] case 3 re-hash forgery re-signed with forger's key rejected -- key: signed by key <random>, not the given key <random>
+  [PASS] case 3 tampered signature rejected -- signature: Ed25519 verification failed
+  [PASS] case 3 tampered trailer rejected -- receipt: seal: trailer is not in the hash chain (edited trailer)
+  [PASS] case 3 wrong public key rejected -- key: signed by key <random>, not the given key <random>
+  NOTE: hash chains catch accidental/partial tampering; the Ed25519 signature (case 3) catches a deliberate full-chain recompute.
+RECEIPT TAMPER (cases 1-8): ALL PASS
+exit 0
+```

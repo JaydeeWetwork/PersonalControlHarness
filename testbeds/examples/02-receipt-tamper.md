@@ -19,10 +19,10 @@ Or through CMake: `ctest --preset testbeds-only -R receipt_tamper$` (after `cmak
 Pass: each tampered input is rejected with a labelled reason, clean receipts accepted, no crashes. Fail: names the case that was wrongly accepted.
 
 ## 4. Status
-**verified** for cases 1, 2, 4-8. Case 3 **skipped**: receipts are not signed yet. Hash-only chains catch accidental or partial tampering but not a deliberate full-chain recompute.
+**verified**, all 8 cases (case 3 un-skipped 2026-10-23, task S1.7). Case 3 first shows the gap (the hash-only check accepts a fully re-hashed forgery), then requires the Ed25519 signature check to reject: the forgery with the original `.sig`, with the `.sig` head patched, re-signed by a forger's key, a tampered signature, a tampered trailer and a wrong public key. Before the fix this case FAILS ("no signature verifier in the PCH"); see `../../docs/hardening/FAIL-BEFORE.md`.
 
 ## 5. Safety
-Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
+Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. Case 3 uses the PCH core signing module `pch/harness/receipt_sig.py`.
 
 ## 6. Further experiments and design notes
-Replay and rollback use a small test-side ledger (`receipt_check.py`); PCH has no session tracking yet. When signing lands, enable case 3. The key must never live in the repo. Input SHA-256s are printed each run.
+Replay and rollback use a small test-side ledger (`receipt_check.py`); PCH has no session tracking yet. Case 3 uses throwaway keys generated in memory; no key is ever written to the repo (see `../../pch/docs/KEY-MANAGEMENT.md`). Input SHA-256s are printed each run.
