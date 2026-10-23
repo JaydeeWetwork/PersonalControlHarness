@@ -1,0 +1,65 @@
+# PCH nightly / extended: torch-backed model beds (incl. the slow rewind/fork
+# ceiling runs) and the online upstream drift check. The real-specimen weights
+# bed (pch.weights_local) skips cleanly with 77: CI never downloads weights.
+# Official actions only, pinned by commit SHA; read-only token.
+# Directed by JaydeeWetwork. Built by Cortana.
+name: nightly
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extended:
+    name: extended ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: py
+        with:
+          python-version: "3.12"
+      - name: Python deps incl. CPU torch (no weights)
+        run: python -m pip install -r pch/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Linux build deps
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ninja-build libx11-dev libxrandr-dev \
+            libxinerama-dev libxcursor-dev libxi-dev libgl-dev libwayland-dev libxkbcommon-dev \
+            wayland-protocols pkg-config
+      - name: Upstream drift (online, vs GitHub at the pinned commit)
+        shell: bash
+        run: |
+          set +e
+          python tools/check_upstream_drift.py --online
+          rc=$?
+          if [ "$rc" = "77" ]; then echo "::notice::upstream unreachable, online drift check skipped"; exit 0; fi
+          exit $rc
+      - name: Configure (Linux)
+        if: runner.os == 'Linux'
+        run: >
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          -DPCH_BUILD_ENGINE=ON -DPCH_BUILD_TESTBEDS=ON
+          -DPython3_EXECUTABLE="${{ steps.py.outputs.python-path }}"
+      - name: Configure (Windows)
+        if: runner.os == 'Windows'
+        run: >
+          cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+          -DPCH_BUILD_ENGINE=ON -DPCH_BUILD_TESTBEDS=ON
+          -DPython3_EXECUTABLE="${{ steps.py.outputs.python-path }}"
+      - name: Build
+        run: cmake --build build --config Release --parallel 4
+      - name: Full ctest x3 (model beds run; weights bed skips without weights)
+        run: ctest --test-dir build -C Release --output-on-failure --timeout 3600 -j 2 --repeat until-fail:3

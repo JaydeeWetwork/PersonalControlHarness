@@ -113,8 +113,15 @@ Every claim and its test is in [docs/CLAIMS.md](docs/CLAIMS.md).
 
 - **Planned:** a signed receipt from a real (non-fixture) DeepSeek specimen
   ([BLOCKERS](docs/BLOCKERS.md)).
-- **Planned:** CI that runs the tests and the docs check on every push
-  ([BLOCKERS](docs/BLOCKERS.md)).
+- **CI configured; first green run pending push.** The workflows are
+  [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and
+  [`nightly.yml`](.github/workflows/nightly.yml). Every push and pull request
+  runs Windows and Linux, Release and Debug, on Python 3.10 and 3.12:
+  build, full ctest, `check_docs` and the upstream drift check. The nightly
+  job adds CPU torch, so the model beds run, plus the online drift check. The
+  weights bed skips cleanly, and CI never downloads weights. The workflows
+  use official actions pinned by SHA with a read-only token, and pass
+  actionlint 1.7.12. This line stays until the first run on GitHub is green.
 
 ## The test beds
 
