@@ -40,6 +40,7 @@ set_tests_properties(pch.fork_budget pch.rewind_fidelity PROPERTIES TIMEOUT 3600
 # (pch/harness/boss.py); the rest are skipped with a reason. Owner decision
 # for every bed: testbeds/DECISIONS.md.
 pch_testbed(pch.boss.versioned_rematch tb_boss_fixture.py versioned_rematch)
-foreach(tb hud_reading telegraph_fairness human_input_rate ranked_fixed_branch_count brain_version_stamp hud_only_honesty)
+pch_testbed(pch.boss.human_input_rate tb_boss_fixture.py human_input_rate)
+foreach(tb hud_reading telegraph_fairness ranked_fixed_branch_count brain_version_stamp hud_only_honesty)
   pch_testbed(pch.boss.${tb} tb_boss_pending.py ${tb})
 endforeach()
