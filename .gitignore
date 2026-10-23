@@ -2,7 +2,17 @@
 .venv/
 __pycache__/
 *.pyc
-DeepSeek-V3/
+/DeepSeek-V3/
+/pch/DeepSeek-V3/
+
+# Signing keys: never commit private keys (see pch/docs/KEY-MANAGEMENT.md).
+# The only private key in the repo is the labeled RFC 8032 test vector in
+# pch/testdata/sig_vectors.json.
+*.key
+*.pem
+!pch/testdata/*.pem
+keys/
+.pch/
 
 # C++ / CMake / Visual Studio build outputs
 build/
