@@ -1,5 +1,10 @@
 # Publishing This Release to GitHub — Step by Step
 
+> **HISTORICAL RECORD (2026-10-19).** This file describes the first release
+> staging and is kept for the record only. It is not current instructions, and
+> paths in it refer to the original staging layout. Removed staging files are
+> still in git history.
+
 JD — this folder **is** the repository, complete and ready. Nothing in
 it needs building or fixing first. You publish it with **GitHub
 Desktop**, signed in as yourself, by your own hand. This guide assumes

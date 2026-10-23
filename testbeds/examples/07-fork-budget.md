@@ -4,7 +4,7 @@
 Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
-Fork a sealed prefix into 1, 2, 4, 8 and 16 branches over a fixed 32-step horizon. Record wall time, peak memory and best-branch score, to see where more branches stop helping on modest hardware.
+Fork a sealed prefix into 1, 2, 4, 8 and 16 branches over a fixed 32-step horizon. Record wall time, process peak RSS and best-branch score, to see where more branches stop helping on modest hardware.
 
 ## 3. How to verify
 From the repo root (Python 3.10+):
@@ -32,4 +32,4 @@ Without torch and the DeepSeek-V3 code it prints SKIPPED and why.
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
 
 ## 6. Further experiments and design notes
-Install `psutil` (free) for peak-memory numbers; without it memory shows 0. Compare a 2-core laptop against a bigger desktop.
+Install `psutil` (free) for the process peak RSS numbers (whole Python process, not just the forks); without it memory shows 0. Compare a 2-core laptop against a bigger desktop.

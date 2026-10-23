@@ -1,5 +1,10 @@
 # Staging Manifest — Combined Release (UNPUBLISHED)
 
+> **HISTORICAL RECORD (2026-10-19).** This file describes the first release
+> staging and is kept for the record only. It is not current instructions, and
+> paths in it refer to the original staging layout. Removed staging files are
+> still in git history.
+
 Assembled: 2026-10-19, on Elfie's workstation, from the production tree
 `~/workspace/litholattice/` and the PCH package `~/workspace/pch-release/`.
 **Nothing in this staging has been uploaded, pushed, or shared.** It
