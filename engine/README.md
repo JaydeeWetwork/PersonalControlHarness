@@ -57,7 +57,7 @@ cmake --build build -j
 ./build/LithoKraft   # or ./build/LithoKraft --selftest
 ```
 
-Quick build on TheWorkstation (VS 2022 Build Tools already installed): run `tools\build.ps1` from PowerShell at the
+Quick build on Windows with VS 2022 Build Tools: run `tools\build.ps1` from PowerShell at the
 repo root (`-Clean` for a clean build, `-Ship` for a shipping build that loads scripts from next to the exe). It logs to
 `%USERPROFILE%\agent-tools\logs\lithokraft-build-<date>.log`.
 

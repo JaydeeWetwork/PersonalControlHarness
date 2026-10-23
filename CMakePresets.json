@@ -17,7 +17,7 @@
     },
     {
       "name": "vs2026",
-      "displayName": "Visual Studio 2026 (multi-config, .sln)",
+      "displayName": "Visual Studio 2026 (multi-config, .slnx; needs CMake 4.2+)",
       "description": "Works from a plain terminal; generates out/build/vs2026/PersonalControlHarness.slnx",
       "inherits": "windows-base",
       "generator": "Visual Studio 18 2026",
@@ -56,7 +56,6 @@
       "name": "testbeds-only",
       "displayName": "PCH test beds only (no C++ build; Python + CTest)",
       "inherits": "base",
-      "generator": "Ninja",
       "cacheVariables": { "PCH_BUILD_ENGINE": "OFF" }
     },
     {

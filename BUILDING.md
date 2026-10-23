@@ -25,7 +25,9 @@ test beds (`testbeds/`, Python run through CTest). Presets live in
 
 Prerequisites (Windows): Visual Studio 2022 or 2026 (or the Build Tools) with
 the "Desktop development with C++" workload, which includes CMake and Ninja;
-Git; Python 3.10+. CMake fetches GLFW, AngelScript, Vulkan headers, glslang,
+Git; Python 3.10+. CMake 3.25 or newer is required; the `vs2026` preset
+(Visual Studio 18 2026 generator, `.slnx` solution) needs CMake 4.2+, which
+ships with the VS 2026 Build Tools. CMake fetches GLFW, AngelScript, Vulkan headers, glslang,
 stb and miniaudio itself on first configure (needs network). The model-backed
 PCH test beds also need `torch` and the DeepSeek-V3 specimen (see
 `pch/README.md`); without them they report SKIPPED, not failed.
@@ -45,9 +47,13 @@ From a "Developer PowerShell for VS" (Ninja, single-config):
     cmake --build --preset windows-msvc-release
     ctest --preset windows-msvc-release
 
-PCH test beds only, no C++ compiler needed (Ninja on PATH):
+PCH test beds only, no C++ compiler needed:
 
     cmake --preset testbeds-only && ctest --preset testbeds-only
+
+This preset uses CMake's default generator. If CMake reports that it cannot
+find a build program (a machine with no compiler toolchain at all), run
+`pip install ninja` and add `-G Ninja` to the configure command.
 
 Linux: `cmake --preset linux-release && cmake --build --preset linux-release && ctest --preset linux-release`.
 The older one-shot driver `python tools/build.py` still works.
@@ -74,8 +80,20 @@ The older one-shot driver `python tools/build.py` still works.
 ## Test results legend
 
 CTest reports PASS, FAIL or SKIPPED (exit code 77). Skipped tests print why:
-a missing prerequisite (torch / specimen) or a PCH feature that does not
-exist yet. See `testbeds/README.md`.
+a missing prerequisite (torch / specimen), a PCH feature that does not
+exist yet, or an OS capability the machine does not grant. See
+`testbeds/README.md`.
+
+### Symlink tests on Windows (Developer Mode)
+
+A few engine security checks (mod sandbox escapes, signed mods containing a
+symlink) need to create symbolic links. Windows only allows that with
+**Developer Mode** on (*Settings > System > For developers > Developer Mode*)
+or from an elevated (administrator) shell. Without it those sections print
+`[SKIP] ... may not create symlinks`, and `engine_storage` / `engine_assets`
+report **Skipped** instead of Passed. Every other check in those tests still
+runs, and any real failure still fails the test. Turn on Developer Mode and
+re-run `ctest` to exercise the symlink checks too.
 
 ## PCH reference-model specimen (optional, for the model-backed test beds)
 
