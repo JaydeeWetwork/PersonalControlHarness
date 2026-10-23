@@ -90,3 +90,19 @@ SIGNATURE FUZZ (bed 15): ALL PASS
 - After: exit 0 (`DOCS CHECK: PASS`).
 - Planted drift, each caught (exit 1): bed 11 un-Planned in README; cities-on
   pin changed by one digit; bed 11 row deleted from DECISIONS.md.
+
+## Code review 2026-10-23 (tb_review_fixes.py against the pre-fix HEAD, box/Linux)
+```
+  [FAIL] R1 close() refuses a record holding NaN -- closed a NaN record
+  [FAIL] R2 deeply nested record: clean reject, no crash -- RecursionError escaped
+  [FAIL] R3 duplicated step number is rejected -- no check
+  [FAIL] R3 skipped step number is rejected
+  [FAIL] R3 contiguous steps 0..n-1 pass -- missing
+  [PASS] R4 saved stream uses LF only
+  [PASS] R4 saved stream round-trips and stays sealed
+  [FAIL] R5 uppercase key_id in a revocation list is refused, not ignored -- list accepted; receipt still verified
+  [FAIL] R5 padded key_id in a revocation list is refused, not ignored -- list accepted; receipt still verified
+  [FAIL] R5 short key_id in a revocation list is refused, not ignored -- list accepted; receipt still verified
+
+CODE REVIEW REGRESSIONS: 8 FAILED
+```

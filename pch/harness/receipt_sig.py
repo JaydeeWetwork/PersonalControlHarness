@@ -171,8 +171,10 @@ def parse_revocations(text: str) -> set:
         raise SigError("revocation list: wrong format")
     out = set()
     for e in d["revoked"]:
-        if not isinstance(e, dict) or not isinstance(e.get("key_id"), str):
-            raise SigError("revocation list: entry without key_id")
+        if not isinstance(e, dict) or not _is_lower_hex(e.get("key_id"), 16):
+            # R5: a mis-spelled id used to be accepted and then never matched.
+            raise SigError("revocation list: every entry needs a key_id of 16 lowercase hex "
+                           f"chars (as printed by pch-keygen), got {e.get('key_id') if isinstance(e, dict) else e!r}")
         out.add(e["key_id"])
     return out
 

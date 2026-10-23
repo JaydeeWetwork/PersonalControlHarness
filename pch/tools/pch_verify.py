@@ -29,7 +29,7 @@ def main(argv=None):
             if line.strip():
                 r = stepstream.loads_strict(line)
                 if not isinstance(r, dict):
-                    raise rs.SigError(f"receipt: line {i} is not an object")
+                    raise rs.SigError(f"receipt: line {i + 1} is not a JSON object")
                 records.append(r)
         with open(a.sig or a.receipt + ".sig", "r", encoding="utf-8") as f:
             side = f.read()

@@ -25,7 +25,9 @@ GENESIS = "0" * 64
 
 def canonical(rec: dict) -> bytes:
     body = {k: v for k, v in rec.items() if k != "chain"}
-    return json.dumps(body, sort_keys=True, separators=(",", ":")).encode()
+    # allow_nan=False: NaN/Infinity are not JSON and loads_strict rejects
+    # them, so they must never be hashed or signed (review R1).
+    return json.dumps(body, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
 
 
 def chain_next(prev_chain: str, rec: dict) -> str:
@@ -100,8 +102,20 @@ def check_sealed(records: list):
         if type(trailer.get("steps")) is not int or trailer["steps"] != len(steps):
             return False, "seal: trailer step count mismatch", None
         return True, f"{len(steps)} steps, {label}", label
-    except (TypeError, ValueError, AttributeError, KeyError) as e:
+    except (TypeError, ValueError, AttributeError, KeyError, RecursionError) as e:  # R2
         return False, f"malformed: {e.__class__.__name__}", None
+
+
+def check_step_sequence(records: list):
+    """Step records must be numbered exactly 0..n-1 in order (review R3).
+    The chain alone cannot tell, because a forger re-hashes; replay uses this."""
+    n = 0
+    for r in records:
+        if r.get("kind") == "step":
+            if type(r.get("step")) is not int or r["step"] != n:
+                return False, f"steps: expected step {n}, found {r.get('step')!r}"
+            n += 1
+    return True, f"{n} steps numbered 0..{n - 1}"
 
 
 class StrictJSONError(ValueError):
@@ -128,11 +142,12 @@ def loads_strict(text: str):
 
 
 def save_stream(records: list, path: str) -> None:
-    with open(path, "w") as f:
+    # UTF-8 + LF on every OS so a saved stream is byte-identical (review R4).
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
         for rec in records:
             f.write(json.dumps(rec, sort_keys=True) + "\n")
 
 
 def load_stream(path: str) -> list:
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return [loads_strict(line) for line in f if line.strip()]

@@ -220,7 +220,14 @@ def verify_replay(model, records):
     ok, why, _label = stepstream.check_sealed(records)
     if not ok:
         return False, f"receipt check failed: {why}"
+    ok, why = stepstream.check_step_sequence(records)  # review R3
+    if not ok:
+        return False, f"receipt check failed: {why}"
+    if sum(1 for r in records if r.get("kind") == "prefill") != 1:
+        return False, "receipt check failed: expected exactly one prefill record"
     header = records[0]
+    if not isinstance(header.get("prompt"), list) or not header["prompt"]:
+        return False, "receipt check failed: header has no prompt"
     if header.get("weights") != weights_digest(model):
         return False, "weights digest mismatch (wrong model state submitted)"
     prompt = header["prompt"]

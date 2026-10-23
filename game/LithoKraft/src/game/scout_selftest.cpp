@@ -229,7 +229,10 @@ void testMapCore() {
     // use the same formula as the fake sampler.
     const int32_t sx = -128 + 16, sz = -128 + 16;
     const uint8_t b = uint8_t(((sx + sz) / 64) % 5);
-    const auto& c = waferMapPalette()[b];
+    // Keep the palette alive: waferMapPalette() returns by value, so binding a
+    // reference to an element of the temporary dangled (review R7, GCC -Wdangling-reference).
+    const auto palette = waferMapPalette();
+    const auto& c = palette[b];
     const uint8_t* p = m1.rgb.data();
     check(p[0] == c[0] && p[1] == c[1] && p[2] == c[2], "map: biome pixel has the palette color");
   }

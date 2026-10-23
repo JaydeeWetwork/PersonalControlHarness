@@ -27,6 +27,7 @@ pch_testbed(pch.signature_fuzz           tb_signature_fuzz.py 10000)
 pch_testbed(pch.vendored_specimen        tb_vendored_specimen.py)
 pch_testbed(pch.weights_path             tb_weights_path.py)
 pch_testbed(pch.weights_local            tb_weights_path.py --local)
+pch_testbed(pch.review_regressions       tb_review_fixes.py)
 pch_testbed(pch.docs_check               ../tools/check_docs.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it
