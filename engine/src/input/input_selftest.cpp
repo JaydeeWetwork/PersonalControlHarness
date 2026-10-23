@@ -95,7 +95,15 @@ void testInputPump(const auto& check) {
   }
   {  // Overflow: 3000 events, no drain; the newest are dropped with a count.
     InputPump pump(std::make_unique<ScriptedBackend>(motionStream(3000)));
-    std::this_thread::sleep_for(std::chrono::milliseconds(2500));  // let the pump overrun
+    // Wait until the pump has offered all 3000 events instead of sleeping a
+    // fixed time. The backend hands out 7 events per poll, so the overrun
+    // takes ~430 polls. With Windows' default ~15.6 ms timer tick that is
+    // ~7 s, so the old fixed 2.5 s sleep was too short there. The generous
+    // deadline only bounds a genuine hang.
+    const uint64_t expectedDrops = 3000 - InputPump::kQueueCapacity;
+    const auto overrunDeadline = std::chrono::steady_clock::now() + std::chrono::seconds(30);
+    while (pump.dropped() < expectedDrops && std::chrono::steady_clock::now() < overrunDeadline)
+      std::this_thread::sleep_for(std::chrono::milliseconds(10));
     std::vector<InputEvent> got;
     pump.drainInto(got);
     bool ordered = got.size() == InputPump::kQueueCapacity;
