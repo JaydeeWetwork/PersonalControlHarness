@@ -452,7 +452,7 @@ void testSimThreadProofs() {
   check(recorded.finishOk && recorded.eventsRecorded == script.size(),
         "demo-proof: recorder finished and captured every scripted event");
   // Pin = the canonical cities-on scenario hash (docs/pins.json, D4.1). The old
-  // pin 5041cf1795c33a8c predated the cities-on default and was stale.
+  // pin predated the cities-on default and was stale.
   check(recorded.hash == 0xcb32c824f8b3ea98ULL,
         "demo-proof: recorded hash matches the canonical cities-on scenario hash cb32c824f8b3ea98");
   check(recorded.stats.applied == script.size() && recorded.stats.dropped == 0 && recorded.stats.orderViolations == 0,

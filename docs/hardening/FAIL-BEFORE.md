@@ -81,3 +81,13 @@ After:
   [PASS] signature fuzz: zero crashes -- 0 crashes
 SIGNATURE FUZZ (bed 15): ALL PASS
 ```
+
+## D4.5 docs check (`pch.docs_check`, `tools/check_docs.py`)
+
+- Before (base `3198eee`): `python tools/check_docs.py /path/to/base` -> exit 1:
+  missing `docs/pins.json`, `docs/CLAIMS.md`, `testbeds/DECISIONS.md`; no
+  DECISIONS row for beds 01-14; 7 skipped beds without a decision entry.
+- After: exit 0 (`DOCS CHECK: PASS`).
+- Planted drift, each caught (exit 1): bed 11 un-Planned in README; cities-on
+  pin changed by one digit in `demo_record_test.cpp`; bed 11 row deleted from
+  DECISIONS.md; the retired pin value reappearing in `demo_record_test.cpp`.
