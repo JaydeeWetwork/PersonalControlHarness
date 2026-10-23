@@ -3,8 +3,9 @@
 It is NOT part of PCH core. It applies the checks CloudAtlas's design asks for
 on top of the hash chain the PCH ships today: size caps, structure, chain,
 trailer seal, contiguous step counter, plus a small ledger for replay /
-rollback (session binding + forward-only counter). Receipts are hash-only
-(unsigned), so a deliberate full-chain recompute is out of scope (case 3).
+rollback (session binding + forward-only counter). Authenticity (a
+deliberate full-chain recompute, case 3) is checked by the Ed25519 signature
+layer, pch/harness/receipt_sig.py, not here.
 """
 import json
 
@@ -28,8 +29,8 @@ def parse(text):
         if len(line) > MAX_LINE:
             raise Reject(f"oversize: line {i} exceeds {MAX_LINE} bytes")
         try:
-            r = json.loads(line)
-        except ValueError as e:
+            r = stepstream.loads_strict(line)
+        except (ValueError, RecursionError) as e:
             raise Reject(f"malformed: line {i}: {e.__class__.__name__}")
         if not isinstance(r, dict):
             raise Reject(f"malformed: line {i} is not an object")
@@ -40,31 +41,21 @@ def parse(text):
 
 
 def verify(records):
+    """Size/structure caps above, then the PCH core check
+    (stepstream.check_sealed): chain, trailer seal (schema 2 trailers are
+    in the chain; legacy ones are labeled), contiguous step counter."""
     if len(records) < 3:
         raise Reject("truncated: too few records")
-    if records[0].get("kind") != "header":
-        raise Reject("structure: first record is not a header")
-    trailer = records[-1]
-    if trailer.get("kind") != "trailer":
+    if records[-1].get("kind") != "trailer":
         raise Reject("truncated: missing trailer")
-    if set(trailer) != {"kind", "steps", "final_chain"}:
-        raise Reject("seal: trailer has unexpected or missing fields (trailer is unhashed)")
+    ok, why, _label = stepstream.check_sealed(records)
+    if not ok:
+        raise Reject(why)
     sealed = records[:-1]
-    if any(r.get("kind") in ("header", "trailer") for r in sealed[1:]):
-        raise Reject("structure: header/trailer out of place")
-    try:
-        if not stepstream.check_chain(sealed):
-            raise Reject("chain: hash chain broken")
-    except (TypeError, ValueError, AttributeError):
-        raise Reject("chain: malformed chain field")
-    if trailer.get("final_chain") != sealed[-1].get("chain"):
-        raise Reject("seal: trailer final_chain mismatch")
     steps = [r.get("step") for r in sealed if r.get("kind") == "step"]
     if steps != list(range(len(steps))):
         raise Reject("counter: step indices not contiguous from 0")
-    if trailer.get("steps") != len(steps):
-        raise Reject("seal: trailer step count mismatch")
-    return trailer["final_chain"], len(steps)
+    return records[-1]["final_chain"], len(steps)
 
 
 class Ledger:

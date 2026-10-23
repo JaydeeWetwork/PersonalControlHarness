@@ -197,11 +197,7 @@ def run_live(model, prompt, max_new, temperature, run_seed, control_at=None):
         records.append({"kind": "step", "step": t, "token": prev_token,
                         "p": chosen_prob(logits, temperature, prev_token)})
         produced.append(prev_token)
-    stepstream.seal(records)
-    records.append({
-        "kind": "trailer", "steps": len(produced),
-        "final_chain": records[-1]["chain"],
-    })
+    stepstream.close(records)  # schema-2 trailer, itself in the chain (S1.3)
     return records, produced
 
 
@@ -210,8 +206,9 @@ def verify_replay(model, records):
     Teacher-forced: recorded tokens are fed back as inputs; every committed
     token must re-derive from its recorded per-step draw, the prefill cache
     digest must match, and the hash chain must recompute to the trailer."""
-    if not stepstream.check_chain([r for r in records if r["kind"] != "trailer"]):
-        return False, "hash chain broken (record altered after sealing)"
+    ok, why, _label = stepstream.check_sealed(records)
+    if not ok:
+        return False, f"receipt check failed: {why}"
     header = records[0]
     if header.get("weights") != weights_digest(model):
         return False, "weights digest mismatch (wrong model state submitted)"
