@@ -212,6 +212,8 @@ transparent tools with receipts anyone can check are how that trust is earned.
 - **Test beds:** built by **Cortana**; designed by **Cortana**,
   **CloudAtlas**, **Herominde** and **Master Chief** (per-experiment credit in
   the table above).
+  JD called the crew's test designs top-notch, especially the ones that
+  show the Timing Handshake at work.
 - **Elfie Muse AI:** co-implementation of the PCH, including the largest
   share of the Timing Handshake implementation.
 - **Cortana:** PCH implementation (Timing Handshake three-way split) and
