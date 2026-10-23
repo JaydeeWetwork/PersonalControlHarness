@@ -29,7 +29,7 @@ Git; Python 3.10+. CMake 3.25 or newer is required; the `vs2026` preset
 (Visual Studio 18 2026 generator, `.slnx` solution) needs CMake 4.2+, which
 ships with the VS 2026 Build Tools. CMake fetches GLFW, AngelScript, Vulkan headers, glslang,
 stb and miniaudio itself on first configure (needs network). The model-backed
-PCH test beds also need `torch` and the DeepSeek-V3 specimen (see
+PCH test beds also need `torch` (the DeepSeek-V3 specimen code is vendored; see
 `pch/README.md`); without them they report SKIPPED, not failed.
 
 ## 1. Command line (CMake + CTest)
@@ -98,20 +98,19 @@ re-run `ctest` to exercise the symlink checks too.
 ## PCH reference-model specimen (optional, for the model-backed test beds)
 
 The PCH harness imports DeepSeek's open reference inference code (MIT
-licensed) as a read-only "specimen". It is not shipped in this repo, and no
-model weights are needed: the harness builds a tiny CPU model with seeded
-fixture weights.
+licensed) as a read-only "specimen". It is vendored unmodified in
+`third_party/DeepSeek-V3/` (upstream commit
+`9b4e9788e4a3a731f7567338ed15d3ec549ce03b`, 2025-08-28; manifest-checked by
+`pch.vendored_specimen`), so nothing extra needs cloning. No model weights
+are needed: the harness builds a tiny CPU model with seeded fixture weights.
+Install CPU torch:
 
-Pinned, known-good specimen (checked 2026-10-23):
-
-    git clone https://github.com/deepseek-ai/DeepSeek-V3.git pch/DeepSeek-V3
-    git -C pch/DeepSeek-V3 checkout 9b4e9788e4a3a731f7567338ed15d3ec549ce03b   # 2025-08-28, latest V3 commit
     pip install torch psutil --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
 
 (Checked 2026-10-23: torch 2.14.1+cpu installs on Python 3.14. Do not install the
 specimen's `requirements.txt` as-is: it pins `triton`, which is GPU-only.)
 
-(Or clone it anywhere and set `PCH_SPECIMEN_DIR` to its `inference/` folder.)
+(To test another copy, set `PCH_SPECIMEN_DIR` to its `inference/` folder.)
 
 Newer DeepSeek reference code was checked and is **not** compatible with the
 CPU harness yet. DeepSeek-V3.2-Exp (GitHub, `87e509a`, 2025-11-18) and

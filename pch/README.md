@@ -76,15 +76,12 @@ Golden vectors: `testdata/sig_vectors.json`.
 
 ## Quickstart
 
-You need the DeepSeek-V3 reference code. It is **not** redistributed here —
-clone it yourself; the harness only imports it:
+The DeepSeek-V3 reference code is vendored, unmodified, in
+`../third_party/DeepSeek-V3/` (pinned commit `9b4e978`, MIT, see its
+`UPSTREAM.md`); the harness finds it automatically and only imports it.
+`PCH_SPECIMEN_DIR` overrides the location.
 
 ```sh
-# 1. Get the specimen (place it BESIDE this repo, as a sibling folder):
-git clone https://github.com/deepseek-ai/DeepSeek-V3
-#    ...or point the rig at an existing copy:
-#    export PCH_SPECIMEN_DIR=/path/to/DeepSeek-V3/inference
-
 # 2. Fresh environment (CPU-only torch, as receipted):
 python3 -m venv .venv
 source .venv/bin/activate

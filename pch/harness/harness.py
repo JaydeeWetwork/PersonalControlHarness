@@ -21,13 +21,14 @@ import sys
 import torch
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-# Specimen location (release-package wiring): clone DeepSeek-V3 beside this
-# repo so that ../DeepSeek-V3/inference resolves, or point PCH_SPECIMEN_DIR
-# at an existing DeepSeek-V3/inference directory. The specimen is imported,
-# never modified, and is NOT distributed with this package.
-_SPECIMEN = os.environ.get(
-    "PCH_SPECIMEN_DIR", os.path.join(_HERE, "..", "DeepSeek-V3", "inference")
-)
+# Specimen location: PCH_SPECIMEN_DIR if set, else the vendored copy in
+# third_party/DeepSeek-V3/inference (pinned upstream commit, MIT, unmodified;
+# see its UPSTREAM.md), else the old sibling-clone layout ../DeepSeek-V3.
+# The specimen is imported, never modified.
+_VENDORED = os.path.join(_HERE, "..", "..", "third_party", "DeepSeek-V3", "inference")
+_SPECIMEN = os.environ.get("PCH_SPECIMEN_DIR") or (
+    _VENDORED if os.path.isfile(os.path.join(_VENDORED, "model.py"))
+    else os.path.join(_HERE, "..", "DeepSeek-V3", "inference"))
 sys.path.insert(0, os.path.abspath(_SPECIMEN))
 sys.path.insert(0, _HERE)  # harness dir first: our kernel.py shim shadows the Triton one
 

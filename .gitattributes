@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Vendored upstream code: keep bytes exactly as upstream (manifest-checked)
+third_party/** -text

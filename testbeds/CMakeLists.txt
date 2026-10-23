@@ -24,6 +24,7 @@ pch_testbed(pch.sig_golden_vectors       tb_sig_vectors.py)
 pch_testbed(pch.sign_at_close            tb_sign_close.py)
 pch_testbed(pch.verify_cli_offline       tb_verify_cli.py)
 pch_testbed(pch.signature_fuzz           tb_signature_fuzz.py 10000)
+pch_testbed(pch.vendored_specimen        tb_vendored_specimen.py)
 
 # Need the reference model (torch + DeepSeek-V3 specimen); skip cleanly without it
 pch_testbed(pch.verify_shipped_streams   run_harness_script.py verify_streams.py)

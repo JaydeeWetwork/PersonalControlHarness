@@ -20,8 +20,10 @@ def model_prereqs_or_skip():
     if importlib.util.find_spec("torch") is None:
         skip("torch not installed (pch/requirements.txt: torch==2.14.1+cpu; "
              "receipted on Python 3.12)")
-    spec = os.environ.get("PCH_SPECIMEN_DIR",
-                          os.path.join(HARNESS_DIR, "..", "DeepSeek-V3", "inference"))
+    vendored = os.path.join(HARNESS_DIR, "..", "..", "third_party", "DeepSeek-V3", "inference")
+    spec = os.environ.get("PCH_SPECIMEN_DIR") or (
+        vendored if os.path.isfile(os.path.join(vendored, "model.py"))
+        else os.path.join(HARNESS_DIR, "..", "DeepSeek-V3", "inference"))
     if not os.path.isfile(os.path.join(spec, "model.py")):
         skip(f"DeepSeek-V3 specimen not found at {os.path.abspath(spec)} "
              "(set PCH_SPECIMEN_DIR; see pch/README.md)")

@@ -193,9 +193,11 @@ couples that code with the LithoLattice engine and the LithoKraft game.
   License Agreement v1.0 (`LICENSE-MODEL`). The PCH does not use or
   redistribute those weights: it builds a toy-scale model from the reference
   code with seeded synthetic weights.
-- The DeepSeek-V3 code is not included in this repository. Fetch it yourself
-  and point `PCH_SPECIMEN_DIR` at its `inference` folder (see
-  [pch/README.md](pch/README.md)).
+- The DeepSeek-V3 reference code (code only, no weights) is vendored,
+  unmodified, at `third_party/DeepSeek-V3/` from upstream commit
+  `9b4e978` with its MIT `LICENSE-CODE` and attribution (`UPSTREAM.md`), so
+  one clone has everything except model weights. `PCH_SPECIMEN_DIR` still
+  overrides it.
 
 ## The Pillars
 
