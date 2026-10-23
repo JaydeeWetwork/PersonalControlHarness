@@ -2,7 +2,25 @@
 
 Versions use a four-place rolling counter (`a.b.c.d`).
 
-## Unreleased (pch-hardening, media)
+## 0.0.1.0 (2026-10-23)
+
+**Release** (no pre-release suffix), approved by JaydeeWetwork; version named
+by the DeepSeek model's second external review. Round 2:
+
+- **CI:** `.github/workflows/ci.yml` (Windows and Linux, Release and Debug,
+  Python 3.10 and 3.12) and `nightly.yml`; SHA-pinned actions, read-only
+  permissions, actionlint clean. First green run pending push.
+- **Tests:** `pch.boss.stub_conformance` (contract C1-C8 with mutants,
+  `PCH_BOSS_IMPL` for the real boss), `pch.upstream_drift` (DeepSeek-V3
+  `9b4e978`), `pch.key_rotation` (rotation, revocation, back-dating,
+  passphrase). Rewind to N = 240 and fork horizon 240, the toy fixture's
+  ceiling.
+- **Docs:** README results refreshed (Windows 78/78 x3, Linux 78/78 x3),
+  `docs/RELEASE-SIGNOFF.md`, consortium credits.
+- **Known limitations:** real-specimen signed run, first green CI run, demo
+  hash repin (see `docs/BLOCKERS.md`).
+
+### Also in 0.0.1.0: media (from the unreleased pch-hardening work)
 - **docs/media:** the 15 fps screen captures are replaced with frame-perfect 60 fps renders (boss HUD replay, ctest replay, LithoKraft flyover). They are rendered offline from deterministic sources by `tools/media/make_media.py`, with a new `flyover_capture` tool. README previews are looping WebP. No Git LFS is needed (largest file 4.4 MB).
 
 ## 0.0.0.4-alpha (2026-10-23, unreleased; local branch pch-hardening)
