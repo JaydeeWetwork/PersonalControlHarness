@@ -70,8 +70,9 @@ A skipped test exits cleanly and prints why; nothing is faked.
 - **2 skipped, environment:** `engine_storage` and `engine_assets` skip their
   symlink checks when Windows can't create symlinks. Turn on Developer Mode to
   run them (see [BUILDING.md](BUILDING.md)). Their other checks still run.
-- **7 skipped, not built yet:** test beds 08-14 need PCH features that don't
-  exist yet (listed in the table below).
+- **7 skipped, not built yet** (that run predates 0.0.0.4): test beds 08-14.
+  Since then 10, 12, 13 and 14 run on the PCH reference boss stub; 08, 09
+  and 11 are **Planned:** (see [testbeds/DECISIONS.md](testbeds/DECISIONS.md)).
 
 ```
 52/65 Test #52: pch.verify_shipped_streams ...........   Passed   12.25 sec
@@ -89,6 +90,12 @@ receipt offline with only a public key
 [key management](pch/docs/KEY-MANAGEMENT.md)). The shipped reference streams
 predate this and are labeled `legacy-unchained`. Open limits are in
 [testbeds/SUMMARY.md](testbeds/SUMMARY.md) and [docs/BLOCKERS.md](docs/BLOCKERS.md).
+Every claim and its test is in [docs/CLAIMS.md](docs/CLAIMS.md).
+
+- **Planned:** a signed receipt from a real (non-fixture) DeepSeek specimen
+  ([BLOCKERS](docs/BLOCKERS.md)).
+- **Planned:** CI that runs the tests and the docs check on every push
+  ([BLOCKERS](docs/BLOCKERS.md)).
 
 ## The test beds
 
@@ -106,13 +113,13 @@ direction. Every test bed was built by Cortana.
 | 05 | [Thread-count determinism](testbeds/examples/05-thread-determinism.md) | Herominde | Cortana | Ran, passed (2, 4 and 12 threads matched 1 thread) |
 | 06 | [Rewind fidelity](testbeds/examples/06-rewind-fidelity.md) | Cortana | Cortana | Ran, passed at N = 1 and 64; larger N not run (beyond the toy model's 248-step context) |
 | 07 | [Lookahead fork budget](testbeds/examples/07-fork-budget.md) | Cortana | Cortana | Ran, passed (1-16 branches) |
-| 08 | [HUD reading](testbeds/examples/08-hud-reading.md) | Master Chief | Cortana | Not run: needs a boss brain and HUD feed |
-| 09 | [Telegraph fairness](testbeds/examples/09-telegraph-fairness.md) | Master Chief, Herominde | Cortana | Not run: needs boss attacks with wind-up timing |
-| 10 | [Versioned receipts and rematch](testbeds/examples/10-versioned-rematch.md) | Master Chief | Cortana | Not run: needs version stamps and a rolling counter |
-| 11 | [HUD-only honesty](testbeds/examples/11-hud-only-honesty.md) | Herominde | Cortana | Not run: needs a HUD-only observation path |
-| 12 | [Human input rate](testbeds/examples/12-human-input-rate.md) | Herominde | Cortana | Not run: needs an action-rate cap |
-| 13 | [Fixed branch count (ranked)](testbeds/examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | Not run: needs a configurable branch budget |
-| 14 | [Brain-version stamp](testbeds/examples/14-brain-version-stamp.md) | Herominde | Cortana | Not run: receipts have no brain-version field yet |
+| 08 | [HUD reading](testbeds/examples/08-hud-reading.md) | Master Chief | Cortana | Planned: needs a boss HUD feed ([decision](testbeds/DECISIONS.md)) |
+| 09 | [Telegraph fairness](testbeds/examples/09-telegraph-fairness.md) | Master Chief, Herominde | Cortana | Planned: needs boss attacks with wind-up timing ([decision](testbeds/DECISIONS.md)) |
+| 10 | [Versioned receipts and rematch](testbeds/examples/10-versioned-rematch.md) | Master Chief | Cortana | Ran, passed on the PCH reference boss stub (version stamp, gap-free counter, rematch) |
+| 11 | [HUD-only honesty](testbeds/examples/11-hud-only-honesty.md) | Herominde | Cortana | Planned: needs a HUD-only observation path ([decision](testbeds/DECISIONS.md)) |
+| 12 | [Human input rate](testbeds/examples/12-human-input-rate.md) | Herominde | Cortana | Ran, passed on the reference boss stub (max 10 actions/s; uncapped control fails) |
+| 13 | [Fixed branch count (ranked)](testbeds/examples/13-ranked-fixed-branch-count.md) | Herominde | Cortana | Ran, passed on the reference boss stub (phone == PC with branch count locked) |
+| 14 | [Brain-version stamp](testbeds/examples/14-brain-version-stamp.md) | Herominde | Cortana | Ran, passed on the reference boss stub (cross-version replay refused or labeled) |
 
 Index and how to run each one: [testbeds/README.md](testbeds/README.md).
 Plain-English summary: [testbeds/SUMMARY.md](testbeds/SUMMARY.md).
