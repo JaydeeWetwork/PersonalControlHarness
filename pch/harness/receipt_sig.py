@@ -148,13 +148,16 @@ def parse_sidecar(text: str) -> dict:
             raise SigError(f"sidecar: {f} must be a string")
     if type(d["timestamp"]) is not int:
         raise SigError("sidecar: timestamp must be an integer")
-    if len(d["sig"]) != 128:
-        raise SigError("sidecar: signature must be 64 bytes (128 hex)")
-    try:
-        bytes.fromhex(d["sig"])
-    except ValueError:
-        raise SigError("sidecar: signature is not hex")
+    # One spelling per value: lowercase hex of exact length only (bed 15
+    # found uppercase hex accepted as the same signature before this check).
+    for f, n in (("sig", 128), ("chain_head", 64), ("key_id", 16)):
+        if not _is_lower_hex(d[f], n):
+            raise SigError(f"sidecar: {f} must be {n} lowercase hex chars")
     return d
+
+
+def _is_lower_hex(v, n):
+    return isinstance(v, str) and len(v) == n and all(ch in "0123456789abcdef" for ch in v)
 
 
 def parse_revocations(text: str) -> set:

@@ -56,3 +56,28 @@ After:
 RECEIPT TAMPER (cases 1-8): ALL PASS
 exit 0
 ```
+
+## S1.8 bed 15 signature fuzz: `tb_signature_fuzz.py`
+
+Bed 15 found a real bug on its first run: the sidecar parser accepted
+uppercase hex in `sig`, so a changed sidecar verified as the same
+signature (an encoding malleability, not a forgery; it breaks "one byte
+string, one meaning"). Fixed by requiring exact-length lowercase hex for
+`sig`, `chain_head` and `key_id`.
+
+Before the fix:
+```
+  fuzz: 10000 mutations, seed 20261023, per-op {0: 1272, 1: 1230, 2: 1276, 3: 1289, 4: 1253, 5: 1248, 6: 1250, 7: 1182}, no-op mutations 17
+  [FAIL] signature fuzz: zero false accepts -- 7 false accepts
+  [PASS] signature fuzz: zero crashes -- 0 crashes
+SIGNATURE FUZZ (bed 15): 1 FAILED
+```
+After:
+```
+  fuzz: 10000 mutations, seed 20261023, per-op {0: 1272, 1: 1230, 2: 1276, 3: 1289, 4: 1253, 5: 1248, 6: 1250, 7: 1182}, no-op mutations 17
+  [PASS] signature fuzz: zero false accepts -- 0 false accepts
+  [PASS] signature fuzz: zero crashes -- 0 crashes
+  [PASS] signature fuzz: zero false accepts -- 0 false accepts
+  [PASS] signature fuzz: zero crashes -- 0 crashes
+SIGNATURE FUZZ (bed 15): ALL PASS
+```
