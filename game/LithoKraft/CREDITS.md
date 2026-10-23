@@ -3,7 +3,7 @@
 A **Wet Wafer Works** game, built on the **LithoLattice** engine.
 
 ## Direction & Design
-- **David "JD" Rittenhouse** — creator, game director, lead designer.
+- **JaydeeWetwork ("JD")** — creator, game director, lead designer.
   World, lore, systems, and the final call on everything.
 
 ## Co-Design & Implementation

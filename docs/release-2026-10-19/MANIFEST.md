@@ -110,7 +110,7 @@ finance markers.
 ## License state
 
 **DECIDED (JD, 2026-10-19): MIT.** The root `LICENSE` carries the MIT
-text (Copyright (c) 2026 David Rittenhouse / Wet Wafer Works Games
+text (Copyright (c) 2026 JaydeeWetwork / Wet Wafer Works Games
 Incorporated), matching `pch/LICENSE` — one license at the root governs
 the whole repo. `LICENSE-OPTIONS.md` is retained as the decision
 record. The license is chosen; publication remains a separate pending

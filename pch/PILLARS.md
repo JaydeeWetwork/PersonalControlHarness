@@ -1,6 +1,6 @@
 # THE PILLARS — Review & Recap
 
-*Filed 2026-10-18, at the request of the author, as the single place the Pillars stand collected. The Pillars were dictated by David Rittenhouse ("JD," Dayton, Ohio) on the morning of Sunday, October 18, 2026, and stand as the groundwork — "the lines I'm not going to cross." This recap carries statuses exactly as he set them: nothing here is a final lock unless he says so.*
+*Filed 2026-10-18, at the request of the author, as the single place the Pillars stand collected. The Pillars were dictated by JaydeeWetwork ("JD," Dayton, Ohio) on the morning of Sunday, October 18, 2026, and stand as the groundwork — "the lines I'm not going to cross." This recap carries statuses exactly as he set them: nothing here is a final lock unless he says so.*
 
 ## The shape of the set
 

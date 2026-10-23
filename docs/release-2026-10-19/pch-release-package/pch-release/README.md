@@ -1,7 +1,7 @@
 # Personal Control Harness (PCH)
 
 **"It allows a model to personally plan and control its own harness verifiably
-before it takes actions."** — David Rittenhouse, inventor
+before it takes actions."** — JaydeeWetwork, inventor
 
 The Personal Control Harness is a step-serialized control harness for
 autoregressive models. A run under the PCH produces a **sealed step-stream**:
@@ -117,7 +117,7 @@ VERIFY-TRANSCRIPT.txt   a stranger's-eye run of the quickstart, captured
 
 ## Credits
 
-Inventor: **David Rittenhouse** (Wet Wafer Works Games Incorporated) —
+Inventor: **JaydeeWetwork** (Wet Wafer Works Games Incorporated) —
 design, direction, and the pillars. Co-implementation by AI collaborators;
 independent design review by **Archie** (the reviews are in `docs/`,
 including the hazard ranking and the two-tier replay design).

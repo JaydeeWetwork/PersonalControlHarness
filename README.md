@@ -1,10 +1,44 @@
-# LithoLattice · LithoKraft · Personal Control Harness
+# LithoLattice, LithoKraft and the Personal Control Harness
 
-> **Initial public release staging — published by the author via GitHub.**
-> License chosen by JD on 2026-10-19: **MIT** (see `LICENSE`; decision
-> record in `LICENSE-OPTIONS.md`).
+A deterministic C++20 voxel engine (**LithoLattice**), the voxel CPU-building
+game built on it (**LithoKraft**), and the **Personal Control Harness (PCH)**:
+a way for a language model to plan and control its own actions inside a
+sealed, replayable, verifiable loop. MIT licensed. Free tools only.
 
-*The Wafer, the way forward.*
+## Start here
+
+1. Read **[BUILDING.md](BUILDING.md)**: CMake command line, VS Code or Visual Studio.
+2. Run the first PCH example: `cd testbeds` then `python tb_shipped_streams_chain.py`.
+3. Browse the experiments: **[testbeds/README.md](testbeds/README.md)** (index)
+   and **[testbeds/SUMMARY.md](testbeds/SUMMARY.md)** (plain-English summary).
+
+## Repository structure
+
+```
+engine/        LithoLattice engine (src/, assets/, tests/, docs/)
+               engine/LithoKraft is a symlink to ../game/LithoKraft; keep it.
+game/          LithoKraft game (src/, assets/, scripts/, CREDITS.md)
+pch/           Personal Control Harness
+  harness/     the reference harness and the two sealed run streams
+  docs/        receipts and reviews
+testbeds/      squad experiments for the PCH, run by CTest
+  examples/    one readme per experiment (designer, goal, how to verify, status)
+  designs/     the original design notes, with author credit
+docs/          architecture, SDK, roadmap
+  release-2026-10-19/   historical release-staging record
+tools/         build driver and asset tools
+.vscode/       VS Code tasks and settings
+CMakeLists.txt, CMakePresets.json   top-level build and presets
+requirements.txt                    CPU torch pin for the PCH
+demo_record_proof.lldemo            sealed demo record (verification artifact)
+LICENSE, CREDITS.md                 MIT license and full credits
+```
+
+## Experiments (test beds)
+
+Fourteen PCH experiments designed by the squad (Cortana, Herominde, Master
+Chief, CloudAtlas). Status, designer credit and how to run each one are in
+[testbeds/README.md](testbeds/README.md).
 
 ## What this is
 
@@ -27,7 +61,7 @@
   sealed run streams, and full receipts.
 
 A Wet Wafer Works Games Incorporated project. Inventor and designer:
-David Rittenhouse. Full credits: `game/LithoKraft/CREDITS.md`.
+JaydeeWetwork. Full credits: `game/LithoKraft/CREDITS.md`.
 
 ## Verifiable claims
 
@@ -44,7 +78,7 @@ this tree alone:
   `stream_greedy.jsonl` are sealed, hash-chained step streams. The
   verifier re-derives every committed token: tampering breaks the chain,
   and a re-sealed forgery is refused on re-derivation. Re-running the
-  test regenerates both streams byte-identically.
+  test regenerates both streams byte-identically on Linux (on Windows the prefill cache digest differs; see the known issue in `testbeds/SUMMARY.md`).
 - **Honest scope.** The PCH proof runs at toy scale with synthetic
   fixture weights — it proves the protocol properties (serialization,
   verification, rewind/branch, witnessed cross-checking), not production
@@ -56,22 +90,6 @@ this tree alone:
 Receipts live in `pch/docs/`; the step-by-step transcript of the PCH
 package verifying itself from a cold environment is
 `pch/VERIFY-TRANSCRIPT.txt`.
-
-## Layout
-
-```
-engine/     LithoLattice engine (src/, assets/, tests/, docs/, branding/)
-            engine/LithoKraft is a symlink to ../../game/LithoKraft —
-            keep it intact; the build reaches the game through it.
-game/       LithoKraft game (src/, assets/, scripts/, CREDITS.md)
-pch/        Personal Control Harness reference package (self-contained)
-docs/       Project documentation (architecture, SDK, roadmap)
-tools/      Build driver and asset tools
-demo_record_proof.lldemo   Sealed demo record (verification artifact)
-MANIFEST.md                Exactly what this staging contains, and what
-                           was deliberately left out, and why
-LICENSE-OPTIONS.md         DRAFT — the license decision, still open
-```
 
 ## Build
 

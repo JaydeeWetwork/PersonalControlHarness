@@ -73,7 +73,7 @@ straight to Part 5.)*
 ## Part 4 — Pre-publish checklist (read this before Part 5)
 
 - [ ] **`LICENSE` is at the folder root.** It is the MIT License,
-      © David Rittenhouse / Wet Wafer Works Games Incorporated.
+      © JaydeeWetwork / Wet Wafer Works Games Incorporated.
       GitHub reads this file and displays the repo as MIT-licensed.
 - [ ] **The signing-key note — your call.** One file,
       `engine/src/assets/mod_signature.cpp`, has a test key baked
