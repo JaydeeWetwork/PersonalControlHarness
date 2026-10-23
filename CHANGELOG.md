@@ -26,6 +26,31 @@ approved by JaydeeWetwork (Ed25519 chosen by JD).
   `docs/hardening/FAIL-BEFORE.md`.
 - `cryptography>=44` added to `requirements.txt`.
 
+### Vendored specimen code (E3.0, JD addition)
+
+- DeepSeek-V3 inference code (code only, no weights) vendored unmodified at
+  `third_party/DeepSeek-V3/` from upstream `9b4e978`, with `LICENSE-CODE`
+  (MIT), attribution and a sha256 manifest (`UPSTREAM.md`) checked by
+  `pch.vendored_specimen`. `PCH_SPECIMEN_DIR` still overrides it.
+
+### Section 2: test beds (T2.1, T2.2)
+
+- `testbeds/DECISIONS.md`: owner decision (JD) to keep and implement all 14.
+- Beds 10, 12, 13, 14 now run on a minimal PCH reference boss stub
+  (`pch/harness/boss.py`: brain stamp, rolling counter, rate cap, locked
+  branch count, refuse-or-label replay) via `testbeds/tb_boss_fixture.py`.
+  Beds 08, 09, 11 remain skipped with reasons (`docs/BLOCKERS.md`).
+
+### Section 4: docs-to-reality sync (D4.1-D4.6)
+
+- Game demo test repinned to the cities-on hash `cb32c824f8b3ea98`;
+  `docs/pins.json` lists every pin.
+- `docs/CLAIMS.md` claims register; README labels unbuilt items `Planned:`.
+- Credit wording: the AI squad designed the test suites without JD's input;
+  JD human-reviews, verifies and approves everything before posting.
+- `tools/check_docs.py` as ctest `pch.docs_check`; CONTRIBUTING rule that a
+  claim change updates CLAIMS.md and CHANGELOG.md.
+
 ## 0.0.0.3-alpha (2026-10-23)
 
 **Alpha.** Credits release; no code or test changes.
