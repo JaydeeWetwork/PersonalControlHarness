@@ -1,7 +1,9 @@
 # Lookahead fork budget
 
-## 1. Designed by
-Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
+## 1. Credits
+Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+
+Designed by: Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
 Fork a sealed prefix into 1, 2, 4, 8 and 16 branches over a fixed 32-step horizon. Record wall time, process peak RSS and best-branch score, to see where more branches stop helping on modest hardware.

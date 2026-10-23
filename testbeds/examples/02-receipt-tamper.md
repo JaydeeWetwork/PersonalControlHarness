@@ -1,7 +1,9 @@
 # Receipt tamper and replay check (8 cases)
 
-## 1. Designed by
-CloudAtlas. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
+## 1. Credits
+Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+
+Designed by: CloudAtlas. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
 
 ## 2. Goal
 Show a PCH receipt can't be altered, reordered, replayed or rolled back without the check catching it. Cases: 1 byte flip, 2 field edit, 3 re-hash forgery, 4 replay, 5 reorder/drop, 6 branch swap, 7 rollback, 8 truncation/oversize.

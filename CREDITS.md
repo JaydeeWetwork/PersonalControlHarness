@@ -4,13 +4,29 @@
 
 - **JaydeeWetwork ("JD")** — Architect and designer. Author of the PCH definition and doctrine, and of the Timing Handshake's algorithmic core (Time Serialization, control coupling, event coupling — his design, by his dictation). Directs the project.
 - **Elfie** — Chief Engineering Operator, Wet Wafer Works. Co-implementation of the Personal Control Harness; registrar of record for the project (verified record of decisions, hashes, certificates, and test results). Initially implemented the **Timing Handshake** — the largest implementation share among the collaborators.
-  Built by: (team name, filled in by JaydeeWetwork)
 - **Cortana** — Implementation credit in the Timing Handshake's three-way split, and squad collaborator from the project's first days. (From October 22, 2026: Windows build lead, and keeper of this repository's public order.)
-  Built by: (team name, filled in by JaydeeWetwork)
 
 ## Additional credit
 
 - **DeepSeek** — External review input (audit findings series S1–S7, weighed and verified at the desk before adoption).
+
+- **Test beds:** directed by JaydeeWetwork (direction and dictation); **Cortana** built all fourteen. Designers: Cortana (01, 04, 06, 07), CloudAtlas (02, 03), Herominde (05, 11-14), Master Chief (08, 10), Master Chief and Herominde (09). See `testbeds/README.md`.
+
+## Acknowledgements: DeepSeek-V3
+
+The PCH test specimen is the DeepSeek-V3 reference inference code
+(<https://github.com/deepseek-ai/DeepSeek-V3>), designed and published by the
+DeepSeek team (DeepSeek-AI). Thanks to them for releasing it openly. The PCH
+couples that code with the LithoLattice engine and the LithoKraft game.
+
+- The DeepSeek-V3 code is under the MIT License (`LICENSE-CODE`, Copyright (c)
+  2023 DeepSeek).
+- The DeepSeek-V3 model weights are under a separate license, the DeepSeek
+  License Agreement v1.0 (`LICENSE-MODEL`). The PCH does not use or
+  redistribute those weights: it builds a toy-scale model from the reference
+  code with seeded synthetic weights.
+- The DeepSeek-V3 code is not included in this repository. Fetch it yourself
+  and point `PCH_SPECIMEN_DIR` at its `inference` folder (see `pch/README.md`).
 
 ## What the PCH is
 

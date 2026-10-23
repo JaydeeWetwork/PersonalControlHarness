@@ -54,27 +54,28 @@ visible attack wind-ups, versioned rematches).
 
 ## The experiments
 
+Directed by JaydeeWetwork (direction and dictation); built by Cortana.
 The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these
 independently, with no direction from JD. Status is as of 2026-10-23
 (Python 3.14.8, torch 2.14.1+cpu, DeepSeek-V3 `9b4e978`). "Skipped" means the test exits cleanly with a reason;
 nothing is faked.
 
-| # | Experiment | Designer | Goal | Status | Next step |
-|---|---|---|---|---|---|
-| 01 | Shipped streams: chain check | Cortana | Prove the two shipped sealed runs are intact (chain, seal, no step gaps) | **Passed** (both streams, 16 steps each) | Edit a digit in a copy and watch it fail |
-| 02 | Receipt tamper and replay check | CloudAtlas | Catch altered, reordered, replayed or rolled-back receipts (8 cases) | **Passed** cases 1, 2, 4-8; case 3 skipped (receipts aren't signed) | Enable case 3 once signing lands |
-| 03 | Receipt fuzz (10,000 mutations) | CloudAtlas | Zero false accepts and zero crashes under random edits, measured against the test-bed verifier | **Passed** against the test-bed verifier (seed 20261023: 0 false accepts, 0 crashes, 92 no-ops) | Put the trailer inside the hash (needs JD's go) |
-| 04 | Replay determinism | Cortana (folded into Herominde's fair-play set) | 16 identical seeded runs match at every 64-step checkpoint | **Passed** (16/16 runs match, ~70 s) | Longer runs |
-| 05 | Thread-count determinism | Herominde | Same final hash with 1, 2, 4 and all threads | **Passed** (2, 4, 12 threads == 1 thread) | Try other CPUs; a mismatch is useful evidence |
-| 06 | Rewind fidelity | Cortana | Snapshot, run, rewind, re-run must match for N = 1 to 65536 | **Passed** N = 1 and 64; N = 1024+ not run (toy model context is 248 steps) | Longer-context fixture or engine tick simulation |
-| 07 | Lookahead fork budget | Cortana | Measure time, memory and score for 1-16 branches | **Passed** 1-16 branches (0.12-1.83 s, peak RSS 205-208 MiB) | Compare a laptop and a desktop |
-| 08 | HUD reading | Master Chief | Boss acts only on what's on screen: no hidden-state leaks, 90%+ match rate | Skipped: no boss brain or HUD feed yet | Build the missing feature, then the real check |
-| 09 | Telegraph fairness | Master Chief and Herominde | Every attack shows a readable wind-up before it lands | Skipped: no boss attacks with wind-up/HUD timing yet | Same as 08 |
-| 10 | Versioned receipts and rematch | Master Chief | Rematches replay the same and receipts carry a version stamp and gap-free counter | Skipped: no version stamps or rolling counter yet | Same as 08 |
-| 11 | HUD-only honesty | Herominde | Blank the on-screen bar; boss must not "x-ray" the real value | Skipped: no HUD-only observation path yet | Same as 08 |
-| 12 | Human input rate | Herominde | No burst of boss actions exceeds a human rate cap | Skipped: no action-rate cap yet | Same as 08 |
-| 13 | Fixed branch count (ranked) | Herominde | "Phone" and "PC" budgets give identical decisions | Skipped: no configurable branch budget yet | Same as 08 |
-| 14 | Brain-version stamp | Herominde | Old receipts on a new build are refused or labeled, not silently replayed | Skipped: no brain-version field yet | Same as 08 |
+| # | Experiment | Designed by | Built by | Goal | Status | Next step |
+|---|---|---|---|---|---|---|
+| 01 | Shipped streams: chain check | Cortana | Cortana | Prove the two shipped sealed runs are intact (chain, seal, no step gaps) | **Passed** (both streams, 16 steps each) | Edit a digit in a copy and watch it fail |
+| 02 | Receipt tamper and replay check | CloudAtlas | Cortana | Catch altered, reordered, replayed or rolled-back receipts (8 cases) | **Passed** cases 1, 2, 4-8; case 3 skipped (receipts aren't signed) | Enable case 3 once signing lands |
+| 03 | Receipt fuzz (10,000 mutations) | CloudAtlas | Cortana | Zero false accepts and zero crashes under random edits, measured against the test-bed verifier | **Passed** against the test-bed verifier (seed 20261023: 0 false accepts, 0 crashes, 92 no-ops) | Put the trailer inside the hash (needs JD's go) |
+| 04 | Replay determinism | Cortana (folded into Herominde's fair-play set) | Cortana | 16 identical seeded runs match at every 64-step checkpoint | **Passed** (16/16 runs match, ~70 s) | Longer runs |
+| 05 | Thread-count determinism | Herominde | Cortana | Same final hash with 1, 2, 4 and all threads | **Passed** (2, 4, 12 threads == 1 thread) | Try other CPUs; a mismatch is useful evidence |
+| 06 | Rewind fidelity | Cortana | Cortana | Snapshot, run, rewind, re-run must match for N = 1 to 65536 | **Passed** N = 1 and 64; N = 1024+ not run (toy model context is 248 steps) | Longer-context fixture or engine tick simulation |
+| 07 | Lookahead fork budget | Cortana | Cortana | Measure time, memory and score for 1-16 branches | **Passed** 1-16 branches (0.12-1.83 s, peak RSS 205-208 MiB) | Compare a laptop and a desktop |
+| 08 | HUD reading | Master Chief | Cortana | Boss acts only on what's on screen: no hidden-state leaks, 90%+ match rate | Skipped: no boss brain or HUD feed yet | Build the missing feature, then the real check |
+| 09 | Telegraph fairness | Master Chief and Herominde | Cortana | Every attack shows a readable wind-up before it lands | Skipped: no boss attacks with wind-up/HUD timing yet | Same as 08 |
+| 10 | Versioned receipts and rematch | Master Chief | Cortana | Rematches replay the same and receipts carry a version stamp and gap-free counter | Skipped: no version stamps or rolling counter yet | Same as 08 |
+| 11 | HUD-only honesty | Herominde | Cortana | Blank the on-screen bar; boss must not "x-ray" the real value | Skipped: no HUD-only observation path yet | Same as 08 |
+| 12 | Human input rate | Herominde | Cortana | No burst of boss actions exceeds a human rate cap | Skipped: no action-rate cap yet | Same as 08 |
+| 13 | Fixed branch count (ranked) | Herominde | Cortana | "Phone" and "PC" budgets give identical decisions | Skipped: no configurable branch budget yet | Same as 08 |
+| 14 | Brain-version stamp | Herominde | Cortana | Old receipts on a new build are refused or labeled, not silently replayed | Skipped: no brain-version field yet | Same as 08 |
 
 Every test bed uses the harness read-only and doesn't change PCH core.
 Details per experiment are in `examples/`, and the original designs with

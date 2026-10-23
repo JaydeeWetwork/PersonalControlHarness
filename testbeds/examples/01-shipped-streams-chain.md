@@ -1,7 +1,9 @@
 # Shipped streams: chain check (start here)
 
-## 1. Designed by
-Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
+## 1. Credits
+Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+
+Designed by: Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
 Show, with nothing but Python, that the two sealed runs shipped in `pch/harness/` are intact: every record's `chain` hash links to the one before, the trailer seals the final hash, and step numbers run 0, 1, 2, ... with no gaps.

@@ -1,5 +1,8 @@
 # LithoLattice, LithoKraft and the Personal Control Harness
 
+> *LithoLattice and LithoKraft are more than a game: they are an AI playground
+> built on a deterministic, fast-ticking, heavily optimized engine.*
+
 A deterministic C++20 voxel engine (**LithoLattice**), the voxel CPU-building
 game built on it (**LithoKraft**), and the **Personal Control Harness (PCH)**:
 a way for a language model to plan and control its own actions inside a
@@ -47,21 +50,48 @@ Design reviews: Argon ([docs/Argon-Review-2026-10-18.md](docs/Argon-Review-2026-
 **JaydeeWetwork** (Wet Wafer Works Games Incorporated): inventor, architect
 and designer of the PCH and LithoLattice. Full record in [CREDITS.md](CREDITS.md).
 
-AI contributors, listed under the names JaydeeWetwork gave them, each followed
-by the team that built the system underneath:
+AI contributors, listed under the names JaydeeWetwork gave them:
 
 - **Elfie Muse AI**: co-implementation of the PCH; the largest share of the Timing Handshake implementation.
-  Built by: (team name, filled in by JaydeeWetwork)
-- **Cortana**: PCH implementation (Timing Handshake three-way split); Windows build lead; designed experiments 01, 04, 06 and 07.
-  Built by: (team name, filled in by JaydeeWetwork)
-- **Herominde**: designed experiments 05 and 11-14 and the fair-play set; co-designed 09.
-  Built by: (team name, filled in by JaydeeWetwork)
-- **Master Chief**: designed experiments 08 and 10; co-designed 09.
-  Built by: (team name, filled in by JaydeeWetwork)
-- **CloudAtlas**: designed experiments 02 and 03.
-  Built by: (team name, filled in by JaydeeWetwork)
-- **Argon/RC**: design reviews.
-  Built by: (team name, filled in by JaydeeWetwork)
+- **Cortana**: PCH implementation (Timing Handshake three-way split); Windows build lead; built all fourteen test beds.
+- **Herominde**, **Master Chief**, **CloudAtlas**: test-bed designers (see below).
+- **Argon/RC**: design reviews ([docs/Argon-Review-2026-10-18.md](docs/Argon-Review-2026-10-18.md)).
+
+The project and the test beds are directed by JaydeeWetwork (direction and
+dictation). Test beds (every one built by Cortana):
+
+| # | Experiment | Designed by | Built by |
+|---|---|---|---|
+| 01 | Shipped streams: chain check | Cortana | Cortana |
+| 02 | Receipt tamper and replay check | CloudAtlas | Cortana |
+| 03 | Receipt fuzz | CloudAtlas | Cortana |
+| 04 | Replay determinism | Cortana | Cortana |
+| 05 | Thread-count determinism | Herominde | Cortana |
+| 06 | Rewind fidelity | Cortana | Cortana |
+| 07 | Lookahead fork budget | Cortana | Cortana |
+| 08 | HUD reading | Master Chief | Cortana |
+| 09 | Telegraph fairness | Master Chief, Herominde | Cortana |
+| 10 | Versioned receipts and rematch | Master Chief | Cortana |
+| 11 | HUD-only honesty | Herominde | Cortana |
+| 12 | Human input rate | Herominde | Cortana |
+| 13 | Fixed branch count (ranked) | Herominde | Cortana |
+| 14 | Brain-version stamp | Herominde | Cortana |
+
+## Acknowledgements
+
+The PCH test specimen is the DeepSeek-V3 reference inference code
+(<https://github.com/deepseek-ai/DeepSeek-V3>), designed and published by the
+DeepSeek team (DeepSeek-AI). Thanks to them for releasing it openly. The PCH
+couples that code with the LithoLattice engine and the LithoKraft game.
+
+- The DeepSeek-V3 code is under the MIT License (`LICENSE-CODE`, Copyright (c)
+  2023 DeepSeek).
+- The DeepSeek-V3 model weights are under a separate license, the DeepSeek
+  License Agreement v1.0 (`LICENSE-MODEL`). The PCH does not use or
+  redistribute those weights: it builds a toy-scale model from the reference
+  code with seeded synthetic weights.
+- The DeepSeek-V3 code is not included in this repository. Fetch it yourself
+  and point `PCH_SPECIMEN_DIR` at its `inference` folder (see `pch/README.md`).
 
 ## What this is
 

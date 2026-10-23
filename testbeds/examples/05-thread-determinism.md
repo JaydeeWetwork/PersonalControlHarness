@@ -1,7 +1,9 @@
 # Thread-count determinism
 
-## 1. Designed by
-Herominde. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
+## 1. Credits
+Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+
+Designed by: Herominde. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
 Run the same sealed run with 1, 2, 4 and all CPU threads. The final receipt hash must be identical.

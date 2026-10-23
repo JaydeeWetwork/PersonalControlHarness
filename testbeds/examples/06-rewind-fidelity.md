@@ -1,7 +1,9 @@
 # Rewind fidelity
 
-## 1. Designed by
-Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
+## 1. Credits
+Directed by: JaydeeWetwork (direction and dictation). Built by: Cortana.
+
+Designed by: Cortana. The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
 Snapshot, run N steps, rewind (fresh model + prefix replay), re-run. The snapshot digest and the re-run must match, with a replay check on each N. N = 1, 64, 1024, 16384, 65536.
