@@ -78,7 +78,18 @@ nothing is faked.
 Every test bed uses the harness read-only and doesn't change PCH core.
 Details per experiment are in `examples/`, and the original designs with
 credit are in `designs/`.
-## Known issue (found 2026-10-23)
+## Shipped streams across platforms (fixed 2026-10-23)
 
-`pch.verify_shipped_streams` fails on a fresh checkout with torch 2.14.1+cpu: both shipped streams report `prefill cache digest mismatch`. The cache digest hashes raw float output. The streams were recorded with the same torch 2.14.1+cpu but on Linux (Python 3.12), per `pch/requirements.txt`, so the mismatch is a Windows-vs-Linux floating-point difference, not a torch version gap. `pch.disc_test` then re-records the streams inside `pch/harness/`, after which the check passes, which hides the problem in a full CTest run. Restore with `git checkout -- pch/harness/*.jsonl`. Fix options (PCH core, need JD's go): record the platform in the stream header or keep per-platform reference streams, or have `disc_test` write to a temp folder.
-
+Platform-tagged reference streams (core fix approved by JD 2026-10-23):
+the prefill cache digest hashes raw float output, which differs between OS,
+CPU arch and torch builds. Stream headers now record `platform` (os, arch,
+torch, python) inside the hashed chain, so the tag can't be swapped quietly.
+`pch/harness/stream_*.jsonl` stay as the original Linux reference set
+(untagged; treated as Linux x86_64, torch 2.14.1+cpu). Windows reference
+streams recorded on the dev workstation are in
+`pch/harness/reference_streams/windows-amd64-torch2.14.1-cpu/`.
+`verify_streams.py` picks the set matching this machine (OS, arch, torch)
+and reports SKIPPED, not FAILED, when none matches. `disc_test_llm.py`
+now writes fresh streams to a temp folder (or `PCH_OUT_DIR`) and never
+overwrites the committed ones. To add a reference set for a new platform:
+`PCH_OUT_DIR=reference_streams/<name> python disc_test_llm.py` from `pch/harness/`.

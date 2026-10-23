@@ -22,4 +22,4 @@ Pass: all 16 runs match run 1. Fail: `first divergence at checkpoint N`.
 Read-only use of the harness: it imports `pch/harness/stepstream.py` / `harness.py` and reads the shipped `.jsonl` streams, and writes nothing into `pch/`. PCH core is not modified.
 
 ## 6. Further experiments and design notes
-The PCH's own `pch_more_tests.py` and `disc_test_llm.py` also run under CTest (`pch.battery2_rewind_witness`, `pch.disc_test`) and skip the same way without torch. On 2026-10-23 both passed (disc_test 5/5, battery #2 7/7). Note: `disc_test_llm.py` re-records `stream_*.jsonl` inside `pch/harness/` when it runs, so restore them with `git checkout -- pch/harness/*.jsonl` afterwards.
+The PCH's own `pch_more_tests.py` and `disc_test_llm.py` also run under CTest (`pch.battery2_rewind_witness`, `pch.disc_test`) and skip the same way without torch. On 2026-10-23 both passed (disc_test 5/5, battery #2 7/7). `disc_test_llm.py` writes its fresh streams to a temp folder (or `PCH_OUT_DIR`), never over the committed ones (core fix approved by JD 2026-10-23).

@@ -12,7 +12,9 @@ Checks:
      un-harnessed generation with identical draws produces identical tokens.
 """
 import copy
+import os
 import sys
+import tempfile
 
 import torch
 
@@ -24,6 +26,14 @@ RUN_SEED = 777
 MAX_NEW = 16
 
 fails = 0
+
+# Fresh streams go to an output dir, never over the committed reference
+# streams in pch/harness/ (core fix approved by JD 2026-10-23).
+# Set PCH_OUT_DIR to choose it (e.g. to record new reference streams).
+OUT_DIR = os.environ.get("PCH_OUT_DIR") or tempfile.mkdtemp(prefix="pch-disc-")
+os.makedirs(OUT_DIR, exist_ok=True)
+SAMPLED = os.path.join(OUT_DIR, "stream_sampled.jsonl")
+GREEDY = os.path.join(OUT_DIR, "stream_greedy.jsonl")
 
 
 def check(name, ok, detail=""):
@@ -39,18 +49,18 @@ print(f"   weights digest: {harness.weights_digest(model)[:16]}...")
 
 print("== 1. sampled run (temp 0.8, per-step seeded) + replay")
 records, produced = harness.run_live(model, PROMPT, MAX_NEW, 0.8, RUN_SEED, control_at=6)
-stepstream.save_stream(records, "stream_sampled.jsonl")
-print(f"   produced tokens: {produced}")
+stepstream.save_stream(records, SAMPLED)
+print(f"   produced tokens: {produced}  (stream: {SAMPLED})")
 fresh = harness.build_model()
-ok, why = harness.verify_replay(fresh, stepstream.load_stream("stream_sampled.jsonl"))
+ok, why = harness.verify_replay(fresh, stepstream.load_stream(SAMPLED))
 check("sampled replay verifies", ok, why)
 
 print("== 2. greedy run (temp 0) + replay")
 records_g, produced_g = harness.run_live(model, PROMPT, MAX_NEW, 0.0, RUN_SEED)
-stepstream.save_stream(records_g, "stream_greedy.jsonl")
+stepstream.save_stream(records_g, GREEDY)
 print(f"   produced tokens: {produced_g}")
 fresh = harness.build_model()
-ok, why = harness.verify_replay(fresh, stepstream.load_stream("stream_greedy.jsonl"))
+ok, why = harness.verify_replay(fresh, stepstream.load_stream(GREEDY))
 check("greedy replay verifies", ok, why)
 
 print("== 3. naive tamper (one token edited, seals left stale)")

@@ -15,6 +15,7 @@ The specimen (DeepSeek-V3/inference) is imported, never modified.
 """
 import hashlib
 import os
+import platform as _platform
 import sys
 
 import torch
@@ -149,11 +150,29 @@ def chosen_prob(logits: torch.Tensor, temperature: float, token: int) -> float:
     return float(probs[0, token].item())
 
 
+def platform_info() -> dict:
+    """Platform that recorded a stream (core fix approved by JD 2026-10-23).
+    Float results (and so the prefill cache digest) can differ between OS /
+    CPU arch / torch builds, so the header names them. The header is hashed
+    into the chain, so this tag cannot be swapped without breaking it."""
+    return {"os": _platform.system(), "arch": _platform.machine(),
+            "torch": torch.__version__, "python": _platform.python_version()}
+
+
+def platform_key(info: dict) -> tuple:
+    """What a reference stream must match to be replayable bit-for-bit here:
+    OS, CPU arch (amd64 == x86_64) and torch version. Python is recorded for
+    the receipt but does not change torch's float results."""
+    arch = str(info.get("arch", "")).lower().replace("amd64", "x86_64")
+    return (str(info.get("os", "")).lower(), arch, str(info.get("torch", "")))
+
+
 def run_live(model, prompt, max_new, temperature, run_seed, control_at=None):
     """Execute a run under the harness; returns the sealed step-stream."""
     records = [{
         "kind": "header", "run_seed": run_seed, "temperature": temperature,
         "weights": weights_digest(model), "prompt": list(prompt),
+        "platform": platform_info(),
     }]
     tokens = torch.tensor([list(prompt)], dtype=torch.long)
     with torch.no_grad():

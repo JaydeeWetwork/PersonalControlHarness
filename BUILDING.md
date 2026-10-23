@@ -101,3 +101,19 @@ DeepSeek-V4-Flash/Pro (`inference/` on Hugging Face, kernel updated
 2026-06-08) call TileLang GPU kernels (`act_quant`, `fp8_index`,
 `sparse_attn`, `hc_split_sinkhorn`) on every forward pass, and V4 replaces
 the MLA `kv_cache`/`pe_cache` that the harness digests. Stay on the V3 pin.
+
+## Shipped reference streams and platforms
+
+Platform-tagged reference streams (core fix approved by JD 2026-10-23):
+the prefill cache digest hashes raw float output, which differs between OS,
+CPU arch and torch builds. Stream headers now record `platform` (os, arch,
+torch, python) inside the hashed chain, so the tag can't be swapped quietly.
+`pch/harness/stream_*.jsonl` stay as the original Linux reference set
+(untagged; treated as Linux x86_64, torch 2.14.1+cpu). Windows reference
+streams recorded on the dev workstation are in
+`pch/harness/reference_streams/windows-amd64-torch2.14.1-cpu/`.
+`verify_streams.py` picks the set matching this machine (OS, arch, torch)
+and reports SKIPPED, not FAILED, when none matches. `disc_test_llm.py`
+now writes fresh streams to a temp folder (or `PCH_OUT_DIR`) and never
+overwrites the committed ones. To add a reference set for a new platform:
+`PCH_OUT_DIR=reference_streams/<name> python disc_test_llm.py` from `pch/harness/`.

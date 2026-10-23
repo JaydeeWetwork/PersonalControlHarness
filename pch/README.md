@@ -86,8 +86,10 @@ python pch_more_tests.py        # expect: PCH BATTERY #2: ALL PASS
 ```
 
 `disc_test_llm.py` regenerates `stream_sampled.jsonl` / `stream_greedy.jsonl`
-deterministically as part of its run (the regenerated files match the
-shipped ones). A captured run of exactly these steps, from a fresh venv on
+deterministically into a temp folder (or `PCH_OUT_DIR`), never over the
+shipped ones; on the same platform they match the shipped set (core fix
+approved by JD 2026-10-23: streams carry a hashed platform tag and
+`reference_streams/` holds one set per platform). A captured run of exactly these steps, from a fresh venv on
 the packaged copy, is kept in [`VERIFY-TRANSCRIPT.txt`](VERIFY-TRANSCRIPT.txt).
 
 ### What the batteries check
@@ -108,6 +110,7 @@ the packaged copy, is kept in [`VERIFY-TRANSCRIPT.txt`](VERIFY-TRANSCRIPT.txt).
 harness/   stepstream.py (chained stream format), harness.py (the rig),
            disc_test_llm.py, pch_more_tests.py, verify_streams.py,
            kernel.py (CPU shim), stream_sampled.jsonl, stream_greedy.jsonl
+           (Linux reference set), reference_streams/<platform>/ (others)
 docs/      Pillar-PlugIn-Map.md, Disc-Test-Receipts-2026-10-18.md,
            Prototype-Receipts-2026-10-18.md, Argon-Review-2026-10-18.md,
            Archie-Review-Prototype-Receipts-2026-10-18.md

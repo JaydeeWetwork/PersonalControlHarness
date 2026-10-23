@@ -1,0 +1,20 @@
+{"chain": "aa6d4387c53999d08a106b414085da5d4d57f5dfcee8819e5d6698bbe5026ad3", "kind": "header", "platform": {"arch": "AMD64", "os": "Windows", "python": "3.14.8", "torch": "2.14.1+cpu"}, "prompt": [11, 42, 7, 99, 3, 250, 18, 5], "run_seed": 777, "temperature": 0.8, "weights": "4365dc9610eadcfaa2ebffd8f8755bfa9e77aa504d0ecd4a6e6413bbb2ee4e0b"}
+{"cache": "d9e02b3cc5d27f7b6978536efac3523322aae4ab4e9c66622d9f49f0ea635123", "chain": "8fd2e4e986ab450b24de2bd9bd01fd317ab2a2bdc2fbcbc5e041652603ae66a2", "chunk": [0, 8], "kind": "prefill"}
+{"chain": "e65ab47cbe4de2b18916ca7232e6fdb94641df5a940d0381dae9f2116dafc07f", "kind": "step", "p": 0.0006672080489806831, "step": 0, "token": 138}
+{"chain": "61cd24eccbdad89c15c8788ae950de41c0807d393fb28bf95f761fb587cf7070", "kind": "step", "p": 0.0009220521315000951, "step": 1, "token": 42}
+{"chain": "b7055963234c490e1d8ab431063783ecaaf18756aaeaf5b4cd069697e1e6f0bc", "kind": "step", "p": 0.0012545305071398616, "step": 2, "token": 251}
+{"chain": "fea3c198190324fd4d4aab54c098f0bee3f36772b64f10ab3daaa549f455e12d", "kind": "step", "p": 0.003175160149112344, "step": 3, "token": 22}
+{"chain": "0de739d3720a0004e41fbcf3048ea637d1c60e3547dcb2b986d58b258c024137", "kind": "step", "p": 0.003403916722163558, "step": 4, "token": 175}
+{"chain": "1b6b8d9d8ba7b096687d7cab3d3254b24bf76d25b919ad5e29fba1912540165b", "kind": "step", "p": 0.008590877056121826, "step": 5, "token": 55}
+{"chain": "3077a4fae70bf80023a7b2a2f4d7e46b8ae9b1090e5e5aaa45a81f6ee01a84a9", "kind": "control", "op": "operator-note", "payload": "checkpoint", "step": 6}
+{"chain": "0001e861cfbff8479095a43448f1ab51fb5cf2847d55531baf144271edce7506", "kind": "step", "p": 0.0016162460669875145, "step": 6, "token": 234}
+{"chain": "7dc9cef21060fb609760db037fc1f9e288b302363f6bf1cfe59e15ff4f83f98a", "kind": "step", "p": 0.005825187545269728, "step": 7, "token": 256}
+{"chain": "4d64458099bdf57339e48cded2551f42420b3d02508cd4679236569f48b67de7", "kind": "step", "p": 0.0031475548166781664, "step": 8, "token": 507}
+{"chain": "7b1062d170f3c5742d464c02f50de32fce69e4f2e3ca7a66e22200368eac20c8", "kind": "step", "p": 0.00540373707190156, "step": 9, "token": 183}
+{"chain": "35c6f317b9250544e16c5c288d455a3733e93e76b418bed9a1092365b4b3e8d6", "kind": "step", "p": 0.0025336218532174826, "step": 10, "token": 376}
+{"chain": "768775909e65e8434057291cd9b1cf9327a83d0d1d873fce733f8c290a1b0c73", "kind": "step", "p": 0.006303910166025162, "step": 11, "token": 488}
+{"chain": "b8e919fecca9c32366abf3aac450411bccde890846b607419bd66efcd2f5fbe5", "kind": "step", "p": 0.003747591283172369, "step": 12, "token": 208}
+{"chain": "e1a93c1f2bdf144849ec69e6d5b1ea146da686c72ad03a283aabd4042cca6fd7", "kind": "step", "p": 0.0019184573320671916, "step": 13, "token": 128}
+{"chain": "5eaed298008b1705e494173090e588449042423b3e0c2601d0486861b5e63117", "kind": "step", "p": 0.004416337236762047, "step": 14, "token": 28}
+{"chain": "cfce62304d9c3f54813908eb256b48502107ecb50ffac08b93fed833c07625db", "kind": "step", "p": 0.0014852804597467184, "step": 15, "token": 149}
+{"final_chain": "cfce62304d9c3f54813908eb256b48502107ecb50ffac08b93fed833c07625db", "kind": "trailer", "steps": 16}

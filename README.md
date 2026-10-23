@@ -78,7 +78,7 @@ this tree alone:
   `stream_greedy.jsonl` are sealed, hash-chained step streams. The
   verifier re-derives every committed token: tampering breaks the chain,
   and a re-sealed forgery is refused on re-derivation. Re-running the
-  test regenerates both streams byte-identically on Linux (on Windows the prefill cache digest differs; see the known issue in `testbeds/SUMMARY.md`).
+  test regenerates both streams byte-identically on the same platform. Float results differ across OS/CPU/torch builds, so streams carry a hashed platform tag and there is a reference set per platform (Linux and Windows today); see `BUILDING.md` (core fix approved by JD 2026-10-23).
 - **Honest scope.** The PCH proof runs at toy scale with synthetic
   fixture weights — it proves the protocol properties (serialization,
   verification, rewind/branch, witnessed cross-checking), not production

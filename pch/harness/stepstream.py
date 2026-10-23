@@ -6,7 +6,8 @@ edit anywhere invalidates every link after it. The discrete committed
 state (token IDs, step records) is what gets hashed -- never float logits.
 
 Record kinds:
-  header   -- run identity: weights digest, config digest, run seed, temperature
+  header   -- run identity: weights digest, config digest, run seed, temperature,
+              recording platform (os, arch, torch, python; since 2026-10-23)
   prefill  -- the macro-step: prompt chunk geometry + post-prefill cache digest
   control  -- a control event admitted at a step boundary (Pillar 2)
   step     -- one committed decode token (Pillar 1): step index + token ID
