@@ -37,9 +37,9 @@ pch_testbed(pch.rewind_fidelity          tb_model_testbeds.py rewind_fidelity)
 pch_testbed(pch.fork_budget              tb_model_testbeds.py fork_budget)
 set_tests_properties(pch.fork_budget pch.rewind_fidelity PROPERTIES TIMEOUT 3600 LABELS "pch;testbed;slow")
 
-# Boss / fair-play beds. Implemented ones run on the PCH reference boss stub
-# (pch/harness/boss.py); the rest are skipped with a reason. Owner decision
-# for every bed: testbeds/DECISIONS.md.
+# Boss / fair-play beds 08-14 run on the PCH reference boss stub
+# (pch/harness/boss.py, a documented minimal stub). Owner decision for every
+# bed: testbeds/DECISIONS.md.
 pch_testbed(pch.boss.versioned_rematch tb_boss_fixture.py versioned_rematch)
 pch_testbed(pch.boss.human_input_rate tb_boss_fixture.py human_input_rate)
 pch_testbed(pch.boss.ranked_fixed_branch_count tb_boss_fixture.py ranked_fixed_branch_count)
@@ -47,6 +47,3 @@ pch_testbed(pch.boss.brain_version_stamp tb_boss_fixture.py brain_version_stamp)
 pch_testbed(pch.boss.hud_reading tb_boss_fixture.py hud_reading)
 pch_testbed(pch.boss.telegraph_fairness tb_boss_fixture.py telegraph_fairness)
 pch_testbed(pch.boss.hud_only_honesty tb_boss_fixture.py hud_only_honesty)
-foreach(tb telegraph_fairness)
-  pch_testbed(pch.boss.${tb} tb_boss_pending.py ${tb})
-endforeach()

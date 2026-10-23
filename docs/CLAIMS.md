@@ -25,9 +25,9 @@ below is registered in CMake.
 | C14 | Ranked mode: phone and PC budgets give identical decisions | pch.boss.ranked_fixed_branch_count | verified (reference boss stub) |
 | C15 | Cross-version replay is refused or labeled, never silent | pch.boss.brain_version_stamp | verified (reference boss stub) |
 | C16 | Engine demo scenario hash is stable across record, replay and handshake | `lithokraft --demo-test` (engine build; not a ctest yet) | verified for stability; the pinned value is open (BLOCKERS B6) |
-| C17 | Boss acts only on what's on the HUD (bed 08) | pch.boss.hud_reading | planned |
-| C18 | Every boss attack has a readable wind-up (bed 09) | pch.boss.telegraph_fairness | planned |
-| C19 | Boss cannot read a blanked HUD value (bed 11) | pch.boss.hud_only_honesty | planned |
+| C17 | Boss acts only on what's on the HUD (bed 08) | pch.boss.hud_reading | verified (reference boss stub) |
+| C18 | Every boss attack has a readable wind-up (bed 09) | pch.boss.telegraph_fairness | verified (reference boss stub) |
+| C19 | Boss cannot read a blanked HUD value (bed 11) | pch.boss.hud_only_honesty | verified (reference boss stub) |
 | C20 | Signed receipt from a real (non-fixture) DeepSeek specimen | - | planned |
 | C21 | CI runs the docs check and tests on every push | - | planned |
 | C22 | The PCH shows nothing about large-model quality (toy scale only) | - | verified (scope statement) |

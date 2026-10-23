@@ -8,8 +8,8 @@
      other "Planned:" line links DECISIONS.md or BLOCKERS.md.
   3. Every ctest named in docs/CLAIMS.md is registered in testbeds/CMakeLists.txt.
   4. testbeds/DECISIONS.md has a row for every bed 01-14.
-  5. Every skipped bed (tb_boss_pending.py REASONS) has a DECISIONS row whose
-     state is "skipped"; a skip without a decision entry fails.
+  5. Test-bed status in README.md and testbeds/README.md matches the
+     DECISIONS.md state, and every ctest DECISIONS/CLAIMS cite is registered.
 Usage: check_docs.py [REPO_ROOT]
 """
 import json
@@ -52,7 +52,6 @@ readme = read("README.md")
 claims = read("docs/CLAIMS.md")
 decisions = read("testbeds/DECISIONS.md")
 cmake = read("testbeds/CMakeLists.txt")
-pending = read("testbeds/tb_boss_pending.py")
 
 # 2. Planned
 readme_planned_beds = set()
@@ -95,14 +94,30 @@ for n in range(1, 15):
     elif dec_rows[b][3] not in ("Implement", "Retire"):
         errors.append(f"DECISIONS.md bed {b}: decision must be Implement or Retire, got {dec_rows[b][3]!r}")
 
-# 5. skips need a decision
-by_test = {r[2]: r for r in dec_rows.values() if len(r) > 4}
-for key in re.findall(r'^\s+"(\w+)":', pending, flags=re.M):
-    t = f"pch.boss.{key}"
-    if t not in by_test:
-        errors.append(f"skipped bed {t} has no DECISIONS.md entry")
-    elif not by_test[t][4].startswith("skipped"):
-        errors.append(f"{t} is skipped but DECISIONS.md says {by_test[t][4]!r}")
+# 5. README tables match the DECISIONS state (and so ctest): an implemented
+#    bed must read as run/verified, a skipped bed must read Planned:/skipped.
+def bed_status_rows(text):
+    for row in table_rows(text):
+        m = re.search(r"examples/(\d\d)-", "|".join(row))
+        if m:
+            yield m.group(1), row[-1]
+for doc in ("README.md", "testbeds/README.md"):
+    for b, status in bed_status_rows(read(doc)):
+        row = dec_rows.get(b)
+        if not row or len(row) < 5:
+            continue
+        implemented = row[4].startswith("implemented")
+        says_run = bool(re.match(r"(Ran|verified)", status))
+        if implemented != says_run:
+            errors.append(f"{doc} bed {b} says {status[:40]!r} but DECISIONS.md state is {row[4]!r}")
+for r in dec_rows.values():
+    if len(r) > 2 and r[2] not in registered:
+        errors.append(f"DECISIONS.md cites ctest {r[2]}, which is not registered")
+for r in table_rows(claims):
+    if len(r) >= 4 and r[-1].startswith("verified"):
+        for t in re.findall(r"\bpch\.[a-z0-9_.]+", r[2]):
+            if t.rstrip(".") not in registered:
+                errors.append(f"CLAIMS {r[0]} verified by unregistered ctest {t}")
 
 if errors:
     print("DOCS CHECK: FAIL")
