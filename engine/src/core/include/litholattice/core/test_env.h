@@ -12,6 +12,11 @@
 #include <filesystem>
 #include <string>
 #include <system_error>
+#ifdef _WIN32
+#include <process.h>  // _getpid: per-process temp dirs (R-TST-4)
+#else
+#include <unistd.h>  // getpid: per-process temp dirs (R-TST-4)
+#endif
 
 namespace litholattice::test_env {
 
@@ -32,13 +37,24 @@ inline void skip(const char* what, const char* reason) {
   ++skipCount();
 }
 
+/// Id of this process. Temp dirs shared by self-tests carry it as a suffix, so two
+/// test binaries running at once (ctest -j) never share a folder (R-TST-4).
+inline long processId() {
+#ifdef _WIN32
+  return static_cast<long>(_getpid());
+#else
+  return static_cast<long>(getpid());
+#endif
+}
+
 /// True when this process may create file and directory symlinks. The probe
 /// runs once: it creates and removes a link in the temp directory.
 inline bool symlinksAvailable() {
   static const bool available = [] {
     namespace fs = std::filesystem;
     std::error_code ec;
-    const fs::path dir = fs::temp_directory_path(ec) / "litholattice_symlink_probe";
+    const fs::path dir = fs::temp_directory_path(ec) /
+        ("litholattice_symlink_probe-" + std::to_string(processId()));
     if (ec) return false;
     fs::remove_all(dir, ec);
     fs::create_directories(dir, ec);

@@ -44,7 +44,8 @@ int runAssetsSelfTest() {
   };
   std::printf("Assets self-test (throwaway packs)\n");
   std::error_code ec;
-  const fs::path root = fs::temp_directory_path(ec) / "litholattice-selftest-assets";
+  const fs::path root = fs::temp_directory_path(ec) /
+      ("litholattice-selftest-assets-" + std::to_string(test_env::processId()));  // R-TST-4: per process; engine_assets and lithokraft_selftest both run this
   fs::remove_all(root, ec);
   const fs::path base = root / "base", mod = root / "mod", player = root / "player", broken = root / "broken";
 
