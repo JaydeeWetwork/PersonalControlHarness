@@ -4,7 +4,7 @@
 Designed by: Master Chief.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/masterchief-03-versioned-receipt-rematch-testbed.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/masterchief-03-versioned-receipt-rematch-testbed.md`.
 
 ## 2. Goal
 Same seed and same brain version must give the same receipt at every worker count; a v1 rematch after v2 exists must match the v1 original; every receipt names its brain version; the rolling receipt counter must be gap-free.

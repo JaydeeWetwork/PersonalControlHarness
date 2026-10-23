@@ -4,7 +4,7 @@
 Designed by: Herominde.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
 In ranked mode the branch count is locked, so a "phone" budget (1 worker) and a "PC" budget (8 workers) must give identical decisions and an identical receipt hash.

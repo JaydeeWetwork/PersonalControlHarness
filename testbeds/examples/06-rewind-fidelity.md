@@ -4,7 +4,7 @@
 Designed by: Cortana.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cortana-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/cortana-testbeds.md`.
 
 ## 2. Goal
 Snapshot, run N steps, rewind (fresh model + prefix replay), re-run. The snapshot digest and the re-run must match, with a replay check on each N. N = 1, 64, 1024, 16384, 65536.

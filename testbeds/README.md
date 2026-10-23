@@ -4,10 +4,10 @@ Worked examples and tests for the Personal Control Harness. Each runs on its
 own with `python <script>` from this folder, or all together through CTest.
 Free tools only. **Start with example 01.**
 
-JaydeeWetwork's only instruction was to think up experiments, test beds and
-designs for the PCH. Each squad member (Cortana, Herominde, Master Chief,
-CloudAtlas) came up with their own ideas and independently designed, tested
-and verified them, with no further context or direction. Each test bed is
+The AI squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these
+test suites on their own, without input from JaydeeWetwork; JD then verified
+them and approved them for posting. JD human-reviews and verifies all
+AI-authored work before it is merged. Each test bed is
 credited Designed by <member>, Built by Cortana. The original design notes, with
 author credit, are in `designs/`. Every test uses the harness read-only.
 

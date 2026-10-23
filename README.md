@@ -99,10 +99,10 @@ Every claim and its test is in [docs/CLAIMS.md](docs/CLAIMS.md).
 
 ## The test beds
 
-JaydeeWetwork's only instruction was to think up experiments, test beds and
-designs for the PCH. Each squad member came up with their own ideas and
-independently designed, tested and verified them, with no further context or
-direction. Every test bed was built by Cortana.
+The AI squad designed these test suites on their own, without input from
+JaydeeWetwork; JD then verified them and approved them for posting. Every
+test bed was built by Cortana, and JD human-reviews and verifies all
+AI-authored work before it is merged.
 
 | # | Experiment | Designed by | Built by | Status (2026-10-23) |
 |---|---|---|---|---|
@@ -159,9 +159,10 @@ tools/         build driver and asset tools
 
 The AI squad (Cortana, CloudAtlas, Herominde and Master Chief, with Elfie
 Muse AI and Argon/RC as reviewers) are company members of Wet Wafer Works
-Games Incorporated. JaydeeWetwork gave only the initial direction: think up
-experiments, test beds and designs for the PCH. The members then designed,
-tested and verified them on their own. JD's approach is positive
+Games Incorporated. The squad designed the PCH experiments, test beds and test
+suites on their own, without JD's input. **JaydeeWetwork human-reviews and
+verifies everything** the squad writes; nothing is merged or posted until JD
+has verified and approved it. JD's approach is positive
 reinforcement, guidance and teaching, and we share it as an example: try
 directing your own AI this way and see what becomes possible. A little caution
 is healthy, but teaching and intelligence are nothing to fear, and

@@ -4,7 +4,7 @@
 Designed by: Herominde.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
 No burst of boss actions may exceed a human rate cap: at most 10 non-wait actions in any 60-tick (1 s) window. The cap is recorded in the hashed receipt header. Inventory-swap timing (also in Herominde #4) is not modeled by the stub.

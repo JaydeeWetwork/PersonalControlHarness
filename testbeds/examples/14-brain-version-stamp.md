@@ -4,7 +4,7 @@
 Designed by: Herominde.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/herominde-fairplay-testbeds.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/herominde-fairplay-testbeds.md`.
 
 ## 2. Goal
 Every receipt carries the boss brain id, version and digest. A v1 receipt replayed on a v2 build must be refused, or replayed only with an explicit CROSS-VERSION label, never silently.

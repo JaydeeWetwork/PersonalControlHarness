@@ -4,7 +4,7 @@
 Designed by: CloudAtlas.
 Built by: Cortana.
 
-The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these experiments independently, with no direction from JD; JD reviewed them (and asked for longer rewind runs). Design: `../designs/cloudatlas-receipt-tamper-check.md`.
+The squad (Cortana, Herominde, Master Chief, CloudAtlas) designed these test suites on their own, without input from JD; JD then verified them and approved them for posting (and asked for longer rewind runs). JD human-reviews and verifies all AI-authored work. Design: `../designs/cloudatlas-receipt-tamper-check.md`.
 
 ## 2. Goal
 Throw 10,000 random edits (value changes, added/removed fields, swapped/dropped records, byte damage) at a sealed receipt and require zero false accepts and zero crashes. Since 0.0.0.4 the test-bed verifier (`testbeds/receipt_check.py`) runs the PCH core check (`stepstream.check_sealed`) plus size caps.
